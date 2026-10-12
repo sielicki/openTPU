@@ -1,0 +1,57 @@
+Unexecuted complete-D continuation after the independently completed fullgraph
+generic sharing certificate. All earlier drivers and receipts remain unchanged.
+
+Pinned source component chain:
+  original partial d960990dea611a96ef883f8c77649c48332f7ee357ba90dd9455f2ba1de4be0a
+  operand lemma99c865a699bcc2263c27c033f2363a7e5cb002a514b1f2e01e8fdd0672e7596e
+  one-bit congruence5fb31c8996da9419abef7cb24dc440a021e967d9c48a2ceb4bb1d7e9ae3069ac
+  fullgraph partialbe2b2227e672306cdbf633253bce191cee263f50c3a819e7efcd3c661e31b41f
+  generic sharing5cf5f95f877e02e89cd1c49d981fb3402e70da917560141992e8b1c873a1af16
+
+Reuse the frozen complete-D component semantics in a new driver: requalify both
+7436-D totality graphs/logs, rebuild full original paired assembly, compare all
+original/indexed/assembled owners, replay the actual operand projections and
+positive/negative lemmas, lift to the full graph, reconstruct the complete32-Y
+congruence and independently audit the resulting full graph. Requalify149
+original intervals plus the separate one-bit proof exactly as before.
+
+Then require the fresh fullgraph/model/lemma/certificate identities and150-row
+baseline to match the preserved fullgraph partial receipt. Regenerate all ten
+additional full-congruence intervals against that exact graph, compare both
+artifact claims and closure hashes, and reparse the actual terminal queries.
+These160 mixed intervals cover precisely[0,2410); old receipts stay incomplete.
+
+Require the passed generic sharing certificate's exact source receipt, complete
+source representation and conditional domain. Recompute its entire knownness,
+canonical expression and replacement decisions on the freshly requalified
+full graph. Newly emitted full shared graph and certificate must equal both
+the declared hashes and authenticated closure artifacts. Replay every owner
+of the old proposal against the fresh mapping; audit the new shared graph's
+complete drivers/models/DAG before querying. No diagnostic signature is a
+premise and no unknown cell/output is silently identified.
+
+All3518 remaining D coordinates are partitioned from the one qualified shared
+full graph. Query constraints/undef semantics/root identities are unchanged.
+Default width16 begins exactly2410. Complete disjoint union[0,5928) is required
+for success. SAT remains a transformed-model witness unless separately mapped
+back. A timeout preserves incomplete, never a theorem or silently skipped bit.
+
+Immutable resume exists from the first version: explicit path/SHA, exact five
+premises, original/congruent/shared fullgraph identities, all model/lift/rewrite
+certificate hashes and the complete mixed baseline must match. Every resumed
+generic_shared interval is regenerated and joined to declared+closure hashes
+and its exact query/log. No old full_congruence interval is relabeled shared.
+
+All large owner processing/emission streams through SQLite; parsed original
+graphs are released before solvers. New flags revoke on interruption or late
+publication failure. No extraction, new state assumptions, higher timeouts or
+memory-limit changes. Original memory bridge/public outputs/child definedness/
+outer trace/current-production applicability remain false and pending.
+
+Root-only commands after independent review:
+source /tmp/opentpu-test-env.sh
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m pytest -q build/sparkle/mxu_outer_shared_D_draft/test_shared_D.py
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_outer_shared_D_draft/check_shared_D.py --output build/sparkle/mxu-outer-shared-D-first
+
+Resume with a new output plus --resume OLD_SUMMARY --resume-sha EXACT_SHA;
+--chunk1 is available without changing any already completed interval.

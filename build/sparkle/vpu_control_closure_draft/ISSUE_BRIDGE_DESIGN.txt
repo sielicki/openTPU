@@ -1,0 +1,79 @@
+Actual original-root -> reached native issue, all555 outputs.
+
+Measured closure diagnostic:337 remaining coordinates comprise243 top inputs,
+29 internal-control outputs and65 datapath results. en and ss_rq are actual Q
+of write_buffer.en_r and stream.ss_rq. The27 issue values are combinational
+actual-root cones. The528 additional top-output crossings have samples at
+ta_en; their count equals ta/tb addresses512 plus enables16. The checker must
+confirm the full consumer-name histogram, not infer it from samples/counts.
+
+                         completed1159 state relation
+                             |                  |
+                  actual original Q        reached sequence Q
+                             |                  |
+original g_comp.u_comp.hold --+                  +-- native datapath c_hold
+                exact port coordinate shared/defined interface
+                             |                  |
+                  original issue cones    reached native issue
+                             |                  |
+                  raw outputs + normalized original issue cuts
+                             +-------555--------+
+                                  equality
+                   /                                 \
+      public ta/tb addresses/enables528        internal control27
+      exact original root port bits           iall_last,irow_last,
+                                               iwid,imask,iss_ok
+                                                    |
+                                    discharge those27 premises in
+                                    initialized1159 composition
+
+1. Authenticate completed initialized1159, original root SQLite/source/typed
+   specialization, local issue555 proof receipt and all3 production bindings.
+   Exact current assembly issue module/directives must equal local proved source.
+   Exact parent instance ports/expressions must match current VpuControl wiring.
+   No name-only production applicability assumption.
+2. Use actual archived original-root graph, NEVER reconstructed issue reference.
+   Use actual archived local native issue graph (gate) with full module source
+   equality to reached production issue. Audit the18 input vectors explicitly:
+   issuing,filling,od_sc,od_one,func,bmode,ic,ir,ch,nch,rows,cols,od_a,oc_a,a_row,
+   b_row,b all come from selected state; c_hold is actual composite hold output.
+   (Exact input inventory is18 vectors; validate against SPECS/graph, not this
+   prose.) State pairs must match completed1159 coordinates, including any
+   original alias buffers; do not freely share a newly invented scalar input.
+3. c_hold maps exact original g_comp.u_comp hold cell connection to native
+   actual external c_hold control input. Preserve raw buffer paths and actual
+   child parameter/ABI records. This is the honest next datapath interface bit,
+   NOT an internally proved producer; its original/native producer equality is
+   a separate existing composite theorem/applicability join to discharge later.
+   Record that after closure2 internal bits and66 datapath bits remain, unless
+   an existing actual interface identity proves c_hold already included elsewhere.
+4. Original outputs are actual top ports ta_addr/tb_addr256 each, ta_en/tb_en8,
+   plus imask8,irow_last1,iall_last1,iwid16,iss_ok1 net aliases. Assert full555.
+   The original address ports and local reference are packed [7:0][31:0], not
+   unpacked arrays. Compare actual low-to-high wire coordinates directly and
+   preserve original port offset/upto/type metadata. Full vector equality must
+   establish ordering rather than an assumed lane-reversal permutation.
+5. Inventory actual cone closure first. Stop on all Q except selected roots,
+   all child outputs except exact c_hold, all missing wires and memory. No new
+   roots to force closure. Audit full drivers/DAG and preserve actual buffers/X.
+   Existing exact mux/pmux projections may be reused with pinned source/model;
+   don't introduce an unverified primitive rewrite. Prove definedness and
+   strict equality of every555 output, with complete immutable upfront manifest,
+   bounded partitions/resume and meaningful actual-output/undefined faults.
+6. Internal premise discharge is specifically original NORMALIZED cut coords
+   used by the completed679/CQ composition. Prove actual raw-output equality,
+   then audit exact retained buffer chains to normalized coords; defined raw
+   output implies defined/equal predecessor with pinned SatGen buffer rule.
+   Join native issue output expressions to actual command/sequence boundary
+   pins and remove exactly27 rows, no wholesale environment flag.
+7. Account exact all528 original port crossings by port/name/position and all
+   additional crossings sourced by these outputs (including buffer aliases),
+   recording still-unproved combinational intermediate observations separately.
+   Never infer a complement D theorem from selected D closure.
+
+Result scope: actual full555 issue behavior and27 premise elimination under
+related selected state and the actual shared/defined c_hold interface. The two
+internal stream/write-buffer state/provider equalities remain pending along
+with full3072 original-state mapping; no whole4231 or all2455-crossings claim.
+Then prioritize complete actual-root stream/write state relations so en/ss_rq
+become consequences of related state and internal-control assumptions vanish.

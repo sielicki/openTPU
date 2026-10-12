@@ -667,3 +667,57 @@ def test_moe_compile_worker_builds_the_image(moe):
         assert np.array_equal(words, I.assemble(eng.image.compile_decode(1, 2)[0][0]))
     finally:
         Q._WORKER = None
+
+
+def test_moe_on_board_rtl_logits_and_state(moe, have_verilator, monkeypatch):
+    """Full six-layer Gemma MoE on Verilator, with resident expert slots.
+
+    Exercises sliding/global attention (global K=V), router/expert gains, the
+    dense MLP beside each MoE block and padded expert width. Host-served fences
+    are pre-satisfied on both machines; this is not live host-streaming coverage.
+    """
+    from opentpu.host.board import Board, BoardBackend, SimTransport
+
+    monkeypatch.setenv("OTPU_BUILD_JOBS", "1")
+    monkeypatch.setenv("OTPU_VERILATOR_JOBS", "1")
+    _, W, spec = moe
+    assert spec.layers == len(KINDS) and spec.experts == 8 and spec.top_k == 2
+    assert spec.k_eq_v and spec.n_kv == 2 and spec.n_kv_global == 1
+    assert spec.ple_dim == 0 and spec.expert_ffn == 96
+    assert spec.ffn == (320,) * spec.layers
+    cfg = _cfg()
+    tr = SimTransport(ch_bytes=cfg.DRAM_BYTES // 2, stall=20, seed=5)
+    assert Board(tr).info()["caps"].get("waitw"), "board RTL must implement WAITW"
+    isa = Engine(spec, W, cap=256, cfg=cfg, rows=1, resident=False,
+                 experts=spec.experts, pipeline=False, prog_cache=False)
+    brd = Engine(spec, W, cap=256, cfg=cfg, rows=1, resident=False,
+                 experts=spec.experts, pipeline=False, prog_cache=False,
+                 backend=lambda c, imgs: BoardBackend(c, imgs, transport=tr, status=False))
+    try:
+        assert (brd.image.fmt.F0, brd.image.fmt.F) == (96, 128)
+        assert isa.image.nbytes == brd.image.nbytes
+        assert isa.image.offload == brd.image.offload
+        layout = brd.image.offload
+        assert len(layout.slots) == spec.layers
+        assert all(count == spec.experts for _, count in layout.slots)
+        assert isa.server.misses == brd.server.misses == 0
+        isa.backend.machine.host = None
+        brd.backend.host = None
+        for engine in (isa, brd):
+            engine.backend.write(0, layout.served, np.array([3e38], np.float32))
+        for position, token in enumerate((11, 222, 333, 444), 1):
+            want, got = isa.step(token), brd.step(token)
+            assert np.array_equal(want.view(np.uint32), got.view(np.uint32)), position
+            assert brd.stats[-1]["cycles"] > 0
+            # Compare every byte of the model image, including both kinds of
+            # KV caches, scratch, route mailboxes and preloaded expert slots.
+            for start in range(0, isa.image.nbytes, 1 << 20):
+                size = min(1 << 20, isa.image.nbytes - start)
+                assert np.array_equal(isa.backend.read(0, start, size),
+                                      brd.backend.read(0, start, size)), (position, start)
+            seq = int(brd.backend.read(0, layout.mbox, 4).view(np.float32)[0])
+            assert seq == position * spec.layers
+        assert isa.server.seq == brd.server.seq == 0
+        assert isa.server.misses == brd.server.misses == 0
+    finally:
+        brd.backend.close()

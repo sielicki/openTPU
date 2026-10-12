@@ -1,0 +1,40 @@
+Unexecuted changed-reference initializer negative control.
+
+Requires explicit --positive PATH and --positive-sha256 SHA for a successful,
+complete dot-local initializer receipt. No placeholder digest or success claim.
+Runs only through sparkle_bounded.py after positive Store installation/review.
+Available positive receipt: build/sparkle/mxu-dot-initial-first/summary.json
+SHA256: 0b2f6154c460ec24f9768704a4d1704d6e86ee59f65ad51e3fa77ec96465119c
+
+Exact source mutation: add initial wd[0]=16'h0001 after the unique retained wd
+packed declaration inside the exact D128/C4/CL16/IMPL2 g_sys branch. Original
+native source/state remain unchanged. This is explicitly a CHANGED REFERENCE
+constraint, not a native initializer bug, original reference semantics or SAT
+counterexample. Native initializer0->1 alone could remain a valid refinement.
+
+Uses same frontend/plugins and positive extraction commands; only mutated source
+and fresh output paths differ. Copies authenticated closed positive SQLite file
+with1MiB streaming blocks; original positive receipt/database are read-only.
+Replays both complete old/fresh graph bridges, all61,323 state mappings and both
+observational quotients before mutation. Renames only fresh_gold database owners
+to baseline_gold, ingests actual mutated reference graph, and requires complete
+old/mutated graph equality ignoring only audited net init and source locations.
+
+Checks actual original g_sys.wd low16 bits and native wd0 alias through all16
+paired state positions, each occurring exactly once. The historical theorem uses
+dsp_state_N fields; no register alias is assumed to be a theorem field. Reports
+the actual field/bit of the low-bit conflict and all16 alias correspondence slots.
+All physical gold
+initializer constraints must remain unchanged outside these16 bits; those16
+must be exactly0001. Across all61,323 mapped bits the ONLY incompatible constraint
+must be the located wd0 alias bit0 reference1/native0. Then Store.witness must reject with the exact
+initialization-implication error. Other failures stay incomplete and do not count
+as this negative control. Full native61323/omitted-reference2048 obligations stay.
+
+Atomic phase checkpoints identify active files; extraction logs archived even
+on interruption. Database archived after explicit close. No heavy work or import
+executed while drafting. Secondary actual native update/full-SAT mutation remains
+future work, as requested. Review and bounded guards are still required.
+The positive guard deliberately splits/reorders the alias across two dsp_state_N
+fields. Negatives reject missing, duplicate, wrongly paired or reordered alias
+bits, extra native occurrences, malformed alias widths, and field/width changes.

@@ -1,0 +1,49 @@
+UNEXECUTED complete buffered-write1722 initialized stage. New files only.
+Exact native VpuWriteBuffer.build config is <8,true,true>:
+LANES8, buffered=true, streams=true. There is NO CL field here; enclosing VPU
+8/2/true uses this configuration through VpuControl. Original wrapper WBUF1,
+SE1 selects NWQ4/WQW2. No invented CL override or smaller proof substitution.
+
+All13fields: four425-bit words1700RAM bits +22control bits wh2/wt2/wn3/hen8/
+hrot3/en_q1/en_r1/done_r1/dpend1. Actual original names are g_wbuf.wq[0..3]
+and g_wbuf controls, except top-level done/dpend. Complete packed word order
+is preserved directly, no field truncation or reversed-word approximation.
+EveryQ/D, all raw init aliases, unique driver and full combinational DAG checked.
+Original unspecified RAM permits one equal native witness; native undefined
+RAM remains arbitrary '?' if present. No extra zero-RAM or empty-FIFO premise.
+
+Fresh C-compiled native and fresh original extraction, no historical opt_expr
+proof promoted. Full reviewed original RTL source snapshot frozen/archived and
+exactly compared before reference reconstruction. Exact original declarations,
+NWQ/WQW geometry, and independent always_ff RAM write statement checked. That
+RAM write runs on push EVEN WHILE rst=1; control pointers/count reset separately.
+Raw reference noopt/memory_map/opt_clean retains this distinction. Original
+simulation-only WBUF alignment assertions are outside this synthesized-state
+formal scope; no arbitrary four-state/event-region diagnostic parity claim.
+
+428publicoutputs+1722D=2150 per side, all4300bits strong definedness then strict
+equality with -enable_undef -set-def-inputs only. All grants, stream arbitration,
+done_i and selected write payloads remain independent inputs. No assumptions
+about queue occupancy, contiguous input addresses, reset prefix, filled buffers
+or connected controller legality. If strict equality/totality fails for a real
+behavior difference, preserve CEX rather than hide it behind traffic premises.
+
+Actual source faults: done output flip; wh reset0->1; suppress wq0 write during
+reset (must yield rst1 equality CEX); o_dpend->X (must fail definedness). dpend
+has internal pdn/control users, preserving full1722state after X output change.
+No miter-only faults. Guards cover full1700arbitrary RAM witness, exact word
+mapping, omitted/overlapping state, init/clock/cycle mismatches, original writer/
+reset/geometry changes and exact fault target uniqueness.
+
+Driver archives compiled dependency/source/linked-object/runner closure, active
+logs/graphs/queries/partial results on interruption; completion revoked on any
+failure. Existing passed command/sequence and frozen stream code untouched.
+No imports/tests/builds/extraction run by author.
+
+Commands for root after independent review and bounded gate release:
+ python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_write_buffer_initial_draft -p 'test_write_buffer_initial.py'
+ python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_write_buffer_initial_draft/check_write_buffer_initial.py --work build/sparkle/vpu-write-buffer-initial-first
+
+Still pending after local success: production register-hint/module/context
+binding, noncircular composed control/outer VPU, physical device power-up/timing,
+runtime and full four-state simulation scope. No whole-VPU claim.

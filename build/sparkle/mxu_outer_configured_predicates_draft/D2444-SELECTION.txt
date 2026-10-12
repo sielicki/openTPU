@@ -1,0 +1,22 @@
+Concrete operational configuration, unexecuted; approved architecture unchanged.
+
+Read the terminal bounded orientation report:
+build/sparkle/mxu-outer-next-predicate-details-first.log.
+It identifies a distinct group of eight original gt/native lt comparisons,
+not the earlier gold755..881 / gate2309..2452 group already replaced.
+Exactly eight of64 swapped-orientation candidates share32 actual known input
+coordinates and have32 unclassified input pairs; those eight one-to-one matches
+are explicitly listed in D2444-pairs.json. All have exact swapped32/32/1 unsigned
+schema. They are candidates to prove, not assumed equivalent.
+
+For the first actual pair, gold:$899.A and gate:$2146.B are the same32 actual
+IDs96756..96787. Original B16727..16758 and native A10120..10151 differ and must
+be proved equal/defined. This confirms actual body/root distinction from the
+first group. The other seven rows have their own exact actual connections in
+the authenticated diagnostic; no numeric-order equivalence premise is used.
+
+The unchanged checker authenticates the actual fullgraph and regeneratedD2444
+cone, exact target bodies, all1024 operand coordinates, all512 swapped equalities,
+and pair ancestry. Actual unknown/inversion negative controls remain required.
+The diagnostic's source/schema hashes are pinned by configuration. No comparator
+replacement or completion of the remaining D obligations follows from selection.

@@ -1,0 +1,39 @@
+Conditional initialized selected-state composition: 679 actual original D plus
+480 exact cq word D. Frozen prerequisites are physical-first SHA70a64fce... and
+cq-proof-first SHAcdd83f7e.... No existing proof files change.
+
+Reconstruct complete boundaries and exact query graphs; authenticate each owning
+receipt, script, log, model/source, command and all positive queries. Recompute
+the complete memory mapping audit and state-only read support. Reuse the proven
+482 control-knownness and independent720 memory law; no fresh memory semantics
+are inferred from two identical lowering invocations.
+
+Head discharge is for the NORMALIZED 240 hc cut coordinates, not merely public
+aliases. Reconstruct each exact raw-head-to-cut buf chain on both sides. Existing
+head theorem proves raw head defined and equal; pinned buf SatGen equations
+give defined output => input defined/equal. Retain every buffer in all proofs.
+This implication propagates backwards along audited acyclic chains. State-only
+head dependence gives the noncircular order: current related state -> head ->
+679 next state, in parallel with exact cq next state.
+
+Freeze a complete bijection original679+logical cq480 -> actual gold1159.
+Audit every original root initializer alias simultaneously against actual Q,
+including unselected complement aliases; reject conflicts. For every defined
+gold startup, copy selected gold coordinates into original selected coordinates,
+obey complement original constraints, leave all other original state arbitrary.
+Defined original selected constraints must be implied by gold initializers.
+Memory is unspecified/shared arbitrary, never forced zero. Original memory
+init accesses are absent by exact CQ schema. This is a selected-state witness,
+not an independent arbitrary-startup equivalence claim.
+
+The remaining non-hc boundary is explicit per-cycle shared/defined environment.
+State/state overlaps derive only from exact relation pairs. State/external
+overlaps remain state-dependent environment contracts, never freely chosen or
+claimed to hold for actual producers. No traffic, fill, reset, or legal-occupancy
+premise is introduced. Outputs certified here are selected D and head only.
+
+Packed layout, actual external producer correspondence, all2,455 outward uses,
+whole4,231-bit control and whole VPU remain unproved. Induction is a checked
+structural certificate supported by solver evidence, not a concrete Lean kernel
+instantiation. Full native composition inherits only the separately pinned
+joint1159 local relation; broader production linkage remains explicit.

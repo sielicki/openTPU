@@ -6,6 +6,7 @@ dot A on the VPU's slot-0 partial loop and u_vt is DSTEP's. VOPs (every function
 reductions sharing slot 0's loop and u_vt with the streams): the TMEM against the ISA
 simulator. Some VOPs are queued or in flight when a stream asks; the testbench fails on a TMEM
 access, a VOP start or an unfinished VOP in stream mode, or a stream output outside it."""
+import os
 import numpy as np
 import pytest
 
@@ -90,11 +91,23 @@ def run_front(streams, vops, rels, tm0, rng, tmp_path, wbuf):
     fin.write_text("\n".join(lines) + "\n")
     ftm.write_text("\n".join(f"{int(w):08x}" for w in tm0) + "\n")
     R = rtlsim.RTL
+    composite = R / "vpu/otpu_se_comp.sv"
+    if os.environ.get("OTPU_SPARKLE") == "secomp":
+        from opentpu.sparkle import se_composite_source
+        composite = se_composite_source(L, 21, 3, 2, True)
+    tail = R / "vpu/otpu_se_tail.sv"
+    if os.environ.get("OTPU_SPARKLE") == "setail":
+        from opentpu.sparkle import se_tail_source
+        tail = se_tail_source()
+    vpu = R / "vpu/otpu_vpu.sv"
+    if os.environ.get("OTPU_SPARKLE") in ("vpu-test", "all"):
+        from opentpu.sparkle import vpu_test_source
+        vpu = vpu_test_source(L, L // 4 if L >= 8 else 1, True, bool(wbuf))
     exe = rtlsim.build("tb_se_vpu", [R / "vpu/otpu_fp.sv", R / "vpu/otpu_fpipe.sv",
                                      R / "top/otpu_pkg.sv", R / "vpu/otpu_vtree.sv",
                                      R / "tech/generic/otpu_tech_ram.sv",
-                                     R / "vpu/otpu_se_comp.sv", R / "vpu/otpu_se_tail.sv",
-                                     R / "vpu/otpu_vpu.sv", rtlsim.TB / "tb_se_vpu.sv"],
+                                     composite, tail,
+                                     vpu, rtlsim.TB / "tb_se_vpu.sv"],
                         {"WBUF": int(wbuf)})
     r = rtlsim.run_sim([exe, f"+in={fin}", f"+out={fout}", f"+tmem={ftm}", f"+dump={fdump}"],
                        timeout=900)

@@ -1,0 +1,25 @@
+Historical checkpoint inventory reconciliation, unexecuted draft
+
+The checker discovers checkpoint-*/summary.json and demands exactly one passed,
+terminal, fully audited receipt for each of the 18 declared checkpoint suites.
+Failed/incomplete attempts are recorded with their hashes and never substituted
+for successful evidence. Unknown or duplicate passed suites fail closed.
+
+It hashes archive objects in streams with deduplication, including model weights,
+dependencies, original sources/tools, simulator binaries and compilation inputs.
+It does NOT read current model weights or the installed venv, and does not rerun
+tests. Actual retained runtime artifacts must still match their archived hashes.
+It recomputes exact JUnit identities/counts and rebuilds the simulator audit from
+archived event/manifest/source/tool/binary evidence. Historical before/after
+checkpoint/dependency equality and source/tool stability fields are required.
+
+The report lists each selected receipt and SHA256 plus input/tool dictionaries;
+this deliberately preserves different historical source trees. All cases use
+RtlBackend/native Top, including board-named cases. No BoardBackend transport,
+physical FPGA, common current-tree or whole-design formal claim is made.
+
+No checker import, guard run, hashing sweep or execution has been performed in
+this drafting task. Root owns the heavy gate. After review, run synthetic guards
+under a 256 MiB bounded job, then reconciliation under the ordinary 3 GiB gate.
+The final checkpoint has now passed according to root; the checker independently
+requires its completed receipt and all terminal audits when eventually executed.

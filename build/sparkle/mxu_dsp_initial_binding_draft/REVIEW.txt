@@ -1,0 +1,41 @@
+Draft only: no imports, tests or binder execution yet.
+
+Pinned initialized theorem: mxu-dsp-initial-second/summary.json, 416 inputs,
+SHA4925be848d0864d4daf04b129ae199040ceea530f000c99fe469f46bc501de66.
+
+All nine proven helper definitions are compared exactly (including attributes
+and incoming directives) to each Gen1/Gen2/CLI assembly. Only seven helper kinds
+are actually instantiated in the C4/IMPL2 production hierarchy:
+pe_000=112, pe_001=336, pe_010=8, pe_011=24, pe_100=8, pe_101=24, colend_23=4.
+pe_110 and pe_111 definitions are present but have no production occurrences.
+This is 512 PE helpers plus four four-DSP column ends =528 DSP48E1 occurrences,
+and 102516 concrete leaf model state bits. These expected counts are enforced
+by the draft, not newly executed evidence.
+
+Reached helper specialization IDs are joined directly to the authenticated
+specialization receipt with exact body hashes and empty effective parameters.
+DSP48E1 occurrences are terminal records, NOT hierarchy nodes or instance paths.
+Each helper child joins its exact hierarchy terminal path and terminal binding;
+module/parent, parameters, connected pin contracts and omitted-output ledgers
+must match. Terminal certificate/selector/hash and qualified profile then join
+the authenticated dsp-occurrence-projection-first receipt. Its helper identity,
+concrete leaf summary/log, actual primitive model and production assembly must
+match the initialized theorem and current assembly. The complete expected DSP
+parameter/default inventory is independently checked, including ONE48, register
+enables, input inversions, MASK/PATTERN and elaborated local loop parameter i.
+The collected 528 paths must equal ALL DSP48E1 hierarchy terminals and terminal
+bindings; an extra reachable DSP outside known helper wrappers is rejected.
+The corrected synthetic guards represent DSPs as terminals and cover missing,
+extra, overlapping and misbound terminals, projection identities and omissions.
+
+The current primitive library and full recorded Lean/RTL/tool source closure
+are bound. The normalizer is rerun as a pure source transform: exact original
+functional model, static USE_SIMD initializer expansion certificate, positive
+normalized model and actual native-only Br2 mutation are compared to their
+authenticated artifacts. Native undefined witness bits remain '?' and all
+nine precise 0-versus-1 initializer rejections are required.
+
+Scope remains parameter-elaborated primitive-model initial predicates. The
+applicability binder does not prove raw event-region/time-zero four-state
+simulation equivalence, FPGA power-up behavior, acyclic Mealy cascade
+composition, or initialized dot/MXU/board composition.

@@ -1,0 +1,60 @@
+Unexecuted next stage: semantic operand lemmas before multiply sharing
+
+The preserved one-bit query D[2249] timed out; this is not a counterexample.
+The diagnostic found unsigned A32/B32/Y32 multiplies on each side. Reference
+gold:$7 B[0:16] has no conservative structural definedness signature. That
+absence neither proves undefinedness nor licenses replacing unknown values.
+
+1. Authenticate the exact incomplete second partition receipt, diagnostic
+   receipt and complete closure, exact D_2249_2250 graph/manifest/query/log,
+   and original complete paired graph plus reviewed projection certificate.
+   Select the actual two $mul cells by name and full body/parameter/pin hash.
+   Never select a match by width alone. Preserve source files unchanged.
+
+2. Construct four operand observations, gold/gate A and B, retaining all
+   128 physical operand coordinates and their actual ordering. Reuse exact
+   root IDs and original semantic identities from the paired source graph.
+   Do not pair formerly independent omitted-Q roots or unknown choices.
+   Build full backward dependency cones; use only the already reviewed exact
+   mux slicing, keeping all other cells whole. Independently verify neither
+   target multiply Y is an ancestor of any operand. If another multiplier
+   remains an ancestor, retain it and report this rather than cutting it.
+   Source-pinned model extension plus driver/DAG audit must justify omitted
+   cells; exact mux value/undef projection rules must remain authenticated.
+
+3. First prove every one of the 128 operand bits defined under the original
+   defined-root domain, explicit undef enabled, all internal unknowns intact.
+   Preserve concrete undefined witnesses; no operand lemma if this fails.
+   Then prove all 64 corresponding A/B bits equal in the SAME shared-input,
+   independent-internal-unknown model, using a mismatch query. Partitioning
+   is allowed only with exact disjoint complete bit coverage. No assumed
+   operand equality, no new inputs/cuts, no range/enable assumptions, and no
+   use of the desired D equality as a premise. Definedness and equality must
+   be terminal UNSAT with exact graph/script/log provenance and timeout
+   handling. The already proved D totality does not imply operand totality.
+
+4. Only after both lemmas pass, build a separate checked substitution using
+   the authenticated actual SatGen unsigned $mul branch and extension rules.
+   Defined equal ordered operands imply equal defined deterministic Y32.
+   Replace one multiply's complete Y coordinates by the other's coordinates
+   everywhere (all consumer pins, observation ports and aliases), remove only
+   that redundant cell, and verify an exact replay of the entire transformed
+   graph. Reject collisions, incomplete replacements and new cycles. Keep all
+   other roots/cells/unknown choices unchanged. This is semantic congruence
+   established by the operand queries, not structural-signature equality.
+   Replay source and target model extension and record the coordinate map.
+   The projection/extension argument must show every original counterexample
+   maps into the transformed query; no assumption literals are injected.
+
+5. Rerun the original exact one-bit D mismatch on this certified representation
+   under the unchanged memory/time ceilings. UNSAT would discharge only that
+   interval. Retain all earlier 2249 proven bits, and require the full 5928-bit
+   union before any retained-D success. Any later interval can reuse operand
+   lemmas only after exact source graph/root/operand lineage correspondence,
+   or must prove fresh lemmas. A successful diagnostic or operand certificate
+   never substitutes for the remaining D queries.
+
+Conditional domain remains full defined Q and external RAM/FP returns. This
+work does not discharge child-output definedness, original-memory bridge,
+strict public-output equality/refinement, initialized outer trace or current
+production source binding. All remain separate required obligations.

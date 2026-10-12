@@ -1,0 +1,41 @@
+UNEXECUTED assembly bridge draft. No heavy work, imports, or test execution.
+
+Requires an explicitly reviewed successful emission receipt SHA on the command
+line; no guessed pending receipt identity is embedded. Uses emission driver's
+local HistoricalEvidence archive-only closure, preventing mutable historical
+linked objects from becoming live pins during a fresh build. All current
+source/generator/link artifacts are snapshotted independently.
+
+Fresh routes: Gen1 default physical API, Gen2 pcieGen2 physical API, and exact
+historical CLI configuration through both independently compiled direct API and
+current rebuilt opentpu-gen fpga-top-physical invocation. CLI/API bytes must
+match. Every complete current top parameter vector must equal historical actual
+evaluated top parameters. No shell/bundle/constraint deployment is performed.
+
+Wholeassembly equality is streaming and global: remove exactly one checked new
+assertion at the END of actual named native core; remove exact old standalone
+ABI assertion only if that wrapper exists. Compare every remaining token in
+order, all attributes, all module definitions, and global/directive boundaries.
+Comments/whitespace may differ; unrelated hardware or directive differences fail.
+No generic regex stripping, no selected-module-only claim for whole assembly.
+
+Reachability preservation is an explicit synthesis-source correspondence theorem,
+not a claim to have rerun full whole-board elaboration: historical full ordered
+support/context/vendor source units are reauthenticated unchanged; exact root,
+SYNTHESIS/YOSYS defines and top parameters are kept. The single added block has
+no hierarchy changes and disappears under SYNTHESIS. Thus complete historical
+paths/terminals and evaluated specialization boundaries are preserved. Actual
+reached SE-tail core +46 FP helper nodes are independently checked against their
+original IDs/parameters and successful product applicability. Fresh emitted core
+and both full helper definitions/contexts match the independent current emission
+bridge, which separately checks all47 actual pre-clean synthesis modules.
+
+Historical proof/gap/CDC/vendor/physical scopes stay inherited unchanged. This
+bridge binds existing coverage to current generated assemblies, not a new
+behavioral/initialization theorem for the whole design. Runtime remains false
+until separately qualified current-runtime receipts/checkpoints pass.
+
+First run should be fail closed on real artifact schema differences. Preserve
+failed attempts; do not widen the allowable HDL differences. Future artifact
+consumers must explicitly consume this bridge; old freshness checkers should
+continue rejecting changed live sources rather than being silently weakened.

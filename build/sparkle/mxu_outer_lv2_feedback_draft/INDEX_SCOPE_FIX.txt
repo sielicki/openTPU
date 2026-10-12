@@ -1,0 +1,29 @@
+Proposed correction after preserved child-validity-first failure on global $neg.
+The controller-specific PairedIndex checks its small total-relation whitelist
+while traversing every numerical epilogue cell, before slicing valid metadata.
+This is stronger than this inventory stage's intended scope, but the failure is
+correct and must not be converted into a full arithmetic extension assertion.
+
+New local StructuralChildIndex only, no shared helper changes:
+- inherit disk ingest, complete unique drivers, all aliases and full DAG checking;
+- dependencies() globally uses the existing exact generic RTLIL cell_pins helper,
+  retaining every input and rejecting nonprimitive/state/formal/opaque cells;
+- retain exact known primitive pin directions, bit/parameter sanity and complete
+  owner validation. No graph rewrite or additional roots, except already-bound
+  omitted original Q frontier handling from previous review;
+- apply the EXISTING source-pinned control_extension.schema to EVERY demanded
+  cell during the validity closure, including nonmux cells. Unsupported demanded
+  primitives fail closed. Selected mux uses the exact pinned coordinate rule.
+
+Report global_structural_driver_DAG_audit=true, but
+whole_child_numeric_total_relation_audited=false. Record all actual global cell
+types and all selected cell types separately. The selected model certificate
+applies only to demanded supported primitives. Complete actual child theorem
+remains a supporting immutable premise; no new generic arithmetic theorem or
+omitted numerical-state temporal extension is claimed. Existing parent binding,
+feedback composition, initialization trace and production flags stay false.
+
+Guards must construct a REAL index with an unselected well-formed $neg, verify
+full driver/cycle errors still reject, and show demanding that same $neg fails
+the unmodified selected primitive schema. Also retain exact omitted frontier
+and mux sibling semantics. Root executes all checks under the existing gate.

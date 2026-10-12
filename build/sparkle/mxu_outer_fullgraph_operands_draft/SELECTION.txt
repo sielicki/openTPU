@@ -1,0 +1,39 @@
+Operational candidate configurations; no operand theorem assumed.
+
+Inputs: completed fullgraph inventory SHA
+8dd2f1f313c030b41d2900c86ed774d3860fab624fde25c23ef406fb3516a18b,
+plus read-only completed mxu-outer-literal-paths-first.log.
+The checker authenticates the inventory/full graph independently and proves actual
+operands; the diagnostic is selection guidance, not a premise of equality.
+
+All 18 remaining eligible gold GT owners are explicitly assigned once across
+three configurations (8+8+2). Every selected native owner is distinct. No claim
+that unmatched native owners or other comparison schemas are equivalent follows.
+
+remaining-word2: eight rows gold1043..1169 listed explicitly in JSON. Each chosen
+pair is the unique one of its four actual shortlist alternatives whose complete
+swapped coordinates agree either as identical original wire IDs or as exact
+literal-mux paths to the same defined original input. The first native A is
+retained2476..2507. The 32 other coordinates are shared actual wires; diagnostic
+identity does not prove their definedness. All 1024 operand bits must still pass
+totality, all 512 swapped equalities must pass, and both actual faults must fire.
+
+remaining-word3: eight rows gold1187..1313 listed explicitly in JSON. Same actual
+path selection criterion; first native A is retained2508..2539. Neither group is
+chosen by numeric order or by assuming a source word relation.
+
+remaining-other: gold105/gate3906 has all64 swapped coordinates on identical
+defined input/constant paths (28 identical integer IDs). gold98/gate3915 is the
+only exact-schema shortlist candidate for that gold owner, but ONLY48 coordinates
+reach equal known roots; 16 remain opaque and the diagnostic does NOT align the
+complete operands. This is a separate explicit experiment with 256 totality and
+128 equality obligations, not an assumed correspondence. Preserve any real
+difference/undefined witness or timeout; do not substitute this pair on that
+basis. Keeping this two-pair experiment separate prevents a failure from revoking
+completed word2/word3 batch results.
+
+Every batch consumes the SAME unchanged configured predecessor graph. No batch
+uses another batch's predicate equality as a premise. Future simultaneous-Y
+congruence requires replay of each successful batch, the exact unsigned32 SatGen
+rule, complete target/root/ancestry identity and a fresh transformed global DAG.
+No substitution or coverage continuation is authorized merely by this selection.

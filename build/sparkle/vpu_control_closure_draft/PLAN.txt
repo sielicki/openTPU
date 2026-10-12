@@ -1,0 +1,77 @@
+Next objective: eliminate internal-control environment premises, then expose
+the complete actual control/datapath interface. Do not add another unrelated
+conditional submodel. The initialized1159 relation already supplies the command
+and sequence state; the other3072 control bits are stream1350 and write1722.
+
+Measured by root's bounded frontier-counts-first diagnostic after this plan was
+started:1016 remaining rows consist exactly679 automatic state/state plus337
+external/external. No mixed class occurs in this actual configuration. Of337:
+*243 are cmd240, start, rst, clk: direct top-interface identity is the expected
+  discharge, preserving all240 command coordinates rather than unpacked guesses.
+*29 are internal control: ss_rq1, en1, iall_last1, irow_last1, iwid16, imask8,
+  iss_ok1. Thus the next concrete combinational target is the27 issue outputs;
+  compare actual root cones to the proved issue module at exact state/provider
+  coordinates. Keep c_hold as the actual datapath input it is, not an invented
+  free iss_ok surrogate. This also starts closing real outward issue consumers.
+*65 are actual datapath results: root_v1, am4_l1, am4_v1, mx_ni17, mx_new32,
+  mxm_all_last1, mxm_row_last1, mxm_tag8, mxm_v1, mo_all_last1, mo_v1.
+  These must be joined to concrete datapath/control interface ports with packed
+  coordinates. The control-only theorem can legitimately quantify shared
+  datapath inputs, but eventual full-VPU composition must discharge their
+  actual producer relation. They are not internal-control providers to fake.
+The337 count is therefore not337 independent missing control behaviors.
+
+First measured artifact: enumerate the exact remaining environment contracts
+from composition-certificate.json, classify their original actual driver and
+native bound producer, and account for every one of2455 original crossings.
+Direct shared top inputs are legitimate final interface variables, not missing
+internal provider theorems. Datapath outputs must eventually share the same
+actual interconnection relation. Internal control outputs must be discharged.
+
+Concrete source evidence establishes the first likely feedback closure:
+OpenTPU/VpuControl.lean emits every child output as a provider and connects child
+inputs by the actual provider expression. rtl/vpu/otpu_vpu.sv g_wbuf assigns
+en=en_r, wb_e=(wn==0); en_r/en_q/wn belong to already locally proved write1722.
+The stream drives ss_rq, ss_act and registered stream activity; these belong to
+already locally proved stream1350. Issue's iss_ok combines sequence func with
+actual composite c_hold. The actual environment probe determines all such
+dependencies rather than assuming this shortlist is complete.
+
+Planned proof order after measured classification:
+1. First close the27 actual issue-provider outputs against the local555-output
+   issue theorem, using existing joint-state relation and actual c_hold boundary.
+   Inventory all555 public issue outputs/crossings to avoid limiting this to
+   only the27 inputs used by the sequence. Then lift all3072 additional original
+   state coordinates to their already-proved
+   local reference graphs, retaining actual original memory owners, reset-time
+   captures, unpacked lane ordering and packed fields. There are only three
+   state blocks total: joint1159, stream1350, write1722. Reuse complete existing
+   initialized local theorems; new work is actual-root correspondence, never
+   rerun a hand-written reference and call that an original-root bridge.
+2. Extract actual original issue/write-select combinational provider cones and
+   compare to exact compiled child outputs, with whole4231 state treated as the
+   single coherent relation. Prove all consumed outputs including en/wb_e,
+   ss_rq/activity, iss_ok and completion signals. A source name match is only
+   candidate correspondence. All actual boundary roots must be preserved.
+3. Independently audit full connected control combinational DAG and exact
+   provider wiring so feedback is through state, or via topologically ordered
+   combinational cones. Reconcile all initial alias constraints at once.
+4. Compose full4231 state with NO internal-control equality assumptions. The
+   remaining explicit interface is only original top inputs and actual datapath
+   outputs, with concrete packed/unpacked coordinate mappings (not a list of
+   abstract scalar surrogates). Pipeline/datapath composition is the later step.
+5. Cover every outward crossing/public output using direct equal state aliases
+   or exact observed cone equalities. A crossing into a complement register is
+   not automatically covered merely because the selected D theorem passed.
+   The diagnostic separately records direct selected state, current queue head,
+   and unproved combinational crossings so no count silently disappears.
+
+Packed-layout discharge must use actual reached typed member/port coordinates
+or extraction of member observers from the immutable original compilation.
+Source struct declarations alone remain candidates. No zero-init, occupancy,
+no-collision, after-fill or reset premise can be added to force closure.
+
+Diagnostic only: no new behavioral/layout/producer theorem, no phase-complete
+flag. It reads immutable direct owners and streams the full owner/crossing
+manifest. Root will run under512MiB. Complete counts and exact pin/bit identities
+remain available in frozen inputs; printed groups are summaries with samples.

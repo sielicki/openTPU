@@ -1,0 +1,34 @@
+Actual root busy provider bridge, pending measured consumer endpoints.
+
+Original source busy = issuing || red_act || ew_n != 0. Use this only to select
+nine expected supporting state coordinates, not as the proof implementation.
+Read actual original root busy alias/cone from frozen SQLite and actual combined
+native command/sequence raw graph output out_command_busy. Bind all nine original
+Q to native gate Q through the completed4,231 startup certificate and exact joint
+state field maps, with commonclock and complete prior1159 relation joins.
+
+Prove actual busy output defined/equal plus every raw state alias (nine more
+coordinates) under arbitrary defined related current issuing/red_act/ew_n state.
+Full actual cone traversal must terminate at those nine Q/constants; reject any
+clock/current-input/other-Q/child/memory/undriven dependency. Preserve all buffers,
+explicit source X and actual primitive semantics. DAG/nonvacuity and post-SigMap
+identity checked independently before strict definedness/equality SAT. No reset,
+traffic, occupancy or initialized-reachability premise.
+
+Use completed joint gate graph (full1159 physical state retained as source) and
+exact output port out_command_busy. The prior actual joint module/body/production
+edge binding identifies this as the reached native command.busy provider.
+Neither the handwritten Boolean formula nor source token equality substitutes
+for actual-cone SAT. Actual native output inversion and X mutations before
+projection must yield concrete counterexamples, preserving full original state.
+
+After the provider inventory identifies exact consumer rows, bind every actual
+busy consumer's original normalized endpoint to the newly proved root raw busy
+via its retained buffer chain, and native expression control_busy to the exact
+reached command output edge. Record all consumer occurrences and prove no new
+input premise is introduced. If original endpoint does not lie on that chain,
+stop; do not normalize arbitrary combinational logic away. The tiny Moore cone
+makes this provider available from current related state before stream D.
+
+This closes only measured busy provider rows. Actual write-select424 and other
+inventory findings remain separate; no whole4,231 transition/trace status here.

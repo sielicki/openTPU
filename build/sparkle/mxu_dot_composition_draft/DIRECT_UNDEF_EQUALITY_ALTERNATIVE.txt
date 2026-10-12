@@ -1,0 +1,93 @@
+UNEXECUTED alternative to the generic primitive compatibility proof.
+Terminal totality now reported by root: fourth receipt
+440d90bb7980674b549ec5cc7cde790394b920db16573ebb6632939c3361b8d0,
+20 cases, each parent100726 output/fullD bits in787 disjoint intervals.
+No whole-dot theorem follows from this receipt alone.
+
+A direct explicit-undef equality proof can avoid the historical X->0 lifting
+lemma entirely. Use the SAME explicit-undef SAT semantics for both actual stepped
+graphs and prove no output/fullD mismatch. Historical graph/initialization/cut
+bridges still authenticate the exact functions and relations, but their binary
+SAT equality no longer serves as the semantic bridge.
+
+Construct a paired graph for each matching complete output-coordinate interval.
+Original input correspondence is the original semantic port name + LSB index,
+never the raw integer net ID. Require identical complete port inventories,
+directions and widths and the exact state_Q mapping. Give each input coordinate
+one shared fresh bit ID across sides; keep every internal bit ID disjoint by
+side. Do not merge internal aliases or X constants across sides. Constants retain
+their original0/1/x/z spelling; any z formal-model limitation stays explicit.
+All input coordinates used by either side are exposed once and constrained only
+to be defined. Missing input on one projected side merely leaves the shared input
+unused there; do not constrain it to a matching internal value.
+
+Whole leaf: pair all actual observed outputs and ALL mapped D from both gold and
+gate in one miter per configuration (nine queries). Current complete totality
+certifies both vectors defined for arbitrary shared two-state inputs/Q. No output
+or retained state bit is dropped, including physically unused model registers.
+
+Parent: independently derive each side's dependency cone for the SAME output
+semantic port/index interval; preserve exact $mux coordinate projection already
+reviewed, and retain every other needed primitive in full. All original helper
+cut outputs remain shared arbitrary inputs to this parent theorem. Direct
+projection cones never replace internal nodes with fresh assumptions. Omitted
+reference Q cannot reach the selected coordinates and remains certified by the
+existing quotient/cone audit. Whole previous fullcell graphs can be regenerated
+with mux projection for smaller future miters; previous totality proofs remain
+valid and need not be rerun merely because equality uses a new exact projection.
+
+Create a mismatch output via exact $ne over corresponding concatenated outputs.
+Use explicit undef, set-def-inputs, and ask SAT for mismatch=1; require UNSAT.
+Do not use equiv_simple without -undef for this new bridge. Prior complete
+explicit-undef totality guarantees both compared vectors and the mismatch
+comparator are defined under every allowed input. Thus UNSAT establishes one
+simultaneous equality vector per partition, with no existential choice per bit.
+All disjoint partition intervals must cover the entire100726-bit parent vector
+on both sides. Undefined individual internals may resolve independently; total
+observations are compared in one common model, not correlated by fiat.
+
+A stronger alternative combines totality+equality in each fresh query and asks
+for either undefined observed bit or a defined mismatch, but that is additional
+machinery and unnecessary once prior totality/projected-graph bridges are exact.
+Require model satisfiability for every allowed binary input under the trusted
+Yosys combinational primitive semantics; reject assumptions/assertions/formal
+cells/unsupported types, cyclic graphs and unsupported model imports. Do not
+prove equality vacuously by adding restrictions that exclude input valuations.
+
+Resource plan (estimate pending bounded inventory): current per-side projected
+pin heuristic50k does not guarantee a paired miter fits3GiB. Use a combined cone
+cost and bisect output intervals before launching a solver; choose a conservative
+starting combined budget, e.g.25k projected pin bits, after inventory. Root widths
+and known expensive shift/multiply/divide cells must appear in the manifest.
+Single-bit oversized cones fail incomplete and trigger another reviewed exact
+representation strategy; never increase cap or silently assume primitive outputs.
+Leaf miter sizes also need actual combined inventories before scheduling.
+Archive generated graphs, scripts and complete manifests before SAT. Reuse proven
+intervals via immutable path/SHA and exact regenerated graph identity on resume.
+
+Meaningful negatives: swap a semantic input bit on one side; swap a mapped D bit;
+mutate one concrete output equation; remove an output interval; bind different
+parent/leaf graphs; merge two unrelated input coordinates; allow a missingdriver;
+replace an X constant by0; accept SAT mismatch/timeout as completion; resurrect
+old X->0 equality as a substitute for missing direct-undef equality.
+
+Once all nine leaf vectors and the full parent vector have explicit-undef equality
+receipts, the initialized state witness + exact global state relation + common
+output-dependency DAG induction in COMPOSED_INITIALIZED_DOT_PLAN.txt can use these
+new equality premises directly. The generic primitive compatibility suite becomes
+unnecessary for this route, although exact projection and trusted solver/primitive
+model semantics remain part of the proof's trust boundary.
+
+Actual inventory completed (bounded, no solver) after this plan was drafted:
+receipt ca4cf8148bf3a3f5d0f09c627f420e1f96dfad3af14e1f8da622ed943c58dbb6,
+build/sparkle/mxu_dot_primitive_inventory/actual-first/summary.json.
+All20 sides inventoried. $eqx occurs once per side in pe000/001/100/101/colend23;
+this makes the generic compatibility caveat concrete. Parent has no $eqx. No
+literal z appears. Actual types: add,and,eq,eqx,logic_not,logic_or,mul,mux,not,or,
+pmux,shiftx,sub,xnor,xor. Whole PE pair pin totals9,488..13,044; column-end pair
+45,768. Leaf pair queries look plausible within3GiB, but that is an estimate and
+must not replace the cap. Parent totals744,756gold+519,216gate make whole-pair SAT
+inappropriate. Use exact paired partitions and count combined projected costs
+before launching. $eqx operands could be separately audited defined to salvage
+that specific generic bridge, but direct same-model equality avoids the extra
+semantic lifting proof and looks the cleaner next concrete step.

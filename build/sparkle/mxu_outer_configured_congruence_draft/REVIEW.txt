@@ -1,0 +1,25 @@
+Unexecuted configured fullgraph congruence; passed prior executables immutable.
+
+Actual operand receipt:
+build/sparkle/mxu-outer-configured-predicate-operands-first/summary.json
+97299b2811246e976fab15890ee879545d94873486f973348b83324736565c1d
+Actual unsigned32 rule:
+build/sparkle/mxu-outer-predicate-rule-first/summary.json
+f64fe5f74dc02aebfa923abf56db4a4c32fd70d312829ba253bcf58f994cf9b7
+
+Delta from approved/passed first predicate congruence: pair count/names/interval
+come only from the SHA-pinned configuration authenticated in the completed
+configured operand receipt. Revalidate exact config source/diagnostic references,
+count128N/64N and actual unsigned32/32/1 target schemas. Replay all four actual
+operand query graphs/scripts/logs and both concrete fault controls; actual rule
+is unchanged and independently replayed. Reconstruct exact source interval from
+the full predecessor predicate graph. Every target/root/pair ancestry lift is
+checked against that graph; pair list is not inferred from names or signatures.
+
+Stream all complete Y substitutions simultaneously, remove only the configured
+original target cells, compare exact complete owner inventories and mapped
+bodies, then fresh full target driver/DAG/model audit rejects cycles. Reuses
+only the actual rule's exact unsigned32 width/sign schema. Source domain remains
+defined full Q and external RAM/FP returns. No original lineage/prefix/wholeD
+or trace claim here. Partial failures revoke every new success flag and preserve
+all active artifacts. No solver or extraction work in this certificate stage.

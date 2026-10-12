@@ -1,0 +1,47 @@
+UNEXECUTED broader-symbolic preservation extension. Frozen first-attempt files
+and inputs remain archived and unchanged; only draft source changed.
+
+Actual bounded diagnostic: bit430409 alone is structurally dead under exact mux
+coordinates, but all30615 gold missing consumed wires collectively reach15433
+of24427 obligations. All are original parent wires, not removed DFF/FP drivers;
+all have aliases. Native side has none. No global irrelevance claim is valid.
+
+streamlane_undriven.py independently derives complete missing sets from all
+ports and cells of authenticated stepped graph, including direct output wires.
+Matches exact pinned complete inventories, then independently checks original
+parent absence of ANY cell/primary input driver, original use, complete aliases
+and absence of alias initializer. It returns the entire original alias mapping.
+OriginalUndrivenIndex recognizes ONLY these approved integers as terminal
+internal undriven wires; no new input/cut/constant/constraint is introduced.
+Global driver/cycle auditing otherwise remains. Projected cell pins keep exact
+integer alias identities; mux slices retain exact coordinates. Gold/gate modules
+remain distinct until flattening, preserving internal namespace separation.
+
+Installed satgen.h source audit: a wire has a named frozen value literal and a
+separate undef:-prefixed literal. Without drivers, those remain unconstrained.
+The strong totality query therefore ranges over both arbitrary values and undef
+flags, including source X behavior. This can prove unreachable padding branches
+without assuming their selectors. It is NOT a source behavior equivalence claim
+until the actual solver fixtures and complete parent obligations pass. Existing
+strict equality, all inputs/state defined, all24427 observations remain intact.
+Actual eqx cells remain untouched. No fill/reset/reachable-state assumptions.
+
+New executable check_streamlane_undriven_semantics.py: actual Yosys observed
+undriven must produce undef CEX; constant-masked wire must be total; same-wire
+case-equality must be defined and always1; masked output must preserve either
+primary input value. Internal missing wire is never a primary input. This is a
+prerequisite validation, not part of the full proof result. Source-only guards
+cover inventory additions/removals, original driven wire, missing aliases/init,
+model anchor drift, query constraints and alias preservation.
+
+check_streamlane_parent_cones.py consumes the new audit, archives original
+parent/store/pinned inventories and audited model source; all prior proof
+queries are unchanged. Exposure helper unchanged, allowing first frozen steps
+reuse via explicit prior receipt. New cone manifests/graphs must match before
+any successful old query reuse; first attempt has no completed SAT queries.
+
+Remaining: bounded guards, actual six-query semantics validation, independent
+review, then complete parent run. Strong totality can genuinely fail for some
+arbitrary mapped states; if so preserve CEX and identify a separately proved
+initialized invariant, never silently constrain the proof. Concrete24FP product,
+mutations, decoder applicability and production annotation bridge still pending.

@@ -1,0 +1,23 @@
+Draft only; no import, tests or execution performed. No tools/source edits.
+Pins vpu-decoder-initial-second/summary.json SHA96c7a82ade9bac51ea0aed04795c5b65d714a61a0d68f04248c73447ac8cc6dc,
+all385 authenticated inputs, all143 state bits, m0=0/m0d257, actual native-source
+decode/opcode initializer mutations and their concrete SAT counterexamples.
+
+Authenticates inherited DecoderReceipt and retains its original reset-induction
+scope. New startup base is additive; old after-reset text is not rewritten.
+Checks startup/induction full-native identities, exact original decoder and
+startup harness, complete module tokens/attributes/incoming directives, and
+reuses DecoderReceipt.bind for actual Gen1/Gen2/CLI consuming assemblies.
+Each reached datapath specialization ID must match exact module hash and empty
+parameters/overrides. Production top LANES8/VPU_CL2 is checked; streams=true is
+bound by the full unparameterized module body against exact8/2/true compiled
+evidence, rather than inferred from the top parameter list.
+
+Result would discharge only m0d=fdec(m0.func) and fh onehot-or-zero from native
+initialization, including cycle0, with all decoder inputs/reset/stalls arbitrary.
+It does not claim other VPU state/RAM startup or complete VPU/board refinement.
+Original reference initial witness remains existential, not arbitrary-independent.
+Guard tests cover wrong scopes/witness widths, missing faults, changed/absent
+reached IDs, parameters, module hashes, attributes and incoming directives.
+First-run fail-closed risks are receipt/schema/source drift, not relaxation of
+the production specialization. Execute only after gate handoff/source freeze.

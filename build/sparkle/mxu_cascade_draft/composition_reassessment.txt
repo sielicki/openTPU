@@ -1,0 +1,46 @@
+Independent reassessment after the positive dependency certificate
+
+The DAG result is structural noncircularity only. No full initialized dot product
+or new stronger definedness theorem follows just from a topological order.
+
+Complete leaf state mapping is an authenticated premise, not a new count-based
+assumption. The pinned initializer checker collects all native/reference Q bits,
+rejects reserved state aliases before insertion, checks initializer preservation,
+demands exact coverage of every Q bit, and uses a bijective full-graph bridge to
+the historical complete transition/output theorem. Its existential reference
+witness retains every native undefined state bit as arbitrary. The DAG checker
+uses the exact init-bearing graph bytes and verifies their Q totals additionally;
+it must not replace the existing bitwise relation by independently chosen roots.
+At each occurrence, the same full state relation must be reused across all output
+ports and next-state obligations. Macro helper reuse accounts for 512 single-DSP
+PEs plus four four-DSP column ends; it must not identify distinct instances'
+undefined native state bits with each other.
+
+The parent still has 63371 gold versus 61323 gate local Q bits. The 2048 extra
+reference bits are roots for dependency analysis, which is harmless structurally.
+Any actual composition theorem must preserve the historical observational
+irrelevance certificate and prove the missing dot-local base witness. The DAG
+certificate does not supply either of these semantic premises.
+
+Undefined-value correlation needs a separate scope check before semantic product
+composition. The cone analysis treats literal x/z as input-independent roots;
+it does not select their values, unify occurrences, expose a shared nondeterminism
+interface, or prove cross-output correlations. For deterministic combinational
+functions under fixed corresponding state and fixed primitive-model semantics,
+the output-specific substitution argument is sound: all variables in the union
+of both cones are held fixed, so irrelevant current inputs may be aligned when
+applying the full leaf/parent theorem. Registered unspecified state is covered by
+the existing complete state relation and introduces no extra per-output choices.
+
+If reference undefined behavior is instead interpreted relationally, with a
+different existential undefined-value witness allowed for each output/input
+valuation, output-by-output equality alone is insufficient: incompatible witnesses
+could satisfy the individual outputs. A future full product must retain one
+coherent whole-leaf witness/unknown assignment per occurrence and timestep under
+the exact authenticated solver semantics, or demonstrate that any unresolved
+combinational x/z choices are observationally irrelevant. Do not describe the DAG
+as resolving this issue or silently upgrade Yosys functional-model evidence to
+universal two-state nondeterministic or raw four-state event semantics.
+
+This is not a blocker for the current narrowly worded DAG certificate. It is an
+explicit prerequisite to a future initialized whole-dot composition claim.

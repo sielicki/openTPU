@@ -1,0 +1,36 @@
+Source-only implementation note after inventory certificate; not a proof.
+
+Use the actual completed inventory graph/manifest and explicit receipt SHA.
+Flatten all entries in manifest order, preserving every constant/duplicate
+observation occurrence. Build interleaved gold/native vector and add PROBE only;
+delete PROBE and require exact previous graph identity. Full graph total-model
+extension and pinned mux slicing semantics are required before using PairedIndex.
+
+Existing partition_graph.write_partition can select exact paired coordinate
+intervals without changing primitive semantics or roots. Its legacy gold_D /
+gate_D port names are merely labels; a new adapter should give observation
+names, or explicitly record that these are observation occurrences and not
+state-D coordinates. All actual original IDs and semantic port/index locations
+remain in a complete new manifest. No full-state theorem is inferred.
+
+Run knownness on the exact combined selected gold/native observation bits first
+with explicit undef and defined actual input roots, then strict equality as a
+separate query. Both queries have exact original model/closure/replay identities.
+A found undefined output or strict inequality is a complete diagnostic witness
+for that interval, not a full-vector counterexample classification or an
+initialized source-level reachability result. Preserve side/port/index, actual
+root assignment and original shared wire identity. Literal-X fanout remains the
+actual model; do not replace each consumer with a fresh input.
+
+Resume from explicit immutable receipt/SHA by regenerating every reused graph,
+manifest and query, matching declared and closure digests, and checking actual
+terminal logs. Schedule unchanged prior widths plus fresh bounded intervals for
+unproved coordinates; require exact complete union before any aggregate flag.
+No successful full-SAT invocation, extraction, or compile is repeated. Interrupted
+and timeout results retain incomplete status, active artifacts and false flags.
+
+Do not reuse the previous D predicate/arithmetical rewrites here merely because
+they helped D proofs. They would require exact wholegraph target/operand lifts
+onto the observation graph and a separate reviewed transformation certificate.
+The initial run should reveal actual observation widths/costs and semantic
+witnesses before choosing such an optimization.

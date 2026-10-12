@@ -1,0 +1,91 @@
+Close the one remaining lane4 provider through its actual valid pipeline
+Source-only design; no graph inventory or proof executed for this new stage.
+
+Completed mux-coordinate inventory:
+mxu-outer-lane4-bit-closure-first/summary.json
+42ca2921a075ec52e67b8f3623eaab2739852c957f6f214fa1cfd645f53dd3d8.
+1154cells353state roots410allroots, one original read candidate and one child
+return external_lv2. These are conservative dependencies, not a necessity proof.
+
+Observed source wiring (orientation only, not an authenticated certificate yet)
+OpenTPU/Mxu.lean wires control.en_c/m0/pr0 through dot and epilogue. Dot produces
+m4, epilogue consumes m4 and produces lv2, and the same lv2 feeds the controller.
+Original otpu_mxu.sv has rf_push=en_c&&lv2. lv2 is otpu_delay u_lv, N=2*LA+1=9,
+driven by launch=ma.v&&ma.last. ma is a4-enabled-cycle metadata delay after mx;
+mx selects mq or mt with pr0. mt/mq contain explicit resettable stages. m5/m6
+and intermediate delays start at m4. Dot m4 is the7-bit metadata delay u_m4,
+LDOT=CLS+MCOLS+3=23 for this exact geometry, driven by actual m0 and en_c.
+Native MxuDot.lean emits meta delay; MxuEpilogue.lean emits corresponding m5/m6,
+mtp/mt,mqp/mq,ma,launch,lv_. No numerical data appears in these source equations.
+That observation must be confirmed against actual authenticated graphs.
+
+Reuse immutable evidence; do not re-extract a convenient new pipeline
+1. Require explicit passed initialized-dot receipt SHA, passed epilogue8197-bit
+   product receipt SHA, their full raw/stepped graph and actual initialization
+   artifacts, plus complete current lane4 inventory/graph and prior owner chain.
+   Validate exact D128/C4/IMPL2/CL16 configurations and pin all selected artifacts
+   to those receipts. Existing transition theorems are supporting premises; do
+   not infer output-cone topology from a module name or handwritten delay count.
+2. Audit actual epilogue output lv2 backward, following actual Q-to-D state
+   coordinates to fixed point, using only audited coordinatewise mux rules and
+   full other primitives. Record every state Q/D/init bit and actual root/pin.
+   Require all external roots to be among en_c,rst,pr0,m4 bits and any genuinely
+   used interface bits; if s4/act_scale/FP outputs appear, report them and stop
+   the small-provider claim. No arithmetic outputs may become free roots.
+3. Continue each actual m4 dependency through the exact actual dot metadata
+   output graph, following its own local Q/D/init and checking no DSP/data/cut
+   return dependency is reached. Bind complete7-bit m4 producer/consumer port
+   widths, not only sampled valid bits. Demand slicing may later retain only
+   needed bits under the pinned rule. All dot internal unknown choices/aliases
+   stay side-local and source-owned; every initial field is derived from the
+   initialized relation, never a hand-initialized shift register.
+4. Produce a concrete hierarchical producer certificate on both original and
+   native sides. Close lv2 using exact full-port occurrence wiring (clk/rst/en_c,
+   m0,m4,pr0) from authenticated archived parent emitter/reference lineage and
+   assembled module definitions. Source text alone is not occurrence binding.
+   If no suitable archived full parent wiring is authenticated, explicitly leave
+   that missing bridge unresolved and qualify only the selected child output
+   graphs until an exact parent assembly reconstruction is reviewed.
+
+Feedback composition after actual cone/owner inventory
+Map each reached provider input to its actual controller output or top input,
+then add the corresponding controller output cones to the existing lane4
+fixed point. Newly reached controller Q keeps BOTH retained-side D and each
+independent omitted-side D as before. Add actual child Q once, preserve clock,
+enable and reset pins and the native→existential-reference initial witness.
+Repeat until a global fixed point; audit combinational DAG on the composed
+actual wires. Sequential feedback through provider Q is expected and allowed.
+Any new rowr/RAM/FP dependency must be reported or instantiated; no free return
+values may be called initialized closed reachability.
+
+Provider validity/state theorem requirements
+A closed small cone can be certified without numerical dot/FP expansion only by
+exact noninterference/extension reasoning on the authenticated full child model:
+all omitted primitive/state obligations must be supported by the existing full
+initialized child theorem/model-extension certificate and complete retained
+state dependency closure. Do not equate ordinary Boolean startup with arbitrary
+original four-state/time-zero semantics. Retain actual defined-state domain and
+existential original initialization; do not assume original startup is zero.
+Queries, if needed to qualify provider state/outputs, retain strict explicit-undef
+proof and original per-wire correlations, no syntactic X simplification.
+
+Then concrete initialized lane4 witness search (separate reviewed executable)
+On the fully closed composed slice, preserve all actual startup constraints and
+once-chosen arbitrary state, and unroll real controller+valid-pipeline D. Actual
+top-level start/command/grant/reset inputs remain unmodified. A SAT search may
+choose M5/RMAX as a concrete witness seed; report any fixed search values as
+existential search restrictions, never assumptions in a universal parity theorem.
+Query actual enabled lane4 and full original address4/OOB; observe both original
+and native enables/data. No mandatory reset or command-bound premise is added.
+Validate every initial/transition/equation row of the returned model and archive
+all input and state choices. A bounded UNSAT only rules out that bounded search.
+Output data effect may still require separately closing arithmetic/data paths;
+an enabled address hazard is not automatically a full differing trace witness.
+
+Scope and implementation ordering
+First implement bounded source/occurrence/valid-cone inventory after review,
+report exact needed child state and upstream controller roots, then decide the
+small closed transition composition. Preserve completed sources. All executions,
+guards, graph parsing and hashing run by root under unchanged resource gate.
+Current production/source-SV/event-region parity remain explicit pending goals;
+this intermediate archived model does not redefine the whole-MXU port objective.

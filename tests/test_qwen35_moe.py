@@ -1065,3 +1065,60 @@ def test_expert_major_prefill_is_bit_exact(tiny, R, skew, wformat, b, monkeypatc
         ga, gb = a.step(t), ref.step(t)
         assert np.array_equal(ga.view(np.uint32), gb.view(np.uint32))
         t = int(np.argmax(ga))
+
+
+def test_moe_on_board_rtl_logits_and_state(tiny, have_verilator, monkeypatch):
+    """Full six-layer hybrid MoE on Verilator, with all experts preloaded.
+
+    SimTransport cannot serve a live host during a run: both machines have
+    satisfied fences and no host polling. This checks real on-card routing,
+    shared-expert gates, DeltaNet/convolution state and attention caches; it does
+    not qualify asynchronous host expert streaming.
+    """
+    from opentpu.host.board import Board, BoardBackend, SimTransport
+    from opentpu.isasim import board_config
+
+    monkeypatch.setenv("OTPU_BUILD_JOBS", "1")
+    monkeypatch.setenv("OTPU_VERILATOR_JOBS", "1")
+    _, W, spec = tiny
+    assert spec.kinds == KINDS and spec.moe.E == E and spec.moe.k == K
+    assert spec.moe.shared == F and spec.conv_k == 4
+    cfg = board_config(DRAM_BYTES=1 << 26)
+    tr = SimTransport(ch_bytes=cfg.DRAM_BYTES // 2, stall=20, seed=5)
+    assert Board(tr).info()["caps"].get("waitw"), "board RTL must implement WAITW"
+    isa = Engine(spec, W, cap=256, cfg=cfg, rows=1, resident=False,
+                 experts=E, pipeline=False, prog_cache=False)
+    brd = Engine(spec, W, cap=256, cfg=cfg, rows=1, resident=False,
+                 experts=E, pipeline=False, prog_cache=False,
+                 backend=lambda c, imgs: BoardBackend(c, imgs, transport=tr, status=False))
+    try:
+        assert isa.image.nbytes == brd.image.nbytes
+        assert isa.image.offload == brd.image.offload
+        layout = brd.image.offload
+        assert len(layout.slots) == spec.layers
+        assert all(count == E for _, count in layout.slots)
+        assert isa.server.misses == brd.server.misses == 0
+        # Keep both model images identical, including host-owned offload words.
+        # All directory entries/tags were populated by Engine's normal warmup.
+        isa.backend.machine.host = None
+        brd.backend.host = None
+        for engine in (isa, brd):
+            engine.backend.write(0, layout.served, np.array([3e38], np.float32))
+        # Four positions turn the three-row convolution history over once.
+        for position, token in enumerate((11, 222, 333, 444), 1):
+            want, got = isa.step(token), brd.step(token)
+            assert np.array_equal(want.view(np.uint32), got.view(np.uint32)), position
+            assert brd.stats[-1]["cycles"] > 0
+            # Complete model image: scratch, all recurrent/conv/KV state, route
+            # mailboxes, directory/tags and expert slots. Excludes only the
+            # board backend's boot/program area beyond image.nbytes.
+            for start in range(0, isa.image.nbytes, 1 << 20):
+                size = min(1 << 20, isa.image.nbytes - start)
+                assert np.array_equal(isa.backend.read(0, start, size),
+                                      brd.backend.read(0, start, size)), (position, start)
+            seq = int(brd.backend.read(0, layout.mbox, 4).view(np.float32)[0])
+            assert seq == position * spec.layers
+        assert isa.server.seq == brd.server.seq == 0
+        assert isa.server.misses == brd.server.misses == 0
+    finally:
+        brd.backend.close()

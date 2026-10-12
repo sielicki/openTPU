@@ -1,0 +1,28 @@
+Unexecuted read-only single-bit diagnostic; no active or previous checker edits.
+
+Authenticate terminal shared_D second receipt by explicit SHA, exact current
+receipt kind, mixed2412 prefix and revoked success flags. Bind full shared graph
+to both its declared representation digest and actual authenticated closure.
+Reauthenticate actual binary/source model and finite deterministic signature
+rules. Require the exact single-bit graph/manifest/D vectors and unchanged
+query script with a real terminal timeout. No graph is transformed or solved.
+
+Reuse existing conservative signatures without broadening eligible primitives.
+Report all cell bodies/input signatures and unknown-dependent causes. Enumerate
+same exact-schema arithmetic/comparison pairs across actual gold/gate names as
+UNPROVEN operand-lemma candidates only. Rank by already matching known-input
+signatures and identical actual wire IDs. LiteralX tokens are never treated as
+one shared unknown choice. The24-candidate report limit is explicit; counts
+and the all_candidates_reported flag disclose whether ranking was truncated.
+The full original cell inventory remains in signatures.json.
+
+Neither candidate ranking nor matching signatures proves operand totality,
+equality, sharing applicability or the outstanding D bit. Any future semantic
+lemma must consume exact cell bodies/roots and prove its actual obligations.
+Completed source receipts and all source models remain immutable; interruption
+or finalization error uses the reviewed incomplete-publication preservation.
+
+Root-only commands after review:
+source /tmp/opentpu-test-env.sh
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m pytest -q build/sparkle/mxu_outer_single_shared_diagnostic_draft/test_single_shared.py
+python3 tools/sparkle_bounded.py --memory-mib 768 -- python3 build/sparkle/mxu_outer_single_shared_diagnostic_draft/diagnose_single_shared.py --receipt build/sparkle/mxu-outer-shared-D-second/summary.json --receipt-sha 2f54acfa644ea7b63eb6d57ef31cd01373c1a1caa39e99223596274cd0f5317c --lo 2412 --hi 2413 --output build/sparkle/mxu-outer-single-shared-diagnostic-first

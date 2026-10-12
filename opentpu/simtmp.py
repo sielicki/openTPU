@@ -13,7 +13,7 @@ up to gigabytes, so:
   without the handler). A forked child forgets its parent's (os.register_at_fork), so a pool
   worker's SIGTERM leaves the parent's runs alone. A process killed outright (SIGKILL, the OOM
   killer) leaves its directory: each new one sweeps its parent of those whose marker (MARKER:
-  host and pid) names a process of this host that is gone.
+  host, pid and PID namespace) names a process of this host and namespace that is gone.
 
 The handler comes with importing this module: rtlsim (and so profile, lens, llm.rtl_backend,
 host.hwlens, the tests and the co-sim tools) and the board model's run (host.board's
@@ -33,7 +33,7 @@ from pathlib import Path
 
 ENV = "OTPU_SIM_TMP"
 DISK = Path.home() / "otpu-build" / "tmp"
-MARKER = ".otpu_owner"              # "host pid" of the process that made the directory
+MARKER = ".otpu_owner"              # "host pid pid-namespace" of the owner
 RAM_FS = ("tmpfs", "ramfs")
 SIGNALS = ("SIGTERM", "SIGHUP")
 
@@ -131,16 +131,34 @@ def _alive(pid: int) -> bool:
     return True
 
 
+def _pid_namespace() -> str:
+    """PIDs are meaningful only inside their owning namespace (Linux containers)."""
+    try:
+        return os.readlink("/proc/self/ns/pid")
+    except OSError:
+        return "unscoped"
+
+
 def sweep(parent: Path) -> list:
     """Remove parent's simulator directories (otpu_*) whose marker names a process of this host
     that is gone; returns them. Directories without a marker, of another host or another user
-    are left alone."""
+    are left alone. Foreign PID namespaces and legacy Linux markers without namespace
+    information are also left alone: an invisible PID does not prove its owner died."""
     host, uid, gone = socket.gethostname(), os.getuid(), []
+    namespace = _pid_namespace()
     for d in Path(parent).glob("otpu_*"):
         try:
             if not d.is_dir() or d.stat().st_uid != uid:
                 continue
-            h, pid = (d / MARKER).read_text().split()
+            owner = (d / MARKER).read_text().split()
+            if len(owner) == 3:
+                h, pid, owner_namespace = owner
+                if owner_namespace != namespace:
+                    continue
+            elif len(owner) == 2 and namespace == "unscoped":
+                h, pid = owner
+            else:
+                continue
             pid = int(pid)
         except (OSError, ValueError):
             continue
@@ -161,7 +179,7 @@ def tempdir(prefix: str = "otpu_"):
     d = Path(tempfile.mkdtemp(prefix=prefix, dir=base))
     _live.add(str(d))
     try:
-        (d / MARKER).write_text(f"{socket.gethostname()} {os.getpid()}\n")
+        (d / MARKER).write_text(f"{socket.gethostname()} {os.getpid()} {_pid_namespace()}\n")
         install()
         sweep(d.parent)
         yield d

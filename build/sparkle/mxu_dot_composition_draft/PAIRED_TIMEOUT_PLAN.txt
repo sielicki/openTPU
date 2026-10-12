@@ -1,0 +1,105 @@
+SOURCE-ONLY PLAN while first paired proof is live. No active checker/helper
+source edits, graph processing, compilation, tests or solver retry authorized.
+
+Current root report: pe000 full-vector miter105738 SATvariables294022clauses,
+~100s, RSS166MiB. Main risk is SAT complexity, not current memory usage. A timeout
+is incomplete and must preserve exact graph/script/log/source hashes. Do not
+raise time/resource limits merely to repeat the same proof.
+
+First alternative: smaller semantic output-coordinate intervals
+-------------------------------------------------------------
+The existing scheduler supports complete disjoint intervals and prior successful
+query resume. After terminal archival, add an explicit helper partition-width
+option (e.g.16 or32) and keep exact complete coverage. Cone regeneration should
+be measured first: how many multiply cells and multiplier input/output widths
+remain in each interval? Smaller output vectors may isolate easy Q-fed outputs
+and D registers, but a single product D bit can still require essentially the
+same multiplier equivalence. Never assume splitting alone removes the hard cone.
+No interval is marked equal until its own exact paired query returns UNSAT.
+
+Second alternative: exact common-subgraph sharing with a concrete certificate
+---------------------------------------------------------------------------
+This is rewriting duplicate deterministic functions, not turning internal nodes
+into unconstrained shared inputs. Build an exact bottom-up expression identity
+for both sides of the paired graph. Shared roots are ONLY already-audited semantic
+input(port,index) bit IDs and binary constants0/1. Propagate a structural
+"definitely defined and deterministic for all binary roots" certificate alongside
+identity. Undefined constants x/z are not certified roots. Existing arithmetic
+state input Q bits are arbitrary DEFINED roots and are eligible; that is distinct
+from pretending initial unknown Q is zero.
+
+For every actual cell eligible for sharing:
+- Audit complete primitive type, parameters, pin directions, signedness and
+  widths against a reviewed deterministic-total-on-defined-inputs rule.
+- Every input coordinate must have a definitely-defined certificate.
+- The exact cell type, ALL parameters and ordered input bit identities must be
+  identical across the candidate nodes. No commutative/algebraic normalization
+  unless separately proved. Nonsemantic src metadata may differ; preserve both
+  source owner identities and every other meaningful attribute in the certificate.
+- Output vector widths/index order must agree. Replace the duplicate output
+  coordinates by the canonical cell's corresponding output IDs throughout all
+  consumers and observed vectors. Retain one actual cell implementation. Create
+  no input ports, assumptions, equality assumptions or cut variables.
+- Record original cell identities, complete type/parameter/input/output signature,
+  totality-rule identity, and every output substitution. Verify the substitution
+  graph acyclic, injective per vector where required, and that every dropped cell
+  is exactly one certified duplicate. All other cells remain unchanged.
+
+Conservative initial whitelist candidates (require source/model audit first):
+bitwise not/and/or/xor/xnor, fully defined mux, finite-width add/sub/mul, ordinary
+comparisons/reductions/logical ops. Case equality can be deterministic when ALL
+operands are structurally defined, but it is unnecessary to start with it and
+must never be admitted based on output totality alone. $shiftx, division/modulo,
+pmux with unrestricted select, formal/nondeterministic cells, unknown primitives,
+and ANY X-bearing dependency remain unshared initially. Even a total observed
+output does not imply every internal arithmetic cell is eligible.
+
+Why safe: by induction from shared binary roots, two eligible exact signatures
+compute the same total vector under every input assignment. Replacing one by the
+other is a deterministic expression substitution. Since all replaced outputs are
+defined in the explicit-undef model, merging them cannot correlate independent
+unknown choices or conceal a mismatch. Noneligible internals and all explicit-X
+branches stay side-disjoint. Definedness of final observations remains the prior
+separate complete premise; it is not used to justify arbitrary internal merging.
+
+Concrete next investigation after root releases the gate
+-------------------------------------------------------
+1. Bound-stream the archived failed paired graph and its input-origin manifest.
+2. Count multipliers, their exact signed widths, and whether each input cone is
+   structurally certified binary/defined under the conservative rules.
+3. Compute identities only; report matched/unmatched eligible multipliers and
+   estimated remaining cell/pin counts. Do not launch a solver in this diagnostic.
+4. If most hard arithmetic is identical and eligible, draft the exact rewrite
+   checker and meaningful substitution guards. Otherwise use smaller partitions
+   or an independently proved primitive relational lemma, not an unverified cut.
+5. Preserve v1 graph/manifest lineage; a rewritten graph needs an explicit exact
+   substitution certificate, not a false byte-identity claim. Prior UNSAT queries
+   may still be reused with their old exact graphs; new queries bind both source
+   paired graph and rewritten graph plus certificate.
+
+Meaningful negatives: merge differently signed multipliers; swap an operand bit;
+merge nodes sharing only widths rather than exact expressions; accept x as a
+binary root; merge partially undefined pmux/shiftx; expose a replacement output
+as an input; omit a consumer/output substitution; omit an unpaired D bit; reverse
+output bit order; alter source graph after certificate; accept a cyclic signature
+or duplicate/inconsistent substitutions. Fail closed for every unreviewed type.
+
+Concrete diagnostic target after smaller-partition retry (source-only refinement):
+first preserved graph is
+build/sparkle/mxu-dot-paired-undef-first/pe_000/0_206/paired.json,
+with adjacent manifest.json, exact semantic root map and complete206-bit vector.
+If leaf16 also times out, select that actual interval's archived paired graph;
+compare its retained multiplier count/input widths/output widths to the first
+full graph. Use the original graph's input ports as the only binary roots.
+Build a disk/owner-streamed driver index and process cells topologically with
+an initially EMPTY reviewed primitive whitelist. For a first narrow diagnostic,
+report raw exact $mul operand identities and whether they are already shared
+input roots/0/1. That can detect the simplest duplicate multipliers without any
+primitive propagation theorem. Then report how many preceding mux/not/logic
+steps would need reviewed definedness rules to establish additional matches.
+Do not conflate such prospective matches with a certified sharing substitution.
+Save an inventory only, with no rewritten graph and no solver invocation, before
+root decides whether a transformation is justified. This avoids implementing a
+large sharing framework before evidence shows it will remove the actual hard
+arithmetic. Failed SAT vector fields identify the affected mapped-D/observation
+coordinates through manifest outputs, even when no counterexample exists.

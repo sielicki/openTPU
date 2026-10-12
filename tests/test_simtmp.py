@@ -37,7 +37,7 @@ def test_tempdir_goes_on_return_and_exception(monkeypatch, tmp_path):
         (d / "dram_0.bin").write_bytes(b"x" * 64)
         assert d.parent == tmp_path / "sim" and d.name.startswith("otpu_t_")
         assert (d / simtmp.MARKER).read_text().split() == [socket.gethostname(),
-                                                            str(os.getpid())]
+                                                            str(os.getpid()), simtmp._pid_namespace()]
     assert not d.exists()
     with pytest.raises(RuntimeError):
         with simtmp.tempdir() as d:
@@ -50,7 +50,7 @@ def _holder(tmp_path, body):
     body inside the block."""
     code = ("import sys, time\nfrom opentpu import simtmp, rtlsim\n"
             "with simtmp.tempdir() as d:\n    print(d, flush=True)\n    " + body + "\n")
-    env = {**os.environ, simtmp.ENV: str(tmp_path), "PYTHONPATH": str(ROOT)}
+    env = {**os.environ, simtmp.ENV: str(tmp_path), "PYTHONPATH": os.pathsep.join(filter(None, [str(ROOT), os.environ.get("PYTHONPATH")]))}
     p = subprocess.Popen([sys.executable, "-c", code], env=env, stdout=subprocess.PIPE,
                          text=True)
     return p, Path(p.stdout.readline().strip())
@@ -74,7 +74,7 @@ def test_sigterm_during_a_worker_threads_run(tmp_path):
             "def run():\n    with simtmp.tempdir() as d:\n        print(d, flush=True)\n"
             "        rtlsim.run_sim(['sleep', '61.5'])\n"
             "t = threading.Thread(target=run)\nt.start()\nt.join()\n")
-    env = {**os.environ, simtmp.ENV: str(tmp_path), "PYTHONPATH": str(ROOT)}
+    env = {**os.environ, simtmp.ENV: str(tmp_path), "PYTHONPATH": os.pathsep.join(filter(None, [str(ROOT), os.environ.get("PYTHONPATH")]))}
     p = subprocess.Popen([sys.executable, "-c", code], env=env, stdout=subprocess.PIPE,
                          text=True)
     d = Path(p.stdout.readline().strip())
@@ -115,3 +115,28 @@ def test_sigkilled_runs_directory_goes_at_the_next_run(tmp_path, monkeypatch):
         assert not d.exists()
         assert all(k.is_dir() for k in keep)
     assert not mine.exists()
+
+
+def test_sweep_does_not_delete_invisible_foreign_namespace_owner(tmp_path, monkeypatch):
+    monkeypatch.setattr(simtmp, "_pid_namespace", lambda: "pid:[local]")
+    monkeypatch.setattr(simtmp, "_alive", lambda pid: False)
+    foreign = tmp_path / "otpu_foreign"
+    local = tmp_path / "otpu_dead_local"
+    legacy = tmp_path / "otpu_legacy_unknown_namespace"
+    for directory in [foreign, local, legacy]:
+        directory.mkdir()
+    host = socket.gethostname()
+    (foreign / simtmp.MARKER).write_text(f"{host} 987654 pid:[foreign]\n")
+    (local / simtmp.MARKER).write_text(f"{host} 987654 pid:[local]\n")
+    (legacy / simtmp.MARKER).write_text(f"{host} 987654\n")
+    assert simtmp.sweep(tmp_path) == [local]
+    assert foreign.exists() and legacy.exists()
+
+
+def test_sweep_keeps_legacy_cleanup_on_platform_without_pid_namespaces(tmp_path, monkeypatch):
+    monkeypatch.setattr(simtmp, "_pid_namespace", lambda: "unscoped")
+    monkeypatch.setattr(simtmp, "_alive", lambda pid: False)
+    directory = tmp_path / "otpu_dead"
+    directory.mkdir()
+    (directory / simtmp.MARKER).write_text(f"{socket.gethostname()} 987654\n")
+    assert simtmp.sweep(tmp_path) == [directory]

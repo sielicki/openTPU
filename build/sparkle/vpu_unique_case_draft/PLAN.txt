@@ -1,0 +1,77 @@
+Exact next applicability obligation (UNEXECUTED source-only draft)
+
+Existing initialized decoder theorem:
+ build/sparkle/vpu-decoder-initial-second/summary.json
+ SHA96c7a82ade9bac51ea0aed04795c5b65d714a61a0d68f04248c73447ac8cc6dc
+ config8/2/true;143bits: m0[114:0]=0,m0d[27:0]=257 at native power-up.
+ I: m0d=fdec(m0.func), func=m0[105:98]. Under I, H=m0d[27:8]
+ satisfies onehot0(H). Historical step_ok preserves I for arbitrary rst/en/ss_act/
+ mi; equal_next proves original/native decoder transition equality. Additive
+ initial_ok proves I at actual native startup without sampled reset. Native m0d
+ startup fh=1 (ADD), so zero-state-only argument would be wrong. Original initial
+ state is existential witness matching native, not independently arbitrary.
+
+Existing local lane normalized-reference theorem removes unique from original
+case statements. Under SE=true: C8=SE=1,NLL=C8?0:NCL=0, so long-lane unique cases
+are inactive. Exactly two active statements per short lane differ. Actual case
+hit sets and package indices are pinned by unique_case_fragment.py. Default is
+explicit in both, so allzero H is safe. Distinct onehot bits imply no competing
+branches, including the grouped RSUM/RSSQ/RDOT branch. No traffic/operands/reset
+or warmup restriction is needed beyond I already proved from initialization.
+
+Small next certificate (preferred to re-extracting enormous full parent):
+ 1 Authenticate stage-third reference and archived reference generator/RTL/pkg
+   identities, plus stage-first hierarchy and completed parent receipt. Rebuild
+   exact8/2/true normalized wrapper using authenticated archived recipe and
+   require byte equality. Require actual RTL active block tokens differ ONLY by
+   the two unique keywords. Verify inactive long-lane generate from exact
+   config/evaluated parameters, not raw broad replace() alone.
+ 2 Emit actual complete two always_comb blocks verbatim from original source in
+   tiny original/normalized modules (helper drafted). Preserve actual functions
+   from authenticated otpu_fp package and operation indices from otpu_pkg.
+   Bind actual fdec_t width/layout independently to existing decoder receipt.
+   x,y,xd,xc,rsa,rsb,rfb remain arbitrary independent32bits. RMA may be arbitrary
+   Boolean here, stronger than either production constant. Per-lane replication
+   is exact substitution of l; all8lanes use these same statements.
+ 3 Compile both actual fragments with the authenticated original Slang plugin;
+   proc -noopt; flatten; opt_clean only. No opt_expr/setundef. Audit exact ports,
+   no registers/init/formal/opaque cells, unique drivers and global acyclicity.
+   The only premise is -set onehot0 1, whose expression is actual decoded[27:8].
+   Query strict definedness of all320bits; query strict equality of all160bits;
+   use -enable_undef -set-def-inputs -verify and concrete counterexample JSON.
+   This is a CONDITIONAL local replacement lemma, not an external assumption.
+   Source mutation V_COPY->V_ADD and selected operand flip should produce real
+   SAT witnesses under the SAME derived onehot0 premise. No miter-only fault.
+ 4 Authenticate existing initialized decoder proof/induction and exact current
+   full native datapath module against its qualified historical module body,
+   attributes/incoming directives using DecoderReceipt/current assertion-only
+   assembly bridges. Latest composite diagnostic bridge changes dependency
+   module, not datapath decoder body, but equality must be actually checked.
+ 5 Verify actual current reached u_lanes.m0d == m0d register and .m0 == m0,
+   with no adapter, and common clk/rst/en. Native source at VpuDatapath.lean82
+   currently emits exactly these references, but SOURCE TEXT ALONE is not the
+   final graph edge certificate. Use authenticated emitted module named pins or
+   bounded tiny parent projection/actual elaborated edge. Register Q provenance
+   must be that authenticated143-bit decoder cone. Bind streamlane inputs m0d
+   and m0 to exact corresponding widths/ordering (no concatenation ambiguity).
+
+Then the applicability statement is: along every initialized native decoder
+trace, the local original active short-lane statements can replace normalized
+ones without changing any lane boundary signal; the existing unrestricted
+normalized-reference product applies. Full22510 state plus decoder143 may be
+composed locally once ownership/disjointness is checked, but it is NOT closed
+wholeVPU: c_uy/c_qy remain external arithmetic inputs, production annotation
+bridge and other VPU subtrees remain outstanding.
+
+Outstanding invariant is NOT onehot discovery; it already has startup+step
+proof. Missing work is exact use-site binding and actual compiler/source
+normalization bridge. Multi-hot countercondition: H[MUL]=H[ADD]=1 can cause
+parallel-case optimized original behavior to differ from priority normalization;
+these states are ruled out by initialized decoder proof, not excluded by new
+user-traffic assumptions. Onehot does not imply any floating operand property.
+
+A purely syntactic onehot/group checker would establish language-level branch
+uniqueness but NOT independently bind Slang unique lowering. Tiny actual-body
+compiler proof closes that gap without repeating24k parent cones. Full original
+wrapper-vs-normalized compiled bridge remains the conservative fallback if
+review cannot justify embedding the exact local replacement lemma.

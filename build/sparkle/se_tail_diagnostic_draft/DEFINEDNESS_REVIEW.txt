@@ -1,0 +1,50 @@
+UNEXECUTED proposal, separate helper staged in definedness_extension.py.
+
+Observed gold X lies in an actual process-generated mux branch. Do not replace
+it by zero, use -prove-x, constrain output definedness, or omit the four D bits.
+Allow only literal x during projection, record its complete cell/pin/root path,
+and preserve it in the extracted graph. Continue rejecting z/unresolved bits.
+
+Normalize each strict actual $buf locally to $or(A,zero) of exactly the same
+width and signedness=false. This is identity on 0/1/X, unlike a guessed alias
+substitution. Keep every port, alias, DFF Q/D, init attribute and original buffer
+A/Y bits unchanged. The shared authenticated expose_steps helper remains intact.
+Record original projected graph plus normalized graph and conversion inventory.
+Guard malformed buffer widths/pins/extra parameters/output aliases; guard an X
+buffer input survives as literal X. Recompare complete state/init maps before
+and after normalization; total counter state remains four bits per side.
+
+Expose observed[21:0] comprising BOTH sides' next4, count4, pop1, dv1, fault1.
+The harness has impossible=constant0. Exact definedness query:
+  sat -enable_undef -set-def-inputs -set-any-undef observed -prove impossible 1 -verify -show-inputs -show-outputs -dump_json definedness-counterexample.json
+
+This is intentionally an UNSAT query: if any observed bit can be undefined,
+there exists a counterexample to impossible==1. Success therefore proves that
+no observed bit can be undefined under arbitrary defined external/current-state
+inputs. It does NOT assume outputs defined. The only premise is defined public
+inputs, including shared current state and parent boundary state, as required
+by the two-state initialized product. No sampled-reset/fill/traffic assumptions.
+
+Then prove step_ok, output_ok, observer_ok individually with:
+  sat -enable_undef -set-def-inputs -prove PROPERTY 1 -verify ...
+Use strict -prove, never -prove-x. All queries require terminal success and rc0.
+Run the definedness query before equality. For a dedicated actual-cone negative,
+replace one native counter D bit with literal x before state exposure; the
+same definedness query must return rc1 and a concrete model with impossible0
+and at least one X in observed. Retain existing D-bit-inversion equality negative.
+This checks that the checker detects undefinedness rather than vacuously passing.
+The initializer mutation remains a valid existential witness, not a failure.
+
+Avoid prep's aggressive unknown simplification if it can erase the actual X
+branch before definedness is checked. Prefer read_json + read_verilog followed
+by hierarchy -top check; proc; flatten; opt_clean. Harness has no state/process,
+so proc is unnecessary if frontend creates pure combinational cells. Do not run
+opt -full, opt_expr -mux_undef, setundef, or SAT -ignore_unknown_cells.
+Verify all selected cells are supported; preserve exact commands in receipt.
+
+Primary reference checked for command semantics:
+https://yosyshq.readthedocs.io/projects/yosys/en/0.44/cmd/sat.html
+The docs specify -enable_undef modeling, -set-def-inputs input constraints,
+-set-any-undef requiring at least one unknown bit, and -prove-x accepting an
+unknown lhs. This proposal deliberately uses -prove and an UNSAT query instead.
+Actual installed binary's bounded help transcript should be archived on run.

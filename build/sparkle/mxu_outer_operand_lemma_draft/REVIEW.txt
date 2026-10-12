@@ -1,0 +1,37 @@
+Unexecuted operand-only experiment. No multiply substitution implemented.
+
+Entry is an explicitly SHA-pinned incomplete archived outer partition receipt.
+Replays its exact [2249,2250) source cone/manifest from the immutable indexed
+paired graph, using the previously reviewed mux projection. The source model
+and binary are freshly authenticated against the receipt. Exact entire target
+cell bodies and original paired root identities are retained in the manifest.
+
+New operand projection uses whole cells only, without any mux slicing. Every
+input of every retained cell is followed to an original root or literal. All
+source input ports remain unchanged, including independent omitted-state Q.
+Both target multiply outputs must be outside every operand dependency cone.
+Source and projected schema/driver/DAG audits plus pinned total primitive
+relations justify removing unused cells without an impossible-model shortcut.
+Literal X occurrences and ordinary unknown signal fanout are not rewritten.
+
+Queries expose all 128 actual ordered operand coordinates, then compare all
+64 corresponding coordinates. Only the original defined-input domain is used;
+no operand/range/equality premises are assumed. The positive result requires
+both actual terminal UNSAT queries and two actual SAT negative controls: one
+operand observation made explicitly X and one inverted. The first requires an
+undefined witness at coordinate zero, the second a differing-operand witness.
+These mutations are private query models, not changes to production sources.
+
+If totality or equality gives a real witness, publish that narrower completed
+experiment status. Timeout, process or finalization errors preserve incomplete
+status and revoke all new theorem flags. All artifacts and source closure are
+archived; independent work cannot silently change the premises during a run.
+
+Even success is conditional on defined full Q and external RAM/FP returns;
+it is not retained-D equality, original-memory semantics, child definedness,
+outer trace refinement, production applicability, or a substitution theorem.
+
+Root-only commands after independent approval:
+source /tmp/opentpu-test-env.sh
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m pytest -q build/sparkle/mxu_outer_operand_lemma_draft/test_operand_graph.py
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_outer_operand_lemma_draft/check_operand_lemma.py --receipt build/sparkle/mxu-outer-partitioned-D-second/summary.json --receipt-sha d960990dea611a96ef883f8c77649c48332f7ee357ba90dd9455f2ba1de4be0a --diagnostic build/sparkle/mxu-outer-arithmetic-diagnostic-first/summary.json --diagnostic-sha 2da6eeb6ba3a2f11ba618ad08f78e701dc390565765cb4a7a0ce9bf4ddd50a50 --output build/sparkle/mxu-outer-operand-lemma-first

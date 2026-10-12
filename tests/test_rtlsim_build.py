@@ -87,3 +87,43 @@ def test_a_failed_build_leaves_no_executable(fake, monkeypatch):
     assert builds() == 2 and exe.read_text() == "half and the rest"
     assert [p.name for p in rtlsim.BUILD.iterdir() if not p.name.endswith(".lock")] == \
         [exe.parent.name]
+
+
+def test_worker_override_reaches_compile_and_linker_recovery(fake, monkeypatch):
+    from pathlib import Path
+    from types import SimpleNamespace
+    src, _ = fake
+    monkeypatch.setenv("OTPU_VERILATOR_JOBS", "1")
+    monkeypatch.setattr(rtlsim, "_VERSION", "fake")
+    calls = []
+
+    def run(command, **kwargs):
+        calls.append(command)
+        if command[0] == "verilator":
+            assert command[command.index("-j") + 1] == "1"
+            return SimpleNamespace(returncode=1, stdout="linker command failed", stderr="")
+        assert command[0] == "make" and command[command.index("-j") + 1] == "1"
+        (Path(command[command.index("-C") + 1]) / "Va").write_text("linked")
+        return SimpleNamespace(returncode=0, stdout="", stderr="")
+
+    monkeypatch.setattr(rtlsim.subprocess, "run", run)
+    assert rtlsim.build("a", [src]).read_text() == "linked"
+    assert len(calls) == 2
+
+
+def test_build_dispatches_to_audited_cache(fake, monkeypatch, tmp_path):
+    from opentpu import simcache
+    src, builds = fake
+    audit = str(tmp_path / "audit.jsonl")
+    monkeypatch.setenv("OTPU_SIM_BUILD_AUDIT", audit)
+    monkeypatch.setenv("OTPU_VERILATOR_JOBS", "1")
+    calls = []
+
+    def audited(*args):
+        calls.append(args)
+        return tmp_path / "audited-binary"
+
+    monkeypatch.setattr(simcache, "build_audited", audited)
+    assert rtlsim.build("a", [src], {"N": 2}) == tmp_path / "audited-binary"
+    assert calls == [("a", [src], {"N": 2}, 1, audit)]
+    assert builds() == 0

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "/home/sielicki/openTPU/build/sparkle/mxu-outer-predicate-D-second/summary.json",
+    "sha256": "82cf67191b2bb73d69ee0e9c275ee6a64cfd9dc278d9242e1086de41cf714887"
+  },
+  "diagnostic": {
+    "path": "/home/sielicki/openTPU/build/sparkle/mxu-outer-predicate-single-diagnostic-first/summary.json",
+    "sha256": "fc6d35d04bff68016a6358cc065c35fda3073e7f35e53117fc2b62c9441db9d9"
+  },
+  "interval": [2444, 2445],
+  "pairs": [
+    ["gold:$899", "gate:$2146"],
+    ["gold:$917", "gate:$2160"],
+    ["gold:$935", "gate:$2189"],
+    ["gold:$953", "gate:$2203"],
+    ["gold:$971", "gate:$2232"],
+    ["gold:$989", "gate:$2246"],
+    ["gold:$1007", "gate:$2275"],
+    ["gold:$1025", "gate:$2289"]
+  ]
+}

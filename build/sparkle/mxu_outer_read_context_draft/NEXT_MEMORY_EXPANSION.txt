@@ -1,0 +1,143 @@
+NEXT STAGE DESIGN ONLY — no executable change or theorem claim
+
+Entry conditions and branches
+----------------------------
+Authenticate the terminal control-definedness receipt by explicit path and SHA,
+its complete source/tool/artifact closure, original graph identity, 16-row actual
+SatGen coverage, full primitive-extension audit and complete control vector.
+If it is incomplete, timed out, or contains an undefined-control witness, do not
+call the proposed expansion an exact original-memory model. Diagnose that
+witness or supply a separately reviewed unknown-control memory relation first.
+The auxiliary theorem's domain defines all original inputs/Q and external
+RAM/FP return boundaries. It does not prove those child returns defined. Keep
+this premise explicit until actual initialized child/RAM composition proves it.
+No in-range address, legal command, zero RAM or mask assumption is introduced.
+
+1. Select and pin the semantic bridge
+------------------------------------
+Authenticate the exact original collected $mem_v2 schema and complete pinned
+simlib.v memory implementation, including full RD_ADDR-OFFSET indexing and
+procedural masked writes. Pair that model with the authenticated SatGen
+value/undef implementation used by queries; document the concrete chosen
+two-state-Q, defined-control domain. Do not use memory_map as a semantic bridge:
+its dropped mk high-address bit is the already demonstrated discrepancy.
+
+The control lemma is noncircular because it quantified over all possible shared
+read value/undef pairs. Instantiate it with the real memory reads, then justify
+the finite construction under its defined RD_ADDR/WR_EN conclusion. Actual
+write addresses are known constants, already checked against every word. The
+bridge must explicitly justify masks, clock/common edge, read ports and all
+initial/reset modes. Keep raw SystemVerilog event-region equivalence excluded.
+
+2. Reconstruct all eleven original arrays, at original read IDs
+--------------------------------------------------------------
+Start from the authenticated original RAM-cut graph and redo exact eight-FP
+boundary cuts. Preserve every ordinary cell/pin, observation, alias and original
+ordinary Q/D identifier. Remove the eleven exact residual memory cells only:
+alpha, alr, drow, mk and xo: each four 32-bit words;
+four RMW delay arrays: each one 32-bit word;
+u_rw: five 293-bit words; u_rwh: four 16-bit words.
+Total: 33 words / 2,297 bits, included in 7,436 controller bits, not added to the
+eight external RAMs' 1,204,224 bits.
+
+Use ownership-fourth's complete physical word/Q relation to pair these original
+word coordinates with mapped Q. Keep the original 5,139 ordinary Q coordinates
+as well. Do not use a global inverse mapped-bit substitution: distinct original
+read ports may collapse to the same low-address mapped signal.
+
+Every original RD_DATA bit gets its own preserved original identifier and one
+driver shared by all original consumers. If read outputs already alias, require
+the exact same original memory/address/word-bit semantics before sharing their
+driver. Keep all original RD ports and all 2,553 coordinates. No per-consumer
+fresh value or independently selected witness is allowed.
+
+Build a finite read selection with exact word-bit order and complete original
+address vector. Every known address outside [OFFSET, OFFSET+SIZE) produces an
+unknown result. The eight mk dynamic reads retain bit2 and all original high
+bits: addresses 4..7 remain out of range. Preserve literal-X use semantics and
+shared final RD wire identity; do not constant-fold unknown selectors or alias
+undefined mux outputs merely because their four-state coordinates match.
+
+Build each of the 2,297 word D coordinates from actual constant write addresses,
+per-bit WR_EN and WR_DATA, common clock and validated distinct write ownership.
+Do not assume an unproved ordering for conflicting write ports. Actual distinct
+addresses avoid that case; a changed inventory must reject. Existing ordinary
+5,139 D expressions remain intact. Thus no D coordinate is omitted.
+
+3. Certify construction before solving context obligations
+----------------------------------------------------------
+Emit explicit per-array, per-word, per-read and per-write lineage, full Q/D
+ownership and original consumer inventories. Prove complete removal/replacement
+of the exact memory drivers; reject extra cells, missing/duplicate drivers,
+cycles, unexplained aliases or initializer owners. Validate every original
+initial alias and memory INIT coordinate before cutting or stripping it.
+
+The resulting combinational graph gets a complete primitive schema/DAG and
+source-pinned total-model-extension audit. Derive exact control equality with
+the original control observations and instantiate the bootstrap lemma; do not
+leave the auxiliary value/mask read inputs in this main model. Model equivalence
+under the defined-control domain is a separate checked certificate, not inferred
+from graph construction success or the historical optimized mapped graph.
+
+4. First solve complete next-state knownness and retained equality
+-----------------------------------------------------------------
+Build independent original-expanded and mapped combinational steps with shared
+semantic external-input and retained-Q coordinates. Original-to-lowered word
+ownership is a within-reference lowering relation; it does not invent a full
+original-to-native relation for the omitted coordinates. Keep omitted Q
+independent across original/native sides unless an additional audited relation
+is actually established. Preserve all 7,436 Q in each graph, including
+the 1,508 historically pruned coordinates. Existing mapped-only quotient does
+not discharge an original-context quotient. Internal unknown value choices
+remain side-disjoint; original read fanout stays shared within its side.
+
+Attempt complete 7,436-D definedness on each side under arbitrary defined full Q
+and inputs/qualified boundary returns. Pair and prove equality of all 5,928
+retained D coordinates by semantic field/index. Initial ownership supplies the
+base retained relation; omitted initial constraints must remain satisfied.
+If any omitted D can be undefined, stop the all-two-state-Q induction route.
+If retained D differs or is undefined, stop ordinary retained-state induction.
+Neither output refinement nor aggregate output totality fixes these failures.
+Required alternatives would be a proved original quotient with arbitrary
+unknown omitted-state evolution, a closed abstract state relation, or one
+coherent existential concrete next-state witness; none is assumed here.
+
+5. Distinguish the complete observation questions
+------------------------------------------------
+Attempt strict explicit-undef equality for every public output, arithmetic
+boundary input and external RAM command/address/data/mask pin, using exact
+semantic port/index pairing. Expect a possible real mk out-of-range witness;
+unrestricted head.M and registered mxm do not establish in-range addresses.
+Preserve the actual counterexample with full shared input/Q and semantic mk
+read address, enable and observed output coordinates.
+
+A strict counterexample is not a successful equality proof. A later separately
+reviewed specified-bit refinement experiment could require native defined/equal
+where reference output is specified, while allowing native specificity where
+reference is unknown. It must check the full actual context, including eqx or
+other undef-sensitive consumers; local X-to-word substitution is insufficient.
+Per-coordinate permission is not a simultaneous existential witness. If a
+coherent-completion theorem is desired, quantify one joint reference witness
+across every output and D with actual fanout correlations preserved.
+
+RAM/FP boundary outputs are not automatically safe under a weaker observation
+preorder: undefined enables, addresses or operands may affect future retained
+state. Actual downstream composition must establish a relation strong enough
+for those consumers, not silently substitute public-output specified-bit scope.
+
+6. Resource and evidence contract
+--------------------------------
+All execution remains under the existing exclusive 3 GiB/no-swap gate. Begin
+with complete vectors; if representation requires partitions, use exact cone
+projection and disjoint exhaustive semantic intervals, retaining shared roots
+and unknown correlations. Do not increase ceilings, add proof cuts or drop D.
+Archive immutable full graphs/manifests before SAT; release parsed graphs;
+stream hashes and preserve interrupted status/logs/active partial artifacts.
+Resume only explicit path/SHA authenticated exact graph/manifest/obligation
+interval matches. Negative controls must exercise a real source/read/write or
+state coordinate change and require the intended semantic failure stage.
+
+Even a completed stage remains an archived boundary-model result until fresh
+current-emission/production binding and actual RAM/FP/dot/epilogue composition
+close all remaining premises. No whole-MXU initialization/trace claim follows
+from the control bootstrap or this plan alone.

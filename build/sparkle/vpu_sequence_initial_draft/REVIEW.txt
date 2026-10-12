@@ -1,0 +1,46 @@
+UNEXECUTED complete local sequence676 initialized stage, exact8/2/true.
+New files only; previously passed command driver/helpers remain unchanged.
+
+Fresh C-compiled native VpuSequence.build plus independently checked compiled
+stateWidths JSON. Fixed complete44-field676-bit map includes actual nfill state,
+mi115bits, st_c/st_frz profiler registers, all reduction/run/index state. No
+native initial-zero assumption: every alias init constraint is audited, undefined
+native bits stay arbitrary; choose one equal-mapped original witness.
+
+Full original RTL snapshot is frozen/archived and compared byte-for-byte BEFORE
+existing original reference recipe runs. This pins every declaration, field
+writer, reset/CE branch and temporary computation. Supplementary original
+uninitialized declaration inventory covers all sequence fields (including output
+pf_u/pf_frz), and original initial-process inventory has only parameter-check and
+simulation rst_seen. Extracted wrapper recreates these unspecified initial states.
+
+Boundary: arbitrary head_chunks is native input nchunks renamed with exact
+16-bit input/net alias audit. This is COMMAND SETUP, not original registered nch
+or nfill. Actual sequence nfill is fully retained and checked in outputs AND D;
+its update remains begin nonempty command followed by max(head_chunks,2).
+All queue/issue/datapath completion interfaces remain independent shared inputs.
+No reset prefix, traffic invariant, after-fill, en/can_begin assumption or queue
+composition is smuggled into the theorem.
+
+All676state outputs+676D=1352 observed bits/side; all2704must be defined under
+-enable_undef -set-def-inputs with unconstrained reset/en each edge. Separate
+strict equality covers every coordinate. Actual D/clock/driver/cycle audit,
+all-init aliases and complete Q mapping precede state exposure. No opt_expr;
+only proc-noopt, memory_map, opt_clean and exact SAT buf->or-zero identity.
+State outputs duplicate some Q checks intentionally; no output is dropped.
+
+Actual native emitted-source mutations: o_done_i bit flip, issuing reset0->1,
+and o_issuing->X. Firsttwo require totality then concrete equality CEX; X requires
+concrete definedness CEX. Reference mutations to reset/en/nfill/init/profiler/
+extra writer are rejected by full source bridge guards. Incomplete/failure logs,
+raw graphs, compiled files and manifests are preserved; no proof success before
+all tests/queries finish. Final receipt revokes completion on publication error.
+
+Current status: source-only executable and5focused guard groups, unexecuted.
+Suggested commands only after root releases bounded gate:
+ python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_sequence_initial_draft -p 'test_sequence_initial.py'
+ python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_sequence_initial_draft/check_sequence_initial.py --work build/sparkle/vpu-sequence-initial-first
+
+Remaining scopes: production emitted module/directive/containing-path binding;
+noncircular command+sequence control composition; stream1350/write-buffer1722;
+wholeVPU initialized refinement. No runtime/four-state event/device/timing claim.

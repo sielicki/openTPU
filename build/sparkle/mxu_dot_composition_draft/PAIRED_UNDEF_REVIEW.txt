@@ -1,0 +1,68 @@
+UNEXECUTED draft: check_paired_dot_undef.py, paired_dot_undef_graph.py,
+test_paired_dot_undef.py. No tests, solvers or extractions launched.
+
+Direct explicit-undef equality replaces the proposed generic X->0 compatibility
+bridge. The actual $eqx cells remain actual $eqx cells with original parameters;
+no argument that totality makes them insensitive to case-X behavior is used.
+
+Pins terminal complete definedness receipt440d90bb... and all20case/completeparent
+interval coverage; closes its source/artifact lineage. Generates both side
+wrappers anew from those exact historical stepped graphs. Complete output port
+name/width inventories are sorted into a canonical semantic order, and every
+original position must occur exactly once. Both original input inventories and
+state mappings are audited through initialized graph bridges and matching port
+contracts. Parent remains all100726observed/helper-input/fullD bits; helper cases
+retain all observed outputs/fullD. Full initial witnesses are premises for graph
+identity here, not a new whole-dot initialized theorem claim.
+
+Each paired graph shares only original semantic input coordinates(port,index).
+Internal signal IDs are freshly allocated separately per side, even if original
+integer IDs coincide; X constants retain spelling. Actual approved exact mux
+coordinate projections are used independently on each side; other cells stay
+complete. A $ne over the paired complete selected vectors drives mismatch.
+Explicit-undef SAT asks mismatch=1 with only original input roots constrained
+defined. Prior complete totality rules out unknown observations. UNSAT therefore
+proves actual same-model equality, including actual $eqx behavior. A SAT model
+is preserved as an actual mismatch; parser/error/timeout remain incomplete.
+
+Nine helper cases start as fullvector queries; oversized paired cones bisect
+without dropping bits. Parent starts128bit intervals and bisects above combined
+25k projected pin bits or10k cells; helper threshold50k pin bits. Single-bit
+oversized cones stop before solver. These are heuristics, never a RAM guarantee;
+all execution must use unchanged3GiB bounded gate. Cases declare exact coverage,
+not a required fixed number of solver invocations.
+
+Version1 already supports --resume PATH --resume-sha SHA. Reauthenticate previous
+closed source/artifact closure, same definedness premise and exact case set;
+retain prior proven interval boundaries. Fresh paired graph and full manifest
+must match previous SHA, and old query/log must match current exact SAT command
+and successful UNSAT classification before reuse. Fill uncovered intervals and
+require every previous proven interval consumed. No opportunistic latest-file
+selection. Incomplete/partial active graphs/logs/indexes are named before work,
+archived on ordinary exceptions, and incomplete status overrides success if
+terminal publication fails. Host/cgroup SIGKILL still requires external archival,
+as in prior runs; the last atomic checkpoint identifies all active paths.
+
+Guard scope: semantic roots across differing net IDs, internal disjointness,
+constant preservation, full output permutation, dropped/overlapping output
+rejection, port mismatch, resume interval gaps/overlaps, SAT versus UNSAT/error
+classification, no unapproved assumptions, and missing final totality partition.
+No concrete equality proof has been run. Independent review required before
+bounded guard/solver scheduling. All earlier full-definedness sources untouched.
+
+Review hardening: every freshly generated FULL side probe and original manifest
+must byte-hash match its exact artifact in the pinned totality closure, and those
+artifacts are directly reverified. This is stronger than width/status matching.
+Resume requires claimed artifact digest == regenerated digest == historical
+input_sha256 digest at the actual graph/manifest path; all old files are then
+rehash-verified. Added swapped graph, swapped manifest and wrong-side negatives.
+
+First paired run terminal: pe000 full-vector SAT timed out at180s, process186.10s,
+1,805,234,176B and zero memory events. Original attempt is preserved incomplete;
+no SAT result is inferred. Draft now has --leaf-partition-bits(default16) and
+--parent-partition-bits(default128), each constrained1..128. The semantic canonical
+vector, full graph/totality joins, exact root mapping and complete coverage remain
+unchanged. Successful immutable resume intervals retain their own boundaries.
+Solver timeout180s, process timeout240s and required3GiB gate are unchanged.
+The structural sharing alternative is source-only in PAIRED_TIMEOUT_PLAN.txt;
+no internal sharing transformation has been implemented or assumed.

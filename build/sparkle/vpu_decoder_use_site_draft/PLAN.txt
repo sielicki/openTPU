@@ -1,0 +1,90 @@
+UNEXECUTED exact initialized decoder -> streamlane use-site binding draft.
+New helper decoder_lane_edge.py; no active FP/fragment dependencies changed.
+
+Required receipts, all full immutable closures:
+ A decoder startup second SHA96c7a82ade9bac51ea0aed04795c5b65d714a61a0d68f04248c73447ac8cc6dc
+ B decoder production consumer first SHAa4392768408d6f661d1fc792a191a2c3938d299abf41d8a95b15a854de1faa76
+ C streamlane extraction third SHA f23c3db55c72c1d14b58154509804fe3a4e130b6a34be28a113f31ebb7e62e5e
+ D current composite assembly bridge first SHAc4536dbec2cfe0522092ac5896a9f809342e7940fead7938b9431b67a7b6d3ef
+ E conditional fragment lemma path/SHA MUST be explicit after actual execution;
+   no latest-file selection or placeholder successful status.
+ F local FP product second SHA4e749057b648372993947a366456c0c7090fcbeab3099f98828bb29a26f00dc8
+   may be recorded as available context; binding does NOT close annotation gap.
+
+Checks in the new binder, required conjunctions before any applicability status:
+ 1 A actual startup audit/witness143 (m0=0,m0d=257), unrestricted step/onehot/equal
+   next inherited proofs, exact full-native module+attrs+incoming directives.
+   Replay authenticated startup none proof and actual initializer mutation logs;
+   independently rederive Q/D of BOTH decoder graphs from archived none/raw.json.
+   Helper decoder_q accounts exactly143 Qbits, m0[114:0],m0d[27:0], commonposedge
+   clk; existing startup witness helper audits all aliases and existential gold
+   initial consistency. Do not use sampled-reset base as startup evidence.
+ 2 B pins same A startup digest, full decoder module hash, exact production8/2true
+   paths and original specialization/hierarchy evidence. Current D is transitive
+   whole-assembly token/attrs/directive correspondence across preceding SE-tail
+   and composite assertion-only bridges. Reauthenticate the preceding receipts,
+   complete old/new assembly identities and ordered support/parameter manifests.
+   Do not mistake D preserved SE-tail path list for actual datapath reachability:
+   carry B's actual datapath paths, and verify complete source correspondence
+   chain starts at exactly B's assembly SHA. Gen1/Gen2/CLI all required.
+ 3 Fresh current emitted datapath selected full module == A proved full-native
+   module tokens/attrs + incoming directive context. This imports decoder graph
+   mapping by exact module identity, not by finding a similarly named signal.
+   Also compare stage C datapath module and current parent; full identity must
+   match. Current generator source/link closure and unchanged support units must
+   remain current where claiming current emitted assemblies, without importing
+   new runtime qualification.
+ 4 Independently parse actual complete emitted u_lanes instance (helper edge).
+   ALL25 named ports must occur exactly once in actual order; every expression
+   is retained in report. Enforce .m0(m0),.m0d(m0d),.clk(clk),.rst(rst),.en(en)
+   and external arithmetic .c_uy(c_uy)/.c_qy(c_qy) as single exact tokens. No
+   indexing, concatenation, truncation, adapter, inverted clock/reset/enable,
+   duplicate pin or positional association. Compare complete edge to proved
+   datapath's edge; full parent identity already ensures other expressions equal.
+   Verify reached lane child full module == C's reached-lanes.sv (including
+   production register attributes and incoming directives), and exact module
+   port widths/directions/order [m0 115,m0d28,clk/rst/en1]. Preserve child port
+   input little-endian packed ordering by [114:0]/[27:0] declarations.
+ 5 E must prove exact two actual source blocks under H=m0d[27:8] onehot0,
+   same original RTL/pkg/FP SHA as A+C. Recheck strict320definedness/160equality
+   query identities, actual source label+operand mutation CEX and sole premise.
+   Bind C actual short-lane SEtrue => C8true => NLL0, all8shortlane occurrences.
+   Do not drop outside-normalized-reference branch edits without source audit.
+
+Conclusion once all pass: every initialized production decoder trace supplies
+onehot0 at the exact reached lane input, including timezero, for arbitrary
+rst/en/ss_act/mi. Thus E's CONDITIONAL local fragment premise is discharged at
+that use-site. Original-source fragment replacement applicability established;
+no new user-traffic restriction. Reference decoder initial state existentially
+matches native143bits. m0d fh=1 at startup (ADD), not fh=0.
+
+Still not wholeVPU or closed22510 subtree: c_uy/c_qy external arithmetic inputs
+stay shared arbitrary, raw-to-annotated child implementation relation remains
+separate, production hardware mutation controls and other VPU state absent.
+Binding can use complete emitted module equality plus authenticated actual
+143-Q graph mapping; no fresh large datapath graph extraction needed. If source
+register identity/name cannot be tied to the authenticated decoder projection,
+stop for tiny graph projection rather than assume same-name Q equality.
+
+Executable checker glue/guards remain to implement after confirming exact D->B
+assembly lineage schema. Helper parsing and actual-Q inventory are staged now;
+no proof or binding has run. All large closure reads/hashes later under bounded
+3GiB gate, normalize each receipt map ONCE (avoid prior FPquadratic lookup bug).
+
+UPDATE: executable glue now staged in check_decoder_lane_use_site.py with tests.
+Uses fixed exact A/B/C/D/tail receipt SHAs above; explicit E argument required.
+Replays actual E source/harness/query identities and mutation CEX, validates
+D->tail->B assembly SHA chain,143 raw Q/D and initial witness, and full actual
+parent/annotated-child module token+attrs+directive identities. Parses all25
+actual instance pins and every declared child port in exact order. No execution.
+Status only initialized_onehot0 use-site applicability; annotation behavior
+relation and external arithmetic closure remain false. Independent review needed.
+
+Actual fragment prerequisite now PASSED independently at
+ build/sparkle/vpu-unique-case-fragment-third/summary.json
+ SHA8feab970d2d4134fa4f98f1be3a6e2a019833641b6c83c4026bbcb9e55f8cde8.
+Checker helper imports root-reviewed updated original F_NZ extraction, so fresh
+fragment-source reconstruction includes exact authenticated negative-zero local
+constant. No fragment or active FP checker was edited here.
+Current D->tail->B SHA chain was inspected in all3small receipt case fields and
+matches exactly. Final bounded checker/guard execution still pending.

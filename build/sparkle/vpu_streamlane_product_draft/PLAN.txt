@@ -1,0 +1,156 @@
+UNEXECUTED evidence-backed design; source freeze respected. No imports, tests,
+netlist parsing, hashes, extraction, compilation or solvers ran for this draft.
+Only source and existing receipt text were read. inventory.py and focused guards
+are executable components, not a full driver or completed theorem.
+
+Exact production scope
+----------------------
+OpenTPU.VpuDatapath.toVerilog/build config8/2/true reaches u_lanes:
+otpu_vpu_lanes_sparkle. Historical lane theorem config is8/8/true. Native
+VpuDatapathSupport selects nsx1, nll0 when comp8, so source suggests the lane bank
+is identical, but future proof MUST compile8/2/true and compare full module
+body/attributes/incoming directives to the historical8/8/true artifact and
+current reached production assemblies. No mere config substitution.
+
+Actual retained local state:1255bits,39 fields:
+- meta_slot0_0..6: seven33-bit registers =231bits.
+- lane0..7_slot0_ra/rb/rc/re:32 registers of32bits =1024bits.
+- All native initial values zero EXCEPT each rc initializes to0x80000000.
+  Eight negative-zero words must be preserved in native/reference witness.
+- Historical receipt records zero pruned bits on both sides. Independently
+  verify every actual raw retained Q/D, all alias initial constraints, clock and
+  width before reusing that count. Existing script overwrites mapping aliases;
+  never inherit its initializer handling as an initialization theorem.
+- No mutable RAM appears in the lane-bank source; prove that from actual graph.
+  Composite ROMs may elaborate as memories. Do not initialize arbitrary contents
+  or silently erase X, unsupported memory, or extra state if encountered.
+
+Arithmetic:24 actual instances: laneN_slot0_ab and ce are mul2 (16*125=2000bits),
+laneN_slot0_sum is add4 (8*191=1528bits). Exact original names:
+g_slane[N].u_ma.u_m/u_c/u_a. Full clk/en/a/b/y interfaces. FP3528bits; local+FP
+4783bits is only a CONDITIONAL product while the composite interface is cut.
+Use current concrete conditional-mul-sv relation/full-add equality and actual
+leaf all-alias init witnesses, not old filled-pipeline arithmetic theorem alone.
+
+Additional actual child: u_comp / original g_comp.u_comp, SeComposite EXT1,
+LANES8/MW21/NS3/HA2, recorded17727 statebits and no private FP. Thus full lane
+subtree candidate22510bits =1255+3528+17727. Do not double count the external
+c_uy/c_qy tail results: these remain arbitrary external inputs at lane boundary.
+Bank outputs total3885bits. Keeping25 cuts yields8015 checked parent bits:
+1255D +3885external +1560FP operand/en +1315composite input bits (clock common).
+All3362 composite output bits and768 FP result bits are unrestricted cut inputs.
+See independent inventory.py for exact named port widths and local fields.
+
+Existing evidence and exact locations
+-------------------------------------
+1. build/sparkle/formal_vpu_datapath_lanes/8_8_streams_summary.json
+   statuspassed;proof.config[8,8,true];1255bits;prunedgold0/gate0.
+   Input artifacts under .../8_8_1/proof/:
+   native.sv, reference.sv, hierarchy.json, extract.ys, boxes.json, flat.json,
+   flatten.ys, steps.json, miter.sv, proof.ys.
+   steps.json recordedSHA abff5e05f52407a5d787caa436e99a7ccc74147f12eb5e5e3f99f08b7a41c36d.
+   proof.ys recordedSHA f6d12ed0a4cf352880588a29b27866c95ea66cad1da4cef4db5379689b9c64e7.
+   Historical solver uses equiv_simple -short -undef. This alone is NOT a total
+   definedness or initialized trace theorem.
+2. build/sparkle/vpu_datapath_qualification_decoder_reachability.json
+   lanes[] contains the exact1255-bit record and authenticated terminal log:
+   .../8_8_1/proof/proof.log SHA
+   0e730560e7ea0634ea74a1a954f117827fd4b3a9771ee625a089f7d1dc0fdbb3.
+   Authenticate qualifier through production proof closure; don't claim missing
+   historical logs or invent hashes. No fresh replay solely for missing provenance
+   appears necessary once this chain is mechanically authenticated.
+3. build/sparkle/formal_vpu_datapath_lanes/scope.json
+   Exact proof reference strips unique case->case in extracted elementwise
+   section, preserving first-match simulation and strengthening undefined
+   multi-hot synthesis states. Actual RTL remains unchanged.
+4. build/sparkle/formal_se_composite/vpu_mw21_summary.json
+   configuration[8,21,3,2], externaltrue,17727bits,arithmeticnull.
+   Receipt SHA is recorded in authenticated lane inputs:
+   13e86a4c99a48050e063c50c8b80a8a8c907004378b5317415d309df6ab4b566.
+   .../formal_se_composite/8_21_3_2/{hierarchy,flat,steps}.json and proof.ys
+   contain complete EXT1 transition. Control-register initializers use identity
+   microcode, NOT all-zero; retained constant fields need exact implication audit.
+5. tools/prove_sparkle_vpu_datapath_lanes.py: source extraction, all25 cuts,
+   normalization of gold i_/o_ root names and composite lane word reversal.
+   tools/prove_sparkle_se_composite.py: retained composite aliases and port word
+   reversals. Reconstruct independently; bind exact complete original source
+   anchors/params/functions and actual packed/unpacked connection directions.
+6. Existing initialized FP families and consumers, decoder initial receipt
+   build/sparkle/vpu-decoder-initial-second/summary.json, and production decoder
+   binding are supporting premises. Decoder actual startupm0=0/m0d0x101 closes
+   prior reset-only invariant; it is not an after-fill assumption.
+
+Proof-boundary gaps and recommended decomposition
+-------------------------------------------------
+The composite is Mealy, not Moore: st_sel[0] directly depends on in_v/ret_r;
+st_a/b/c depend on current operands and later stage st_y. Therefore copying the
+SE-tail all-leaf-Moore composition unchanged would be unsound. Two sound options:
+A. Recommended: flatten ONLY concrete EXT1 composite into bank parent while
+   retaining24 FP boxes. Candidate parent18982bits, no mutable RAM expected.
+   All external c_uy/c_qy stay real unrestricted inputs. Actual FP y cones are
+   Moore under complete FP relations, so parent all-D/outputs/child-input equality
+   and concrete leaf preservation compose noncircularly. Avoid flat FP arithmetic.
+   This requires one new complete parent proof; old separate lane/composite
+   graphs, source recipes and transitions remain authenticated reference evidence.
+B. Reuse separate parents only after proving complete port dependency order for
+   both original/native composite and bank. Dependency union must be acyclic;
+   st_y stage0 is registered FP result, stages1/2 external tail results. Do not
+   assume all composite outputs equal before proving its actual current inputs.
+   This option saves SAT work but adds a nontrivial Mealy composition certificate.
+
+Independent initialization:
+- bank1255 full field equality, with eight nonzero rc initializers;
+- composite17727 full equality plus all original/native defined/undefined alias
+  constraints and constant fields; native identity microcode values are actual;
+-16mul2 conditional-sv complete relations and8add4 equality, including startup;
+- every undefined native bit quantified universally, equal reference witness
+  existential where reference unspecified. No reset/enable/fill restrictions.
+- Any added/pruned raw state must be explicitly proven irrelevant to ALL external
+  outputs and ALL retained D, as done for Max; never silently drop it.
+
+Original unique-case applicability must be discharged explicitly. Production
+short lanes have two unique cases at rtl/vpu/otpu_vpu.sv:778/788. Long-lane cases
+are unelaborated in exact stream config. Pin actual reference extraction and
+prove normalized-vs-unmodified output/next-state equality under exact onehot0
+function decoder invariant, bound to the initialized143-bit decoder theorem.
+Do not add an unrelated mask, legal-command assumption, reset, or warm-up.
+Normalized all-input bank theorem may remain broader, but final original RTL
+claim must cite this reachable decoder premise from cycle0.
+
+Strong proof recipe and negatives
+---------------------------------
+Rebuild complete original/native parent with actual state cuts, preserving all
+alias init before edits. Prove all observed output/next-D/child-input bits defined
+for arbitrary defined current state and inputs (explicit X model); then strict
+full equality. Historical -undef success does not replace this obligation.
+Use the proven Max/diagnostic approach: -enable_undef -set-def-inputs; any-undef
+UNSAT query, followed by -prove (never -prove-x). Do not use opt_expr/setundef
+that can erase actual X before checking. Map ROMs with exact contents; audit all
+retained state after mapping. Test actual output bit inversion, actual en/hold
+fault, and actual D->X definedness fault with rc1+concrete models. A pure native
+initializer change may still admit a reference witness; treat it as source
+applicability guard, not fabricate an equivalence counterexample.
+
+Before executing: root review inventory, exact reference extraction/onehot bridge,
+complete composite init mapping and optionA/B choice. A full checker is not yet
+staged because these are genuine unresolved obligations, not routine parser
+changes. First bounded work should inspect authenticated pre-cut graph inventories
+and build independent mapping/init receipts. Guard counts are not proof evidence.
+No installed source/tools changed. Current runtime/production assertion work is
+independent and remains governed by its own receipts and runtime qualification.
+
+Option A follow-up (still unexecuted)
+------------------------------------
+OPTION_A.txt now specifies exact combined generator/extraction, complete graph
+and init audit, original diagnostic limitations and checked-bit inventory.
+GenerateTemplate.lean is staged. composite_inventory.py provides all256 named
+source fields/17727bits and source initializer witness, plus all-alias validation
+component. test_composite_inventory.py is unexecuted. UNIQUE_CASE_BRIDGE.txt
+provides exact branch-hit sets, mutual-exclusion argument, actual initialized
+143-bit decoder premise and precise multi-hot countercondition. Source-level
+mapping is now complete; no mathematical blocker to the synthesized component
+product was found. The remaining executable driver work is authenticated graph
+extraction/audits/proof assembly, with all counts provisional until actual audit.
+Original composite simulation diagnostics are a concrete additional obligation;
+see collision and alignment expressions in OPTION_A.txt. They must not be
+folded into an arbitrary-input functional theorem as hidden assumptions.

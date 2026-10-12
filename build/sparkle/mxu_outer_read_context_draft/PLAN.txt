@@ -1,0 +1,117 @@
+UNEXECUTED design: exact outer memory read-context audit
+
+Confirmed diagnostic, not conjecture:
+mxu-outer-read-equation-diagnostic-first.log locates gold mk port4 bit0,
+original RD bit13942, original high address bit14040 / mapped17110. Expected
+lookup is mux(actual low-two-bit lookup, X, high). Mapped omits the high guard.
+The mismatch concerns running-max sort keys. Existing failed artifacts and
+checker remain unchanged. Neither head.M<=4 nor mx_go&&mxm[k] implying an in-range
+index is an input assumption. mxm is registered state; the source assertion is
+not a theorem, and unrestricted commands may defeat a reachable-state bound.
+
+Concrete complete-context checker design:
+1. Authenticate the exact archived cut/mapped/steps/state_mapping/ram_induction
+   and all present source/model inputs. Historical generating-source closure is
+   absent: this remains an archived-graph experiment, not current production.
+2. Preserve the complete original cut graph's wire identities and every alias,
+   port, ordinary cell body and initializer. Replace the exact eleven collected
+   register arrays by explicit per-word Q/D and finite mux equations. Use all
+   original read address bits (upper absent words give X), complete write masks,
+   unique actual constant write addresses and unchanged common clock. Preserve
+   a single original RD wire/whole word and all fanout; never make fresh values
+   at each consumer. Zeroing memory is forbidden.
+3. Reconstruct from ORIGINAL cut endpoints, not global inverse mapped-ID
+   substitution. Multiple original reads can map to a common low-bit alias
+   after high-bit truncation. Rewiring that one mapped ID cannot recover which
+   original consumer used which address. Original bit IDs retain that identity.
+4. Pair complete physical state coordinates: original nonmemory DFF Q plus all
+   33 words/2,297 bits against mapped Q, total7,436 before quotient. All Q and
+   external input coordinates are independent common defined values. Arithmetic
+   and eight external-RAM read boundaries share exact semantic pin identities.
+   Preserve all1,508 omitted Q in reconstruction; independently recheck their
+   quotient before any reduction. Existing mapped-only quotient is insufficient.
+5. Partition complete observed vector into all public/boundary output bits and
+   all5,928 retained D coordinates. Match by semantic port/field/index, not raw
+   integers. Use reviewed exact per-bit mux cones, complete generic cells and
+   disk indices. No new internal cuts, no high-bit/command range assumptions.
+6. Query strict complete definedness and explicit-undef equality of every D
+   coordinate first, with independent internal unknowns in the two graphs. If
+   all D are defined and equal, equal two-state Q can induct without inventing an
+   abstract-undefined state relation. A single retained-D failure stops that
+   argument; output preorder cannot repair it.
+7. Query strict complete output equality as the contextual-unobservability
+   alternative. A counterexample must report semantic port/index, full shared
+   inputs/Q, actual mk read address and active write masks. Preserve actual
+   log/model and status as a counterexample, not an extraction/solver failure.
+   No expectation that this will pass: mx_go/mxm/mx_i are unrestricted state,
+   and unrestricted head.M need not keep active reads inside MCOLS.
+
+Directional alternative (only after precise model choice/review):
+- Preserve the same strict complete D invariant from step6. For observations,
+  require every reference-specified coordinate to be defined and equal natively;
+  native output may be more specified where the reference is genuinely unknown.
+  This is a NEW theorem scope (specified-bit trace refinement), not bit-identical
+  outputs, raw SatGen relation identity or raw event-region SV equivalence.
+- Check the COMPLETE original and mapped observation context. A local X->word
+  refinement is not congruent through eqx/case-X or other undef-sensitive logic.
+  Do not assume monotonicity from syntax or aggregate output totality.
+- Before adopting any per-coordinate predicate, specify and validate its exact
+  value/mask semantics against pinned SatGen sources and small positive/negative
+  models. One reference RD whole-word variable remains shared across every fanout;
+  no independent witness selection at each output. If the intended theorem is
+  existential concrete completion rather than specified-bit refinement, the
+  checker additionally needs one simultaneous vector witness for all outputs
+  and D—not merely separate satisfiability or per-bit permission predicates.
+- If original D can be unknown, ordinary equal-known-Q induction is unavailable.
+  Required next work is either an explicit relation to abstract original state,
+  closed under all transitions, or a coherent existential concrete next-state
+  witness. Do not claim such a relation from output preorder checks.
+
+Independent useful next stage:
+An honestly named initial-ownership certificate can establish original full
+array/DFF initial predicates correspond to mapped physical Q and establish the
+mapped-only5,928/1,508 retained quotient, while recording all original read
+transition differences as pending. It must NOT claim original-memory quotient,
+original-to-mapped transition refinement, initialized outer trace, or current
+production applicability. A new driver/status separates this from the failing
+stronger read-equation checker; no permissive flag is added to old evidence.
+
+DESIGN REVIEW ADDENDUM BEFORE IMPLEMENTATION
+
+The initial padded-read/write-mux proposal is not called an exact original
+memory model until a noncircular defined-control lemma is discharged. Pinned
+simlib.v $mem_v2 indexes memory with full RD_ADDR and uses procedural if(WR_EN).
+Undefined selectors/enables may differ from mux merging, independently of the
+already observed high-bit truncation. Every actual RD_ADDR and WR_EN bit must
+first be proved defined, without assuming in-range addresses.
+
+Bootstrap model for that lemma:
+- Preserve original ordinary cells, ports, wire IDs and read fanout. Remove only
+  the exact eleven memory drivers, and give each DISTINCT original RD output bit
+  one mux(value, X, mask). The value and mask are separate arbitrary defined
+  input bits. No mask is constrained and no duplicated input is introduced at
+  consumers. Original aliases of a read bit share one mux output.
+- This represents all four SatGen value/undef pairs: mask0 selects either
+  defined value; mask1 forces undef and undefGating leaves the output value free.
+  Different original read bits may vary independently, a conservative weakening
+  of real array correlations. It is solely an auxiliary universal proof cut.
+- A separate tiny pinned SatGen coverage audit must demonstrate the two defined
+  and two undefined value representatives. No opt_expr/setundef or other
+  undef-simplifying passes are allowed. Bind exact schema, every original read
+  driver and every unchanged consumer, plus unique drivers/full DAG and a
+  source-pinned total-model-extension audit for every remaining primitive.
+  Without extension, an UNSAT result could be vacuous and is not accepted.
+- Prove all complete original RD_ADDR and WR_EN vectors defined for every
+  assignment of ordinary input/full Q and read value/mask inputs. This result
+  holds for actual memory read values regardless of correlations or undefined
+  coordinates. It is not circularly established in the unproved expansion.
+- Only a complete authenticated bootstrap receipt can qualify the main finite
+  memory expansion, where ALL read cuts are removed and actual arrays restored.
+
+State induction hardening: keep every7,436 Q per side. Begin by attempting
+complete7,436-D definedness on each side, retaining equality obligations on the
+5,928 related Q/D coordinates. The1,508 omitted states are not silently assumed
+to stay defined. If any omitted D can be undefined, stop this full-two-state
+induction route: original-context quotient and unknown omitted-state/control
+closure require a separate proof. Matching totality of aggregate public outputs
+alone cannot establish these internal control/state premises.

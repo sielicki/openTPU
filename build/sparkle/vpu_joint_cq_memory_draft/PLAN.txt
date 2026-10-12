@@ -1,0 +1,127 @@
+Status: source-only design, following the completed conditional679-D theorem.
+No new memory graph transformation, control proof or memory relation has run.
+
+Completed prerequisite
+----------------------
+vpu-joint-physical-proof-first/summary.json
+SHA70a64fce832358159a7625b40389fb1864faac60ce404b797beeb553b9c49c59
+proves all679 actual selected flop D and1,256 alias pairs under its exact shared,
+defined boundary (1,935 pairs/121 partitions). This still cuts the240-bit hc.
+This stage must discharge the queue provider, not assume that hc is arbitrary
+and simultaneously claim it equals the real memory read.
+
+Source facts, not substituted transition equations
+-------------------------------------------------
+Original otpu_vpu has cmd_t cq[2], cq_h1,cq_n2. hc=cq[cq_h]. In the unchanged
+sequencing process, reset clears cq_n/cq_h but does not assign cq memory. In
+the nonreset branch, start writes cq[cq_h ^ cq_n[0]] <= cmd before the blocking
+qn update and optional pop. The write is not gated by en, rdy, queue occupancy,
+or can_begin. Simultaneous acceptance and pop are legal in the proof domain.
+No new legal-traffic, sampled-reset, ready/valid or onehot premise is permitted.
+Actual memory access cells, not these handwritten equations, are proof inputs.
+
+The original storage inventory already identifies the complete cq memory as
+two240-bit words. The joint reference has actual mapped cq[0]/cq[1] Q/D from
+the unchanged process, and its all1159-state native relation passed. We still
+need actual memory parameters/ports/initializers and the physical bit-order join.
+Do not infer a parameter vector or absence of memory init solely from RTL text.
+
+Next bounded schema probe (no proof claim)
+------------------------------------------
+diagnose_cq.py binds the completed679 receipt and exact original/joint owning
+receipts, source and database identities, then inventories every actual memory
+access/init cell referring to cq, full params/directions/connections and memory
+owner, all480 gold Q/D/initializer aliases, original hc/cq_h/cq_n/cmd/rst/start
+aliases and immediate driver identities. It preserves unknown literal pins.
+Missing/multiple access ports are reported; no assumed single-port lowering.
+No root-wide flattening or memory_map. All large reads go through the gate.
+
+Stage A: actual control semantics and memory projection
+------------------------------------------------------
+After measuring the actual schema, collect every memory clock/read/write/reset/
+enable/address/data cone from original owners. Retain their real buffers and X
+literals. Use the existing shared boundary, including the679 selected state,
+but REMOVE provisional hc from any cone that would depend on the same memory
+read: data dependence must be explicit, never a circular provider premise.
+For the source-expected write side, dependencies should be rst,start,cq_h,cq_n
+and cmd only; verify this from actual graph instead of trusting the expectation.
+
+Prove actual read address/control knownness and actual write mask knownness for
+ALL shared defined source inputs and current state, not just on a sampled reset.
+Process lowering may leave ADDR/DATA as X when write EN is zero. Do NOT demand
+unconditional write-address/data definedness and do NOT coerce disabled X pins.
+Prove: every actual write EN bit is defined; if any EN bit is one, address is
+defined and selects an in-range word; for every enabled data bit, DATA is defined.
+Read-enable/reset/clock parameters must be the measured exact schema. For this
+asynchronous two-word head, prove the actual address is defined and in range;
+if schema differs, revise the proof obligations before lowering.
+These are theorem conclusions from actual cones, never extra query assumptions.
+Retain arbitrary combinations of rst/start/en and all cq_n bit patterns.
+
+Stage B: exact two-word memory lowering and480-D/240-read proof
+-------------------------------------------------------------
+Extract an isolated actual memory graph containing the original cq owner and
+ALL its access/init cells plus their complete actual providers. Preserve full
+word/data/address/mask order, parameters, clock identities and initializers.
+No unrelated original state/child owner is erased from its existing inventory.
+Prefer the pinned Yosys memory_map implementation on this tiny isolated graph,
+with a strict before/after certificate for exactly two240-bit words. Pin full
+memory_map.cc plus relevant Mem construction/init handling and current model
+closure. No optimizing pass that strengthens undefined semantics is allowed.
+
+The certificate must justify the actually reached specialization of the memory
+map, including start_offset, address extension/range, writer order/priorities,
+read transparency/collision/reset behavior, initialization and per-bit mask.
+Do NOT assume simlib gives an executable standalone $memwr semantics: its split
+memory primitives are non-simulatable without collection. Use actual Mem semantics
+and exact observed map, with a separately reviewed specific mapping argument.
+
+If Stage A proves the control conclusions above, the special-case mapping may
+use them in its proof argument: disabled DATA/ADDR X are unobserved because the
+known write mask selects hold for every word/bit. Preserve actual X branches in
+the emitted graph and prove all mapped D/read totality/equality with explicit
+undef. No blanket assumption that controls were known. If Stage A fails, either
+prove an exact arbitrary-undef memory relation preserving the countercondition,
+or report it; do not silently adopt two-state memory semantics.
+
+Bind original word index0/1 and each of240 bit positions to the actual gold
+cq[0]/cq[1] Q aliases. Account for offset/upto and packed command field order.
+Freeze all480 mapped D pairs +240 actual read bits and boundary aliases before
+bounded partitions; prove definedness and strict equality against actual gold
+memory-D/head cones with the same shared480 memory Q inputs. The read theorem
+must include the actual original hc buffer aliases, not only the mapped read pin.
+It must show that the existing provisional hc relation can be replaced by this
+defined/equal state-only memory read. Do not retain hc as a defined external cut
+inside this read theorem.
+
+Both sides' read is Moore relative to memory Q and cq_h, which are current state.
+Prove actual cone dependency/clock/driver/DAG properties. Then equal read outputs
+discharge the679-D theorem's hc boundary without circular dependence on D or
+current command acceptance. Joint feedback still preserves original blocking
+qn order, which is already covered by the679-D theorem.
+
+Initialization and practical scope
+----------------------------------
+Audit every original cq initializer owner/alias and actual mapped gold Q init.
+If original memory is unspecified and native words are defined, use the explicit
+existential original-initial-state witness equal to native words. Do not zero-fill
+arbitrary original memory, claim independent arbitrary initial states equivalent,
+or require reset to initialize contents. If both words are unspecified, share
+arbitrary word values under the existing relation. Check all679 original/init
+constraints too before publishing a combined initialized1159-partition claim.
+
+Completing480-D/read closes the memory/hc provider gap. It does not automatically
+close source-packed external boundary layouts, other actual producers, all2455
+outward crossings/public observations, or the eventual4231-state whole-control
+composition. Report remaining flags independently.
+
+Actual faults and resource policy
+--------------------------------
+Mutate the actual original write address selector, a write-data bit/enable, and
+the actual read word order, before isolation/lowering. Require concrete SAT
+counterexamples for the affected obligations. A reset-write fault that newly
+writes while rst=1 must have an rst=1 witness. No miter-only fault. An initializer
+change on an unspecified reference need not be semantically wrong, so use a
+source/receipt applicability guard rather than fabricate an init counterexample.
+All extraction/transformations/proofs use the root's bounded gate; no full-root
+memory mapping. Preserve immutable stages and resumable complete query manifests.

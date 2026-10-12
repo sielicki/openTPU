@@ -1,0 +1,31 @@
+New source-only helpers; no author execution, no passed-file changes.
+
+physical_slices.py implements only exact one-owner buf/mux/pmux coordinate slicing,
+with original bit identities, full selector vectors, branch-major B indexing and
+per-import occurrence records. Other primitive cells remain intact and explicitly
+uncertified. This is not yet complete graph closure/DAG/679-D proof orchestration.
+
+slice_model.py compares complete reviewed SatGen cc/header snapshots (copied from
+the current acquired source) and provides independent scalar/vector finite
+value/undef relation checks. Source equality deliberately does NOT set executable
+source linkage or formal kernel certificate flags. The eventual driver must bind
+the authenticated acquisition/build closure, executable, actual input artifacts,
+source snapshots and this implementation. No receipt can infer that from fixtures.
+The wire/token model is after SigMap. The future graph driver must independently
+establish the actual JSON-to-post-SigMap identity (or absence of extra aliases).
+
+Ten unittest methods (with schema/primitive subcases) cover real incorrect branch
+indexing, omitted unknown selectors, wrongly identified undefined buffer outputs,
+retained wire vs literal-X import identity, complete source drift and dimensions.
+The exhaustive two-coordinate pmux fixture has 65,536 assignments; it compares
+sets of allowed output value/undef pairs rather than arbitrarily chosen undefined
+values. It is supporting finite validation, not an arbitrary-width proof.
+
+Per reviewer guidance the PLAN no longer claims cloning literal-X selectors must
+change observable behavior. One-owner/one-import provenance is still mandatory.
+
+Root-only bounded guard command after independent review:
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_joint_physical_proof_draft -p test_physical_slices.py -v
+
+Expected resource scale: small pure Python fixtures/source snapshots, no netlist
+or solver, 256 MiB cap. No overall proof status or production behavior claim.

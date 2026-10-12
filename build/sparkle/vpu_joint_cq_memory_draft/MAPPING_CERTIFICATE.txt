@@ -1,0 +1,38 @@
+Independent semantic check still required before the mapped-state flag may become
+true. The strict two-word Q/D owner audit alone is structural, not semantic.
+
+For the measured specialization the abstract memory law is exact and finite:
+at each positive write clock edge, for word w in {0,1}, bit i in {0..239},
+  next[w][i] = (EN[i] && ADDR == w) ? DATA[i] : current[w][i].
+The asynchronous read is current[READ_ADDR]; there is no output register, reset,
+transparent/bypass path, multiple-writer priority, or initialized word. These
+facts are all checked by the complete measured memory/access schema.
+
+Build an independent law graph from that complete schema and the ORIGINAL
+actual control/data provider pins, with the same480 current word inputs. Compare
+every480 law next-state bits and240 law read bits against the actual memory_map
+output graph (including original hc buffers), with strong totality plus strict
+equality. Keep all actual provider X literals; do not set write ADDR/DATA defined
+as new primary inputs. The previously proved482 totality observations establish
+the enabled knownness conclusions from the actual source domain. A disabled X
+address/data must remain present in both actual/law graphs and be masked by the
+known zero mask, not replaced with arbitrary known data.
+
+This is stronger than merely comparing two invocations of memory_map: its
+reference is the measured finite one-writer memory law, independently constructed
+from actual original access parameters/pins. Pin actual memory_map.cc and Mem
+construction/init source as provenance and to bind each address/word alias. Do
+not claim generic memory lowering correctness or arbitrary-undef-control parity;
+the exact actual-domain knownness theorem discharges that potential difference.
+
+Use distinct actual-memory faults: swap mapped word address identity, change
+the original actual write selector/data bit, add a write during reset, or reverse
+read words before constructing the actual side. Keep the law/reference side
+based on the unmutated authenticated source. At least the selected planned
+negative cases must yield concrete models; mutation validation is not a substitute
+for all720 positive observations.
+
+Only after the independent law-to-actual-map proof may the actual-map-to-joint
+480-D/read proof publish a memory semantic relation. Then state-only head equality
+discharges the679 theorem's provisional hc cut, using the shared cq_h coordinate.
+Initialization and complete outward-observation coverage remain separate stages.

@@ -1,0 +1,37 @@
+SOURCE ONLY; no guards, imports or driver execution by author.
+
+Driver requalifies all positive query artifacts and reconstructs exact graphs,
+including complete control knownness, independent memory law, every679D and
+480D/head/alias partition. Query paths and immutable storage paths stay separate.
+No solver runs or re-extraction; one graph is retained at a time. Historical
+owner closure is immutable, full implementation identities are direct CQ inputs.
+All newly imported implementation files are frozen as current checker inputs.
+
+Full initial witness quantifier is deliberately strong: every defined gold
+startup must have an original witness. Original defined selected bits therefore
+must already be fixed identically by gold. Unspecified cq words are shared
+arbitrary. Original whole-root alias constraints, including complement aliases,
+are reconciled together. Any off-state initializer fails rather than being
+ignored. No arbitrary undefined-valued initial-state equivalence is claimed.
+
+hc discharge walks the actual raw->normalized buffer chains. Exact pinned
+SatGen buffer source/model supports the reverse implication defined Y =>
+defined equal A; both solver head equality and Moore dependency audit are
+requalified. It never erases buffers or equates unknown buffer values.
+
+External/state overlaps remain explicit per-cycle environment conditions.
+State/state matches additionally must be exact1159 relation pairs. This
+conditional trace relation does not establish actual producer or packed layout,
+outward crossing observations, whole4231 or concrete Lean-kernel instantiation.
+
+Root commands (not executed):
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_joint_initialized_composition_draft -p test_composition.py -v
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_joint_initialized_composition_draft/check_composition.py --work build/sparkle/vpu-joint-initialized-composition-first
+
+Expect six focused guards. Defined constant/external or constant/state boundaries
+remain explicit per-cycle equality contracts; undefined constants and conflicting
+constant/constant pairs reject. No actual producer identity is inferred.
+Driver uses streaming archive and SQLite 8MiB cache,
+one paired netlist at a time; default3GiB gate and serial execution. No new
+compilers/solvers. Failure revokes conditional initialization and hc-success
+flags before inherited per-artifact preservation/checkpoint retry.

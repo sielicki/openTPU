@@ -1,0 +1,33 @@
+DRAFT ONLY: check_composite_assemblies.py, composite_assembly.py and
+ test_composite_assembly.py. No execution, imports or installed-source edits.
+
+Consumes exact installed bridge 27b77270... and baseline aa3b6b26..., plus completed
+se-tail-assertion-assemblies-third/summary.json SHA15534eb8506e8010dc6ed0f1ca5c36cb625af69d35dfd23d47e0d79472177e5c.
+Historical closures are archived before new build mutates linked objects.
+Generate exact Gen1/Gen2/CLI parameter vectors; compile all complete physical ABI
+assemblies; separately require actual CLI byte-concatenation equality. Authenticate
+unchanged ordered support/vendor source units, exact SYNTHESIS/YOSYS defines and
+historical complete top parameter overrides from original hierarchy manifests.
+
+Normalize ONLY original ABI observer block (if wrapper exists) and new core block,
+at their exact named module ends, with token-identical predicates, actual ROM
+functions, messages and guard. The allowed blocks derive from completed installed
+bridge and compiled baseline; independently replay old-wrapper stripping first.
+Whitespace wrapping is allowed inside the blocks; extra statements, modules,
+attributes, directives, support logic, instances and parameter changes fail closed.
+Compare every remaining token, entire module inventory/attributes and global/
+incoming directive contexts. Require actual reached composite module equal to
+qualified installed standalone core. No behavioral narrowing or traffic assumptions.
+
+Disk streaming copies assemblies and token streams. Only bounded diagnostic blocks
+are collected (256 KiB cap). Source/object/log/artifact preservation is recursive
+on success/interruption; explicit signal handlers suppress repeat interruptions,
+atomic incomplete checkpoints and archives retain available compiler artifacts.
+
+This is transitive complete-source correspondence under the same synthesis
+configuration, NOT fresh full elaboration, runtime or a new whole-VPU theorem.
+Previous complete runtime suite predates installed composite diagnostics; all
+new receipt fields keep current_runtime_qualified=false. Fresh program/composite
+runtime receipts and any checkpoint checks must follow. Four-state fixture remains
+unexecuted; old wrapper shortcut and new original return predicate differ for X,
+so arbitrary four-state event equivalence remains explicitly false.

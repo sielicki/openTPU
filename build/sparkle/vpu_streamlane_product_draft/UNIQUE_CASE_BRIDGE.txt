@@ -1,0 +1,56 @@
+Source applicability argument, not yet an executed certificate:
+
+Exact synthesized short-lane cases (rtl/vpu/otpu_vpu.sv:778 and788):
+ A. selector1, branch hits fh[V_COPY],fh[V_ABS],fh[V_FILL], explicit default.
+ B. selector1, branch hits fh[V_MUL],fh[V_OUTER],fh[V_ADD],fh[V_SUB],
+    fh[V_RSUB], (fh[V_RSUM] OR fh[V_RSSQ] OR fh[V_RDOT]), explicit default.
+ Symbol values independently from otpu_pkg: COPY8 ABS12 FILL13 MUL3 OUTER6
+ ADD0 SUB1 RSUB2 RSUM16 RSSQ18 RDOT19. All eleven symbols in B/A are distinct
+ within each case, and every symbol is a valid fh[19:0] index.
+
+Let H=unsigned m0d[27:8]. P=(H & (H-20'd1))==0. For any i!=j in0..19,
+P implies !(H[i] && H[j]); hence all branch hit groups in either case are
+pairwise disjoint. Explicit defaults cover H=0 and bits outside each case.
+Thus original unique case and normalized priority case select the same body
+for every defined operand bitvector under P. No special operand values or
+reset/fill assumptions are needed. Body equality is literal token equality;
+only the two unique qualifiers are removed in this exact active generate branch.
+Inactive long-lane cases562/636 disappear because NLL0; audit no long-lane
+instances exist in exact elaboration before relying on this fact.
+
+Mechanical certificate to stage under bounded gate:
+- Extract actual short-lane block with unique anchors beginning
+  '  for (genvar l = NLL; l < LANES; l++) begin : g_slane' and ending before
+  '  // ------------------------------------------------------------------ RMAX'.
+- Parse/validate EXACT two case selectors, case-label groups, explicit defaults
+  and all case bodies from the original source (reject nested or changed cases).
+  Pin package token values and exact source qualifiers. Generate a tiny proof
+  of disjoint branch hits for all20-bit H under P; assert no matched pair.
+- Separately compile both actual combined original-reference wrappers (unique
+  retained vs exactly removed), same common FP cut results/equal parent state.
+  Prove all output/D/cutinput bits defined and equal with '-set onehot0 1' on
+  the actual H expression. No other input or state restriction. This binds the
+  compiler lowering as well as the source argument. Partition if needed.
+- Parent normalized-reference/native theorem is unrestricted in current m0d.
+  Only the original-source applicability bridge carries P; it is supplied by
+  the real initialized decoder, not assumed externally for the whole design.
+
+Decoder premise identity:
+ build/sparkle/vpu-decoder-initial-second/summary.json
+ SHA96c7a82ade9bac51ea0aed04795c5b65d714a61a0d68f04248c73447ac8cc6dc.
+ Exact config8/2/true,143bits,m0init0,m0dinit257. Evaluator actual fdec of
+ m0[98+:8]. Its inherited proof step_ok proves fdec correspondence invariant
+ under arbitrary rst/en/ss_act/mi; onehot_ok proves P. Actual initial_ok proves
+ correspondence and P at power-up. Authenticate all385 inputs, proof commands,
+ terminal logs and exact production decoder module/edges using the installed
+ check_sparkle_vpu_decoder_initial_consumers.py pattern and current refreshed
+ assembly closure. Verify reached u_lanes.m0d and .m0 are exactly those decoder
+ outputs (no adapter or unrelated source), and shared clock/en semantics.
+ Until that edge and current production binding are authenticated, certificate
+ is a conditional component theorem, not whole-VPU startup equivalence.
+
+Precise excluded multi-hot condition: H[3]=H[0]=1 gives both MUL and ADD;
+choose x=1.0,y=2.0, c_s0=0,en=1,rst=0. Priority body selects MUL operands
+(ib=y,ic=-0), while a synthesized parallel-case don't-care lowering is not
+required to choose that body. We neither claim equality on these impossible
+initialized-decoder states nor hide them with -prove-x.

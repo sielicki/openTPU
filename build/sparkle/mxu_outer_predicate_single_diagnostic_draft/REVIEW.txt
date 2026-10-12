@@ -1,0 +1,23 @@
+Unexecuted read-only diagnostic for a future terminal single-bit timeout.
+Current predicate-D-second is still running; no terminal SHA or bit is assumed.
+
+Explicit --receipt/--receipt-sha/--lo are required; hi is exactly lo+1. Require
+the precise predicate-congruent coverage kind, revoked global proof flags,
+complete162 mixed baseline[0,2412) and gap-free proved new prefix to lo, with
+every new interval labeled predicate_congruent. Authenticate actual failed
+graph/manifest/query/log and its complete D observations, requiring real TIMEOUT.
+
+Authenticate the standalone fullgraph predicate certificate through the current
+receipt closure; require exact primitive/mux model, shared-source receipt, root
+domain and unpromoted scope. Its declared target digest AND actual archived
+target digest must equal the current full predicate graph's declared/closure
+digest. This diagnoses that representation only; it does not freshly requalify
+the original-to-shared proof chain or promote incomplete source status.
+
+Existing strict source-pinned signatures and candidate ranking remain unchanged.
+No comparisons become structurally known through whitelist expansion; literal
+X is never a shared choice. Actual arithmetic parameters/operand IDs/unknown
+dependencies are preserved, all candidate proofs false, cap24 explicitly marked
+nonexhaustive. No rewrite, solver, or repeated timeout query. Imported driver
+identities are pinned before work; standard checkpoint/archive and failure
+publication preserved. Completed previous diagnostics remain unchanged.

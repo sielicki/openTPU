@@ -1,0 +1,50 @@
+Unexecuted new generic whole-DAG sharing certificate. Prior helpers unchanged.
+
+This stage proves only an exact defined-expression transformation of the SHA-
+authenticated complete full-congruent graph. The old whole proof remains
+incomplete; its revoked lifting/congruence flags, old prefix and complete5928-D
+claim are not promoted. The later coverage driver must requalify those premises
+and the mixed ledger before transferring any new partition proofs to the one
+original graph. This checker performs no solver query or extraction/build.
+
+Authenticate the same actual Yosys binary/source derivations/NAR/SatGen bodies
+and finite deterministic rule set used by the independently reviewed sharing
+model. Original root inputs and0/1 start known. Every cell follows actual full
+DAG dependencies without assumed side isolation (prior semantic multiply
+congruence creates legitimate cross-side edges). A reviewed primitive's outputs
+become known from its known inputs, independent of whether a duplicate exists.
+
+Canonical keys contain complete type/params/signedness/directions, non-src
+attributes, ordered canonical input IDs, and every output width. Digest buckets
+only find candidates: exact complete record equality is required before merge.
+The earliest completed matching cell is permanent and never later removed.
+All output coordinates are mapped together to that cell; representatives are
+defined and have no substitution themselves. The whitelist admits only one
+output pin Y, but every vector bit is preserved. Unclassified/unknown cells
+and literalX outputs are never merged, including a mux with constant selector
+but unknown unused arm (the conservative knownness rule still requires both).
+
+Known-bit, expression, substitution and complete replay tables are disk-backed.
+Full graph/certificate emission streams owners/records; no expanded recursive
+expression trees are built. Every cell pin, port and alias is remapped while
+all other metadata remains intact. A separately ingested proposal must equal
+the expected complete owner inventory and every remapped owner. Independent
+fresh tables replay all rules/canonical decisions and emitted bytes exactly;
+the final shared graph gets a complete new driver/DAG/schema audit.
+
+This is original-to-shared model preservation: each merged output was already
+known and equal to its deterministic representative under every original
+assignment. Unknown choice values/fanout remain unchanged. No new input, cut,
+equality assumption, range premise or syntactic undefined-value replacement.
+
+Guards exercise: complete output/alias/root preservation; a diamond with an
+already cross-side multiply edge; deliberate digest collision; known outputs
+with no duplicate; signedness/order/independent-root mismatches; literalX and
+unknown-wire dependencies; unsupported known-looking primitives; mutated
+aliases, observations and roots; permanent representatives and complete replay.
+Late failures revoke the new sharing flag and preserve incomplete evidence.
+
+Root-only commands after independent review:
+source /tmp/opentpu-test-env.sh
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m pytest -q build/sparkle/mxu_outer_generic_sharing_draft/test_generic_sharing.py
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_outer_generic_sharing_draft/check_generic_sharing.py --receipt build/sparkle/mxu-outer-complete-D-first/summary.json --receipt-sha be2b2227e672306cdbf633253bce191cee263f50c3a819e7efcd3c661e31b41f --output build/sparkle/mxu-outer-generic-sharing-first

@@ -1,0 +1,60 @@
+UNEXECUTED SOURCE DRAFT. No tests, compiler, solver or actual graph audit run.
+
+Implemented:
+- outer_memory_context.py: original-ID auxiliary construction, complete state
+  inventory, exact shared read fanout, full controls and ordinary-D observations.
+- read_mask_coverage.cc: fresh actual SatGen model per each of the 16 possible
+  input-value/input-mask/output-value/output-mask assignments; expected 6 SAT,
+  10 UNSAT. Timeout is an error. No Yosys synthesis pass is used.
+- control_extension.py: source-pinned arbitrary-value/undef model extension
+  applicability audit for the actual outer primitive inventory; strict schema,
+  whole graph driver/DAG and no hidden initial constraints. Separate from
+  definedness; the tiny mask coverage check cannot replace this audit.
+- Pure guards for construction and extension applicability are drafted.
+- check_outer_control_definedness.py now implements the provenance/preservation
+  runner, exact historical RAM cut reconstruction and FP cut audit, compiler
+  before/after dependency closure, actual coverage execution, full model audit,
+  and one complete explicit-undef controls query. No partitions or dropped
+  controls. Actual graph models are released before SAT. This runner and its
+  guards are awaiting independent review; nothing has executed.
+  The lemma explicitly requires all external RAM/FP cut-return inputs defined;
+  it does not discharge child-output definedness or composed applicability.
+  Late failures revoke both theorem flags and retry incomplete publication once.
+
+Independent source review approved construction and coverage plugin. Extra
+outer primitive extension rules were reviewed; requested schema hardening is
+included. All successful ownership files and
+historical failed stronger read-equation artifacts remain unchanged.
+
+Required execution/review contract, now implemented by the draft runner:
+1. Preservation/provenance runner: explicit ownership receipt path+SHA; verify
+   its entire archived closure and expected scope; independently reconstruct
+   original flat -> eight-RAM cut graph and exact eight FP cut with original
+   declarations. Bind resulting graph bytes to authenticated historical cut.
+2. Authenticate actual Yosys source/binary/derivations and build configuration;
+   compile coverage plugin against those exact headers/library, pin compiler
+   and plugin bytes, archive all 16 actual row logs. Bounded single compiler,
+   no daemon. Load in that same Yosys binary. No raw event-region SV claim.
+3. Construct/bootstrap and authenticate complete ordinary + word Q coordinates
+   (7436), all original RD drivers and controls; run complete model extension
+   audit with the same pinned source. Preserve full graph/manifest before SAT.
+4. Query the complete RD_ADDR/WR_EN observation vector in one operation.
+   If the actual bounded query needs partitioning, implement and review exact
+   projections preserving original drivers, shared read cuts and dependencies;
+   no partition implementation or resource success is assumed here.
+   Query explicit-undef definedness with original input/full-Q/value/mask roots
+   defined. No assumptions on address, masks or commands. Archive complete
+   disjoint coverage and precise CEX if any. Never count ordinary-D output
+   totality as discharged by the controls-only query.
+5. Atomic initial/incremental summary, active artifact list before graph writes,
+   SIGTERM suppression and incomplete preservation; stream archive/hash; explicit
+   immutable resume path/SHA would be required for completed partition reuse.
+   This first version has one complete query and never reuses partial results.
+   Verify source/tool
+   closure at start and finish. Release parsed graphs before launching SAT.
+
+Only after all these premises pass may the finite original memory expansion
+claim its reviewed defined-control domain. Main context then restores arrays
+and removes all bootstrap read cuts; complete 7436-D definedness and retained-D
+equality remain obligations. Original quotient, original-to-mapped read bridge,
+outer trace, RAM/arithmetic composition and current production remain unproved.

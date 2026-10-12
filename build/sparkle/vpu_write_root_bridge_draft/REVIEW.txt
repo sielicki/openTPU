@@ -1,0 +1,29 @@
+Pending independent source review/execution. Actual root1722 bridge.
+
+One measured4x425 memory, one rising-edge writer and two distinct asynchronous
+readers. Preserve read CLK=X and every pin. Complete856 knownness observations:
+425 masks,4 read-address bits,2 any-mask-enabled write-address bits,425 per-mask
+enabled data bits. Disabled X pins unchanged; no new control root or assumptions.
+
+Isolate actual memory plus complete22 physical-control D,428 outputs and all
+rawaliases/provider cones. ReadDATA is temporarily a traversal stop only; both
+actual read cells restored before memory_map. Actual root22 Q remains a shared
+state domain alongside complete native1722 Q. Exact memory_map source/binary
+inherits pinned CQ closure, not a new generic compiler proof.
+
+Audit every retained provider/cell parameter/pin identity after mapping, all1700
+Q/D/commonclock, allwordinit owners, four complete ordered wordaliases and exact
+address-owner names. Fresh strong SAT independently compares mapped1700D+850
+read outputs to four-word per-bit masked write/read-before-write law, on actual
+provider pins. Both readers preserved separately even if their addresses match.
+
+Then compare all1722D+428 outputs+all raw input/state aliases to production-bound
+native graph. Width16 partitions fixed upfront, exact immutable partial query and
+mapping resume. Actual native wq0D flip/X and rst-dependent suppression before
+projection; reset suppression must produce concrete rst1 witness. No miter fault.
+
+Native raw extraction scope remains inherited from completed local write proof.
+Whole initialized4231, actual external provider equality and whole outward crossing
+closure remain false. Root owns simultaneous original initializer witness work.
+No added reset/fill/occupancy assumptions. Proof flags revoked on any failed final
+archive/cleanup. Passed helpers and proofs unchanged.

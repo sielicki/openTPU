@@ -1,0 +1,38 @@
+Measured actual schema (bounded diagnostic passed): one $memwr_v2 WIDTH240,
+ABITS1, PORTID0, positive common clock, empty priority mask; one asynchronous
+$memrd_v2 WIDTH240/ABITS1, EN1/reset0, unused CLK literalX, all reset/init dataX,
+empty transparency/collision masks. Memory2x240 offset0. No init access cells.
+Actual gold cq0/cq1 have no initialization aliases; no zero initialization assumed.
+
+First new helper cq_memory.py implements strict complete schema, a 482-bit
+actual-provider totality graph (240 mask +1 read address +1 enabled write address
++240 individually enabled data observations), and isolated actual-memory graph.
+It never constrains disabled address/data X. The masking muxes are property
+observers only; actual write pins remain unchanged in the isolated graph.
+It removes the240 provisional hc boundary before traversal. For head-cone
+collection only, actual read DATA is a temporary traversal stop, then its exact
+memory read owner drives those bits in the final isolated graph. No external
+head/read-data input remains. Original clock and state correlations are retained.
+
+Next integration steps before execution/claim:
+1. Authenticate the completed679 receipt, original/joint owner maps and current
+   implementation; rebuild exact boundary and strict memory inventory. Prove
+   the482 actual-control observations total with unchanged explicit-undef query.
+2. Run pinned memory_map only on the isolated original owner graph, no optimizer.
+   Audit actual two240-bit mapped Q/D/init and head relation; retain all provider
+   coordinates by port ordering and post-SigMap graph correspondence.
+3. Before trusting mapping, certify its exact measured one-writer/async-read
+   implementation from memory_map.cc and Mem parser/init source. Known controls
+   are conclusions of step1; disabled X pins still exist in mapped muxes.
+4. Pair every480 actual mapped D and240 actual head bits against actual joint
+   gold graph using shared queue words/current679 state and same external domain,
+   with hc removed. Preserve buffer alias observations and complete manifest.
+   Prove totality/strict equality in bounded partitions with immutable resume.
+5. Actual write-selector/data/reset-write and read-order faults require concrete
+   failures. Initialization witness and679 composition become separate explicit
+   receipts after the full mapping/provider theorem, not inferred from schema.
+
+The full driver has now been added in check_cq.py/cq_session.py, with independent
+law construction in cq_law.py and actual access faults in cq_faults.py. See
+DRIVER_REVIEW.txt for complete phases, scope, preservation/resume and root-only
+commands. Full-driver review/execution is pending; no semantic claim is made yet.

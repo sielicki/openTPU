@@ -1,0 +1,84 @@
+UNEXECUTED OPTION A RECIPE; all retained counts provisional until graph audit.
+
+1. Freeze immutable historical closure FIRST (archive-only HistoricalEvidence,
+   never mutable historical linked objects); separately pin current Lean sources,
+   imported .olean/native link closure, RTL, Yosys/Slang and exact fresh scripts.
+   Historical lane receipt and terminal log paths/hashes are in PLAN.txt.
+2. Compile GenerateTemplate.lean at exact8/2/true. Independently generate exact
+   current VpuDatapath.toVerilog8/2/true. Compare full lane/composite/FP module
+   tokens, attributes and incoming directives. Compare lane against historical
+   8/8/true only after this concrete generation; reject any module difference.
+3. Reconstruct reference wrapper with authenticated reference(8,2,True) recipe
+   from prove_sparkle_vpu_datapath_lanes.py. Independently check unique anchors,
+   complete extracted original bodies/functions/types, exact parameters below,
+   and packed/unpacked lane assignments. Do not treat helper hash as source bridge.
+   Wrapper parameters: LANES8 CL2 AW20 CBW5 LM2 LA4 SL7 NVF20 RL8 NSLOT10
+   NSX1 NCL8 NLL0 C8=1. Original RMA=(RL>=2+LM+LA)=1.
+   Composite reference instance must be LANES8 MW21 NS3 HA2 EXT1. Check actual
+   elaborated instance parameters/directions and source branch, not inferred names.
+4. Exact extraction script, with fresh-path placeholders replaced:
+   read_slang --keep-hierarchy --top gold rtl/top/otpu_pkg.sv rtl/vpu/otpu_fp.sv rtl/vpu/otpu_fpipe.sv rtl/vpu/otpu_se_comp.sv REFERENCE
+   read_slang --keep-hierarchy --top otpu_vpu_lanes_sparkle NATIVE
+   rename otpu_vpu_lanes_sparkle gate
+   proc
+   write_json HIERARCHY
+   Save original all-alias initializers before graph edits. Authenticate all actual
+   reference/native FP definitions and their 16mul2/8add4 instance edges; check
+   latency/padding and complete concrete graph correspondence to FP receipts.
+   Blackbox ONLY these FP definitions in a separate file. Do NOT blackbox either
+   otpu_se_comp or otpu_se_comp_sparkle. Reject extra opaque cells/parameters.
+5. Flatten script:
+   read_json FPBOXES
+   flatten -noscopeinfo gold gate
+   memory_map
+   opt_clean
+   write_json COMBINED
+   Deliberately no opt_expr or opt -full before definedness. Preserve literal X
+   branches and process flags. Unknown actual buffer cells use audited local
+   identity normalization only. Reject mutable memories; if discovered, retain
+   every bit and arbitrary initial contents and revise inventory rather than zero.
+6. Exact FP cut names remain g_slane[N].u_ma.u_m/u_c/u_a and
+   laneN_slot0_ab/ce/sum. Audit actual type, clk/en/a/b/y directions+widths,
+   unique drivers, no cut result overlap or primary-input alias, common posedge
+   clock. Introduce 24 arbitrary32-bit results; check all24*65 operand/en bits.
+   Do NOT insert composite word reversal adapters: composite is now actual
+   internal wiring. Its existing packed/unpacked source connections are retained
+   and flattened. Only root reference i_/o_ prefix normalization is required.
+7. Map39local fields +256composite source fields (inventory.py and
+   composite_inventory.py); expected source18982bits, then independently inventory
+   every raw Q/D, clock and all initializer aliases on BOTH graphs. No pruning.
+   Source inventories predict exact17727composite bits, but preclean graph may
+   retain redundant constants/buffers/additional raw state: if so compare actual
+   complete Q/D, not selected source aliases. Never erase extra state based only
+   on historical retained count. Separately prove irrelevance to every D/output
+   before any justified removal; otherwise enlarge state relation and witnesses.
+8. Preserve all3885 external outputs +18982 next-D +1560 FP inputs/en =24427
+   candidate checkedbits. Prove all defined under arbitrary defined equal current
+   state and external/cut inputs using explicit undef encoding. Then strict full
+   equality; no -prove-x/-undef don't-care equality. Partition checkedbits if
+   needed but exhaustive disjoint union must equal complete output inventory.
+   Prove FP leaf actual outputs are state-only on both sides, compose initialized
+   full conditional-mul-sv/full-add relations. Product candidate22510bits.
+9. Real production mutations: external output inversion, actual lane enable/hold
+   inversion, composite actual D->X. Fresh attempt dirs, require rc1 and concrete
+   JSON model of falsified property; never accept generic process failure.
+
+Initializer source witness (no sampled reset):
+  All256 composite native declarations are defined. Identity control is
+  (0x80000000<<32)|(0x3f800000<<64)|(1<<97)|(2<<101), 105 bits.
+  uco0/uco1/uco2/uc_rt take this value. All other fields zero. Reference source
+  has no register initialization declarations; original delay implementation and
+  elaborated alias init must still be checked before calling it unconstrained.
+  vpos/cpos/ret_r reset behavior must not be confused with a power-up constraint.
+  Eight local rc initializers remain 0x80000000; local other state zero.
+
+Original synthesis/simulation boundary:
+  Preserve exact reference `ifndef SYNTHESIS diagnostics in source evidence but
+  this product proves synthesized outputs/state. Original composite has extra
+  fatal predicates absent from native: !rst&&en&&in_v&&ret; !rst&&(ret !=
+  (lp_v&&!fin)); and per-stage output control alignment checks. These are genuine
+  diagnostic-parity obligations, not reasons to restrict arbitrary product inputs.
+  For example rst=0,en=1,in_v=1,ret=1 triggers original collision diagnostic.
+  Product equality can still hold on that input; do not label it full simulation
+  parity or silently assume collision freedom. Separate reachability/observer
+  checks and native diagnostic emission may follow, as for SE-tail.

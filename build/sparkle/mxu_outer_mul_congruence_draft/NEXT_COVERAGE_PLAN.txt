@@ -1,0 +1,108 @@
+Plan only, unexecuted: complete retained-D coverage on one original paired graph
+
+Completed immutable premises
+  Partition second receipt d960990dea611a96ef883f8c77649c48332f7ee357ba90dd9455f2ba1de4be0a:
+    149 original-graph successful intervals, disjoint union [0,2249).
+  Operand receipt 99c865a699bcc2263c27c033f2363a7e5cb002a514b1f2e01e8fdd0672e7596e:
+    all128 actual operand coordinates defined; all64 ordered pairs equal;
+    original shared roots and independent unknowns; two actual negative controls.
+  Congruence receipt 5fb31c8996da9419abef7cb24dc440a021e967d9c48a2ceb4bb1d7e9ae3069ac:
+    all32 multiply Y coordinates substituted; exact D[2249] mismatch UNSAT.
+  Remaining complete interval is [2250,5928), exactly3678 coordinates.
+
+1. Establish one original graph identity before combining any results.
+   Authenticate all three explicit receipt paths+SHAs and their complete input
+   closures, including original side full7436-D totality graphs/logs, retained
+   relation and original complete paired graph. Require identical original
+   paired graph SHA, relation/root-pairing manifest and conditional domain.
+   Replay that the indexed-pair differs from that original graph only by the
+   exact previously declared interleaved observation port: no cells, aliases,
+   inputs, parameters or original ports may change. This can be checked by
+   streaming complete owner records, then releasing each parsed graph.
+   Never combine claims merely because both receipts say interval2249 or have
+   the same widths. Current-source production applicability remains pending.
+
+2. Lift the operand lemma once to this original full graph, explicitly.
+   Replay the exact fullgraph-to-D2249 projection and compare its entire graph
+   and manifest with the authenticated operand premise. Re-audit actual full
+   driver inventory, DAG and source-pinned total-model-extension applicability.
+   Authenticate the exact mux coordinate projection rule. Check every selected
+   root against its original fullgraph input port/index/ID; no internal root
+   cuts or newly shared omitted-Q values are permitted. Every generic selected
+   cell stays whole with complete input dependencies; sliced muxes retain the
+   same ordered selected A/B/Y coordinates and unchanged selector.
+
+   Check both complete target multiply bodies, all64 input IDs per side and
+   all32 output IDs against the actual FULL graph, not only a new D cone.
+   Freshly replay the whole-cell operand dependency projection already used
+   by the128/64-bit lemmas. Record its complete transitive ancestry and exact
+   fullgraph-to-first-projection-to-operand projection correspondence. Neither
+   target output may occur in either operand's fullgraph ancestry. No extra
+   fullgraph driver, constraint, alias or parameter can be silently ignored.
+
+   Semantic lift: restricting any original fullgraph satisfying value/undef
+   assignment to this exact projection gives a satisfying projected assignment
+   with the same original operand coordinates. Selected mux equations preserve
+   each coordinate's value/undef relation; whole cells and shared signal IDs
+   remain unchanged. Literal-X per-use auxiliary choices restrict consistently,
+   without identifying distinct original uses. Therefore the already universal
+   projected totality/equality lemmas apply to those actual fullgraph operands.
+   Removed-cell extension plus the complete model/DAG audit also rules out a
+   vacuous projected model. This is a quantified model-projection argument,
+   not an assumption that a per-D slice represents every later D cone.
+   Fail closed if a complete correspondence cannot be checked.
+
+3. Create ONE separately certified fullgraph congruence representation.
+   Using the lifted actual operand lemmas and pinned deterministic known-input
+   multiply rule, replace gold:$7 Y32 by gate:$4214 Y32 in every fullgraph cell
+   pin, original observation port and alias. Remove exactly gold:$7; preserve
+   all other cell bodies and every input/root identity. Replay the entire
+   transformation, not just the target cell or selected outputs. Audit roots,
+   unique drivers, complete primitive models and DAG after substitution.
+   Keep the exact original-to-transformed observation coordinate map. For any
+   original satisfying assignment, the two Y vectors were equal and defined,
+   hence simultaneous replacement yields a transformed satisfying assignment
+   with identical observations. No SAT assumption or arbitrary internal cut is
+   introduced; other unknown-valued signals stay side-disjoint/shared exactly
+   as in the original graph. A later proof can only consume this transformation
+   after this fullgraph lift/certificate passes independently.
+
+4. Resume the exact coverage ledger and query remaining coordinates.
+   Requalify all149 original intervals, including the140 inherited artifact
+   paths in the first attempt, via actual closure hashes, exact query scripts,
+   terminal UNSAT logs and regenerated graph/manifest bytes. Requalify the
+   single congruence interval through its actual certified source and target
+   graphs plus terminal query. This yields [0,2250), not a rounded interval.
+   Construct new disjoint intervals beginning exactly2250, ending exactly5928;
+   default width16 is reasonable now the duplicate multiply is removed.
+   The final partial interval is allowed; every bit appears exactly once.
+   Do not silently rerun/replace existing successes or drop difficult bits.
+
+   Project each new interval from the ONE certified transformed full graph,
+   with the same reviewed exact mux-only slicing and full other-cell closure.
+   Maintain the original semantic field/index ledger for each observed D.
+   Ask the unchanged explicit-undef mismatch under the original defined roots,
+   preserving the180-second timeout and3GiB ceiling. Complete simultaneous
+   original full-D totality remains the premise; transformed observations are
+   known by congruence, not by a new unproved assertion. Use compact UNSAT logs
+   and a same-constraints concrete-model replay if SAT occurs. A SAT result is
+   labeled transformed-model witness unless separately reconstructed on the
+   original graph. A timeout remains unresolved, never a success.
+
+5. Preserve immutable resumability from the first continuation version.
+   Atomic created/per-interval/final checkpoints; all active graphs, manifests,
+   query scripts/logs and source snapshots archived before expensive work.
+   Revoke new success flags after interruption or late publication failure.
+   A later resume requires explicit receipt SHA, exact original FULL graph,
+   lifted lemma certificate, transformed FULL graph and model/root identities;
+   every inherited interval graph/manifest digest must match both its declared
+   digest and its authenticated closure entry and a fresh exact replay.
+   Preserve the distinction between original, single-congruence and new full-
+   congruence query representations. Only exact disjoint union [0,5928), with
+   all terminal proofs authenticated, permits complete retained-D equality.
+
+All results remain scoped to archived graph models with defined full Q and
+external RAM/FP returns. Completing this coverage does not itself discharge
+original collected-memory semantic refinement, public-output equality or
+directional refinement, child-return definedness, initialized outer trace,
+whole MXU/board equivalence, or current production source applicability.

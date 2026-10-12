@@ -1,0 +1,77 @@
+SOURCE-ONLY DRAFT; exact source-rule independent review pending, no execution.
+
+Model pins: acquired Yosys recursive source NAR
+563ca4e9a30ac27244136e6d43448a5907177c9c63a42568bbee077fc73e20be;
+SatGen.cc ee9c3f7b6268f192ad33f8f9117ddde4fa683400d936afef483da6fb31c8c98b;
+SatGen.h a3cc919b23f8a5fe6794cc20699a29ae8c6070b6ed782b204eb44efe9583d86a.
+model_rules links this tree to the exact installed binary/source derivations;
+full source includes the finite ezSAT Boolean/vector expression constructors.
+The extension audit is a reviewed source-level constructive argument whose
+actual graph applicability is checked mechanically; no Lean-kernel claim.
+
+For each accepted cell, fixing all incoming value/mask coordinates leaves an
+extension: evaluate its finite internal Boolean/vector expressions, assign the
+output mask as computed, and assign output values to the computed yy on mask0
+coordinates (arbitrary on mask1). Auxiliary width-padding output literals are
+fresh and can take their computed values. Inputs are never constrained by a
+separate legality predicate in these selected branches. Unique driven outputs
+and a DAG allow these witnesses to be combined without output conflicts.
+
+Reviewed cases to be independently confirmed against exact source:
+* add/sub/mul: arithmetic prelude computes a mask from incoming undef masks;
+  value is finite bitvector addition/subtraction/shift-add multiplication.
+* and/or/xor/xnor: finite bitwise values; output-mask equations depend on input
+  values/masks only. Controlling known values may clear a mask; no conflict.
+* not: finite complemented value, extended incoming undefined mask.
+* mux: y=ite(s,b,a); mask when s is unknown includes differing/unknown A/B bits,
+  otherwise selected mask. Every (s,maskS,A,maskA,B,maskB) has an output witness.
+* pmux: sequential finite value selection; selected mask plus all_undef when
+  any selector is undefined or two selectors are true. Multiple selection
+  is NOT excluded by an assumption; the model makes those outputs undefined.
+* logic_not/logic_or: finite reductions and mask formulas. Higher output bits
+  are defined zeros; Y_WIDTH is required positive, not silently fixed to1.
+* eq: finite equal comparison, low output mask set only when unknown operands
+  could matter (undef_any AND NOT masked_ne); upper masks zero.
+* eqx: value uses values with unknown coordinates masked and equality of undef
+  masks; all output masks zero. Mask sensitivity is preserved. No binary-X
+  compatibility is claimed or required.
+* shiftx: finite signed/unsigned shift value expression; undefined mask shifts
+  input masks with out-of-bounds fill1 and ORs undefined shift-amount masks.
+  Sign/width padding follows actual SatGen source. Out-of-bounds selection does
+  not constrain B; it yields an unknown output. Undefined shift amounts likewise
+  have output witnesses. A/B/Y widths are positive and signedness Boolean.
+
+SatGen.h importSigSpecWorker applies aliases, allocates fresh literal-X values
+for each importDefSigSpec use, and uses mask1 for literal X. Every such fresh
+choice remains independent; this checker transforms no graph or expression.
+Named net IDs retain shared value/mask coordinates across uses. Literal Z and
+other constants are rejected rather than assigned assumed four-state behavior.
+The exact imported-wire naming/undef-prefix scheme remains the solver's model.
+
+Structural audit: parse complete original probe files from the authenticated
+terminal full paired equality totality_bindings, not only projected SAT cones.
+Strict root/module/owner framing and EOF; reject constrained/opaque modules;
+exact primitive pin/direction/parameter dimensions; unique integer drivers;
+full-cell DAG including unused cells; all cell inputs and output port roots
+have known drivers or authenticated original omitted-Q roots. All aliases and
+literal bits remain in the immutable original graph. Alias-only dead Q names
+are recorded without making new roots; they impose no model equations.
+
+The 2,048 gold omitted Q bits are admitted ONLY through the exact authenticated
+local quotient receipt and only for parent/gold. They are arbitrary actual
+original state coordinates, not zeroed and not new SAT inputs. This audit shows
+model existence for every assignment to them; the previous quotient establishes
+observational independence. Their original transitions and initial constraints
+remain in local proof evidence. No new equality obligation for their D bits is
+asserted. No helper has omitted state.
+
+Full exact-graph model existence plus prior totality and paired independent-
+unknown equality supports coherent simultaneous observations/D. This receipt
+alone does not establish initialized composition or production applicability.
+
+Source-only draft files: extension_graph.py, extension_model.py,
+check_model_extension.py and test_extension_graph.py. Root must review and run
+small guards under the 256 MiB gate, then full audit under the ordinary 3 GiB
+gate. No solver or extraction is invoked by this driver, only exact source NAR
+hashing and streaming graph/SQLite audits. Snapshot and archival work remain
+inside the bounded process tree. Failures preserve incomplete artifacts.

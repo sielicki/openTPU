@@ -1,0 +1,73 @@
+Lane4 exact mux-coordinate dependency refinement, unexecuted proposal
+The passed whole-cell sequential inventory remains immutable:
+mxu-outer-lane4-sequential-inventory-second/summary.json
+7fd68227d2f3a796c647e5b89213811d6da69a8617d4e7d330007850d6b84cbc.
+It conservatively found14601cells6060state roots513child-return roots and8mk
+read candidates. This does NOT prove those providers are necessary dependencies.
+
+Smallest next concrete stage
+Reuse the exact same authenticated full paired graph, original/native full
+physical Q/D mapping, initial manifests and root identities. Freshly replay
+prior state/target construction, complete model extension and driver/DAG audit;
+compare the resulting target manifest and physical map to the passed inventory.
+Only replace whole-cell mux dependency expansion with the already source-pinned
+SatGen per-coordinate $mux rule. Do not add a new primitive whitelist or source
+transformation, and do not reuse generic RTL identities about undefined values.
+
+For demand of Y[i] on a WIDTH=W $mux, require exact parameter WIDTH and complete
+pin widths/directions, and record demand A[i],B[i],S[0]. Preserve original bit
+IDs, pin positions and literal occurrences. Accumulate all demanded indices for
+a cell; revisits must expand newly demanded bits (visited-cell-only would be
+incorrect). Keep BOTH arms and selector even if one path looks favorable or
+an already-proved state invariant could make it unreachable. No traffic, reset,
+M bound, knownness or lane alignment premise is added. Constants remain literal
+coordinates; each original cell/wire identity is retained. For every other
+primitive keep its complete input dependency set and actual full body exactly.
+The whole original graph remains the semantic model; this stage constructs only
+a justified dependency certificate, not a rewritten graph or a SAT theorem.
+
+The exact source-pinned mux value/undef formula is the same one already audited
+by the observation projection checker. Apply it only after exact model/source
+identity and actual WIDTH/pin/schema checks. The complete original total-model
+extension plus unique drivers/DAG justify omitting unselected sibling mux output
+coordinates from dependency demands: their internal assignments can extend any
+selected-cone model without extra constraints. Do not claim correlation identity
+from replacing unknown outputs by aliases; no such replacement is performed.
+
+Two separate target/closure passes
+1. Original lane4 data32 combinational dependency demand, stopping at original
+   Q/input roots. Intersect its demanded integer wire IDs (not every output of
+   every encountered cell) with each original mk read vector. Report all candidate
+   read ports with exact demanded bit subsets and complete32bit original address.
+   Multiple candidates remain explicit. Even a single structural candidate does
+   not by itself prove causality or initialized enable.
+2. Both actual lane4 enable bits, native mx_i low3, and all32 address coordinates
+   for every surviving read candidate. Follow each reached physical root through
+   BOTH original/native actual D for retained roots and independent omitted D,
+   iterating demanded bits/Q to a fixed point. Sequential feedback is allowed;
+   combinational cycles are rejected by the full original driver/DAG audit.
+   Preserve exact external root classification and every child return reached.
+
+Acceptance and comparison
+Publish complete original→refined correspondence, demanded-index manifests,
+original cell hashes, state Q/D records, root port/index identities and child
+return groups. Require every refined data/target root and state/cell dependency
+to be a subset of the authenticated prior conservative inventory where targets
+match; when read candidate pruning changes targets, justify it from the separate
+complete lane4data demand certificate. Nothing is declared necessary merely
+because this still-conservative analysis reaches it.
+
+If refinement excludes all providers, the next stage can design exact initialized
+bounded closed-controller traces after review. If providers remain, report their
+actual paths and last opaque nonmux primitives before deciding between further
+independently source-audited bit rules and actual child-state composition. No open
+provider trace will be relabeled initialized whole-MXU reachability. Original SV
+unknown/event semantics and current production generation remain separate gaps.
+
+Focused guards before bounded execution
+Vector mux demanded sibling exclusion, symbolic selector keeps both arms, constant
+selector still retains both arms, unknown literal preserved, repeated demands on
+one cell expand union, nonmux full-input conservatism, multiple state feedback
+fixed point and independent omitted state, exact Q/D/root reconstruction replay,
+wrong WIDTH/ports/directions rejected, changed prior manifest/hash rejected,
+interruption revokes all completed-inventory flags. Root runs all heavy work.

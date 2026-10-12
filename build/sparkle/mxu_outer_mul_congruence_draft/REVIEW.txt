@@ -1,0 +1,39 @@
+Unexecuted whole-Y congruence and one original D-coordinate experiment.
+
+The independently completed operand receipt is required by exact SHA. Rebuild
+its complete128 operands and64 equality graph from its original source cone,
+match all four positive/negative actual query graphs and scripts, reparse their
+terminal logs, and authenticate the same full model/binary/source. This is not
+an assumed equality of multiplier inputs or a new solver constraint.
+
+Freshly authenticate the exact installed SatGen multiplication body, arithmetic
+undefined-mask rule, and actual source/header/derivation/NAR identities. For
+the actual unsigned32 dimensions, known equal ordered operands force known
+equal deterministic Y32. The complete original source model has the same
+root identities and unknown choices as the qualified operand experiment.
+
+Delete only the redundant gold multiply. Simultaneously map every one of its
+32 Y coordinates to the corresponding native Y coordinate in every port,
+alias and cell pin. Keep all other cell bodies/metadata and all input roots.
+Reject output overlap, target-output operand ancestry, driver/cycle failures,
+and any mismatch of a fresh whole-graph and coordinate-certificate replay.
+
+Soundness direction used for UNSAT: every original satisfying assignment has
+equal defined multiply outputs by the earlier lemmas. Thus replacing all uses
+by their equal counterpart yields a satisfying assignment of the transformed
+graph with identical observations. No removed multiply can have imposed an
+additional input constraint (the pinned multiplication relation is total).
+No unknown signal is reselected or equated by this substitution. The operand
+lemmas precede this rewrite; transformed equality is never their premise.
+
+Query is the exact original D[2249] mismatch constraint on the congruent graph,
+same defined root domain, explicit undef, same180-second timeout and3GiB cap.
+Its outcome discharges at most this one interval. Complete5928 coverage,
+outer trace, original-memory bridge, child output definedness and production
+applicability remain false. Preserve terminal failure and late-finalization
+failures as incomplete, with all new theorem flags revoked.
+
+Root-only commands after independent review:
+source /tmp/opentpu-test-env.sh
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m pytest -q build/sparkle/mxu_outer_mul_congruence_draft/test_mul_congruence.py
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_outer_mul_congruence_draft/check_mul_congruence.py --receipt build/sparkle/mxu-outer-operand-lemma-first/summary.json --receipt-sha 99c865a699bcc2263c27c033f2363a7e5cb002a514b1f2e01e8fdd0672e7596e --output build/sparkle/mxu-outer-mul-congruence-first

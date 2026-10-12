@@ -1,0 +1,73 @@
+UNEXECUTED initialized stream1350 stage. New draft files only; passed command
+and sequence files untouched. Exact LANES8 streaming branch used by8/2/true.
+VpuStream.build itself is monomorphic (no CL parameter); no false CL override.
+
+Fresh actual C-compiled native source; full original RTL snapshot frozen and
+byte-identical before original wrapper reconstruction. All stream declaration
+initializers are unspecified; original initial-process inventory excludes these
+fields. Wrapper strips actual delay/tail instances and exposes their boundary
+signals as shared arbitrary ports; no tail/tree/command feedback assumption.
+Complete original block recorded; exact source snapshot pins all reset/enable/
+FIFO writers, removed instance declarations and original lane adapters.
+
+Complete30fields1350Q/D:11 handshake/control bits,1059 input-data alignment bits,
+266Q-partial bits,6kind FIFO pointers,8kind entries. Original unpacked data fields
+s1_fd/s_fd/s1_in_d/s_in_d/q_pd map reversed32-bit chunks (LSB within each lane
+unchanged); kq0..7 correspond directly to packed kq[0]..kq[7]. Raw aliases retained,
+initial constraints gathered before clean paired_* aliases; complete bijection
+and all initializer aliases checked independently of declared candidate count.
+All actual clocks/unique drivers/full-D acyclicity checked; unsupported or extra
+state fails closed. No opaque child or discarded D.
+
+Original s1_fi/fd/in_v/in_d and second-stage data/s_cfg capture even during reset.
+Kind FIFO pointers reset on rst OR s_init; entries hold then. Q partial capture
+only depends on en, including when rst is high. These distinctions remain in the
+actual extracted graph and unrestricted fullD theorem; no zero/reset shortcut.
+
+820 public output bits+1350D=2170observed/side; all4340bits strongdefinedness,
+then strict equality under explicit-undef with set-def-inputs only. Arbitrary
+shared state/input vectors; native unspecified init remains arbitrary, reference
+witness selected once equal-mapped. No independent initial-state equivalence.
+Proc-noopt/memory_map/opt_clean only; exact SAT buf->or-zero normalization.
+
+Four actual emitted-source faults: ss_gnt flip, ss_rq reset0->1, suppress s1_fi
+capture during reset, and o_ss_rq->X. Non-X faults must stay total then produce
+strict equality CEX; capture CEX additionally requires rst=1. X fault must fail
+totality concretely while retaining all1350state bits (ss_rq has internal users).
+Meaningful original reset/capture/writer/init/lane-map guards included.
+
+Bounded stage archives source/dependency/linked-object/runner/graphs/queries/
+logs and all generated partial artifacts. No heavy execution/imports by author.
+Commands proposed only when root releases gate:
+ python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_stream_initial_draft -p 'test_stream_initial.py'
+ python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_stream_initial_draft/check_stream_initial.py --work build/sparkle/vpu-stream-initial-first
+
+Pending after local success: current production module/context/path binding,
+full noncircular control composition, buffered-write1722, wholeVPU startup.
+No simulation event-region, device power-up, timing or runtime qualification.
+
+FIRST-RUN FAIL-CLOSED DEMUX FOLLOW-UP (source-only; no rerun by author):
+Actual unoptimized gold has $demux. Shared cascade_cones lacks that schema.
+stream_demux_cones.py is a local clone of its complete conservative Cones class;
+only cell_pins gains exact WIDTH/S_WIDTH/A/S/Y validation. S_WIDTH<31 matches
+pinned SatGen's signed-int selector loop bound. All outputs are actual drivers
+and depend conservatively on ALL actual A/S inputs; complete input validation,
+clock/Q/D audit, duplicate-driver checks and topological cycle rejection remain.
+Unknown literal selectors remain literal x/z in the original graph. NO demux
+rewriting, Boolean replacement, added root, assumed selector, or blackbox cut.
+
+Installed binary SHAaaa6f93f... and exact acquired Nix source satgen.cc
+SHAee9c3f7b... are pinned by the driver, along with installed satgen.h
+SHAa3cc919b.... Reviewed actual importer block is archived as demux_satgen.cc;
+its exact unique source inclusion is checked. It imports both defined value and
+undef vectors for A/S/Y, computes native per-output unknown status and applies
+undefGating. Thus the existing strong SAT queries consume native demux semantics
+without any new equality/definedness assumption. Unsupported/mismatched model
+fails closed. Fixtures cover malformed dimensions/parameters/pins, cycles,
+aliased outputs, invalid bit tokens and preserving unknown selectors unchanged.
+Existing tools/cascade_cones.py and passed command/sequence helpers unchanged.
+Write-buffer draft is frozen during root run and has NOT received this change.
+
+Second attempt retained: raw audit rejected native $bwmux before proof. Local schema now requires sole resolved WIDTH>0, A/B/S/Y all exactly WIDTH (vector S, not scalar), exact directions and valid tokens. All output drivers and all conservative dependencies remain audited for cycles. No graph transformation or additional input premise. Pinned native SatGen branch uses vector ite for value and vector selector/data undef equation plus undefGating. Exact full branch archived as bwmux_satgen.cc against existing fixed source/binary pins. Added complete dependency, X/Z selector preservation, each port dimension, unresolved/extra/zero parameter, driver alias, cycle and invalid-bit guards. Unexecuted pending independent review and root gate.
+
+Bounded complete raw primitive inventory found one further $bmux (gold $113). Added exact same resolved WIDTH/S_WIDTH schema with reciprocal dimensions: A=WIDTH*2**S_WIDTH, S=S_WIDTH,Y=WIDTH, unchanged all-input dependencies/driver/DAG. Native pinned SatGen binary-tree value/undef branch is archived and exact-membership checked; no lowering. Inventory log build/sparkle/vpu-stream-primitive-inventory.log binds original raw hash. Added reciprocal widths, X/Z selectors, graph preservation, cycle/direction/extra-param guards. All source-only changes awaiting review/tests.

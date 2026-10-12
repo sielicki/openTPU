@@ -1,0 +1,49 @@
+Design only: original whole-VPU root inventory for the later4231-bit control partition
+
+Deliverable and terminal scope
+A staged bounded driver archives original source/tool/receipt closure, then elaborates the EXACT original otpu_vpu root at LANES8/CL2/WBUF1/HAS_SE1 with real child declarations preserved. It produces immutable root hierarchy, process-lowered state/memory inventory, exact child occurrence contracts, original control-state candidates and candidate control/datapath frontier aliases. It launches no SAT and claims no partition equivalence, no complete4231Q inventory until memories are independently mapped, no whole-VPU theorem.
+
+Important resource choice
+Use the existing reviewed specialization-inventory pattern: real source/declaration compilation, explicit --blackboxed-module for nonroot module definitions. Do NOT instantiate/flatten all child FP/tail RAM, and do NOT substitute handwritten headers. This inventories the actual original root's wiring and local state while keeping each original child occurrence opaque. Child internal state is explicitly absent, not declared equivalent. All instantiated child declarations/parameters/full incoming directives remain authenticated. A later control projection must record each actual blackbox boundary used; this root inventory alone is not permission to treat arbitrary child outputs as equivalent.
+
+Source compilation units/order
+1 rtl/top/otpu_pkg.sv
+2 rtl/vpu/otpu_fp.sv (real package)
+3 rtl/vpu/otpu_fpipe.sv (otpu_delay,fmul,fadd,fadd2,fmadd,fmma declarations)
+4 rtl/vpu/otpu_se_comp.sv
+5 rtl/vpu/otpu_vtree.sv
+6 rtl/vpu/otpu_se_tail.sv
+7 rtl/vpu/otpu_vpu.sv
+Derive and verify actual unique module/package definitions from these files before invocation; fail if unresolved module/import/include, duplicate definition, source-order change or unrecognized active directive. The whole original VPU is never rewritten. Determine any required extra dependency by exact original imports/instantiations, not a broad RTL directory glob.
+Read_slang flags: --no-proc --keep-hierarchy --top otpu_vpu -D SYNTHESIS -D YOSYS -GLANES=8 -GCL=2 -GWBUF=1 -GHAS_SE=1. SID default must be recorded, not silently overridden. Every declared module except otpu_vpu receives --blackboxed-module. Explicit SYNTHESIS excludes original simulation assertions/rst_seen; inventory reports that exclusion with source anchors rather than counts them as proved state. Preserve source conditional directives and actual preprocessor arguments.
+Actual root's syntactic child families include otpu_delay,otpu_fmma,otpu_fmadd,otpu_fmul,otpu_fadd,otpu_se_comp,otpu_vtree,otpu_se_tail. Some are inactive at exactCOMP8; root AST/graph determines actual reached set/parameters. Do not require all syntactic families to instantiate.
+
+Stage0 immutable-input checkpoint (before external processes)
+- Require fresh attempt directory, bounded_context, pinned exact input receipt paths/SHA. Snapshot driver/helper sources and streaming-hash/archive all input sources in fixed order, exact paths and full tokens/attributes/directives.
+- Pin control-binding second SHA704555cc... and comb-third SHA7271adaaafc7d1b53c1a4c1aa969a046d8efe1f369a465f5994805b8a76e1203. Joint terminal receipt is optional for inventory-only; if supplied, authenticate but never invent its pending status. Original RTL/pkg identities must agree across component receipts, binding's explicit owning receipts, and live files.
+- Pin Yosys binary/frontend plugin, actual help read_slang/proc; require documented --no-proc/--keep-hierarchy/--blackboxed-module/-G support. Pin proc.cc SHA15a830535d43363fe58379f254527b9a99d09252f87cffbfcb487e2bf1d1c251; require actual noopt/norom guards. Archive commands/cwd/env/compiler1 flags before spawn.
+- Write receipt status=incomplete, phase=inputs_frozen, all active artifact paths. SIGTERM/SIGINT suppress repeats, revoke completion before independent per-file preservation, record each archive failure, publish incomplete best-effort.
+
+Stage1 elaboration artifact (no synthesis optimization)
+Run exact read_slang with --dump-ast if needed to verify effective parameters, write original-hierarchy.il immediately; only proc -noopt -norom afterwards, then write original-root.json. One invocation is sufficient if both outputs archived; process-level .il allows independent prelowering inspection. No flatten, memory_map, opt_expr, opt, opt_clean, rename, setundef, blackbox source edits or cone pruning. Even noopt proc_clean is part of pinned proc semantics and is recorded, not described as literal process preservation.
+Archive log/returncode/AST/hierarchy.il/root.json in finally even if import fails. Stage1 failure remains incomplete. Streaming artifact archive and module-owner reader only; never retain both full raw hierarchy and Python deep copies.
+
+Stage2 independent complete root inventory (read-only)
+- Require exactly one root marked top with actual requested effective params, all original root port names/directions/widths and no unexpected override. Resolve any generated specialization identity via actual AST, not guessed module names.
+- Inventory every module/cell/net/port/memory owner, actual source attributes, init attributes on all aliases, processes, unknown literals and undriven net IDs. Reject duplicate JSON owners/invalid bit tokens/ambiguous input or output drivers. Output a complete per-owner digest map plus small connectivity index (SQLite/disk if needed).
+- Inventory all child cells: exact original definition ID, full resolved parameter set, complete named pins with actual directions/widths/bit vectors, actual clock/reset/en expressions, and unique output drivers. Blackbox descendants' storage is outside this stage; no guessed clocks or cuts accepted.
+- Inventory all local sequential primitive types/widths/clocks/Q/D and all memories (name,width,size,start offset,read/write ports,clock/enable/address/data/mask/init). Do not reject harmless not-yet-supported memory kinds by inventing DFF state; record unresolved inventory and retain incomplete qualification.
+- Memory_map intentionally omitted: original root includes datapath memories unrelated to control. Global mapping could inflate representation and silently discard unused words. Command cq[2]240 and writebuffer wq[4]425 alone account for2180 logical storage bits; stream unpacked arrays may also appear as memory objects before lowering. Do not assert2051DFF+2180RAM until actual emitted ownership proves that layout. The target4231 is logical candidate scope, not assumed raw flop count.
+- Candidate aliases use exact source fields from complete prior maps; classify each candidate bit/word as DFF-Q, memory storage coordinate, ordinary wire or unresolved. Preserve multiple aliases, packed/unpacked order and original declared ranges. Full disjointness test across selected storage coordinates; no silent first-match name search.
+- Record all OTHER root-local state/memory separately (decoder m0/m0d, metadata pipelines, accumulators, outer/row buffers etc.). These remain actual original objects, neither deleted nor included in4231. Candidate control-memory selective mapping is deferred.
+
+Stage3 inventory terminal, not theorem
+Receipt status=original_vpu_root_inventory_complete_partition_unproved only if all owners/aliases/occurrences/params/closure and no unexpected parser gaps accounted. Include source+tool hashes, total local physical/logical state inventory, candidate4231 mapping status (complete or explicitly unresolved), blackboxed child family/occurrence count, diagnostics excluded, and no behavioral_proven flag. Freeze artifacts and final source hashes. Stage4 will decide precise control-memory-only mapping and true datapath frontier from this immutable inventory; no re-elaboration solely to recover lost metadata.
+
+Resume contract
+An input-only checkpoint may resume only identical source ordering/full hashes, actual executable/plugin hashes, flags/config and recipe version. Reuse elaborated hierarchy only with exact script/argv/cwd/source closure AND successful terminal execution record, all artifact hashes, AST/root identity and full owner inventory validation. Interrupted file existence alone is never a completed extraction. Preserve original artifact identities and separate resumed archive paths.
+
+Meaningful eventual guards
+WrongLANES/CL/WBUF/HAS_SE; active unknown macro; reordered source package; modified source declaration/body/incoming directive; child blackbox bound to wrongoriginaldefinition; missing/duplicate child pin; unresolvedparam; aliased input/cell drivers; off-Q init/conflictinginit; memory width/word-order mismatch; stream lane-order swap; duplicate JSON owner; partial rootgraph accepted as terminal; failed archive leaving status success; swapped resume path/hash/script. Stage0/1 should fail conservatively before processing large graphs where possible.
+
+No executable driver is implemented yet: root requested design-only while joint proof is active. This document is the independent-review contract for the next extraction/inventory implementation, not a new formal result.

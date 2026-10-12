@@ -1,0 +1,43 @@
+PLAN ONLY — frozen executable and first artifacts remain unchanged.
+
+Observed first partitioned result:
+140 successful16-bit intervals cover[0,2240). The[2240,2256) equality query
+timed out at180s with91cells/21,777variables/61,634clauses. The immediately
+preceding16-bit interval used91cells and passed. This is unresolved equality,
+not a counterexample. Peak scope memory was about842MiB with no OOM events.
+The failed interval corresponds to paired_62 (h), bits237..252.
+Source resume receipt SHA:
+3115e047cb72f132c0b38e924ba740c5e707bc278311c295b0ca095315e816d9.
+
+First action: use existing reviewed immutable resume with --chunk1.
+The driver authenticates/regenerates the original140successful intervals at
+their original widths, then produces one-bit intervals for all remaining3688
+coordinates. The complete union remains[0,5928); no harder coordinate is skipped.
+All primitive rules, original paired root IDs, independently rooted omitted Q,
+explicit-undef semantics and full-D qualification remain exactly as before.
+The timeout/memory ceiling is unchanged. Whole generic arithmetic cells remain
+intact, so smaller intervals may still have similar SAT cost; success is not
+assumed. No new proof representation or executable change is required.
+
+Root-only command after its gate is free:
+source /tmp/opentpu-test-env.sh
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_outer_partitioned_D_draft/check_partitioned_D.py --output build/sparkle/mxu-outer-partitioned-D-second --resume build/sparkle/mxu-outer-partitioned-D-first/summary.json --resume-sha 3115e047cb72f132c0b38e924ba740c5e707bc278311c295b0ca095315e816d9 --chunk 1
+
+Only if global one-bit scheduling creates material overhead:
+A separately reviewed scheduler could refine just explicit unresolved windows,
+e.g.[2240,2256), and use16-bit intervals elsewhere. It must first preserve every
+existing authenticated successful interval regardless of size; fill only gaps,
+validate integer bounds/disjointness, and require the exact union[0,5928).
+Window boundaries must split intervals, never hide or overlap an obligation.
+Changing the schedule cannot change projection, roots, masks, models, timeout,
+or a previously successful artifact's graph/manifest bytes. Guards should cover
+windows inside a gap, overlapping/out-of-range windows, already proved spans,
+final partial intervals, and mixed-width immutable resume. No such scheduler
+is currently implemented or needed to start the existing --chunk1 experiment.
+
+If a single-bit arithmetic cone times out, preserve it and stop blind retries.
+A bounded diagnostic can then inspect the exact failed primitive/type/input
+signatures. Any deterministic-expression sharing requires a separately reviewed
+source-pinned certificate and complete original-vs-transformed graph identity;
+the current plan introduces no sharing, internal cuts, operand assumptions,
+or unknown-value correlation changes.

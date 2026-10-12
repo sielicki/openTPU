@@ -1,0 +1,195 @@
+UNEXECUTED PLAN. No composed initialized-dot theorem is established here.
+The current definedness run is unfinished; terminal path/SHA remains REQUIRED.
+
+Proposed scope
+--------------
+Exact D=128, C=4, implementation=2, CL=16 physical dot, under authenticated
+parameter-elaborated formal primitive initialization. For every allowed native
+initial state and every shared two-state input sequence, choose one reference
+initial state such that corresponding public output traces agree thereafter.
+The reference choice occurs once at initialization, not separately per output,
+bit, time step or solver obligation. Registers update on the common positive
+clock. No independent-initialization equality, raw time-zero/four-state simulator,
+vendor device power-up, epilogue, outer-MXU or whole-board claim.
+
+Evidence dependencies (all must be complete and immutable)
+---------------------------------------------------------
+1. Definedness: explicit user/root-supplied terminal receipt PATH and SHA, exact
+   18 helper sides plus two parent sides, status complete_partitioned_definedness_probe,
+   all_obligations_defined=true. All18 leaf full observed-output/full-D vectors;
+   parent complete disjoint partition union, not merely a passing prefix. Replay
+   provenance recursively through first/second/third and final receipts. Every
+   reused leaf/partition must have an authenticated successful UNSAT log and
+   exact query, output-coordinate manifest, graph identity/projection audit.
+   No ERROR/TIMEOUT, missing partition, contradictory count or unresolved signal.
+2. Local initial/quotient:
+   build/sparkle/mxu-dot-initial-first/summary.json
+   SHA0b2f6154c460ec24f9768704a4d1704d6e86ee59f65ad51e3fa77ec96465119c.
+   Full61323 mapped local bits, all2048 gold-only bits observationally irrelevant,
+   complete real native initial predicate and one reference initial witness.
+3. Nine physical helper initial models:
+   build/sparkle/mxu-dsp-initial-second/summary.json
+   SHA4925be848d0864d4daf04b129ae199040ceea530f000c99fe469f46bc501de66.
+   Full state mapping and arbitrary undefined native Q retained; exact
+   parameter-only CARRYOUT initializer normalization, full transition bridges.
+4. Common gold/native output dependency order:
+   build/sparkle/mxu-cascade-second/summary.json
+   SHAa1f721e5bee00ea9a9d2a87213e80412b8f462038cbb7a7969058968fd45a37e.
+   All516 helper occurrences,1028 observed helper-output nodes,64 union edges;
+   actual parent cut graphs and complete pin contracts on both sides.
+5. Historical parent and nine helper full-transition receipts must be exactly
+   those referenced by items2/3/4, with exact steps graphs/proof scripts/logs.
+   Their equiv_simple -short commands OMIT -undef. Their binary SAT semantics
+   cannot be silently relabeled arbitrary-X semantics.
+6. Negative evidence: actual initialized native helper faults, changed-reference
+   local initializer control (explicitly a changed-reference constraint, not a
+   native implementation bug), and actual compiled self-cascade rejection.
+   These validate checker sensitivity; none replaces a positive premise.
+7. Applicability: join exact parent cuts to each concrete helper configuration,
+   all full pin widths/wiring/state bijections. The helper occurrence inventory
+   is512 PEs+4 column ends, containing528 physical DSP primitives. Recompute
+   production-state sum102516 from selected mappings, not a hardcoded total
+   alone. Two unused PE configurations remain proven but are not instantiated.
+
+CRITICAL ADDITIONAL OBLIGATION: semantic compatibility, before theorem reuse
+-------------------------------------------------------------------------
+Definedness alone does NOT lift arbitrary binary X->0 equality. Example:
+case-equality(x,0) is a defined false under explicit unknown semantics, but
+case-equality(0,0) is true under binary X->0 substitution. $eqx/$nex therefore
+need a separate proof or must be rejected by the compatibility audit. It is not
+enough to whitelist them as total, or assume no such cell exists.
+
+Perform a bounded streaming inventory of every actual gold/gate helper and parent
+steps cell type, complete parameters, directions, widths, all constants and roots.
+No execution authorized for this plan. Include cells behind partition slicing,
+not only types seen in a few passing examples. Preserve per-cell/model identities.
+Reject case-X-sensitive operators, nondeterministic formal cells, unknown cells,
+unsupported parameters/widths and malformed/non-driver signals. If a type occurs
+only in an independently certified irrelevant cone, exclusion needs an explicit
+complete observed/full-D dependency certificate, never opportunistic pruning.
+For $eqx/$nex, either reject even if inconvenient or prove all their actual operand
+bits defined and audit equality to the binary operator; output totality is not
+that operand premise. Default implementation should reject until audited.
+
+Exact compatibility lemma to establish for EACH accepted instantiated primitive:
+Let h assign value/undefined pairs to its inputs and outputs satisfying the
+pinned explicit-undef SAT model. Let c be any binary input vector agreeing with
+all coordinates whose h undefined flag is0. Binary evaluation under the pinned
+historical non-undef cell model must agree with h's output values wherever h's
+output undefined flag is0. All dimensions, signedness, shift direction, out-of-
+range behavior, reductions, and partial select/arithmetic cases are included.
+The binary model must also be a deterministic total function of binary inputs,
+or its complete nondeterministic extension must have an explicit compatible
+selection; do not assume this for partial primitives.
+
+Audit/prove this lemma from the exact pinned cell models, not their type names.
+Initial candidate families are standard bitwise/logical/reduction operators,
+width-checked arithmetic/comparison, shifts, mux and pmux, but the whitelist is
+EMPTY until each used family/parameter rule is reviewed. Division/modulo/shiftx
+and multi-selected pmux require their actual partial/undefined model behavior.
+A small primitive theorem suite or a reviewed trusted-model proof can discharge
+this; synthetic samples alone are insufficient for arbitrary widths. The new
+mux projection already audits the installed coordinatewise SatGen mux equation,
+but it does not establish the entire inventory's compatibility.
+
+Actual installed satgen.h currently shows literal Sx imported as a free value
+with undefined flag1 when enabled and binary zero when disabled. The same code
+compares the undefined token specifically to Sx, so literal Sz must NOT be
+assumed to receive full four-state Z treatment. Inventory x and z separately;
+reject z until the exact chosen formal interpretation is explicitly audited.
+The receipt's semantic scope is the pinned Yosys formal model, never a raw
+four-state SystemVerilog/event-region equivalence claim.
+
+Why the compatibility lemma plus complete totality suffices
+---------------------------------------------------------
+Fix arbitrary defined input/Q bits of one complete stepped graph. Take an
+explicit-undef model valuation. Evaluate the binary historical graph with X
+constants replaced by its documented binary representative (currently0). In a
+DAG order, the primitive lemma shows that this binary valuation agrees with
+every known abstract bit: inputs agree by premise; X representatives satisfy
+unconstrained abstract coordinates; each primitive preserves agreement on all
+known outputs. Generated unknowns from partial operators require the same lemma,
+not an independent unjustified choice. Certified irrelevant parent Q cannot
+reach observations/full mapped D and therefore does not enter this induction.
+
+The definedness proof says every actual observed output and mapped D coordinate
+has undefined flag0, for EVERY explicit-undef satisfying valuation of arbitrary
+defined inputs/Q. Thus each entire observed-output/full-D vector agrees with the
+same deterministic binary graph evaluation simultaneously. This establishes a
+single graph function on relevant observations/state update; it is not a set of
+unrelated existential bit witnesses. A graph model must be satisfiable for every
+binary input; prove this as part of each primitive's total model/extension
+property, otherwise UNSAT definedness could be vacuous. No assumptions/assertions
+or ignored cells may restrict input valuations in the probes.
+
+Historical complete binary gold/gate equality then equates those simultaneous
+functions, because exact graph/projection/steps bridges join the very same
+port order and state mappings. If compatibility or model extension is missing,
+STOP with pending_semantic_bridge. A new explicit-undef full-vector equivalence
+proof is a possible alternative; do not mark the theorem complete on totality
+alone.
+
+Compositional induction after semantic bridge
+-------------------------------------------
+Global state relation R is equality of all61323 mapped parent bits and every
+actual instantiated helper's complete state correspondence (102516 total),
+with2048 reference-only local bits existential/ignored by the quotient. Recompute
+and ensure relation disjointness across instance namespaces and within fields.
+Total mapped state163839; full reference physical local+leaf165887, within the
+exact primitive models. No reset/enable-controlled state may be omitted.
+
+Base: for every legal native initial assignment, combine the local initial
+witness and each leaf initial witness on disjoint occurrence state. Honor all
+reference-only local initial constraints using the quotient's supplied witness.
+This constructs one globally compatible reference initial state. Undefined native
+Q remains arbitrary two-state data; it is never initialized to zero by the proof.
+
+Step: fix related current states and shared external inputs. For each helper
+output node in the authenticated common gold/native union-DAG order, predecessor
+outputs already agree. Actual parent combinational wiring computes this node's
+input dependency cone equally on both sides using the same parent state and
+predecessor outputs. Lifted full helper equality gives its output equality.
+Outputs not depending on an input need no claim that that future input has yet
+been evaluated: use exact cone independence. At completion every helper output
+is equal. Substitute this one simultaneous cut-output valuation into the lifted
+parent theorem: public parent outputs and all parent mapped D bits agree, and
+all concrete helper input pins agree. Apply the lifted full helper theorem to
+these actual full inputs to obtain ALL helper D bits equal simultaneously.
+The next reference-only local bits may evolve by their actual model; quotient
+independence proves they cannot invalidate R or future observations.
+Hence R is preserved and all public dot observations agree for every finite
+prefix and therefore the infinite synchronous trace. No combinational fixed
+point is assumed; the certified union-DAG order supplies one evaluation order.
+
+Implementation/checker staging
+-----------------------------
+A. Authenticate complete terminal definedness and complete closed source/artifact
+   lineages. Refuse an unfinished fourth-run status or mere all-green prefix.
+B. Stream actual primitive inventories under the bounded gate; save exact model
+   audit manifest and a pending/pass status for every distinct semantic rule.
+C. Discharge compatibility + model-existence rules. This is an explicit remaining
+   proof obligation, not a comment in the final receipt. It may require more
+   solver or formal kernel work once the inventory is known.
+D. Check concrete graph joins, full port/output/state mappings, actual helper
+   configuration inventory, disjoint global relation and initialization witnesses,
+   union DAG order/edge justification, and complete projected-obligation coverage.
+E. Instantiate a reviewed generic initialized acyclic composition theorem using
+   those concrete audited functions/relations. A generic Lean theorem log alone
+   does not mean this concrete instantiation exists. Clearly distinguish an
+   evidence-backed composition checker from a kernel-checked concrete theorem.
+F. Final status only after A-E have explicit evidence; atomic incomplete receipts,
+   frozen driver/imported-source hashes, bounded jobs, logs and streamed archives.
+
+Meaningful negative guards for the new checker: missing parent last partition;
+case-X-sensitive cell accepted on output totality alone; vacuous impossible-cell
+model; omitted mapped-D field; duplicate state bit across occurrence mappings;
+wrong occurrence configuration; reference/native cut pin swap; extra reachable
+helper; cycle in union order; reference-only Q reaching a true observation; a
+nonshared per-output initial witness; partial primitive mislabeled total; source
+or archived graph changes; final publication failure must revoke success.
+
+Primary model reference inspected for the caveat (explanatory, not version pin):
+https://raw.githubusercontent.com/YosysHQ/yosys/main/kernel/satgen.cc
+The $eqx/$nex branch explicitly compares undef masks while the ordinary binary
+branch does not. The implementation must authenticate the exact installed model
+version before accepting its rule; upstream main is not a binary-version bridge.

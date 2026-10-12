@@ -34,6 +34,8 @@ module otpu_delay #(parameter int W = 32, parameter int N = 1) (
   end
 endmodule
 
+// Native Sparkle replacements are supplied by opentpu-gen fpipe when selected.
+`ifndef OTPU_SPARKLE_FLOAT
 module otpu_fmul
   import otpu_fp::*;
 #(parameter int LAT = 2) (
@@ -101,6 +103,8 @@ module otpu_fadd2
   assign y = r;
   assign yo = ro;
 endmodule
+
+`endif
 
 module otpu_fmadd
   import otpu_fp::*;

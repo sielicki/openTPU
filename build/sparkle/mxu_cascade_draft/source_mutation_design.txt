@@ -1,0 +1,42 @@
+Concrete negative control design; no extraction/execution yet
+
+Use the authenticated native-contracts.sv from the exact folded parent proof.
+Locate the unique full physical_pe0_15 instance statement and require its type
+otpu_mxu_pe_dsp_010. Require exactly one .pcin(physical_pc0_14) and exactly one
+.pcout(physical_pc0_15) in that statement. Replace only the former connection
+with .pcin(physical_pc0_15). Require one whole-source edit and reversible byte
+equality. Preserve every other module, attribute, directive and instance byte.
+
+This uses LAST=1/PREG=0 at the end of the first 16-PE chain. The output is Mealy;
+the positive concrete pe_010 gold/native cone audit must first show that pcout
+depends on pcin. A mutation on a PREG=1 PE would be ineffective as a combinational
+cycle control and is explicitly unsuitable.
+
+Archive the original digest, changed source, exact old/new instance statements,
+source-edit count, and all extracted evidence. Replay the authenticated native
+parent extraction script with only its source and output paths changed to fresh
+mutation paths. Do not expand DSPs, alter gold, or run a narrowed solver. Require
+the same frontend binary/plugin identities and completed extraction log/status.
+
+Re-audit all 516 contracts, types, parameters, input/output drivers and local Q
+inventory on the resulting concrete graph. Require selected pcin bits equal its
+own pcout bits at physical_pe0_15, with each width48. The helper cone must remain
+the positive authenticated one. Recompute actual parent dependency edges and
+require the explicit edge:
+    physical_pe0_15.pcout -> physical_pe0_15.pcout
+Then require the common gold/native order to reject specifically this cycle.
+Record the exact actual pin identities and self-edge as the cycle witness.
+Source/extraction/parser/driver/unsupported-cell errors are incomplete failures,
+never successful negative controls. Missing/multiple mutation targets fail.
+
+This is an actual source-derived structural noncircularity counterexample, not
+an arithmetic SAT counterexample. It does not claim that a cyclic functional
+model has a unique or absent fixed point, nor that the positive circuit fails.
+
+Proposed implementation split: pure unique-instance mutation helper with guards;
+bounded runner stages source archive, exact extraction, graph audit, explicit
+self-edge witness, expected DAG rejection. Keep each stage incomplete/checkpointed
+until both extraction and the precise cycle rejection complete. The positive
+certificate should eventually require this negative-control receipt before
+claiming fault-tested noncircularity; current draft status describes graph
+certification only and does not claim a source mutation has been tested.

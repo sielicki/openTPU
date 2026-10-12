@@ -1,0 +1,73 @@
+UNEXECUTED first initialized VPU control stage: command483 only, exact8/2/true.
+
+check_command_initial.py freshly C-compiles native VpuCommand and reconstructs
+original wrapper with authoritative existing prove_sparkle_vpu_command.reference.
+Both helper and actual RTL/package plus complete native generation closure are
+hashed/archived before proof. It does NOT inherit old binary/opt_expr equivalence.
+Original cq[2]/cq_n/cq_h declarations must be exactly uninitialized and original
+initial-process inventory contains only parameter diagnostic and rst_seen.
+This establishes reference startup predicates are genuinely unspecified, rather
+than silently dropped by wrapper reconstruction. Actual native alias constraints
+are all collected; unspecified native bits remain '?' (never forcibly zeroed).
+
+Actual both graphs use proc -noopt, memory_map, opt_clean. No opt_expr.
+Every483Q/D, all four state mappings and every initializer alias are audited;
+all actual inputs/cell outputs uniquely driven, common positive clock, every
+combinational cell acyclic (including D cones), unsupported cells fail closed.
+Only exact SAT value/undef identity $buf->or-zero normalization is permitted.
+State exposure removes init only after independent implication witness.
+
+All287 public output bits plus483D=770 observed coordinates per side; all1540
+bits explicitly proved defined with -enable_undef -set-def-inputs and
+-set-any-undef observed -prove impossible1. Strict equality separately proves
+all770 coordinates for shared arbitrary complete state and boundary inputs.
+No reset, queue occupancy, after-fill, start/en, or other boundary assumptions.
+Reference initial witness is chosen once equal to actual native current bits;
+complete D equality preserves it. No independent-original-startup claim.
+
+Actual production emitted-source faults: o_cq_n bit flip; cq_n reset assignment
+0->1; o_cq_n->xx. Firsttwo must remain total then fail equality with rc1 and
+concrete model. Unknown-output fault must fail totality with concrete X model.
+No miter-only fault. Full native source/extraction remains archived for each.
+
+Single bounded job, compiler threads1, no daemon; freeze source/linked closure,
+all generation dependencies and active logs/C/object/exe on failure/interruption.
+No historical receipt edited. Build-only sources. No execution by author.
+
+Suggested root commands once heavy gate free:
+ python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_control_initial_draft -p 'test_command_initial.py'
+ python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_control_initial_draft/check_command_initial.py --work build/sparkle/vpu-command-initial-first
+
+Remaining explicit scope:
+ command current production applicability/containing control wiring;
+ sequence676 (all stateWidths from actual compiled exact8/2/true), stream1350,
+ bufferedwrite1722. Their historical tools are tools/prove_sparkle_vpu_sequence.py,
+ prove_sparkle_vpu_stream.py and prove_sparkle_vpu_write_buffer.py. They use
+ proc/opt_expr and reconstructed declarations; old arbitrary-state proof is not
+ automatically strong undef or initialized equivalence. Next stages must freshly
+ preserve original declaration startup, all mappings including stream reversed
+ unpacked32-bit lanes/kq bit lanes and buffered wq4x425=1700RAMbits+22controlbits.
+ Native nonreset command regs HOLD during rst; bufferedwrite RAM writes occur
+ OUTSIDE rst and may update during reset. These distinctions must survive fullD
+ checks; neither a reset prefix nor zero-RAM assumption is allowed.
+ Control composition must separately establish noncircular command/sequence/
+ stream/write-buffer interfaces; no wholeVPU claim follows from local proofs.
+
+ORIGINAL TRANSITION CORRESPONDENCE HARDENING (review follow-up):
+The driver freezes/archives original_vpu_command_scope.sv before audit, and
+requires current original RTL to equal this complete reviewed snapshot byte for
+byte BEFORE using the existing extraction function. This pins all enclosing
+clock/reset/accept/pop branches, temporary initialization/final writes, and any
+additional process or alias-based assignment, rather than hoping a partial
+writer regex finds them. A supplementary explicit inventory checks all EIGHT
+cq/cq_h/cq_n/qn assignments (the two reset writes share one original line).
+Exact reset, start, can_begin&&en and nfill assignment anchors are recorded.
+Original reset, accept/pop guard, qn initial/final, nfill formula, and extra writer
+mutations are rejected by meaningful source correspondence guards.
+
+The output nfill is the extracted COMBINATIONAL SETUP VALUE passed to sequence:
+it matches the expression assigned to original registered nfill upon beginning
+a nonempty command. It is NOT a claim that the original nfill state register
+matches this output every cycle. begin_cmd likewise names the original event
+boundary can_begin&&en. Complete original sequential state in this local theorem
+is only cq0/cq1/cq_h/cq_n, all483 bits; sequence676 owns registered nfill.

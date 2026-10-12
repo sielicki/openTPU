@@ -1,0 +1,174 @@
+SE-tail initialized composition: concrete plan, not an executed proof
+==================================================================
+
+Exact intended production specialization: LANES=8, TA=7, QD=1. The existing
+parent theorem is build/sparkle/formal_se_tail/summary.json, proofs[0], with
+configuration [8,7,1], state_bits 82820. Other two receipt configurations are
+not substitutes. Source: OpenTPU/SeTail.lean and rtl/vpu/otpu_se_tail.sv.
+
+Independent source inventory
+----------------------------
+inventory.py names every retained parent register and mapped RAM word without
+discovering the relation by greedily choosing coincidentally matching aliases.
+It also implements full Q/D/clock/direction/alias/initializer coverage and an
+explicit arbitrary-RAM witness audit. It is deliberately not an executable
+proof driver; run() refuses to issue a result. No imports/tests/extraction or
+large netlist parsing were run during this drafting task.
+
+RAM: five banks kb/kb2/qb/vb/gb *8 lanes *32 words *32bits =40960;
+ub[128]*273=34944; dq[8]*32=256. Total 76160 unspecified RAM bits.
+Retained local registers: 6660. Parent=82820.
+FP: 27 mul2 *125=3375; 19 add4 *191=3629. FP total=7004.
+Retained synthesized product=89824 bits.
+
+Important source-state distinction: dq_n is a four-bit FIFO occupancy counter
+used only by the original simulation underflow/overflow assertion, enclosed by
+`ifndef SYNTHESIS. The native source also declares dq_n. Existing synthesis
+extraction opt_clean removes this counter, and the authenticated legacy miter
+has dq_h/dq_t but no state_dq_n. Source local count is therefore 6664, not6660.
+Full source-declared product count would be89828. Do not label89824 as every
+source register or claim simulation FIFO-diagnostic equivalence from it.
+
+Initialization obligation
+-------------------------
+Read init from ALL aliases in raw flat graph BEFORE overwriting mappings or
+dropping $ aliases. Confirm every defined init lies on retained Q, with no
+conflicting alias. Require actual defined native init for6660 local register
+bits; reference defined bits, if any, must agree. RAM bits must be unspecified
+on both sides for this specialization; witness selects reference RAM equal to
+the same arbitrary native RAM, not zero. An unexpected defined RAM bit is a
+fail-closed change requiring a revised audited witness, not silently ignored.
+Each of46 concrete FP leaves has its actual native/reference witness from
+formal_fp_state/attempt2. Multipliers require equality of m_sv only when m_sp;
+all other multiply bits and all add bits remain equal.
+
+Composition rule and proof partition
+------------------------------------
+1. Authenticate and independently reconstruct complete parent equal-state
+   theorem: arbitrary shared82820 parent Q bits, arbitrary all external inputs,
+   and46 arbitrary common32-bit FP y values. It proves all parent next state,
+   all external outputs, and every leaf's en/a/b input. Both pe and cen remain
+   arbitrary, independently; no valid/fill/traffic/reset schedule premise.
+2. Instantiate concrete mul2/add4 initialized relations from the full-state
+   FP receipt. Compare entire module tokens, attributes, incoming directives;
+   check leaf references are actual otpu_fmul(LAT2)/otpu_fadd(LAT4), including
+   identity u_pad, and exact gate definitions. No legacy after-fill FP theorem
+   can discharge this new initial relation.
+3. Check y Moore cones in concrete exposed leaf steps: only state/constants,
+   no current en/a/b/clock/reset, unknowns, undriven nets, cycles or multiple
+   drivers. Equal current leaf relations then imply all common y values before
+   the parent theorem is applied. Parent gives equal next inputs; concrete leaf
+   step relation preserves all FP state. This avoids a circular assumption even
+   though p1/s2/dd and lane feedback paths connect arithmetic outputs to inputs.
+4. Combine native register/leaf witnesses and shared arbitrary RAM witness for
+   base; induction yields initialized synthesized product refinement for89824.
+   Generic ProductComposition.lean is supporting logic only, not a concrete
+   kernel-checked instantiation of RTL/compiler/SAT certificates.
+
+Never flatten parent RAM together with concrete FP into one SAT instance. The
+existing parent structural equivalence decomposition and two small concrete FP
+relations already partition all obligations without changing the theorem.
+
+Parent proof reconstruction and provenance
+------------------------------------------
+The parent receipt already authenticates hierarchy.json, boxes.json, flat.json,
+extract.ys, flatten.ys, steps.json, miter.sv, proof.ys, generator/native.sv and
+original sources. Independently validate exact extract specialization/options.
+Reconstruct hierarchy->boxes, checking only the four intended FP module kinds
+are emptied and marked blackbox; original u_pad must be genuine zero-latency
+identity. Check each actual leaf cell's full pin directions/connections, width,
+common positive clock and elaborated parameter representation. Require46 exact
+instances, no opaque remaining sequential cells, no hidden discarded state.
+
+Output cuts must be unique integer nets, not aliases of external input, another
+leaf output, parent driver or parent Q. Promote y as commoninput, en/a/b as
+checked outputs; clock stays shared. Check all exported parent interface pins.
+Legacy original unpacked lane ports need reversal in groups of32 for exactly:
+fd,in_d,xd,xa,y_d,qp_d,u_a,u_b,u_c,u_e,u_y,q_a,q_b,q_c,q_y.
+Do not reverse individual word bits. Audit original AST port array bounds and
+actual Slang flattened ordering before reproducing this bridge. Add lane-swap
+and word-bit-swap guards. cfg remains exact packed23-bit metadata.
+
+Existing legacy mapping picks whole xa/xd256-bit aliases, while inventory.py
+uses eight32-bit lane fields. For receipt equality reproduce the old grouping
+or independently verify mapping partitions/Q-D equivalence under this explicit
+regrouping. Do not compare JSON with differing groups and weaken to bitcount.
+Capture actual initializers before the legacy alias filtering (which erases
+init information); compare every transformed bit with authenticated steps.
+
+Historical terminal evidence FOUND (supersedes earlier missing-log warning):
+build/sparkle/vpu_production_leaf_log_replay-default/summary.json, SHA256
+236c3c00257032af14552878d7d186b264c84d79d8ddcaf467d981d8fa8862a4,
+is itself pinned by all_child_binding-complete. Its exact se_tail8/7/1 case
+binds original proof.ys07067ad883aaecf5495c15810c6fe17fd8c57544b838929532b72e783977eeb4
+and complete steps274253d02e471a32549a3e8c61a13bab15d456dad313beba90755799934fd461,
+with baseline58c086941ea70c8daa668fda2b8da7a4118510877dadd3e8cb32da6265e83f7a.
+It records returncode0, terminal success, and replay proof.log SHA256
+2f57d9be6f0f4be0f68d892d1a0f1635efb26ee412b1a034eb3c6e8f2cdd15e4.
+Consume/authenticate this exact replay closure and reconstruct complete mapping/
+cut transformations against the immutable steps. No parent re-solve is needed
+solely for terminal-log provenance. The original unbound proof.log is not used.
+
+Fresh generation must use compiled run_generator, freeze complete Lean import
+closure/compiler/runtime and linked manifests, match all three complete module
+bodies plus attributes/directives to authenticated native.sv. Parent generation
+uses SeTail.toVerilog with endpoint/noShiftRegister/ub blockRAM hints; plain
+toVerilog is not an interchangeable production artifact.
+
+Four diagnostic bits: attainable independent extension
+-------------------------------------------------------
+Prefer a separate tiny next-state/initializer theorem over rebuilding or
+reproving the82820-bit parent. Do not pretend the old theorem includes dq_n.
+Source transition on both sides is reset-or-init priority, then pe:
+next dq_n=0 if rst||init, else pe ? dq_n+dv-d_pop (mod16) : dq_n.
+Original d_pop=pe&&um.v&&um.j==0; um comes only from warm and ub_q registers;
+dv comes from the six-cycle dv pipeline. No raw RAM data or FP combinational
+logic is needed in this counter's next-state cone.
+
+Extract the ACTUAL original/native dq_n flop and entire D cone from the archived
+pre-opt hierarchy (or a fresh tiny cone extracted from that archived hierarchy).
+Stop only at external inputs and actual named parent Q bits already covered by
+the retained mapping. Identify warm, ub_q, dv endpoint aliases and dq_n itself
+by independently audited source names; compare both clock/reset priorities and
+actual initializers. Replay corresponding structural transforms, retain dq_n
+before cleanup or use a cone-only JSON module. Do not prove a handwritten
+counter formula without mechanically binding it to both real D cones.
+The new four-bit theorem may assume common parent state (already supplied by
+the parent relation), so it composes without strengthening parent inputs. Its
+output cannot influence any existing synthesized external/cut/nextstate cone;
+prove that noninterference structurally in the pre-clean graph, ignoring only
+simulation assertions whose exact source predicates are separately pinned.
+This covers all89828 source state bits at low solver cost, while keeping the
+89824 production synthesized scope distinct. If exporting the FIFO diagnostic
+as an extra checked output, pin the original assertion's actual predicate:
+!rst&&pe&&((d_pop&&dq_n==0)||(dv&&!d_pop&&32'(dq_n)==DFD));
+note that init is not excluded by the original diagnostic. It cannot be claimed
+as an existing native diagnostic port: native currently has no such output.
+
+Next executable steps, after gate handoff
+-----------------------------------------
+A. Finish driver and guard tests; they must still fail closed on changed replay
+   log provenance, original leaf parameters, RAM init, alias grouping, and the
+   optional diagnostic scope. Run guards256MiB first.
+B. Bounded3GiB audit one archived parent graph at a time; release graph before
+   reading its successor, writing report, generation or invoking solvers. Audit
+   and reconstruct immutable parent and leaf transformations; save full evidence
+   receipt before any expensive operation. No alternate unbounded process.
+C. Authenticate or reprove exact retained parent theorem. Validate leaf Moore
+   and FP bindings. Establish actual initialized witness and compose89824.
+D. Prove optional dq_n cone extension separately; report89828 only after pass.
+E. Three actual production mutations (not miter-only): o_v flip, ub write data
+   bit flip, and cen inversion on um0. Require exact solver exit1, failure marker
+   and JSON model falsifying checked property. SAT negatives may explicitly
+   activate the modified write/enable but keep full parent next-state miter.
+   If monolithic negative exceeds3GiB, select an exact affected output/nextstate
+   cone from full miter and prove concrete disequality; report that narrow fault
+   sensitivity separately, while positive theorem remains exhaustive.
+F. Later bind exact product definitions to reachable Gen1/Gen2/CLI instances,
+   including full token/attribute/directive and parameter identity. This does
+   not solve whole-VPU initialization or undefined-address/refinement scopes.
+
+Memory/time estimate: parsing parent mappedRAM may dominate memory; solve via
+existing complete equiv_make/equiv_simple proof, never all-FP flatten. No honest
+runtime estimate before bounded audit. Four-bit cone should be tiny; exact graph
+extraction is more work than SAT. One job only,3GiB,zero swap; preserve failures.

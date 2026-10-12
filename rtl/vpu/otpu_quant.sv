@@ -36,6 +36,7 @@ module otpu_qdly #(parameter int W = 32, parameter int N = 2) (
   assign q = qr;
 endmodule
 
+`ifndef OTPU_SPARKLE_QSCALE
 module otpu_qscale
   import otpu_fp::*;
 #(parameter int LM = 2, parameter int LA = 4, parameter int TW = 2) (
@@ -110,6 +111,8 @@ module otpu_qscale
   assign inv = (zd2 || bd2) ? F_ZERO : (fe >= 9'd255) ? F_INF : {1'b0, fe[7:0], invm[22:0]};
   assign sc = zd2 ? F_ZERO : scd;
 endmodule
+
+`endif
 
 module otpu_quant
   import otpu_pkg::*;
@@ -260,6 +263,19 @@ module otpu_quant
   end
 `endif
 
+`ifdef OTPU_SPARKLE_QREAD
+  f32_t xp [LANES];
+  wire [LANES-1:0][31:0] xp_native;
+  logic [31:0] mp_baddr;
+  f32_t cmax;
+  rm_t mc;
+  otpu_qread #(.LANES(LANES)) u_native_read(.clk,.en,.csf,.rsf,
+    .t_rdata,.t_rdata2,.t_rdata3,.m0,.badr,.xp(xp_native),.mp,.mp_baddr,.cmax,.mc);
+  for (genvar l=0;l<LANES;l++) assign xp[l]=xp_native[l];
+  function automatic logic mgt(input f32_t a, input f32_t b);
+    return a[30:0] > b[30:0];
+  endfunction
+`else
   // ------------------------------------------------------------------ prescale
   // the TMEM read data is registered first (no path from the block RAMs into the multipliers'
   // DSP inputs in one cycle); m0 and the byte address are delayed to match (QL)
@@ -310,6 +326,8 @@ module otpu_quant
     cmax <= v[0];
     mc <= mh;
   end
+
+`endif
 
   // block buffers (streaming QACT): chunk c of buffer b holds elements c*LANES .. (the data
   // itself is in per-lane RAMs beside the writer, g_sb)
@@ -402,6 +420,13 @@ module otpu_quant
       wsc_in = sc2;
     end
   end
+`ifdef OTPU_SPARKLE_QWRITE
+  wire [LANES-1:0][31:0] wx_native;
+  wire [LANES-1:0][7:0] qb;
+  for (genvar l=0;l<LANES;l++) assign wx_native[l]=wx[l];
+  otpu_qwrite #(.LANES(LANES)) u_native_write(.clk,.rst,.en,.wq,.wx(wx_native),
+    .winv,.wsc_in,.wqd,.qb,.wsc_d);
+`else
   // the writer's selection registered in front of the multipliers
   wm_t   wq_r;
   f32_t  wx_r [LANES];
@@ -449,6 +474,8 @@ module otpu_quant
   end
   otpu_qdly #(.W($bits(wm_t)), .N(LM + 2)) u_wq (.clk, .rst, .en, .d(wq_r), .q(wqd));  // ends in a flip-flop
   otpu_delay #(.W(32), .N(LM + 2)) u_ws (.clk, .en, .d(wsc_r), .q(wsc_d));
+
+`endif
 
   // QST scale word: written when the group's scale arrives (no data writes are in flight)
   logic [31:0] saddr;                         // next scale word address

@@ -1,0 +1,36 @@
+Source-only first phase of complete679-D theorem, not another completed proof.
+Author has not executed/imported/tested these files.
+
+diagnose_physical.py consumes exact original inventory/joint receipts and direct
+artifact SHA maps. It independently rebuilds the complete679 physical Q/D through
+frozen Stage2a storage audit; all480 cq memory coordinates remain pending. It
+uses the complete actual joint input vector, all679 Q plus provisionalhc240.
+can_begin/busy/hf/h_empty and geometry are NOT additional independent boundaries.
+
+Packed source rules for actual mt_t/rm_t/meta_t are checked from the entire pinned
+original RTL snapshot and exact constant definitions, in the actual verified
+root specialization. mo/mxm selected fields use those explicit slices. These
+are source-derived candidates with graph layout theorem flagsfalse; any closure
+success does not silently resolve type/producer/initialization obligations.
+
+Boundary relation preserves literal0/1/x/z and repeated original coordinates.
+Gold inputs may share an original coordinate; distinct original wires are never
+merged because gold happens to alias them. Such reverse conflicts and literal
+mismatches are explicit diagnostic records. Every actual buffer is traversed;
+only boundary-cut selection follows buffer chains, with actual downstream alias
+vectors added to traversal. No state graph transformation or solver assumptions.
+All679 original/gold D are the diagnostic's roots, all external interface/state
+alias vectors included, all unexpected state/memory/child/unknown dependencies
+reported. Primitive semantics and acyclicity are not certified by this probe.
+
+Root commands after review (serialized gate):
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_joint_physical_draft -p test_physical_frontier.py -v
+python3 tools/sparkle_bounded.py --memory-mib 512 -- python3 build/sparkle/vpu_joint_physical_draft/diagnose_physical.py
+
+Capture diagnostic stdout in a fresh log. It is expected to expose any genuinely
+missing alias/field/provider before committing a large complete-D checker. Read-
+only SQLite8MiB cache; small historical raw graph loaded once; source/hash reads
+streamed where possible. No root re-extraction, memory expansion or solver.
+Next executable theorem will freeze this global relation and exact full679-D
+partition, then run strict explicit-undef totality/equality plus alias linkage,
+retaining complete physical state and arbitrary original input traffic.

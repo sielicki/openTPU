@@ -1,0 +1,112 @@
+UNEXECUTED new stage, intentionally different from the preserved failed checker.
+
+Driver: check_outer_initial_ownership.py
+Graph/initial audit: outer_initial_ownership.py
+Guards: test_outer_initial_ownership.py
+
+Terminal status, only after every check completes:
+complete_archived_outer_initial_ownership_mapped_quotient_and_RAM_identity_certified
+
+The prior check_outer_initial.py and its failed receipts remain unchanged. This
+stage does not establish its original complete read-equation scope.
+
+Facts this stage can independently establish:
+- Original 11 residual arrays / 33 words / 2,297 arbitrary initial bits correspond
+  injectively to actual mapped full-word DFF Q coordinates. Actual write-address
+  and per-coordinate masked-update equations and whole ordinary graph bodies
+  remain checked; every additional DFF/mux coordinate is exhausted.
+- Every ordinary original and mapped net-alias initial predicate is reconciled,
+  with no ignored initialization owner. All original small-memory INIT bits
+  remain arbitrary; no memory-zero assumption is introduced.
+- The original 5,139 ordinary DFF bits plus 2,297 word bits map to all7,436 mapped
+  physical bits. Native has7,436 direct DFF bits. Eight external RAM arrays retain
+  the separate full1,204,224-bit arbitrary-array initial identity.
+- The existing complete retained_model replay supplies an initial witness on
+  5,928 retained coordinates and independently audits1,508 omitted bits per side
+  ONLY IN THE AUTHENTICATED MAPPED GRAPH. The complete mapped-to-historical-step
+  replay and all mappings remain required.
+
+Read mismatch handling is exhaustive classification, not a waiver of semantics:
+Every original read port/bit records both complete original expected and actual
+mapped coordinate expressions, full original/mapped address, and original/mapped
+read IDs. Exact equality is explicitly distinguished from the exact known mk
+range-guard omission. Only mk ports4..11 bits0..31 with dynamic high bit2 and
+literal-zero bits3..31 may match the latter classifier, and only when expected
+is exactly mux(actual, X, high). Any unrelated mismatch fails. Completion
+requires the entire set of256 known differing coordinates, plus exact complete
+read coordinate coverage without duplicates. Those rows are NEVER marked equal.
+
+Required false flags:
+original_collected_memory_quotient_proven
+read_transition_bridge_proven
+original_to_mapped_explicit_undef_transition_refinement_proven
+raw_sat_value_undef_model_identity_proven
+outer_trace_refinement_proven
+production_applicability_proven
+RAM_transition_composition_proven
+
+No current-generation source closure is fabricated: the old receipt lacks it.
+The stage applies only to authenticated archived graph models. The mapper source
+and exact tree/NAR lineage remain pinned. Init/word correspondence is a base
+relation, not a transition certificate. Mapped observational quotient cannot be
+used as an original collected-memory quotient until a separate original-context
+proof establishes it. Every stronger transition/composition/applicability
+obligation remains explicitly pending in the receipt.
+
+The next transition design is recorded separately in
+build/sparkle/mxu_outer_read_context_draft/PLAN.txt: reconstruct full original
+read identities, first prove all retained D defined/equal without input range
+assumptions, then strict contextual observations or a precisely justified
+specified-bit refinement with coherent whole-word/fanout semantics. It has not
+been implemented or executed in this stage.
+
+After ownership-first incomplete: original u_rw.g_regs.r read port0 bit0 (67837)
+has no remaining mapped alias, but is LIVE as WR_DATA bit293 of the same memory.
+The complete bounded diagnostic is mxu-outer-unmapped-read-diagnostic-first.log
+(512MiB cap,16.404s,116805632B peak,all events0). This is never classified dead.
+
+Constant-read reconstruction now fills a missing read-wire mapping only from an
+exact fully known in-range address and its already audited physical word Q.
+Existing per-port mappings must agree (no overwrite). It indexes every original
+cell input occurrence, module port and net alias; the missing coordinate must
+have at least one consumer and every consumer must be WR_DATA in the complete
+residual-memory inventory. All of those actual mapped masked-write D equations
+are still checked later. Dynamic/OOB reads, other consumer kinds, observations,
+conflicting existing aliases and incorrect next-word D all fail. Every filled
+coordinate and full consumer list is recorded. One-pass consumer/alias indexing
+avoids rescanning all cells for every bit. Scope flags remain unchanged.
+
+After ownership-second incomplete: bounded exact alias diagnostics find40 native
+common-alias changes, all exclusively initializer placement. Source constraints
+move from one wire alias to another; no other metadata changed. Gold has zero
+common-alias differences; removed aliases on both sides have no semantic attrs.
+The audit now compares every alias field except init exactly, while deferring
+initializer placement to the already mandatory full physical-Q reconciliation.
+Every original/new alias is still scanned; invalid width, conflicting values,
+non-Q defined initializers and inconsistent constant initializers fail. The
+entire original predicate map translated through physical ownership must equal
+the entire mapped predicate map. Initializers cannot be dropped, added or
+changed. Deleted aliases with init are still rejected. The report records each
+placement change and complete constrained-bit counts. New guards cover actual
+relocation, loss/change/addition/conflict/width/non-init-metadata/non-Q/constant
+faults. No transition or original-quotient scope changes.
+
+After ownership-third incomplete: bounded full primitive inventory confirms12
+original $bmux cells as the only unsupported selector type; other arithmetic
+kinds are already included in the conservative dependency helper. Local
+ownership_cones.py copies the reviewed stream schema/DAG helper (including exact
+bmux/bwmux/demux parameter and complete port shapes). ownership_graph.py copies
+the retained state/quotient routines, changing only the local helper import and
+adding a full combinational driver/DAG audit with DFF Q/input roots. Selector
+outputs conservatively depend on EVERY input coordinate, with no selected-arm
+assumption. Full actual source fragments are matched to the already pinned
+SatGen source/NAR; no graph rewrite or SAT/transition theorem is inferred.
+
+The successful stream helper, shared tools and preserved failing old checker
+are not edited or monkeypatched. Driver now explicitly imports ownership-local
+routines. New guards verify full bmux state dependency/initialization and reject
+malformed dimensions/directions/parameters/tokens, missing/aliased drivers and
+cycles; demux/bwmux reciprocal vector schemas are also covered. Primitive
+inventory log mxu-outer-primitives-inventory-first.log:0.223s93536256B peak,
+512MiB cap,all memory events0. Whole ownership stage remains incomplete pending
+a fresh bounded successful terminal result.

@@ -1,0 +1,36 @@
+New files only; first diagnostic and all passed proofs remain unchanged.
+No author execution/imports/tests.
+
+Actual whole-cell report has1256 underlying original wires, no literal boundary
+coordinates, no reverse alias/literal conflicts. Gold closes. Original extras
+include m0 metadata flops, g_comp and delay outputs, plus32-bit memory-read data.
+They are reached through vector cells. This does NOT yet prove irrelevance.
+
+The next diagnostic keeps all679D and actual alias vectors, same exact source/
+state/field joins and input snapshots, but uses exact per-output dependencies for
+strictly checked $buf, $mux, $pmux. No graph is rewritten and no new cut introduced.
+All other cells retain conservative full-input dependencies. Actual unknown
+selectors and pmux multiple-active condition are preserved by retaining every S
+bit. Buffer output identities stay separate; tracing A[i] is a dependency rule,
+not identifying undefined A.value and Y.value in a solver.
+
+Inspected current kernel/satgen.cc: mux value/undef vectors operate coordinatewise
+with same scalar selector; pmux branch slices use j*WIDTH+i, with all_undef based
+on every S and their unknown/multiple-active condition; buf undefGating also acts
+per output bit. This supports the proposed dependency audit but an actual solver
+projection will require a separately reviewed, source-pinned certificate. The
+diagnostic retains solver_model_projection_certificate_proven=false.
+Any future projection must keep ONE cell with sorted selected output coordinates
+and the corresponding ordered A/B data slices, preserving every shared selector
+and branch. Do not clone one mux per demanded bit: independent copies of literal
+unknown selectors could alter original cross-output value/undef correlations.
+
+Root commands after review:
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_joint_physical_draft -p test_precise_frontier.py -v
+python3 tools/sparkle_bounded.py --memory-mib 512 -- python3 build/sparkle/vpu_joint_physical_draft/diagnose_physical_bits.py
+
+The latter uses a private FunctionType namespace to replace only baseline.main's
+closure function, keeping baseline exact state/source/ABI joins byte-unchanged.
+It does not modify baseline globals, snapshots or metadata. Capture a fresh log.
+Five guards exercise exact matrix indexing, unknown/all selectors, malformed
+schema, unused vs demanded siblings, and conservative handling of other cells.

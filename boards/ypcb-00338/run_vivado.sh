@@ -26,6 +26,27 @@ root="$(cd "$here/../.." && pwd)"
 speed="${1:-1066}"
 out="${OUT_DIR:-$root/build/vivado}"
 jobs="${JOBS:-8}"
+if [[ -n "${OTPU_SPARKLE_BUNDLE:-}" ]]; then
+  if [[ -n "${VIVADO_DOCKER:-}" ]]; then
+    echo "native FPGA builds require the bounded local process tree; Docker is unsupported" >&2
+    exit 2
+  fi
+  jobs="${JOBS:-1}"
+  if [[ "$jobs" != 1 ]]; then
+    echo "native FPGA builds require JOBS=1" >&2
+    exit 2
+  fi
+  if [[ "${STEP:-}" == impl ]]; then
+    for config_name in MCOLS ACT_ROWS VPU_CL MXU LANES ULANES CORE_MHZ BUILD_ID DSTEP PCIE_GEN; do
+      if [[ -v "$config_name" ]]; then
+        echo "native STEP=impl reuses the saved configuration; omit $config_name or perform a full build" >&2
+        exit 2
+      fi
+    done
+  fi
+  # Fail before invoking Vivado if the bundle or resource limits are invalid.
+  python3 "$root/tools/prepare_sparkle_fpga_bundle.py" verify --bundle "$OTPU_SPARKLE_BUNDLE"
+fi
 # The target (targets/ypcb-00338.toml through opentpu/target.py): the defaults of the knobs below,
 # the platform id and the arch hash the CFG_* registers report. Without a working python3 the
 # built-in defaults stay (the same values) and CFG_HASH reads 0.
@@ -89,7 +110,7 @@ export PCIE_GEN="${PCIE_GEN:-2}"    # read by vivado/bd_native.tcl and userclk1_
 if [[ "${STEP:-}" == impl ]]; then
   run "$here/vivado/build.tcl" "$out" "$jobs" impl "${IMPL_STRATEGY:-}"
 else
-  run "$here/vivado/create_project.tcl" "$speed" "$out" "$mcols" "$core_mhz" "$build_id" "$vpu_cl" "$lanes" "$act_rows" "$dstep" "$mxu" "$platform" "$arch_hash"
+  run "$here/vivado/create_project.tcl" "$speed" "$out" "$mcols" "$core_mhz" "$build_id" "$vpu_cl" "$lanes" "$act_rows" "$dstep" "${MXU:-$mxu}" "$platform" "$arch_hash"
   run "$here/vivado/build.tcl" "$out" "$jobs" full "${IMPL_STRATEGY:-}"
 fi
 echo "done: $out/otpu.bit"

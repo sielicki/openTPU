@@ -1,0 +1,111 @@
+Whole-current-graph comparator inventory and bounded operand batches
+Status: source-only design; no inventory, candidate pairing, or proof executed.
+
+Purpose
+Avoid discovering one comparator group at each retained-D timeout. First inventory
+the actual complete current graph. Do not extend proof machinery or select an
+operational pair list until that bounded diagnostic has established the concrete
+remaining population and ambiguities.
+
+Immutable entry
+The completed configured congruence receipt is:
+  build/sparkle/mxu-outer-configured-congruence-first/summary.json
+  d1229daff572c6d19449bf4d0c0c5116f084d1236a5f3f68450a67724f8453d1
+Require its exact kind/status and all four success flags. Authenticate its complete
+closure; join active_artifacts.full_predicate_congruent to full_congruent_sha256
+and the same digest in input_sha256. Authenticate its model and mux model, with
+fresh source-rule replay. This is the complete paired graph, not one failed cone.
+Keep original-lineage, prefix, full-D and trace flags false in the diagnostic.
+
+The new incomplete continuation is separate evidence:
+  build/sparkle/mxu-outer-configured-D-first/summary.json
+  090b04d60214f83c771692fc899c1fc93f7e4ce128b92f7455f8f3e728ccc086
+It reports 164 baseline plus two new 16-bit intervals, covering [0,2476), and a
+timeout [2476,2492). It is not a predicate-D receipt. Any later coverage stage
+must requalify that exact configured representation and ledger; the inventory
+does not need to promote or reuse the timeout.
+
+First executable stage: bounded read-only inventory only
+1. Root runs a new driver through sparkle_bounded.py. Stream the authenticated
+   graph into a private SQLite PairedIndex, perform complete existing strict
+   schema/driver/DAG audit and verify the 11,856 interleaved D coordinates.
+   Do not load the complete JSON graph or all cell bodies into memory together.
+2. Enumerate every comparator type on each side, not just gt/lt. Record names,
+   complete body hashes, exact parameters, pins/directions, A/B/Y coordinates,
+   and each operand bit's actual input-root or cell-output driver. Record all
+   unsigned32/32/1 gold gt and gate lt candidates separately from unsupported
+   shapes/types. An unsupported comparator is reported, never silently removed.
+3. Generate diagnostic candidate edges only for the actual opposite orientation
+   and exact swapped widths/signs. Use literal 0/1 or identical integer bit IDs
+   to report coordinate identity; X/Z tokens are never evidence of a shared
+   unknown choice. Report full-vector identity independently for gold A/native B
+   and gold B/native A. These are rankings, not operand totality/equality proofs.
+   Do not pair by cell-number order or assume a group contains eight cells.
+4. Keep a disk-backed edge table and stream the report. Explicitly report complete
+   comparator counts, exact-shape candidate count, zero/one/multiple candidates
+   per owner, and ambiguous/unmatched populations. A configurable bounded report
+   limit must label any abbreviated detail as nonexhaustive; counts and full
+   comparator inventory stay complete. Do not materialize an unbounded Cartesian
+   product in RAM. Inverted index of complete actual operand vectors can produce
+   the useful exact-vector shortlist without treating excluded pairs as disproved.
+5. Freeze graph/index/report/model/source closure and imported local tool sources
+   before work and at finish. Publish initial/incremental incomplete summaries;
+   preserve partial artifacts and revoke completion on late publication failure.
+   Diagnostic has no solver, transformation, or theorem flag. Guards cover wrong
+   receipt kind/digest/body, X nonidentity, duplicate/ambiguous matches, reporting
+   truncation, and preservation failure.
+
+What source inspection supports, and what it does not
+The last two observed groups had one complete actual shared operand vector and
+one nonidentical vector. Original memory expansion retains defined constant-read
+muxes with unused X arms; the conservative existing sharing whitelist does not
+recognize those as known. This is a plausible recurring representation pattern,
+not evidence about uninspected fullgraph comparators. Existing exact read IDs and
+word-Q ownership may help explain candidates after inventory. Do not silently
+extend the knownness whitelist, alias unknown-selected branches, or call raw
+SatGen unknown-value correlations irrelevant.
+
+Conditional follow-up only after actual inventory review
+The frozen configured checker requires a failed single-bit cone and completed
+diagnostic. It cannot accept arbitrary fullgraph pairs by changing a status string
+or fabricating an interval. A new explicit fullgraph operand entry is required:
+* SHA-pinned source graph/certificate, inventory and explicit ordered pair config.
+  Every selected full cell body/actual coordinate must match the inventory and
+  source. Ambiguous or unmatched owners remain explicit pending obligations.
+* Construct exact operand cones directly from the complete graph. Use an explicit
+  new observation-vector adapter over the audited index, not a fake D interval.
+  Record each coordinate as pair index, side, pin and bit, preserving the actual
+  underlying net ID and original root port/index. Retain full non-mux primitives;
+  any mux slicing requires the existing exact per-bit value/undef model certificate
+  plus total-model-extension for removed DAG cells. No internal cut or assumption.
+* Initially at most eight pairs per batch (1,024 totality / 512 swapped equality
+  coordinates), because that size has actual bounded evidence. Eight is not a RAM
+  guarantee: estimate cone representation, split before solving if needed, keep
+  3 GiB and 180-second solver limits, and preserve any unresolved single-pair case.
+* Prove all actual gold A/B and native B/A bits defined, then all swapped operands
+  equal. Include actual undefined-bit and wrong-value controls. Keep defined full Q
+  and external RAM/FP-return premises explicit; add no traffic/range premise.
+* Every batch uses the SAME immutable predecessor fullgraph. Preserve shared
+  unknown wires and actual comparator dependencies across all selected cones.
+  Reject each pair's own target-Y ancestry. Other comparators remain actual source
+  cells, not assumed equal. Store an exact disjoint pair ledger and immutable
+  batch resume identities; do not infer success for unselected owners.
+* After all desired batches succeed, replay every query/model/root/body join and
+  lift the universal cone lemmas to that one fullgraph. Reuse the actual unsigned32
+  gt/lt rule only for its exact width/sign domain. Simultaneously substitute all
+  selected complete Y vectors, replay every owner/alias/input, then fresh global
+  driver/DAG audit; reject any cross-pair cycle. This is a separate certificate,
+  not part of the diagnostic or a proof from candidate signatures.
+* A final continuation requalifies original-to-current lineage and all 2,476
+  completed coordinates, then preserves every remaining [2476,5928) obligation
+  (3,452 bits) with exact mixed-representation immutable resume. No complete-D,
+  original-memory transition, output-refinement, trace or production promotion
+  follows merely from a successful inventory or comparator batch.
+
+Optional later diagnostic improvement, not an implemented rule
+Pinned SatGen mux equations show that a literal defined selector and a defined
+selected arm make Y known/equal that arm regardless of the unused arm. A narrowly
+reviewed canonical-knownness certificate could therefore expose word-read identity.
+This needs explicit rule/domain/provenance and guards; it must not generalize to
+undefined selected arms (aliasing would change unknown-value correlations). The
+initial inventory does not require this extension and should run first.

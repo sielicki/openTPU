@@ -1,0 +1,66 @@
+Lane4 initialized investigation: exact sequential cone before bounded trace
+Unexecuted. All previous proof/diagnostic sources and receipts stay immutable.
+
+The passed lane0 alignment invariant does not exclude lane4: with mx_i low3=0,
+the original32-bit read address of mk port8 (must be discovered by actual
+manifest, never assumed by this plan) is4. Source hardware accepts M unchanged;
+no M<=4, reset, traffic, ISA-validity or command-liveness premise will be added.
+The source M5/RMAX scenario is only a search seed, not a reachable witness.
+
+First executable stage: complete sequential dependency inventory, no SAT claim.
+Authenticate completed hazard certificate, its exact inventory/initial ownership
+and all7436 native Q/D coordinates, plus full original read manifest. Start with
+actual native t_wen[4], original t_wen[4], original lane4 read address and native
+mx_i low3. Use the full original/native graph and exact paired shared-root map.
+Keep all32 original address bits. Original read coordinates must be located by
+actual expanded read manifest and output-cone ancestry; report all candidates
+if ambiguous, never infer read port from source numbering alone.
+
+Compute the least fixed point of FULL primitive-cell dependencies and sequential
+state dependencies. Whenever a physical Q root is reached, include its actual D
+cone and repeat until no new Q appears. Retained roots require BOTH actual D
+owners if either side can depend on them; independently omitted Q retain their
+side identity and D. Record complete original port/index identities, exact
+owners/body digests, all Q/D/init predicates and root classifications at every
+boundary. No internal dependency becomes an input, and no mux arm is discarded
+merely because it is inactive in one example. Detect unsupported cells, cycles,
+missing/multiple drivers and budget excess with an incomplete receipt.
+
+This inventory determines whether the actual hazard control transition is
+independent of RAM, FP, dot and epilogue returns. All child-return roots are
+reported; their absence is an audited graph property, not inferred from source.
+If any occur, the next trace checker must instantiate the required child state
+and memory transitions, or produce only an explicitly open-boundary candidate.
+No free returned values may be promoted to initialized closed reachability.
+
+Next bounded trace stage (only after concrete inventory review):
+- use the exact closed sequential slice and full init predicates restricted by
+  proved no-dependency closure, with unused state extension justified;
+- native initial constrained bits exact, arbitrary native bits existential once;
+  choose one coupled original initial witness from ownership, and retain each
+  omitted state's own actual D across cycles (no per-cycle rechoice);
+- all actual external top inputs remain universally permitted; SAT may choose
+  a concrete command sequence, whose complete start/accept/release signals are
+  archived. No assumed command M bound. Optional M5 is an explicitly restricted
+  existential witness search, never an invariant proof over all commands;
+- fresh per-cycle combinational unknown choices keep their original shared wire
+  fanout; whole original RAM arrays, if included, have one initial array and real
+  write/read evolution, never per-read arbitrary returns;
+- query actual defined enabled lane4 plus original full address>=4, native and
+  original enables/data observed. Require no free child roots for a closed
+  archived-controller witness, otherwise defer that claim;
+- validate every time-step of any SAT model against original graph equations,
+  initialization, full control path and command pins; do not call a bounded UNSAT
+  result an unbounded invariant. Source/event/current-production parity remain
+  separate applicability obligations even for a closed archived graph witness.
+
+Before implementing broad unrolling, root executes this bounded inventory. It
+will report exact cone size, all child providers and state dependencies so we can
+choose a feasible complete proof representation under the unchanged3GiB cap.
+
+Implementation clarification
+Combinational cycle rejection is performed by the full PairedIndex driver/DAG
+audit. Real sequential Q-to-D-to-Q feedback is allowed and terminates by the
+visited-Q fixed point. Enable/address targets do not establish a data effect;
+the separate lane4 data ancestry inventory selects every possible read candidate
+conservatively and records ambiguity. No SAT query is executed by this stage.

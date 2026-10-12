@@ -1,0 +1,21 @@
+Unexecuted child validity dependency inventory. Existing passed evidence frozen.
+Root alone executes guards and actual audit through sparkle_bounded.
+
+The driver authenticates epilogue8197 and dot61323 local stepped state, all
+field/index/Q/D/initial witness coordinates, both-side valid output roots, full
+primitive driver/DAG audit, and pinned mux-coordinate semantics. Dot D tokens in
+the initialized JSONL are encoded original coordinates, compared as such.
+
+Dot gold's2048 certified omitted reference Q are not ordinary defined inputs.
+The exact quotient set is checked against complete initialized reference-only
+JSONL owners. The unchanged index may recognize those existing undriven Q in
+unused graph siblings; any actual demand is reported as an unresolved frontier
+with its concrete original Q/D/init owner. No zeros, new roots or favorable-path
+pruning. A demanded frontier disables metadata-only-root scope.
+
+This stage inventories child endpoints. It does NOT bind production parent
+occurrences, prove temporal extension of omitted numerical state, close feedback,
+or prove initialized lane4 reachability. Initial witness is native-to-existential
+reference, not independent reference startup equality. A same-named seven-bit
+m4 endpoint is a shape check, never a wiring proof. Actual parent graph binding
+and controller/provider global fixed point are subsequent required obligations.

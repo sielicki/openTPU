@@ -1,0 +1,33 @@
+Unexecuted draft: no imports, tests, extraction, proof or source/tool edits.
+
+Finding: actual compiled production 8/2/true decoder declares m0=115'h0 and
+m0d=28'h101. Metadata function field is bits98..105. Original fdec(0) has cls1,
+cc0, cf0, s00 and fh1, so decode value257 and onehot-or-zero fh hold at power-up.
+This closes the native decoder invariant's sampled-reset premise if validated;
+it does not establish initialization of any other VPU register or RAM.
+
+Driver authenticates current DecoderReceipt default driver-guards5 and complete
+input/archive closure, compiled generator/projection and full-native identity.
+It reconstructs both actual reference wrapper/decoder and the143-bit exposed
+transition graph exactly from authenticated raw.json, collecting initialization
+from all aliases before transformation. The original143-bit reference state is
+unspecified, so an equal concrete reference witness is possible (defined bits,
+if any, must agree). Every native bit must have defined init; no reset assumption
+is used. Existing step_ok/onehot_ok/equal_next logs and exact unrestricted solver
+scripts are authenticated; old sampled-reset base is explicitly not startup
+evidence. A tiny new SAT checks the actual initial state against original fdec
+and onehot-or-zero. No all-zero decoder shortcut or decodeValue reimplementation.
+
+Two fresh native-source initializer mutations are re-extracted: m0d101->100 and
+m0func0->1 (bit98). Their actual graph initial values must fail the initial
+predicate with exact solver exit1 and concrete JSON counterexamples. Existing
+reset/update/stream transition mutations remain historically scoped evidence.
+
+Next: review, install tools/ only after source freeze, bounded256MiB guards,
+then bounded proof (512MiB likely sufficient, do not bypass3GiB ceiling).
+Preserve first failed attempt. Fresh proof gates include actual schema/script
+identity and current archived helper/source closure, so stale facts fail closed.
+No consumer binder is included yet: production assemblies must be matched to
+full_native module tokens/attributes/incoming directives and exact reached8/2/true
+specialization before advertising this as discharging a production invariant.
+No concrete Lean-kernel/SAT certificate/compiler correctness claim is made.

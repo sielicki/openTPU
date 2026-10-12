@@ -1,0 +1,29 @@
+UNEXECUTED diagnostic draft; no graph rewriting and no equality success claim.
+Target after terminal archival: paired second pe000[48,64) or another explicit
+receipt/case/range. Requires immutable terminal incomplete receipt path+SHA and
+actual graph/manifest/script/log hashes from its closure. Reads only those input
+artifacts; explicitly does not requalify the entire prior proof closure.
+
+SQLite owner/driver index plus complete DAG audit. Binary constants0/1 and exact
+original paired input ports are defined roots, checked against authenticated
+semantic shared-input manifest. X/Z never qualify. Only exact fully-width-checked
+mux,not,logic_not,and,or,xor,xnor,add,sub,mul,eq,ne accept the rule that all inputs
+structurally defined implies deterministic defined output. No partial/case-X-
+sensitive operation is accepted. Exact typed parameter+ordered input signatures
+must match; no operand reordering, commutativity, algebra or guessed identity.
+Every multiplier reports exact widths/parameters, operand signatures and blocked
+input reasons; cross-side exact eligible matches reported as candidates only.
+No cells/wires are replaced and no outputs are cut or newly constrained.
+
+Rule schemas need source review before execution. Mathematical totality on defined
+finite-width operands is used only to classify possible sharing candidates; a
+future substitution certificate/model audit would still be required before
+changing a proof graph. Diagnostic status explicitly says no equality theorem
+and no sharing-substitution theorem. Standard capped runner mandatory, archive
+SQLite after closing, preserve interrupted input/log identities. No execution
+performed while root owns runtime gate.
+
+Latest root update: interval pe000[48,64) PASSED within the unchanged180s timeout.
+It must not be described as failed. The running second attempt remains intact;
+this diagnostic is optional source-only preparation for a later explicitly
+selected terminal artifact, not a reason to interrupt or replace successful work.

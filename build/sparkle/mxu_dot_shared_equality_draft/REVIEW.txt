@@ -1,0 +1,38 @@
+Source-only full equality integration draft; no guards or solver executed here.
+
+New driver check_shared_dot_undef.py preserves the earlier complete nine-helper
+and 100726-bit parent obligations, exact input-coordinate pairing, complete
+explicit-undef totality graph bindings, initial/transition source closures,
+exact mux slicing, disjoint output coverage, timeout and memory budgets.
+
+Every new query generates the unchanged original paired.json and manifest,
+then a certified shared.json/substitution.json. The exact original graph is
+replayed against both generated values and re-read published bytes under the
+NAR-authenticated finite Yosys model rules. Only shared.json is sent to the
+unchanged explicit-undef SAT query. No cuts, new inputs or assumptions appear;
+unknown expressions remain independent. Zero substitutions are valid and
+still produce a replayed identity certificate. Full certificate graphs are
+released before the solver runs.
+
+Resume authenticates both original pair/manifest and, for a previously shared
+query, fresh shared graph/certificate byte identities against fields AND the
+previous input closure. The previous script must name that authenticated
+proof graph and its log must contain the exact successful SAT classification.
+Sharing model audits must agree. Legacy completed queries retain their old
+representation and are reused exactly as before. The known second attempt's
+four [0,64) intervals can be resumed; standalone 64..80 success is deliberately
+not separately imported and will be recomputed. This avoids a new receipt
+adapter. Success still requires all intervals in all ten paired cases, and
+whole_dot_proven remains false.
+
+Incremental incomplete checkpoints record original/shared/certificate paths
+before writing or SAT. Imports under tools/build are snapshotted at entry and
+revalidated at finish. Old attempts and all active standalone dependencies
+are unchanged.
+
+Proposed bounded guards (root coordinates gate):
+source /tmp/opentpu-test-env.sh
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m pytest -q build/sparkle/mxu_dot_shared_equality_draft/test_shared_query_bridge.py build/sparkle/mxu_dot_defined_sharing_draft/test_defined_sharing.py build/sparkle/mxu_dot_composition_draft/test_paired_dot_undef.py
+
+Proposed full run after independent review:
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_dot_shared_equality_draft/check_shared_dot_undef.py --output build/sparkle/mxu-dot-paired-shared-first --resume build/sparkle/mxu-dot-paired-undef-second/summary.json --resume-sha 3470c87c32152db5f8acb3e98beac25a8a3a798c75acf1fa4b2888fd12c0a42c --model-source build/sparkle/yosys_source_acquisition/attempt1/source

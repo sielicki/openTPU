@@ -1,0 +1,34 @@
+Source-only executable draft, not run or imported:
+ check_unique_case_fragment.py / unique_case_fragment.py / tests.
+
+Pins exact extraction-stage-third receipt and archives its complete closure.
+Consumes authenticated original RTL/pkg/FP package and exact normalized reference
+wrapper. The two original complete always_comb blocks must occur keyword-only
+normalized exactly once in the authenticated wrapper. Package enum values,
+selectors/defaults/active-generate derivation and fdec_t source layout are pinned.
+This is local-fragment scope; it does not assert the decoder use-site bridge.
+
+Fresh tiny actual original/normalized Slang compilation, plus exact common
+harness. Inputs all7*32float words,28decoder bits,RMA Boolean remain arbitrary.
+RMA arbitrary is stronger than production constant; each array uses actual l=0
+coordinate, giving a lane-independent lemma. Complete result+operand output160
+bits, bothside definedness320bits; condition onehot0(decoded[27:8]) remains an
+explicit component premise. It is NOT yet discharged by production wiring.
+
+No proc optimization or opt_expr. Strict $buf-to-unsigned-OR-zero normalization
+preserves SAT value/undef semantics only; exact pins/widths required. All other
+cells untouched. Exact flattenedcheck interface, noQ/state/init/memory/formal,
+allbit-token audits, unique input/output drivers, all-cell acyclicity and full
+outputdriver resolution via Cones. No hidden cutpoints or unused output drops.
+
+Both explicitundef/definedprimary queries include only -set onehot0 1. Prove
+fullobservations total, then strict full160equality. Actual original-source label
+and operand mutations are separately compiled; each must stay total and fail
+strict equality with rc1 plus concrete JSON showing onehot0=1 and equal_ok=0.
+No miter-only mutation, timeout/parser fail accepted, or -prove-x.
+
+Active source/script/raw/audited/model/log/command/result artifacts preserved on
+failure/signals; terminal receipt remains conditional_only/use_site_pending.
+No native source/builds, no changes to live FP checker dependencies. Gate required
+for guards or tiny compiler/solver validation. Parent initialized decoder143 and
+allproductionedge/applicability obligations remain explicitly outstanding here.

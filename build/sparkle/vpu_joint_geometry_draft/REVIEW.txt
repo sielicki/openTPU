@@ -1,0 +1,57 @@
+Actual semantic checker ready for source review; no author execution.
+
+Actual root-run diagnostic found no extra frontier on either side. Both complete
+cones have56nonbuffer primitive cells,707visited bits,156X literal dependencies.
+The corrected semantic projection also retains actual buffers and observes their
+boundary aliases. No extra state/memory/child is cut to close the theorem.
+
+Checker projects actual original DB D(nch,nfill) and actual archived joint-gold
+D(nch,nfill), with all32 D observed on each side. Complete whole-cell dependencies
+are retained. EVERY actual buffer stays in the solver graph with its distinct
+output identities, parameters and pins; no internal canonical substitution.
+This is necessary because native SAT undefGating allows independent value bits
+at undefined buffer outputs. Simlib wire identity alone was insufficient and
+the original unexecuted collapse approach has been removed.
+Canonicalization selects underlying boundary cut coordinates only. The actual
+275 downstream boundary aliases on each side are additionally observed and
+proved defined/equal to those underlying inputs. Thus the query has614 observed
+bits:64 actualD plus550 actual alias bits. All source cells retain exact type,
+parameters, attrs and connections up to final side-disjoint bit renaming.
+An audit-only $buf->$pos copy supplies identical dependency edges to Cones; it
+is never serialized for SAT. Local schemas plus Cones enforce full D/alias DAG,
+unique drivers and dimensions. Actual native satgen.cc is supporting evidence;
+the exact historical solver executes every unchanged buffer's undef semantics.
+
+The275shared defined input bits are the underlying cut coordinates for hc240,
+can_begin1, en1, rst1, nch16, nfill16. Their actual aliases are linked by fresh
+solver totality/equality obligations. Later composition must provide definedness
+and equality at these exact underlying coordinates, not just names.
+No producer/layout theorem is asserted; external boundary equality/definedness
+is an explicit conditional scope. hf and h_empty are actual downstream cones.
+X literals are preserved and full explicit-undef totality plus strict equality
+must pass. No frontend, process lowering, opt_expr or arithmetic abstraction is
+used: a directly assembled JSON miter contains the two original primitive cones.
+
+Hardware negatives modify the ACTUAL archived gold flop D before projection:
+bit0 inversion via a real added inverter, forced hold from actual Q, and literal
+X on actual D. Every original1159Q is unchanged; full mutated module archived.
+These are elaborated-hardware faults, not emitted-Lean/source mutation claims.
+Both definedness and equality positives required; flip/hold must remain defined
+and give strict concrete equality CEX; undefined must give an actual observed-X
+model from the failed strong totality query. Full32 observation count retained.
+
+Complete previous receipt closure and direct artifact identity, coordinate to
+original/joint joins, exact binary match, source helper hash agreements, active
+artifact checkpoints, failure preservation and final hashes retained.
+
+Root commands, after review (author has not run):
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_joint_geometry_draft -p test_geometry.py -v
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_joint_geometry_draft/check_geometry.py --work build/sparkle/vpu-joint-geometry-first
+
+Eleven guards cover complete observation/interface, side-disjoint state names,
+extra state/missing wires/D cycles, preserved X, actual D faults and full Q,
+primitive dimensions, exact undef query and concrete failure model validation,
+preserved independent undefined buffers and explicit boundary alias obligations.
+No wholecontrol, startup, raw observer or layout claim. The result is a focused
+conditional next-state theorem which can later discharge two real consumers in
+the full original partition relation.

@@ -1,0 +1,40 @@
+UNEXECUTED additive actual compiled Lean mutation driver and guards.
+No installed patch, imports, tests, builds, simulations or netlist processing run.
+
+Positive immutable source: se-composite-diagnostic-candidate-second/summary.json
+SHA256 6df3dca524addb88cae015c2b3a85e43bfda4b3343ee9e4ace10e96e576a26ce.
+Replay complete closure, successful exact SAT scripts/logs, 486/349-bit state/init
+support and source observer reconstruction. The 34 baseline simulation records
+and complete synthesis bridge remain positive evidence, not rerun by mutations.
+
+Three mutations change actual reviewed Lean helper source before C compilation:
+1. collision_enable removes en from its actual emitted predicate.
+2. return_fin_boundary changes actual fin >= into >, exposing pass+1==n_pass.
+3. rom_entry changes only stage0/class1/pass0 actual generated table constant by
+   +1. Its original bit0 is verified zero, so this flips exactly that bit.
+
+Every changed helper compiles through run_generator. Fresh old core must equal
+the authenticated old core; removing the actual diagnostic block from mutant
+core must recover it too. Entire emitted mutant core must equal the positive
+core with exactly its intended predicate/table edit and no other change. No
+proof harness/output/witness-only mutation is accepted. Original RTL observer
+source, full paired ROM/trigger outputs and native datapath are unchanged.
+
+Full-domain 648-bit explicit-undef definedness must still succeed for each fault.
+Then strict equality must yield a real complete defined SAT model and unique FAIL
+terminal with no timeout/error. Decoder maps the complete 648-bit observed vector
+to both five-bit trigger flags,315-bit ROM vectors,four-bit n_pass outputs. It
+requires exact target differences and every original input value. ROM negative
+search fixes rom_cp=16 solely to demonstrate the changed table entry; it does not
+restrict positive definedness/equality claims. All positive obligations remain.
+
+Collision witness must demonstrate disabled en losing its suppression. Return
+witness must hit the exact original four-bit threshold and only trigger bit1.
+ROM witness must differ exactly in ROM bit0 and may additionally differ in its
+own stage0 control trigger; other outputs must match. Undefined outputs, unrelated
+faults, missing/truncated models and generic process failures stay incomplete.
+
+All source/helper/compiled objects/graphs/scripts/logs/models are authenticated;
+active checkpoints and graceful interruption preserve incomplete evidence.
+This strengthens candidate mutation controls only. It does not install the patch
+or qualify ABI/production assembly/runtime, four-state behavior, or whole VPU.

@@ -1,0 +1,43 @@
+Unexecuted eight-pair operand stage; no substitution or new premise.
+
+First pair actual128-total/64-swapped lemma passed, immutable summary SHA
+d54ef81be293178cbb60d48981a1a2c5f9e41f2c5533466952d27f865f9be7b0.
+The new batch independently checks eight explicit natural-order candidate pairs
+on the same entire regenerated D2412 cone, rather than extending that receipt.
+Pairing is a hypothesis proved or refuted by actual queries, never an assumption.
+The source domain, exact full_shared graph/model/diagnostic joins and projection
+machinery are unchanged from the reviewed first-pair checker.
+
+For each pair, build the exact full-cell operand dependency closure and reject
+its own target Ys as operand ancestors. Other pairs' comparator dependencies
+are retained as their actual original cells. Their equality is never presumed;
+the joint1024-totality then512-swapped-equality queries retain the full source
+dependency semantics. Union identical cell owners without cloning shared unknown
+choices; keep every original root. All gold A,B vectors precede all gate B,A
+vectors in one complete1024 observation list. Actual inverted/X first-coordinate
+controls are required after positive results. Undefined/different results remain
+diagnostic outcomes, and timeout remains incomplete. No source rewrites.
+
+Subsequent congruence design, requiring separate review/executable
+Authenticate pinned SatGen arithmetic comparison undef handling, exact unsigned
+32/32/1 gt/lt branches, width extension and undefGating, plus actual ezSAT reversed
+unsigned comparison implementation. Prove a tiny actual-SatGen universal gt(A,B)
+versus lt(B,A) rule if useful; no whitelist addition is implicit. The proved
+operand totality forces both predicate masks0, and swapped operand equality then
+forces equal Y. Replay all batch queries and exact source bodies before lifting
+to the immutable full shared graph: full target bodies, every operand ancestry
+owner, original root identities, and mux projection applicability must match.
+One simultaneous full-Y substitution may replace all eight original predicate
+outputs with their native counterparts only after the full-graph driver/DAG
+audit succeeds; preserve every other owner and all unknown correlations. If
+cross-side replacement creates a cycle, fail closed and use a separately audited
+acyclic staged order. Do not merely assume numeric/source order is topological.
+
+After congruence, requalify the existing exact2412 prefix and prove D2412 before
+continuing all3516 remaining coordinates to5928 with immutable mixed-ledger
+resume. Existing source globalflags remain revoked; new completecoverage and
+outer original-memory/trace/production claims stay false until separately proved.
+This batch reduces repeated runner/provenance work but does not increase any
+resource or timeout ceiling. If the joint query times out, retain its complete
+inputs and partition semantic observation groups under a separately reviewed
+resume instead of dropping comparisons or assuming earlier predicate results.

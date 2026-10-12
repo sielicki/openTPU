@@ -1,0 +1,18 @@
+Unexecuted local subclass; no active/shared/passed helper or consumer changed.
+
+Historical closure still records every (original absolute path,digest) owner.
+Initial content-addressed snapshot verification uses direct() once instead of
+two successive SHA reads and is reused for additional owners of that snapshot.
+This uses the same initial-check/final-recheck lifetime as existing authenticated
+owner caching. No hash is cached across attempts or substituted by file stats.
+
+Finalization streams every observed file again. For an exact ARCHIVE/<digest>
+path, it verifies bytes and file identity across the read, then avoids copying
+the already existing snapshot into another archive temporary. All other files
+retain normal archive() handling. No live source gets the no-copy exemption.
+Archive corruption at entry or before finish still fails; owner paths are never
+lost. A path replacement during the final read fails even with identical bytes.
+
+Likely benefit is reduced repeated I/O and cgroup page-cache reclaim, not a
+claim of reduced Python anonymous memory. Receipt-cache lifetime is unchanged.
+Needs independent source review and bounded guards before optional integration.

@@ -1,0 +1,148 @@
+Connected4,231 selected-control composition: source-only design
+
+Prerequisites and result boundary
+Await terminal write-select proof before fixing its receipt/hash. Consume the
+completed simultaneous startup4,231 witness and actual original/native
+joint1,159, stream1,350, writer1,722 transition relations, issue555, busy1 and
+write-select424 providers. Source/extraction/memory/model scopes of each remain
+explicit. Desired theorem: initialized selected-control step/trace relation
+under only actual host/datapath boundary equality. This is not yet whole-VPU,
+nonselected-state equivalence, physical timing, or universal original-context
+replacement. No reset, occupancy, traffic, zero-memory or opcode premises.
+
+A. Complete logical coordinate and occurrence join
+Pin the provider inventory's3,167 actual six-child input occurrences:
+250 exact endpoint candidates +280 joint-internal +2,121 external occurrences
++91 previously missing write-select domain +425 previously missing providers.
+Counts must be rederived from exact rows; no unique-name deduplication.
+The280 command/sequence internal edges are covered by the actual joint theorem;
+retain the entire edge inventory, including both busy occurrences. The91 now
+join to sequence state;425 become busy1 plus cw424 with exact normalized consumer
+observations. The250 are candidates until actual alias/constant links are proved.
+The2,121 external occurrences may share physical bits; they are not2,121
+independent unconstrained inputs. Canonical native parent expressions and actual
+original endpoint relations must jointly determine unique external classes.
+
+Use exactly the startup bijection: original2,051Q+2,180logical memory coordinates
+versus native joint/stream/write unit coordinates. CQ480 and writer1,700 mapped
+net IDs are converted via authenticated mapped-state and old-to-new provider
+maps to logical(memory,word,bit), never equated across extraction ID spaces.
+Keep every current Q, D and memory bit and prove partition coverage/disjointness.
+Retain all output observations and complete component input-width/order vectors.
+Audit actual constants by value. Any X/Z boundary, contradictory mixed class,
+missing producer or repeated native input requiring incompatible original
+coordinates is an unresolved obligation, not an extra input or silent merge.
+
+B. Provider-to-consumer semantic links
+For each internal occurrence, join the producer's actual original observation
+and native output to the consumer's exact normalized proof boundary coordinates.
+Record both actual retained buffer chains and all existing alias totality/linkage
+observations used. Neither names nor canonical() equality establish semantics.
+For state-only providers, join exact current-Q relation and complete support.
+For issue27/busy1/cw424 already directly observed normalized consumers, replay
+those exact observation/query identities. Other250 candidates require either
+an exact already-proved raw alias linkage, defined upstream reverse/forward
+buffer rule with pinned SatGen semantics, or a small actual-cone link query.
+Forward/reverse buffer reasoning is used only after definedness is established;
+unknown buffer input/output value variables must never be identified by fiat.
+Native producer-to-consumer equality is the exact reached parent wire coordinate;
+verify all six full ordered edges and full containing body/directive identity
+for Gen1/Gen2/bundle, not merely the control_ name.
+Command head_nfill setup and sequence retained nfill stay separate coordinates.
+
+C. Actual dependency graph and noncircular proof order
+A module-level order is insufficient (en, ss_rq and busy form apparent module
+feedback). Build a per-bit obligation graph from actual proved combinational
+cones on BOTH sides. Vertices are state Q/logicalmemory roots, genuine external
+classes, observed provider bits, normalized consumer bits and full next-state D.
+For each actual output or D observation recover the exact archived projected
+owner/cell/bit graph from its successful query, plus its source-coordinate and
+boundary maps. Requalify actual source/projection/SigMap certificates; do not
+infer support from HDL expression names or declared inputs.
+Strict buf/mux/pmux coordinate dependency rules are allowed only with their
+already-pinned exact model certificate; all selectors and branch positions stay.
+Other primitives keep full dependencies unless separately certified. Keep one
+owner per union of demanded coordinates, all literal occurrences and buffers.
+Original memory outputs are modeled by the completed actual-map/independent-law
+bridges: head is current-word/current-read-address support; writes use old words
+and actual controls. Neither read/write timing nor defined controls is assumed.
+Retain both original writer readers and prove each actual support independently.
+
+The graph must account for original intermediate combinational providers outside
+selected state, not just native edges. Any reachable nonselected Q/child/memory
+is an actual external datapath boundary only if already an authenticated parent
+boundary class; otherwise it is a missing proof/provider. Removing all4,231
+current-state roots and genuine external classes must leave acyclic support on
+both sides AND an acyclic UNION of paired-obligation dependencies after semantic
+boundary-class identification. Opposite side dependencies may create a relational
+cycle despite individually acyclic circuits. Require one explicit order satisfying
+both sides. Record deterministic topological order and every dependency edge;
+cycle detection is fail-closed, never resolved with a new equality assumption.
+
+Conditional component queries often expose unused boundary ports. For induction,
+extract the ACTUAL support of each output observation from the exact archived
+query graph, including support of observed raw aliases and equality targets.
+To reuse a universal query before unrelated inputs are available, justify a
+formal extension: each unused boundary equivalence class may be assigned an
+arbitrary defined common value since it has no path to this observation. Shared
+classes/constants with used roots are included, not independently assigned.
+Record extension satisfiability against fixed related Q, constants and all
+existing shared classes. An alias-link premise cannot depend on the very output
+being established. If support/alias correlations prevent this extension, retain the broader premise
+or reprove the actual reduced-support cone with no extra input assumptions.
+Do not infer per-output independence merely from whole-module conditional proof.
+
+Then visit support-ready observations: current related state and genuine external
+classes establish first outputs; exact provider links establish subsequent input
+relations; complete actual D theorems establish all4,231 next-state coordinates.
+All source input occurrences must have one discharged status. The connected
+contract must contain zero internal per-cycle premises. True external classes
+remain explicit state-dependent physical datapath interface relations where
+applicable; no claim the entire external datapath itself has been proved here.
+
+D. Startup and outward scope
+Replay root simultaneous startup witness (not independent per-unit satisfiability),
+including all original alias constraints shared with complement state and actual
+native initializers. The actual native artifact constrains all4,231 selected
+coordinates, including memory; original has zero defined initializer constraints.
+Quantification is FOR EVERY defined native startup EXISTS a compatible original
+startup. Do not assert arbitrary native selected-memory startup or universal
+original/native startup alignment. Only any explicitly unspecified complement
+state remains arbitrary. Preserve exact five stream lane permutations.
+Output/public scope must be enumerated independently: provider inventory covers
+5,857 outward uses of selected storage plus backward D/access closure; it does
+NOT include every provider-only/public cone. Join every actual native parent
+output to a proved observation/current-state coordinate. For original outward
+uses, retain the entire5,857 occurrence set and extend inventory with the union
+of all promised public/provider output cones before claiming context replacement.
+Any unmatched original procedural temporary/internal consumer remains an explicit
+replacement gap. An initialized connected selected-state theorem can be reported
+once A-C and startup pass, while context-replacement/public completeness remain
+false until this final observation/crossing coverage is complete.
+
+First executable artifact (no SAT initially)
+One immutable connected-domain/support inventory, using exact completed query
+artifacts and complete startup/provider manifests. Stream query graph inputs and
+SQLite owners; release each graph after its per-output support record is saved.
+Emit full3,167 occurrence resolution, original/native logical state joins,
+unique external class definitions, candidate semantic links, and both per-bit
+support/DAG manifests with all unresolved edges. Preserve terminal inventory
+separately from semantic theorem flags. Review the measured unresolved list;
+run only necessary actual alias/link queries, then an authenticated composition
+certificate checking the complete union and proof order. Never promote metadata
+inventory to an initialized trace theorem without the dependency/extension and
+all-input-discharge argument above.
+
+Hierarchy implementation clarification
+No fresh whole-control flatten is required: exact reached six-module body/edge
+identity transports each authenticated raw child bit-support graph into a
+namespaced hierarchy. Require explicit mapping from local raw module input,
+output,Q and D IDs to the joined current-state/parent-edge coordinates; bit IDs
+are never global across modules. For native joint command+sequence combined
+artifact, join its hierarchical u_command/u_sequence Q aliases to the per-unit
+startup fields and exact full child definitions, preserving both constituent
+edge vectors. Verify all state clocks are the same actual parent clk, with the
+same edge polarity; clock is not a new arbitrary combinational data provider.
+Original supports remain anchored to original root owners and exact mapped
+memory certificates. Hierarchical native support plus actual original support
+can therefore establish the two complete per-bit DAGs without giant extraction.

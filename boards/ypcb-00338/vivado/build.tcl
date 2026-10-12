@@ -15,7 +15,44 @@ set impl_only [expr {[lindex $argv 2] eq "impl"}]
 # an implementation strategy (e.g. Performance_Explore) when the default run misses timing
 set strategy [lindex $argv 3]
 
+set sparkle [expr {[info exists ::env(OTPU_SPARKLE_BUNDLE)] && $::env(OTPU_SPARKLE_BUNDLE) ne ""}]
+if {$sparkle != [file exists $out/sparkle-manifest.json]} {
+  error "native FPGA project/bundle selection differs; recreate the project with matching selection"
+}
+if {$sparkle} {
+  if {$jobs != 1} { error "native FPGA builds require one job" }
+  exec python3 $root/tools/prepare_sparkle_fpga_bundle.py verify \
+    --bundle [file normalize $::env(OTPU_SPARKLE_BUNDLE)] --project $out
+  set_param general.maxThreads 1
+}
+
 open_project $out/otpu.xpr
+if {$sparkle} {
+  # Check the opened project as well as its manifest: synthesis can ignore the
+  # generated RTL's initial parameter assertions.
+  set actual_parameters [dict create]
+  foreach item [get_property generic [current_fileset]] {
+    if {![regexp {^([A-Z_]+)=(.+)$} $item -> name value] || [dict exists $actual_parameters $name]} {
+      error "native FPGA: malformed or duplicate project generic: $item"
+    }
+    if {$name eq "BUILD_ID" && [regexp {^32'h([0-9a-fA-F]{1,8})$} $value -> hex]} {
+      scan $hex %x value
+    } elseif {$name eq "DSTEP" && [regexp {^1'b([01])$} $value -> bit]} {
+      set value $bit
+    }
+    dict set actual_parameters $name $value
+  }
+  set expected_names {MCOLS ACT_ROWS VPU_CL MXU_IMPL LANES ULANES CORE_KHZ BUILD_ID DDR_MTS DSTEP PCIE_GEN}
+  if {[lsort [dict keys $actual_parameters]] ne [lsort $expected_names]} {
+    error "native FPGA: project generic inventory differs"
+  }
+  set actual_values {}
+  foreach name $expected_names { lappend actual_values [dict get $actual_parameters $name] }
+  exec python3 $root/tools/prepare_sparkle_fpga_bundle.py verify \
+    --bundle [file normalize $::env(OTPU_SPARKLE_BUNDLE)] --project $out --parameters {*}$actual_values
+  # Implementation reuse takes its PCIe routing choice from the verified project.
+  set ::env(PCIE_GEN) [dict get $actual_parameters PCIE_GEN]
+}
 file mkdir $out/reports
 # run properties (synthesis options, implementation directives): impl_directives.tcl; not in a
 # FAST development build (create_project.tcl)
@@ -121,6 +158,15 @@ close $fh
 puts [exec cat $out/reports/SUMMARY.txt]
 
 # ---- bitstream, written from the routed design opened above
+if {$sparkle} {
+  if {![string is double -strict $wns] || ![string is double -strict $whs] ||
+      [regexp -nocase {nan|inf} "$wns $whs"]} {
+    error "native FPGA: missing finite numeric setup/hold timing results; bitstream not written"
+  }
+  if {$wns < 0 || $whs < 0} {
+    error "native FPGA: timing failed (WNS $wns ns, WHS $whs ns); bitstream not written"
+  }
+}
 write_bitstream -force $out/otpu.bit
 if {[llength [get_debug_cores -quiet]]} { write_debug_probes -force $out/otpu.ltx }
 # BPI x16 flash image (for a permanent load; see docs/board.md). The flash has address lines

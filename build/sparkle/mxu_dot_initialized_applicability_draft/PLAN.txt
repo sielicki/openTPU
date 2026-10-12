@@ -1,0 +1,126 @@
+SOURCE-ONLY DRAFT. No imports, tests, parsing, extraction or hashing executed.
+No initialized certificate success assumed. No applicability claim yet.
+
+Exact target: D128/C4/IMPL2/CL16 initialized physical dot, mapped state163839,
+reference physical state165887 (2048 reference-only quotient bits). Original
+primitive-model initialization is parameter-elaborated; arbitrary native undefined
+bits remain arbitrary. No independent startup, raw event-region four-state,
+device power-up, whole-MXU/epilogue/controller, board, timing or runtime claim.
+
+Authoritative inspected contracts:
+ tools/check_sparkle_mxu_dsp_initial_consumers.py production_occurrences:
+  checks112pe000+336pe001+8pe010+24pe011+8pe100+24pe101+4ce23=516 helpers,
+  all528DSP terminal paths, exact parameters, projections, declaration context,
+  bound specialization IDs, global terminal exhaustion and topMCOLS4/MXU_IMPL2.
+  This is reusable structural code, NOT a theorem upgrading parent initialization.
+ tools/check_sparkle_physical_proof_binding.py physical_proof/compare_modules:
+  historical transition source/replay recipe and native/helper identity only.
+ build/sparkle/mxu_dot_initialized_certificate_draft/check_initialized_dot.py:
+  future terminal initialized_physical_dot_trace_refinement_certified receipt;
+  consumes local/leaf/cascade/equality/model-extension exact graph joins.
+ build/sparkle/se-composite-assemblies-first/summary.json:
+  c4536dbec2cfe0522092ac5896a9f809342e7940fead7938b9431b67a7b6d3ef
+  exact current Gen1/Gen2/bundle source bridge; changed modules are composite
+  diagnostic core/wrapper only, all other tokens/attrs/directives preserved.
+
+Concrete findings:
+ 1 Dot's reached specialization is monomorphic: overrides={} and
+   effective_parameters={}. Do not demand nonexistent D/C/CL parameters.
+   Exact definition equality to proof-generated D128/C4/IMPL2/CL16 plus full
+   helper occurrence mapping binds specialization. Check actual top MCOLS=4
+   and MXU_IMPL=2 independently via existing occurrence audit.
+ 2 Actual parent ABI is17pins: clk,pr0,wf0,c_hi,hi0,mb0h,mb0,ws0h,ws0,m0,
+   w0,a0,en_c inputs and ws4h,ws4,m4,s4 outputs. NO rst port. Reset belongs
+   enclosing controller scope, so do not invent a reset premise or wire.
+ 3 OpenTPU/Mxu.lean build emits instance dot: a0=act_data; every other pin
+   same-named direct net, actual order recorded in dot_applicability.ORDER.
+   Hierarchy child records contain only directions/widths, NOT connected net
+   expressions. Full enclosing module identity and exact token edge audit are
+   needed to establish wiring. draft enclosing_dot_edge checks every expression.
+ 4 Existing physical binder covers older assembly matrices, not current sources;
+   DSP binder covers initialized leaves only. Neither supplies new parent claim.
+
+Executable orchestration still to implement (helpers drafted, no fake PASS):
+ A CLI --certificate PATH --certificate-sha SHA REQUIRED, no default guessing.
+   HistoricalEvidence.record pins complete immutable closure; certificate_contract
+   requires exact terminal status, config, state dimensions,100726 parent vector,
+   1028-node cascade. Require all5 premises in certificate.premises join its direct
+   input_sha256, then derive historical parent from pinned local/initial/cascade
+   equal reference. Do not scan arbitrary archive keys for similarly named files.
+   Authenticate relation/DAG JSONL output artifacts and explicit source runner
+   closure; preserve generic mathematical/external-checker trust scope.
+ B Derive proof source directory from authenticated historical parent replay
+   recipe exactly as physical_proof (archive-only historical snapshots); require
+   source original receipt and replay native.sv/reference.sv/native-contracts.sv/
+   reference-contracts.sv/DSP48E1.sv/extraction/compiled runner identity joins.
+   Entire original reference wrapper must equal authenticated historical exact
+   reference function output from its ARCHIVED self-contained generator recipe,
+   or consume its existing qualified source reconstruction receipt. Do not import
+   changed modern reference helper and assume old lineage. Parent main source
+   body and all helpers must match raw proof, all attrs/directives preserved.
+ C Pin current assembly receipt SHA above; its cases give actual new_assembly
+   paths/hashes in that receipt's direct input map. Resolve from THAT receipt,
+   not a consumer's transitive closure guessed artifact name (annotation lesson).
+   Join each old_assembly to exact SE-tail assembly bridge15534eb8... and then
+   original coverage/specialization assembly. Reuse exact source token modules
+   current versus historical for dot, enclosing MXU, all9helper definitions and
+   all modules on reached containing path whose old hierarchy is reused. Prove
+   top/module/interface/instance identity along full path, not just dot body.
+   Composite diagnostic changes are disjoint; preserve explicit current lineage.
+ D Load exact specialization-binding-{gen1,gen2}-first/bundle-final and their
+   recorded specialized-hierarchy-{gen1,gen2}-first/bundle-third receipt hashes.
+   Use immutable archived metadata with owning-summary direct maps. Replay all
+   projection identity/model/initializer checks from DSP consumer binder, then
+   production_occurrences(hierarchy,binding,module_hashes,projections).
+   Reuse source code function, not merely prior coverage count. Check current
+   exact DSP primitive functional model and incoming declarations against proven
+   model; do not claim synthesis/physical timing from formal-model equivalence.
+ E reached_dot requires ONE actual dot path, exact reached ID in binding.nodes,
+   module hash, empty effective parameters, complete ABI; parent dot child exact
+   interface, exact516 direct native names matched to initialized parent cuts.
+   Existing production_occurrences rechecks all528 terminal/projection contracts.
+   Join every helper path under this exact dot and no extra dot/helper/DSP path.
+   Compare all helper module tokens+contexts to proof's pre-cut native.sv; parent
+   full-body identity preserves every child expression, not only counts/widths.
+   enclosing_dot_edge checks all17parent expressions; current parent identity
+   preserves actual hierarchy context. Full compare also retains attributes/init.
+ F Report per-case reached path+specialization, parent theorem SHA, source module
+   hashes/context, all516helper+528DSP paths, effective configuration evidence,
+   all state counts and precise initialization semantics. Entire containing MXU
+   remains unproved. Historical exact source bindings do NOT imply current live
+   generation freshness: verify current source/object closure or mark snapshot
+   applicability only. No runtime regeneration required for snapshot theorem.
+
+Unresolved implementation work explicitly blocking completed binder:
+ - build full immutable receipt-chain orchestration and current source freshness
+   policy (snapshot applicability safe; live freshness cannot be inferred).
+ - reconstruct/qualify original reference recipe from archived exact helper,
+   joining proof extraction anchors to original RTL definition and params.
+ - bind containing module identity along current-vs-old full hierarchy path.
+ - actual future certificate path/hash only after terminal success.
+ - focused guards and bounded execution after independent source review.
+
+Resource plan: HistoricalEvidence for old linked artifacts before reading live
+source; normalized receipt maps cached once; stream large module tokens/hashes
+and relation files; release hierarchy/netlists before external processes. No
+new extraction/SAT needed if original recipe bridge and module identity close.
+Draft dot_applicability.py provides fail-closed metadata/ABI/path contracts only.
+
+FOLLOW-UP IMPLEMENTATION (supersedes the earlier orchestration-pending list):
+check_dot_applicability.py now implements the complete receipt/assembly/hierarchy
+orchestration above with mandatory --certificate/--certificate-sha. Reconstructs
+full original reference via fresh explicitly archived recipe functions in a
+closed two-RTL-file namespace, compares full bytes to exact historical reference;
+this is independent reconstruction, not invented historical helper provenance.
+Checks current vendor primitive model functional text against parent DSP model.
+Replays full existing production_occurrences and exact enclosing token edge;
+compares every containing module along complete actual reached path old/current,
+with binding ID/hash equality. Rechecks current generator Lean source closure.
+This is runnable draft, unexecuted; actual schema differences fail closed.
+
+Review/run proposal once heavy gate released:
+ python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/mxu_dot_initialized_applicability_draft -p 'test_dot_applicability.py'
+ python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_dot_initialized_applicability_draft/check_dot_applicability.py --output build/sparkle/mxu-dot-initialized-applicability-first --certificate EXACT_TERMINAL_RECEIPT --certificate-sha EXACT_TERMINAL_SHA
+No success claim until reviewed actual bounded execution. Immutable failed
+receipts retained; missing owned artifact maps cannot fall back to arbitrary
+transitive authenticated keys.

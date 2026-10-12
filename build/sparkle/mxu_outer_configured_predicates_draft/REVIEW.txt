@@ -1,0 +1,26 @@
+Unexecuted configurable operand lemma architecture. No actual pair configuration
+is present: D2444 comparison bodies and pins must be inspected first.
+
+Instead of fixed names/count, require an explicit SHA-pinned small configuration:
+schema_version1, source and diagnostic each exact path+SHA256, one failed interval
+[lo,lo+1], and a complete ordered list of distinct gold/gt and gate/lt target
+pairs. No heuristic pairing and no implicit extension of earlier theorems.
+The builder accepts1..64 explicit pairs as a representation bound, audits every
+actual unsigned32/32/1 target, retains all original roots and unknown fanout,
+and rejects each pair's own target-output ancestry. Other real comparator
+dependencies remain in the union. The configuration is a hypothesis to prove.
+
+All128*N actual operand bits must be defined, then all64*N swapped pairs equal;
+actual first-coordinate X and inversion faults must be detected. Dynamic counts
+are recorded and equality parameters/vectors are exact; no dropped target or
+bits. SAT/undefined outcomes remain concrete witness diagnoses, timeout remains
+incomplete. Resource and180-second query ceilings unchanged.
+
+Driver replays the precise predicate-congruent source kind/mixed baseline and
+failed query, complete actual fullgraph declared/closure digest, finished
+diagnostic and independent predicate transformation certificate/model identity.
+It regenerates the exact failed cone from that full graph before constructing
+operand queries. Actual target bodies are joined to authenticated diagnostic
+records. Source/driver snapshots, partial archives, and failure flags preserve
+the reviewed prior runner behavior. No source status or fullgraph substitution,
+whole-D equality, original memory/trace or production claim is promoted.

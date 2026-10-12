@@ -1,0 +1,30 @@
+Executable coordinate stage; unexecuted. No previous passed files changed.
+
+Actual diagnostic confirms every direct original alias exists; nchunks has four
+SSA temporaries plus final scoped temporary. There is no justified unconditional
+alias substitution for the joint geometry observer. This checker therefore binds
+all930 direct observation coordinates, including678 selected-state coordinates,
+and records actual matching scalar begin-conjunction owners. It does NOT claim
+behavioral equality even for the252 combinational alias bits. Source assignments
+and real gold buffer traces bind output ports to aliases; full source/package
+hash equality joins the original elaboration to the historical joint wrapper.
+The original state coordinates join Stage2a; gold state coordinates join the
+complete passed joint inventory. Complete typed field/layout equivalence remains
+false, as do geometry32, guard-use-site, extra-crossing and transition obligations.
+
+Full historical closure authenticated through HistoricalEvidence; exact Stage2a
+to original owner join, direct per-artifact owner maps, helper capture/final hash,
+all exception cleanup/publication protections. Fresh raw gold graph loaded under
+the3GiB gate, gate module released immediately; no graph extraction/SAT. SQLite
+is immutable/read-only. Output captures original and gold buffer cells and all
+actual matching AND owners, without changing either graph or defining unknowns.
+
+Independent review requested before root execution. Commands (author unexecuted):
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_joint_observation_draft -p test_observation_coordinates.py -v
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_joint_observation_draft/check_observation_coordinates.py --work build/sparkle/vpu-joint-observation-first
+
+Next actual semantic proof is the small guarded geometry/data-consumer bridge and
+actual-original full D projection, not a broad name-equality certificate. The
+root931st begin expression owner may have duplicate equivalent copies; all are
+recorded and none is asserted to be the actual unique process guard until its
+consumer path is checked. Full arbitrary input traffic remains required.

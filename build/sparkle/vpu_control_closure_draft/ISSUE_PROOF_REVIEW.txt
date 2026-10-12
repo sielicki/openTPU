@@ -1,0 +1,55 @@
+Source-only complete driver ready for review; no author imports/tests/execution.
+
+Measured actual probe passed: both fullcell frontiers empty. Original primitives
+buf/mux/eq/logic_and/logic_not/add/gt/pmux/lt/reduce_or/ne/logic_or; native adds
+or/and/xor. The projection reuses frozen exact mux/pmux/buf coordinate slices
+and global DAG audit; local extension audits standard binary $or schema only,
+without rewriting emitted cells. Actual130 original X occurrences are retained.
+All555 outputs plus211 input-alias observations are declared before any query.
+
+Confirmed actual public crossing histogram is ta_addr256,tb_addr256,ta_en8,
+tb_en8, precisely528. The same555 proof also supplies27 internal providers.
+The recorded partition has no outward crossings directly rooted at those27
+normalized providers; their consumers are inside its already-retained dependency
+set. This does not imply all remaining1927 crossing uses are covered.
+
+Driver authenticates original/composition/local issue/binding/assembly receipts;
+rebuilds the actual original/native boundary; checks historical native extraction
+script/argv/source/log; binds full reached native module+directives and complete
+issue/sequence/command edges in all3 production cases. No fresh reference RTL
+is generated. Inputs17 state vectors come from the actual1159 bijection; c_hold
+is the actual g_comp.u_comp.hold child output. Its producer equality remains
+unproved, as does original-root3072 stream/write-state correspondence.
+
+Default partition width16:766 coordinates yield48 partitions, full definedness then strict
+equality, all actual buffers retained, post-SigMap topology verified. Exact
+immutable positive-query resume uses the frozen CQ session helper, complete
+source/model/manifest identity and original query-path binding. Stop on first
+failure and preserve artifacts; all new success flags revoked on exceptions.
+
+Actual hardware graph mutations occur at native module ta_en[0] output before
+projection: a real added inversion cell or literalX. Complete module delta is
+audited/restorable and saved, never merely changing the equality miter. Flip
+must pass definedness and fail equality with a concrete model; X must fail
+definedness with an actual observed-X model. These are graph-level actual-output
+negative controls, not claims that mutated Lean was recompiled.
+
+After all proof queries, exact raw->normalized original buffer chains and actual
+native provider expressions remove27 old environment rows. Unchanged310 rows
+plus actual c_hold yield311 per-cycle interface contracts:243 top inputs,
+2 internal-control state-provider bits en/ss_rq,66 datapath bits. No whole4231,
+all2455 crossings, generic packed-layout or c_hold-producer theorem is claimed.
+
+Root commands after independent review:
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_control_closure_draft -p test_issue_bridge.py -v
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_control_closure_draft/check_issue_bridge.py --work build/sparkle/vpu-issue-bridge-first
+
+Nine focused guards in the revised driver, unexecuted by author. First attempt
+failed closed before queries because diagnostic-only imports lacked historical
+ownership. The proof now imports fixed pins from a pure helper and registers
+the explicit physical owner before source capture. Guards reject diagnostic
+imports, altered pins, missing direct ownership and conflicting owner hashes.
+Full driver default3GiB/serial120s queries;
+no compiler, extraction or upstream source edit. Existing proof artifacts and
+helpers remain frozen. Optional --resume RECEIPT --resume-sha256 SHA preserves
+valid exact prior positive query work; negative cases are rerun.

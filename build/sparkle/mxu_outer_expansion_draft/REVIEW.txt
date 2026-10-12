@@ -1,0 +1,32 @@
+UNEXECUTED separate exact-memory expansion and full-D experiment.
+
+Premise: constant-read controls receipt SHA
+4206c3f8489eb9ce0c0106b673e85241d1c357ef68a4b9a0d4648ee6085635ca.
+Fresh complete qualified graph/manifest identity is required, alongside its
+complete actual query/coverage/source closure. Defined full Q and defined RAM/FP
+return boundaries are explicit domain premises, not child-composition results.
+
+Original asynchronous reads and masked writes are pinned to actual simlib source
+after whole-source NAR authentication. Full literal-zero high-bit checks permit
+finite padded trees; OOB leaves remain X. All11arrays/33words/2297bits become
+existing word Q and complete masked D. Every original RD ID/fanout remains;
+all universal read value/mask inputs/drivers are removed. Other original owners
+are preserved. Known selectors guarantee finite read equations match indexed
+read coordinates in the stated domain; known enables guarantee masked write
+equations match original per-bit conditional writes. No raw unknown-control or
+SV event-region equivalence is claimed.
+
+Each original ordinary Q is joined through its exact old cell/output index to
+the archived mapped reference; array Q through authenticated word ownership.
+Only5928retained Q are shared across original/native models. All1508omitted Q
+per side remain independent. Every7436D is queried for definedness on each side
+before retained-D equality can run. Any undefined D stops ordinary induction;
+the result records a genuine semantic witness, never promotes output preorder.
+
+Original quotient, whole outer trace, RAM/FP composition, production binding,
+strict complete observations and specified-bit refinement all remain false.
+This stage supplies conditional construction and the first concrete D queries.
+
+All prior completed/imported files remain unchanged. Root executes all guards
+and actual runs through the existing exclusive3GiB/no-swap gate. No test/proof
+execution has occurred while drafting. Independent review requested.

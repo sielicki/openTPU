@@ -1,0 +1,88 @@
+Original collected-memory bridge after complete retained-D equality
+Status: design reviewed; executable draft awaiting source review and bounded validation.
+
+Premises
+* Qualified constant-read control theorem4206c3f8489eb9ce0c0106b673e85241d1c357ef68a4b9a0d4648ee6085635ca:
+  7436fullQ,3609control coordinates,2169exact constant reads and384unrestricted
+  original read-bit choices, known external inputs/RAM/FP returns.
+* Initial ownership3125ed7672387359eb49e5febea0f851f23ee731532c54b982c6f2fca7a3a908:
+  exact original33word2297bit ownership,5928retained/1508omitted per side,
+  arbitrary eight main RAMs. This is not original observational quotient.
+* Terminal all-D certificate fdf1d99ffcf4840c3729e4acc6aff1a104fa74ffc74486390c967642a84f257c:
+  each side7436D total; all5928retainedD equal under shared semantic external
+  inputs/retainedQ and independently arbitrary1508omittedQ per side. Complete
+  representation chain plus382exact disjoint intervals (166baseline+216new).
+* Historical original graph only. No generating-source manifest exists, so
+  current production freshness and native/RTL source correspondence stay pending.
+
+Fresh concrete work, with no solvers or repeated extraction
+1. Authenticate terminal receipts and their complete actual input closures;
+   recheck exact statuses/domains and all382terminal equality scripts/logs plus
+   exact coverage, graph/manifest declared-to-closure SHA joins. Requalify both
+   original7436D totality scripts/logs and full physical-Q/D manifest contracts.
+   Do not promote the interrupted first expansion receipt or its revoked flags.
+2. Reconstruct actual historical flat→eight-main-RAM cuts→eight RMW-FP cuts with
+   exact wholegraph/port/declaration contracts. Recompute the qualified bootstrap
+   and require byte/object identity of complete graph+manifest to the existing
+   control theorem, including all state/control/read coordinates and roots.
+3. Recheck the actual value/undef mask-plugin16-row coverage result, its command,
+   compiler header/dependency/plugin/binary closure, exact controls SAT script,
+   terminal log, and complete primitive extension audit. The proof-only read
+   cuts are overapproximations with one value/undef pair per original RD bit;
+   repeated consumers share one bit. Constant in-range reads use existing wordQ
+   independently of the control theorem. Thus universal control knownness is
+   applicable to actual memory reads without circular expansion assumptions.
+4. Authenticate exact source NAR and complete simlib $mem_v2 body plus actual
+   SatGen mux rules. Audit every original memory parameter/mode/pin, OFFSET,
+   literal high address bit, all word/bit ownership, complete read aliases,
+   constant distinct write addresses, clock edge and every masked write.
+   Construct all read trees retaining the complete nonliteral address (including
+   mk high bit) and explicit X leaves at out-of-range addresses. Enumerate each
+   actual finite address shape, not just in-range cases. No traffic/range premise.
+5. Rebuild gold expanded steps, native full steps, all7436physical coordinates,
+   retained relation and complete original paired graph using frozen helpers.
+   Compare fresh entire graph bytes and all manifests to the exact graphs used
+   by completeD. Audit all ordinary owners, roots, drivers and DAG. No old
+   memory_map read truncation is used as a semantic premise.
+
+Semantic argument and applicability boundary
+The domain is an explicitly stated discrete collected-memory value/undef
+clock-step relation with defined fullQ and defined external inputs/RAM/FP
+returns. Simlib supports its four-state coordinate equations; it does not prove
+this lifted value-correlation model or source SV/event-region equivalence.
+Certified defined RD_ADDR and WR_EN make each actual read address/enable choice
+known. In-range reads select the same defined existing wordQ. Out-of-range reads
+remain X: one shared original RD wire carries its value/undef pair to every
+consumer, and the exact mux tree preserves an unconstrained value with undef1
+for that wire. Do not independently choose values for different consumers.
+Known disabled writes retain Q; known enabled writes select actual WR_DATA,
+including its undefinedness. Distinct constant write addresses remove priority
+ambiguity. Complete fullD totality then establishes all nextQ defined in this
+domain; it does not establish every internal node or public output defined.
+Every coherent assignment of this source relation extends to the added muxes
+while preserving every original wire. Each already chosen undefined original
+RD value is admissible at its tree output under exact SatGen undefGating.
+Additional correlations between source OOB choices can therefore be retained;
+no independent choice is forced and no source value is reselected. The reverse
+model inclusion and raw value/undef model identity are not claimed. No equality
+of raw unknown-selected mux value correlations is assumed. This intermediate
+model certificate does not discharge the final original-source parity goal.
+
+Precise quotient scope
+Universal paired retainedD equality, with independent omittedQ roots and
+nonvacuous total primitive relations, implies retained next state is independent
+of each side's omitted coordinates. Full7436D knownness lets ALL omitted states
+evolve along their actual transition after one initial choice; they are never
+reselected each cycle. A certificate may establish this retained-transition
+quotient after the concrete memory bridge, but must leave full observational
+original_collected_memory_quotient false until all public/RAM/FP observations are
+checked. Initial/trace composition is a later explicit stage. OOB output
+equality/refinement, child-return definedness, main-RAM feedback and production
+applicability all remain pending.
+
+Implementation boundary
+Use a new checker and guards under this directory. Preserve all prior code and
+receipts. Reuse exact reviewed graph builders, but freshly bind their outputs
+and rule applicability. Atomic incomplete checkpoints, source/tool snapshots,
+streamed archives and late-failure flag revocation remain mandatory. Root alone
+runs guards and audit through the existing3GiB gate; no ceiling change.

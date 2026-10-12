@@ -1,0 +1,60 @@
+Concrete physical cascade DAG certificate: unexecuted draft
+
+Inputs are the pinned initialized-nine-leaf receipt and its authenticated exact
+C4/IMPL2/CL16 folded physical-dot transition receipt. Both original and native
+actual pre-cut parent graphs are traversed, along with all eighteen concrete
+init-preserving gold/native helper graphs. Source topology is never evidence.
+
+The parent has 512 PE + 4 column-end helper occurrences, representing 528 DSPs.
+Each column-end helper graph already contains the four concrete functional DSPs;
+its complete flattened combinational graph is checked, including internal Mealy
+cascades. No DSP behavior is inferred from stub declaration or naming.
+
+Algorithm
+  1. Authenticate complete source/artifact closures and exact receipt hashes.
+  2. Stream graph owners, discarding enormous netname/source metadata. Parse one
+     side/leaf at a time. Never create a flattened 528-DSP solver query.
+  3. Check every pin inventory/direction, driver uniqueness, missing drivers,
+     explicit positive common-clock DFF roots and closed combinational cell kinds.
+     Check all internal combinational cells for cycles, not just output cones.
+  4. For each helper output port, compute its conservative current-input cone.
+     Each supported combinational output depends on all cell input bits; DFF Q
+     terminates dependency. Inputs and literals are roots. Unknown constants are
+     retained roots; this is dependency analysis, not a new four-state theorem.
+  5. On each actual parent graph, resolve those helper input cones to external
+     inputs/state/constants or other helper output obligations. Parent helper
+     types, parameters, full contracts and all 516 occurrence paths must match.
+  6. Union original/native output dependencies and demand a common topological
+     order. Independent DAG orders are insufficient: their union might cycle.
+
+Why output-specific dependency order is sound
+At a fixed corresponding state, each concrete output is insensitive to inputs
+outside its certified cone. Assume predecessor outputs equal in a shared order.
+Both actual parent cones then give equal relevant leaf inputs, using the existing
+parent theorem under arbitrary shared leaf outputs. Choose common values for
+irrelevant inputs/outputs when instantiating that universal theorem. The complete
+leaf transition/output theorem gives equality of the selected output; locality
+justifies restoring irrelevant actual values. After all output obligations are
+discharged, every leaf input and parent next-state/output obligation can use the
+full parent theorem without circularity. This argument is external checked graph
+composition, not a claimed concrete Lean-kernel theorem instantiation.
+
+The pin-level overapproximation deliberately does not optimize mux selection or
+bit arithmetic. If it introduces a false cycle, preserve the failing receipt and
+refine the dependency representation with sound bit semantics; do not omit an
+edge, assume pipeline fill or increase the RAM limit.
+
+Separate remaining obligations
+Dot-local initialized witness and reference-only 2048-bit observationally
+irrelevant state remain pending. This does not prove complete initialized dot,
+controller/RAM startup, outer MXU product or physical-device power-up. The existing
+production binder applies initialized leaves; this certificate applies directly
+to the authenticated historical physical-dot pair. Current production parent
+applicability still requires its own exact-body/wiring join.
+
+Before executing
+Independent review, synthetic guards, then a new bounded 3 GiB attempt. No imports,
+netlist processing, extraction, hashing sweep or solver work has occurred while
+drafting. Root owns the heavy gate. Add actual authenticated cascade-wiring fault
+as a separate later obligation; synthetic cycle/missing-driver guards do not count
+as a circuit-source mutation counterexample.

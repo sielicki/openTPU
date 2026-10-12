@@ -1,0 +1,61 @@
+Source-only full driver integration; unexecuted. Existing approved slicing/model
+helpers remain unchanged. No passed source or artifact edited.
+
+New files: physical_graph.py, physical_model_link.py, check_physical.py,
+test_physical_driver.py, and exact reviewed JSON backend source snapshot.
+
+The driver binds five explicit prior receipts, original/shared RTL, exact root
+configuration, original selected storage and complete 1159 gold Q, source-derived
+boundary coordinates and every alias. It freezes a complete 679-D + all-alias
+manifest and deterministic 16-observation partitions before solving anything.
+All alias pairs additionally compare BOTH sides to the corresponding underlying
+shared coordinate. State/boundary correlations are shared globally across partitions.
+
+Primitive support is the measured inventory only, with exact schemas and full
+dependencies except reviewed buf/mux/pmux coordinate slices. Audit-only buffer
+dependency adaptation is never used for SAT. Original buffers and undef literal
+occurrences remain intact. Unresolved drivers, state or dependencies fail closed.
+
+Concrete solver linkage mirrors the reviewed pinned Nix derivation/NAR/source
+policy, then matches complete approved SatGen snapshots and installed header.
+It also authenticates exact JSON backend and frontend source. Each actual paired
+graph is imported and written with the backend's SigMap-applied bit coordinates.
+A full cell/port/parameter/attribute/token/alias topology comparison (up to a
+bijection of numeric bit IDs) rejects new aliases or changes. Queries consume
+that archived post-SigMap graph directly, without process lowering/optimizations.
+
+Every positive partition must prove observed totality and strict equality plus
+alias linkage. Three actual archived-gold issuing D mutations retain full1159 Q;
+each mutated graph is rebound/reprojected and its concrete target must fail with
+a model. This is an actual D mutation, not a changed miter. Hold-fault reachability
+is not presumed; if no counterexample, the overall result remains incomplete.
+
+Active scripts/graphs/models/logs are published before commands, streamed into
+immutable archives, and exceptions revoke success before best-effort individual
+preservation and repeated incomplete publication. Optional --resume RECEIPT
+--resume-sha256 SHA requalifies only successful positive queries. It requires
+identical prerequisites/model/binary/implementation/whole manifest, fresh raw
+graph/projection hashes, direct-owner artifact paths/digests, exact original query
+text/command/cwd/result, successful terminal log, and a repeated topology check
+of the frozen post-SigMap graph. Query identities and archive storage paths stay
+separate, preserving original query paths through second-generation reuse. A
+completed definedness query can be reused even when equality was interrupted.
+First incomplete query stops the run; success and positive-complete flags revoke.
+
+Remaining false scope flags: cq480, actual producer equality/definedness, packed
+layout correspondence, coherent initialization, all outward crossings, trace and
+whole-control refinement. This is the complete conditional 679 physical-D theorem
+under the exact recorded shared/defined boundary, not a whole-partition theorem.
+
+Root-only commands after independent source review:
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_joint_physical_proof_draft -p test_physical_driver.py -v
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_joint_physical_proof_draft/check_physical.py --work build/sparkle/vpu-joint-physical-proof-first
+
+First actual run may fail conservatively on import serialization/schema differences;
+preserve attempts and diagnose rather than weaken the complete obligations. No
+runtime estimate asserted; prior closure is small but source authentication and
+all partition solvers remain subject to the 3 GiB serial gate and 120s/query limit.
+
+Eight driver guard methods now include concrete binary derivation output and
+resume path/hash/query/identity/second-generation tests. Derivation hashes are
+the exact archived acquisition identities, not freshly trusted path contents.

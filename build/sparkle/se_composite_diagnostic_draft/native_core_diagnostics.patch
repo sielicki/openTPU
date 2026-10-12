@@ -1,0 +1,111 @@
+--- a/OpenTPU/SeComposite.lean
++++ b/OpenTPU/SeComposite.lean
+@@ -184,10 +184,60 @@
+   ((List.range c.lanes).flatMap fun l => (List.range c.stages).flatMap fun s =>
+     [endpoint s!"kd{l}_{s}_6"] ++ if c.external then [] else [endpoint s!"cd{l}_{s}_1"])
+ 
++/-- Simulation observers use the actual retained composite state; no new state. -/
++private def diagnosticControlCheck (c : Config) (stage : Nat) : String :=
++  let table := String.intercalate "\n" <| (List.range 5).flatMap fun ci =>
++    (List.range 16).map fun p =>
++      s!"      7'd{16*(ci+1)+p}: diagnostic_uc{stage}=105'd{(SeMicrocode.operation (ci+1) (p*c.stages+stage)).encode};"
++  let offset := if stage == 0 then 0 else 10+(stage-1)*7
++  let extra := if stage == 0 then
++    s!" || rr_e != (md0_6[{c.metadata+c.lanes}+:4]==0 && (md0_6[{c.metadata+c.lanes+4}+:3]==1 || md0_6[{c.metadata+c.lanes+4}+:3]==2))"
++    else ""
++  s!"
++  function automatic logic [104:0] diagnostic_uc{stage}(input logic [6:0] cp);
++    case(cp)
++{table}
++      default: diagnostic_uc{stage}=105'd{(SeMicrocode.operation 0 0).encode};
++    endcase
++  endfunction
++  always @(posedge clk)
++    if (!rst && vpos[{offset+6}] &&
++      (uco{stage} != diagnostic_uc{stage}(md{stage}_6[{c.metadata+c.lanes}+:7]){extra}))
++      $fatal(1, \"otpu_se_comp: output control out of step\");
++"
++
++/-- Emit original collision, return and control checks in the production core. -/
++def withDiagnostics (c : Config) (core : String) : Except String String := do
++  let ending := "\nendmodule\n"
++  if !core.endsWith ending || (core.splitOn ending).length != 2 then
++    throw "SE composite diagnostics require exactly one complete emitted core"
++  let diagnostic := s!"
++`ifndef SYNTHESIS
++  function automatic logic [3:0] diagnostic_n_pass(input logic [2:0] cls);
++    case (cls)
++      3'd1, 3'd2: return 4'd{((9+c.stages-1)/c.stages)%16};
++      3'd3: return 4'd{((6+c.stages-1)/c.stages)%16};
++      3'd4, 3'd5: return 4'd{((10+c.stages-1)/c.stages)%16};
++      default: return 4'd1;
++    endcase
++  endfunction
++  wire diagnostic_fin = (lp_m[{c.metadata+c.lanes}+:4] + 4'd1 >= diagnostic_n_pass(lp_m[{c.metadata+c.lanes+4}+:3]));
++  always @(posedge clk)
++    if (!rst && en && in_v && ret_r)
++      $fatal(1, \"otpu_se_comp: entry while a chunk returns\");
++  always @(posedge clk)
++    if (!rst && ret_r != (vpos[{c.period-1}] && !diagnostic_fin))
++      $fatal(1, \"otpu_se_comp: ret out of step\");
++{String.intercalate "\n" ((List.range c.stages).map (diagnosticControlCheck c))}
++`endif
++"
++  return core.replace ending (diagnostic ++ "endmodule\n")
++
+ def toVerilog (c : Config) : Except String String := do
+   let core ← build c
+   let emit := Sparkle.Backend.Verilog.toVerilog
+   let core ← Backend.withRegisterHints core (registerHints c)
++  let core ← withDiagnostics c core
+   return core ++ if c.external then "" else
+     emit { Float.multiply 2 with name := "otpu_se_comp_mul" } ++
+     emit { Float.addition 4 with name := "otpu_se_comp_add" }
+--- a/OpenTPU/SeCompositeABI.lean
++++ b/OpenTPU/SeCompositeABI.lean
+@@ -2,28 +2,7 @@
+ 
+ namespace OpenTPU.SeComposite
+ 
+-private def controlCheck (c : Config) (stage : Nat) : String :=
+-  let table := String.intercalate "\n" <| (List.range 5).flatMap fun ci =>
+-    (List.range 16).map fun p =>
+-      s!"      7'd{16*(ci+1)+p}: expected_uc{stage}=105'd{(SeMicrocode.operation (ci+1) (p*c.stages+stage)).encode};"
+-  let offset := if stage == 0 then 0 else 10+(stage-1)*7
+-  let extra := if stage == 0 then
+-    " || impl.rr_e != (impl.md0_6[MW+LANES+:4]==0 && (impl.md0_6[MW+LANES+4+:3]==1 || impl.md0_6[MW+LANES+4+:3]==2))"
+-    else ""
+-  s!"
+-  function automatic logic [104:0] expected_uc{stage}(input logic [6:0] cp);
+-    case(cp)
+-{table}
+-      default: expected_uc{stage}=105'd{(SeMicrocode.operation 0 0).encode};
+-    endcase
+-  endfunction
+-  always @(posedge clk)
+-    if(!rst && impl.vpos[{offset+6}] &&
+-      (impl.uco{stage} != expected_uc{stage}(impl.md{stage}_6[MW+LANES+:7]){extra}))
+-      $fatal(1, \"otpu_se_comp: output control out of step\");
+-"
+-
+-/-- ABI packing and simulation assertions. All functional hardware is native. -/
++/-- ABI packing; functional hardware and simulation checks are in the native core. -/
+ def wrapper (c : Config) : String := s!"
+ module otpu_se_comp #(
+   parameter int LANES={c.lanes}, MW={c.metadata}, NS={c.stages}, HA={c.lookAhead},
+@@ -61,15 +40,6 @@
+   end
+   otpu_se_comp_sparkle impl(.clk,.rst,.en,.in_v,.in_c,.in_a(pa),.in_b(pb),.in_m,.in_meta,
+     .hold,.st_sel,.st_a(sa),.st_b(sb),.st_c(sc),.st_e(se),.st_y(sy),.out_v,.out_d(pd),.out_m,.out_meta);
+-`ifndef SYNTHESIS
+-  always @(posedge clk) begin
+-    if(!rst && en && in_v && impl.ret_r)
+-      $fatal(1, \"otpu_se_comp: entry while a chunk returns\");
+-    if(!rst && impl.ret_r != (impl.vpos[{c.period-1}] && !out_v))
+-      $fatal(1, \"otpu_se_comp: ret out of step\");
+-  end
+-{String.intercalate "\n" ((List.range c.stages).map (controlCheck c))}
+-`endif
+ endmodule
+ "
+ 

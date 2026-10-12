@@ -1,0 +1,99 @@
+Actual local-dot initialization/transition negative-control design
+Status: source-only design; no compilation, extraction, imports, solver, large
+artifact processing, or installed edits performed.
+
+Exact scope
+D=128, columns=4, rows=4, chainLength=16, implementation=2. Native source is
+OpenTPU.MxuPhysical.dot applied to this Config. Reference is the authenticated
+IMPL2 dot wrapper/contracts derived from rtl/mxu/otpu_mxu.sv. Physical DSP helper
+outputs remain arbitrary shared cut inputs; all61,323 retained parent state bits
+and2,048 omitted-reference bits retain the existing audits.
+
+Finding: native initialization changes alone are not semantic counterexamples
+OpenTPU/MxuDot.lean's IMPL2 loop creates wd0 with:
+  clocked "wd0" 16 (ref "en_c") <decoded low/high weight expression>
+OpenTPU/Circuit.lean::clocked emits:
+  .register "wd0" "clk" ("no_reset", .synchronous)
+    (mux (ref "en_c") value (ref "wd0")) 0
+MxuPhysical.dot retains wd0; only actual DSP-replaced register names are removed.
+The corresponding original storage is g_sys.wd[0], declared in the packed
+logic [D-1:0][15:0] wd vector and updated on en_c. It has no initial constraint.
+The physical-dot reference preserves that declaration/update. The original
+local otpu_skew and otpu_delay pipeline registers also have no initial clauses.
+
+The source initial hi_v=0 is a simulation diagnostic under `ifndef SYNTHESIS
+and is removed by this exact synthesized reference scope. fd_rst=0 belongs to
+outer controller/FIFO diagnostics, outside the extracted dot region. Neither
+can justify a local-parent native initializer counterexample. DSP primitive
+initializers belong to the separate concrete helper premises, not local state.
+Text inspection found no reference-defined local parent register initializers;
+the real init-preserving extraction must confirm this rather than assuming it.
+
+Therefore compiled native wd0 initial0->1 should generally STILL admit a valid
+reference witness with g_sys.wd[0]=1. It is a useful source-applicability/witness-
+change guard (and optionally a positive witness-adaptation test), not a failed
+refinement theorem. Do not require its rejection as a semantic counterexample
+and do not replace arbitrary reference initial state with a fabricated zero.
+
+Selected meaningful negative: actual compiled retained update mutation
+Generate a private Lean driver importing OpenTPU.MxuPhysical. Build the exact
+Config above using MxuPhysical.dot. Walk Module.body and match exactly once:
+  .register "wd0" clk rst (.op .mux [.ref "en_c", value, .ref "wd0"]) initial
+Assert initial==0 and the expected clock/reset metadata. Replace only the
+active update value with Expr.xor value (.const 1 16), preserving the hold arm,
+clock, reset metadata, register name, width and actual initializer. Reject zero
+or multiple matches. This is an actual compiled native circuit mutation, not a
+post-hoc JSON miter change or a weakened traffic predicate.
+
+Emit the changed parent with Sparkle.Backend.Verilog.toVerilog; append exactly
+the same primitiveModules definitions/parameters and backend emission as
+MxuPhysical.emitDot. Compile with sparkle_compiled_lean.run_generator, with
+single compiler concurrency inside the bounded gate. Authenticate original
+Lean import closure, generated C/object/executable/link manifest, emitted HDL,
+and the exact mutation-target inventory. Check the unchanged helper module
+bodies, attributes and directive contexts against the existing leaf premises.
+Produce blackbox contracts by the existing authenticated contracts procedure;
+only parent wd0 D changes. All helper interfaces/parameters remain concrete.
+
+Use a fresh mutation output directory. Reuse initializer_script's exact
+init-preserving extraction pipeline (same frontend/plugin hashes and semantic
+commands), substituting only the explicitly archived mutated native source and
+fresh output path. The positive source hash assertion must remain unchanged:
+this is a separately labelled negative branch, never accepted as the positive
+source. Keep the original reference source byte-identical.
+
+Expected rejection: exact initialized graph bridge differs at the wd0 D cone
+(or downstream cell owner), because the original theorem proves the unmutated
+complete transition graph. Record the exact changed owner and retain the graph,
+script, log and original/mutated hashes. This is a strong correspondence-bridge
+negative, NOT by itself a SAT semantic counterexample. For semantic evidence,
+expose ALL existing parent/cut outputs and ALL61,323 next-state obligations in a
+separate full transition miter, preserving the existing cut/state map; require
+an ordinary equality failure with en_c=1 found by SAT (do not assume a traffic
+schedule). No output subset, reset/fill mask, -prove-x or independent native/
+reference initial-state restriction is allowed. Do not rerun the positive
+large theorem solely to manufacture provenance.
+
+Optional actual incompatible-initializer control (reference mutation)
+If an initializer-specific rejection is required, a valid adversarial source
+control is to insert a single reference initialization clause for the SAME
+retained register, e.g. inside the extracted g_sys block immediately after the
+unique packed wd declaration:
+  initial wd[0] = 16'h0001;
+Keep native wd0 initialization0. This deliberately changes the reference's
+formal initial constraint and is NOT presented as an existing original init.
+Compile/extract the separately archived mutated reference using the same
+init-preserving pipeline. Require the exact graph bridge still holds ignoring
+only the audited init attribute; then witness() must fail with
+  native initialization does not imply reference witness
+on the mapped bit whose original value is1 and native value0. If the frontend
+also changes structure, record that earlier exact-graph rejection separately;
+do not count it as the initializer-witness negative until graph identity is
+established. Include all initializer aliases before pruning; never inject the
+constraint directly into the witness table or modify just a receipt.
+
+Authorization/resource boundary
+This note proposes work only. All generator builds, extraction, graph streaming,
+archiving and any solver must use tools/sparkle_bounded.py under the shared gate.
+No current evidence demonstrates either mutation executed; do not increment
+proof/mutation coverage until the appropriate real terminal receipt exists.

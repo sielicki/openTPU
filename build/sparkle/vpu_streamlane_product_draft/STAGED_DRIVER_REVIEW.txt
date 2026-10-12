@@ -1,0 +1,67 @@
+UNEXECUTED staged executable: check_streamlane_stage.py + test_streamlane_stage.py.
+Root may review/run under its bounded gate; no installed changes, tests, imports,
+hashing, builds or extraction were performed by the author.
+
+This first executable stage deliberately STOPS after fresh exact compiled source,
+full module body/directive correspondence and complete raw hierarchy extraction.
+It streams every JSON owner and preserves Q/D/initializers/X literally; no FP or
+composite cells are cut yet. It cannot label itself a product proof. Pending
+obligations are mandatory receipt fields. Historical receipt SHA must be supplied
+by reviewer; no fabricated historical provenance or invented new theorem hashes.
+
+Historical linked-object closure uses immutable archives before rebuild. Current
+source/imports and linked objects are separately pinned. Complete terminal
+extraction receipt is resumable by SHA authentication without regenerating inputs.
+Interrupted/failed attempts remain incomplete/archived and require a fresh work
+path; partial stage replay is not yet implemented. This is intentionally narrower
+than an end-to-end resumable solver driver. Heavy work always bounded.
+
+The no-argument runner generator is constructed by generator() with exact pinned
+output path literals, matching run_generator's actual calling convention; the
+older standalone GenerateTemplate.lean takes arguments and is NOT invoked.
+Source anchors/case labels are audited and historical wrapper reconstruction must
+match exactly. These checks do NOT discharge the original unique-case compiler
+bridge, exact initialized-decoder edge applicability or complete raw state audit.
+All those obligations remain explicitly pending, along with concrete FP graph
+matching, arbitrary-state definedness/equality and actual mutations.
+
+Follow-up implementation should consume archived hierarchy rather than regenerate:
+stream-copy into FP-only boxes while independently authenticate each FP concrete
+module and exact clock/port/state/latency contracts; flatten composite into parent;
+map inventory aliases and retain all actual Q/D/init. Then add strong SAT proof
+and full original-source onehot applicability per OPTION_A/UNIQUE_CASE_BRIDGE.
+
+Actual source inspection found production VpuDatapath applies laneRegisterHints
+before emission; historical lane proof emits raw VpuLanes.build. The staged
+runner therefore emits BOTH raw lane and independently annotated reached-lane
+modules. Historical raw full module identity is checked separately from exact
+annotated full module identity within current datapath. This avoids stripping
+attributes or falsely claiming raw and annotated source are byte/token identical.
+The annotated-vs-raw complete graph correspondence remains part of the pending
+production applicability obligation; the extraction presently consumes raw source.
+Incoming directives are compared per selected module, not by requiring unrelated
+module-name context maps of differently sized bundles to be equal.
+
+Interruption hardening (unexecuted): marked-workspace discovery works from draft
+or tools installation. SIGTERM/SIGINT set an incomplete receipt and ignore repeat
+graceful signals during preservation; original handlers are restored on exit.
+Each phase checkpoints active artifact paths before expensive work. Compiled
+runner now executes in a child Python process through the existing logged run
+function, capturing all compiler/linker/generator stdout/stderr in generator.log.
+A finally block archives every existing generator source/dependency/C/object/
+executable/runner manifest, generated HDL and extra generator-local objects.
+Failure preservation records per-path errors rather than converting failed work
+into success. Uncatchable SIGKILL cannot finalize a receipt; prior active-path
+checkpoints remain incomplete and usable for forensic recovery only.
+
+Historical recipe correction after preserved first attempt:
+Live prove_sparkle_vpu_datapath_lanes.py differs from receipt0882622f... by a
+later docstring/width guard. The stage now consumes that authenticated archived
+source, AST-selects exactly its reference(lanes,cl,se=False) function, and compiles
+ONLY that function with ROOT/re and narrow str/int/range builtins. No archived
+module imports, top-level code, or unrelated functions are executed; unexpected
+helper dependencies/defaults/decorators are rejected. It first requires exact
+historical8/8/true wrapper bytes, then emits8/2/true from the same function.
+Live original RTL remains independently pinned to the historical source hash.
+Focused loader guards cover ignored hostile module-level code, changed contracts,
+external dependencies and real historical reconstruction. Not executed by author.

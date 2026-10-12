@@ -1,0 +1,36 @@
+Unexecuted full-shared graph representation certificate; no original-lineage promotion.
+
+Pinned terminal inputs to pass explicitly:
+build/sparkle/mxu-outer-predicate-batch-first/summary.json
+4bb4c002d22531bce8cff8336ae814f04831cc2973046f4c5fe695c5de472c97
+build/sparkle/mxu-outer-predicate-rule-first/summary.json
+f64fe5f74dc02aebfa923abf56db4a4c32fd70d312829ba253bcf58f994cf9b7
+
+Replay all four batch query graphs/scripts/logs and complete manifest, all three
+actual-SatGen comparison-rule queries, their exact primitive model and immutable
+full_shared graph source receipt. Regenerate original D2412 cone bytes+manifest
+from that full graph, then bind complete actual operand coordinates, eight
+pairwise target bodies, source semantic root IDs and full ancestry. Earlier
+predicate cells remain real ancestors; no pair's own target may be its ancestor.
+The joint1024/512 certificate entails each pair's128/64 lemma under the same
+actual root domain. Exact pinned mux slicing plus whole-cell projection permits
+restriction of every full source model to the proved operand query model.
+
+Simultaneously rename all eight original Y coordinates to corresponding native
+Y coordinates, remove exactly eight original comparators. Stream every remaining
+cell/pin/port/alias and retain complete metadata; independently re-ingest target
+and compare all owner inventories and exact mapped bodies. Fresh target SQLite
+Index performs complete driver/DAG/model audit and rejects introduced cycles.
+Source inputs cannot change. Unknown or unrelated owners are not merged.
+
+Logical direction: for every original full_shared satisfying assignment, lifted
+operands are defined/equal; the actual comparison rule makes each Y pair known
+and equal. Restrict/rename that assignment to the target, preserving every
+observation under the recorded map. This suffices to lift later target universal
+observation equality back to full_shared; no forward original-to-full_shared
+lineage or coverage is inferred here. Defined fullQ/external RAM+FP returns
+remain premises; child-definedness, prefix2412, original lineage, complete D and
+outer trace/production flags remain false. All new proof flags revoke on any
+late failure; partial artifacts and DBs are preserved. Large full graphs are
+streamed through disk stores and parsed source cone is released before fresh
+indexing. No solver is launched by this certificate stage.

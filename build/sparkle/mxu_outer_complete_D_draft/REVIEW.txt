@@ -1,0 +1,55 @@
+Unexecuted complete retained-D continuation; independent source review approved.
+
+The driver pins the three immutable premise receipts explicitly in source.
+It requalifies both7436-D totality logs and graph contracts, rebuilds the paired
+assembly, and compares every owner against the archived original graph through
+SQLite streaming records. The indexed graph must differ only by its declared
+complete interleaved observation port. Metadata and original observations are
+compared exactly, without dropping source attributes or alias owners.
+
+The successful128-bit operand totality/64-bit equality and both actual negative
+controls are requalified from their complete graph/script/log identities. The
+exact original D2249 cone is freshly projected and must hash-match that premise.
+Full target bodies, input/output IDs, root port/index identities and full-cell
+operand ancestry bind its universal lemmas to the original full graph. Pinned
+total primitive models and exact coordinate mux projection justify restriction
+and extension, preserving actual unknown signal sharing and per-use literals.
+
+One entire indexed graph is then rewritten: remove only the redundant gold
+multiply and simultaneously substitute every Y32 use in ports, aliases and
+all cell pins. An independently ingested full owner comparison verifies the
+rewrite; a fresh transformed index audits all drivers, models and cycles.
+No roots, assumptions, omitted-Q sharing or unknown simplifications are added.
+Original satisfying models map to transformed models with equal observations.
+
+All149 original intervals covering[0,2249) are regenerated and their immutable
+graphs/manifests/query logs requalified. The separately certified single D2249
+joins them to cover[0,2250). All3678 remaining coordinates are scheduled from
+the one transformed full graph. Only exact disjoint union[0,5928) proves full
+retained-D equality. Transformed SAT is not called an original counterexample.
+
+Explicit resume is supported in the first version: --resume PATH --resume-sha
+SHA. It authenticates the same original and transformed fullgraph identities,
+all premise/model/lift/rewrite identities and the exact mixed baseline. Every
+reused new interval must match its declared hash, original closure hash, fresh
+graph/manifest byte replay and actual terminal query. An interrupted receipt
+remains incomplete, with logs/inputs preserved and theorem flags revoked.
+
+All heavy work is root-run inside the existing3GiB/no-swap/two-CPU gate. Large
+owner comparisons and fullgraph emission stream through disk. Parsed original
+side graphs are released before indexing/querying. No extraction/build repeats.
+
+Success still means archived-model retained-D equality in the defined full-Q
+and external RAM/FP-return domain. Original memory semantic bridge, original
+quotient, public-output equality/refinement, child-return definedness, outer
+trace and current production applicability remain explicit pending flags.
+
+Root-only commands:
+source /tmp/opentpu-test-env.sh
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m pytest -q build/sparkle/mxu_outer_complete_D_draft/test_complete_D.py
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_outer_complete_D_draft/check_complete_D.py --output build/sparkle/mxu-outer-complete-D-first
+
+A subsequent partial continuation uses a new output directory and the exact
+old summary SHA, for example --resume build/sparkle/mxu-outer-complete-D-first/summary.json --resume-sha SHA.
+The default new interval width is16; --chunk1 can be chosen after a preserved
+timeout without changing roots, semantics or previously completed intervals.

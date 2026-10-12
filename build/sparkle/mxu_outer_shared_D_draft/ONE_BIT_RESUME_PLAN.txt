@@ -1,0 +1,58 @@
+Conditional plan only; active shared_D run and all executable sources unchanged.
+
+The first shared interval[2410,2426) currently has473 cells,52919 SAT variables
+and142882 clauses, reduced from665/111703/301734. These size reductions do not
+establish equality or imply that this or any later interval will finish.
+Leave a successful active run intact. This plan applies only after a terminal
+timeout/incomplete result has been preserved and audited by root.
+
+1. Wait for the active bounded process to terminate. Preserve its summary,
+   complete input/source closure, all generated graphs/manifests/scripts/logs,
+   and resource statistics. Stream-hash the final immutable summary. Do not
+   resume a live or subsequently mutable receipt. Timeout is not counterexample
+   or success; no global revoked theorem flag is promoted from that receipt.
+
+2. Inspect the exact completed new partition ledger. If the first interval
+   times out, no new interval is proved and historical prefix remains2410.
+   If it passes and a later interval times out, preserve every completed16-bit
+   interval exactly. Existing resumable rows contain only terminal UNSAT proofs,
+   each with original graph/manifest/script/log identity and generic_shared
+   representation. Do not infer a proof from an emitted graph or partial SAT log.
+
+3. Use the frozen existing checker with a NEW output directory and explicit
+   immutable receipt path/SHA, adding --chunk1. No source amendment or solver
+   timeout/memory increase is needed. Example only, SHA must be root's actual
+   terminal audit result:
+
+   source /tmp/opentpu-test-env.sh
+   python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_outer_shared_D_draft/check_shared_D.py --output build/sparkle/mxu-outer-shared-D-second --resume build/sparkle/mxu-outer-shared-D-first/summary.json --resume-sha TERMINAL_SHA --chunk 1
+
+4. The existing driver requalifies the original→congruent→shared component
+   chain and160 historical intervals covering[0,2410). It compares the resume's
+   five pinned premises, original/congruent/shared fullgraph/model/certificate
+   identities and exact mixed baseline against fresh replay. Each resumed new
+   interval keeps its original width and must match both its declared artifact
+   digest and closure digest, fresh byte-identical graph/manifest, unchanged
+   query script and terminal UNSAT log. Every resumed interval must be consumed.
+
+5. Only the still-unproved coordinates are newly scheduled at width1. These
+   are exact dependency-cone projections from the SAME certified shared full
+   graph: only reviewed coordinatewise mux projection, all other cells whole,
+   original input IDs/correlations, independent omitted Q and literal-X choices
+   retained. Each query has the same explicit-undef and defined-root domain;
+   no carry/enable/range/state/output assumption is added. A single-bit output
+   still keeps all genuine dependencies, including complete arithmetic cells.
+
+6. No coordinate is lost: disjoint union of the historical baseline, unchanged
+   resumed intervals, and newly proven single-bit intervals must cover all5928.
+   The initial remaining3518 may shrink only by authenticated terminal proofs.
+   A timeout at one bit remains unresolved. Preserve its graph/script/log and
+   actual semantic field/index, then diagnose that concrete dependency cone
+   before considering another representation; do not blindly repeat the same
+   SAT query, increase limits, cut internal drivers or skip the difficult bit.
+
+Resource scheduling remains root-controlled. The queued VPU diagnostic runs
+before any new long continuation. All jobs stay under the same3GiB/no-swap/
+two-CPU exclusive gate. No agent proof or artifact processing is authorized
+by this plan. Original-memory/public-output/child-definedness/outer-trace and
+production applicability obligations remain outside this retained-D stage.

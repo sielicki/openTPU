@@ -1,0 +1,42 @@
+Unexecuted source draft. Passed inventory helpers and all prior receipts remain
+unchanged. Root alone runs guards and actual queries through the bounded gate.
+
+Entry: mxu-outer-observation-inventory-first/summary.json, explicit SHA
+8a629838995e9ba6baea2b81c58eea0afbe8c54ce237b5f9a73ee80d558f891d.
+130 semantic output ports, 5,829 occurrences on each side:
+2,187 top; 3,122 actual RAM input pins; 520 actual FP input pins.
+
+Modes are independent and use exactly the same graph/root domain:
+definedness asks for any unknown among BOTH interleaved sides;
+equality uses -prove equal 1, whose strict signals_eq property requires a
+defined one. Its negation admits undefined equality outputs as failures; unlike
+-set equal 0 it cannot discard all unknown comparisons before reporting UNSAT.
+The proof SUCCESS/FAIL parser is distinct from ordinary SAT query markers.
+Actual pinned SatGen command/header source branches are authenticated, and every
+run executes seven tiny real-solver regressions: equal literal1/0/X and actual
+$eq on 0/0, 0/1, X/0, X/X. Only known true must prove; unknowns must fail.
+Schema version2 prevents reuse of an older query contract.
+No knownness result is invented as an equality prerequisite or input assumption.
+Each complete-success flag needs all 5,829 coordinates with exact interval union.
+A counterexample ends that run with a diagnostic terminal status and false
+aggregate flags; it does not prove initialized reachability or whole-source
+failure. Another mode can run independently on the same immutable inventory.
+
+Both modes preserve all original value/undef correlations. Literal unknowns
+remain in actual cell bodies; no synthetic root stands in for an internal wire.
+Only the audited coordinatewise mux projection changes primitive width.
+Complete original DAG total extension justifies omitting unobserved cells and
+unused mux coordinates; all other primitives retain entire actual bodies/pins.
+
+Immutable resume keeps successful widths, regenerates exact graph/manifest bytes
+and verifies declared SHA against archived closure plus actual terminal query.
+New partitions fill every gap. Timeout remains incomplete; no cap/timeout raise.
+Full-source graphs are released before SQLite cone processing/solver execution.
+
+Expected source discrepancy remains deliberately exposed: original mk dynamic
+reads keep the extra high address bit and OOB X, while native reads wrap their
+lower address bits. An actual enabled t_wdata difference may require a native
+semantic correction, or a separately reviewed globally coherent directional
+trace relation. ISA command bounds are not an added premise here. Public
+observations, RAM/FP feedback, source/model correspondence and production scope
+are not discharged by a mere specified-bit comparison.

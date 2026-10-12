@@ -1,0 +1,81 @@
+UNEXECUTED draft streamlane_step_cones.py/check_streamlane_parent_cones.py/tests.
+Parent receipt exact path vpu-streamlane-parent-first/summary.json; reviewer must
+supply its authenticated SHA (not invented). Uses archived combined parent and
+both complete state inventories; no generation/extraction replay.
+
+Exposure preserves all original external ports (only actual gold i_/o_ prefixes
+normalized), removes exactly audited DFFs and24FPcells, introduces complete18982Q
+shared defined state inputs plus24*32 shared result inputs. Every actual D checked
+against frozen all_qd; no retained bit dropped. Outputs are all3885external,
+18982D,1560FPinput/en =24427; exact ordered paired port manifests required.
+Original initializers are not query assumptions; initialization witness is prior
+separate evidence. Literal X/Z preserved. Only $buf normalization is exact unsigned
+$or(A,zero), including X. All other cells remain exact. Unsupported primitive
+contracts fail; do not broaden without auditing actual pins/width semantics.
+
+Plan upfront764 partitions of at most32 output bits, exhaustive no overlap/gap.
+Each pair is exact transitive primitive-cell dependency closure. Conservative
+whole-cell dependencies preserve correlations. No internal signal cut or default
+value is introduced. Shared roots match original semantic port/index across both
+sides, not coincidental net IDs. Whole source graph driver completeness/cycle and
+primitive support audits occur before solving, including unused cells.
+
+Each cone: read_json + generated wiring-only Verilog harness +hierarchy+flatten;
+no optimizing pass. Strong -enable_undef -set-def-inputs definedness query asks
+whether either side observed output has any undefined bit. This must prove UNSAT
+through '-set-any-undef observed -prove impossible 1 -verify'. Only then strict
+'-prove equal_ok 1 -verify', never -prove-x, on same arbitrary defined inputs.
+UNSAT proof terminal markers and rc0 required independently for both. No assumptions
+on reset,enable,decoder,fill,legalcommand,othercone outputs. This decomposes the
+universal conjunction exactly. SQLite cache8MiB and per-cone JSON keep solver
+input bounded in representation; a huge actual single cone can still hit ceiling
+and must remain incomplete, not receive an invented additional cut.
+
+Every partition/script/graph/log/model is archived, progress checkpointed after
+each result. Completed ranges are reusable immutable inputs; automatic partial
+resume orchestration is not yet implemented. Failed attempts preserve source and
+results. No positive status until all764 paired definedness/equality checks pass.
+Still not closed product: actual FP initialized relations/Moore outputs, original
+unique-case initialized decoder applicability, production annotated-graph binding
+and real production mutation controls remain explicit pending obligations.
+
+Mux/resume implementation update (unexecuted; supersedes older no-resume note)
+--------------------------------------------------------------------------
+Added streamlane_mux_adapter.py and streamlane_resume.py; checker now schema2.
+Reviewed shared rule source is consumed via explicit --mux-rule-sha and immutable
+HistoricalEvidence archive. Only its two pure mux_slice/audit_mux_model functions
+and literal MUX_MODEL are AST-loaded, not the sibling module/imports/index class.
+No shared MXU files changed. Paired VPU adapter projects exact mux coordinates,
+keeps all other cells intact, has no omitted-state exemption, and checks installed
+satgen.h model anchor. Both-side total projected pinbits<=50000 and cells<=10000
+are preflight thresholds; excess splits intervals deterministically, single-bit
+excess stays incomplete. These are heuristics, not a memory-completion guarantee.
+Every split and final partition retains complete24427-bit coverage.
+
+--prior PATH --prior-sha SHA consumes immutable partial result. Completed stepped
+artifact reused only with same exposure source identity and parent receipt; mutable
+SQLite is always rebuilt, never trusted after interruption. Missing early-stage
+artifacts trigger exposure from archived parent, not Lean/Slang regeneration.
+Prior completed partition boundaries retained; uncovered gaps receive <=32-bit
+ranges. Definedness/equality reused separately only if graph, harness and full
+root/projection manifest exactly match freshly reconstructed current cone.
+Changed projection inputs rerun that property; no foreign proof silently reused.
+
+Every successful property stores authenticated result returncode0, tool digest,
+exact script/command/log, original graph/bench/model/script paths, and ROOT cwd.
+Reuse explicitly binds query graph/bench/script paths to original artifact paths
+before resolving snapshots. Reconstructed strong query and rc0/result/log markers
+must match. Reused records preserve original paths and identities unchanged, so
+second/subsequent archive-only reuse still checks the original invocation targets.
+Results are not inherited by interval name alone. Actual failures/models remain
+in old immutable attempts; no existing directory is modified.
+
+Focused new guards in test_streamlane_mux_resume.py cover exact discontiguous
+coordinate mapping, paired semantic roots, unknown preservation, budget splits,
+lineage/overlap, per-property reuse, repeated reuse, swapped query targets/cwd,
+changed files, weakened queries, failed result and wrong solver identity.
+No tests, imports or proof execution by author. Root must run bounded guards and
+review current source before first paired parent proof. Final status remains
+product_unproved until existing explicit FP/decoder/production/mutation premises
+are actually completed. Parent receipt reviewed SHA:
+1858205495448741e6694339169680e2bdc802cdcde5e4b8606df80f2b1fc349.

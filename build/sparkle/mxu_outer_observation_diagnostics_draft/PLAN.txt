@@ -1,0 +1,67 @@
+Source-only diagnostic continuation proposal; no behavioral theorem claimed.
+
+Explicit entry: mxu-outer-observation-definedness-first/summary.json (use actual
+path supplied by root; do not infer it), SHA
+06cea5697b21871cdb297b8dd16fed7060f2405e80cdf7bef64948eaf6679f6f.
+Complete fixed inventory owner:
+8a629838995e9ba6baea2b81c58eea0afbe8c54ce237b5f9a73ee80d558f891d.
+Prior run proved120 intervals/[0,1920), found unknown observation in[1920,1936).
+The witness includes both ram0_RD_CLK occurrences: explicit literal X under
+the actual asynchronous RAM parameter model. Neither observation is removed.
+
+Proposed executable: new diagnostic driver, importing frozen reviewed helpers
+but never modifying a passed source. Same fixed paired graph, model, root
+domain, primitive cones, mux law, strict-proof regressions, 5829 coordinates.
+
+1. Reconstruct and SHA-check the immutable indexed observation graph and manifest
+   against the completed inventory. Replay all prior120 positive cone graphs,
+   coordinate manifests, actual scripts/logs and exact interval bounds. Replay
+   prior CEX graph/manifest and witness script/log as a genuine SAT result, not
+   a proof. Actual result categories remain separate. Require graph declared
+   hashes agree with archived input closure and fresh reconstruction.
+2. Continue every not-yet-queried interval, using original16-bit widths and
+   exact complete coverage. For UNSAT append proved_defined. For SAT rerun the
+   unchanged query with full model display and append concrete_undefined_witness,
+   then CONTINUE. Preserve each immutable graph, semantic coordinate manifest,
+   command, log and all cone roots. No forcing knownness for inactive pins.
+3. On terminal complete diagnostic coverage, all intervals must have exactly
+   one checked result with no overlap/gap. Any SAT keeps full definedness false.
+   The receipt says every interval was queried, not every bit proved and not
+   every possible undefined assignment enumerated. A SAT interval can include
+   defined siblings. Capture concrete side/port/index locations from the full
+   interleaved PROBE model, keeping exact bit order and parser width checks.
+4. Immutable diagnostic resume may reuse either category only with regenerated
+   artifacts, actual mode-specific terminal result and complete manifest/model
+   joins. A solver timeout remains incomplete with all earlier categories
+   preserved. No repeated identical solver timeout or ceiling increase.
+
+Separate exact inactive-read-clock law, not an observation omission
+Authenticate each actual main RAM's complete parameters and pins from the
+already bound historical flat/cut/ram records. For RD_CLK only, require exactly
+one read port, RD_CLK_ENABLE=0, RD_EN=1, RD_ARST=RD_SRST=0 on both sides and
+match the exact observation source coordinate/literal. Source-pin complete
+simlib $mem_v2 plus port_active and the prior discrete memory-model scope:
+* synchronous read/forwarding/collision branch is disabled by RD_CLK_ENABLE=0;
+* asynchronous read equation depends on full RD_ADDR and stored array, not CLK;
+* reset branches are disabled by actual reset constants;
+* write update uses the actual WR clock/address/mask/data, never RD_CLK;
+* LAST_RD_CLK may be assigned but all its consumers are in disabled terms.
+Thus RD_CLK does not affect the stated discrete RAM read/write coordinate
+relation for these exact parameters. Unknown RD_CLK is still present in every
+observation artifact and strict knownness remains false. No SV event scheduling,
+raw whole-controller equivalence, array feedback or global observational quotient
+is inferred from this local consumer law. Reject any changed mode/reset/port.
+
+Other undefined coordinates receive no automatic classification or exception.
+In particular WR_DATA X may be actively enabled. Source mk out-of-range reads
+must retain the high address bit and actual arbitrary full-Q/input domain.
+Diagnostic completion should expose later intervals, including t_wdata, without
+asserting an in-range command invariant or ISA legality assumption. An actual
+enabled effect requires a separate targeted witness/query for associated enable
+and downstream consumption, not a claim based on one generic unknown bit.
+
+After this diagnostic, the next decision is evidence based: exact native semantic
+repair, initialized reachability/counterexample, or a globally coherent directional
+trace relation with real RAM/FP feedback. A specified-bit-only output test does
+not by itself close that gap. Root alone runs guards and solver jobs under the
+unchanged bounded gate; no tests or imports by this author before authorization.

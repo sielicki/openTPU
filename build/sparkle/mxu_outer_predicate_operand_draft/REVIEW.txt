@@ -1,0 +1,26 @@
+Unexecuted isolated predicate operand experiment; prior executable/evidence frozen.
+
+Adapted the approved multiply operand lemma machinery to gold:$755 ($gt) and
+gate:$2309 ($lt), exact unsigned32/32/1 schema. Observation vector is actual
+gold A,B followed by actual gate B,A; all128 bits must be defined and all64
+ordered pairs equal, with actual unknown/inverted coordinate negative controls.
+No predicate rule, substitution, new assumptions, or fullgraph trace theorem.
+
+Entry is explicit SHA-pinned incomplete shared-D-second receipt and completed
+single-shared diagnostic. Entire full_shared graph declared/closure digest,
+mixed2412 prefix, exact failed script/log/graph/manifest, actual primitive model
+and source-pinned mux projection are checked. Original D2412 cone is freshly
+regenerated from the entire immutable full_shared graph before target selection.
+Target complete bodies are authenticated against the diagnostic source graph;
+all actual operands and full dependency cells are preserved. Target output
+ancestry is rejected; no internal cuts or per-consumer unknown reselection.
+Full model extension/driver/DAG audit remains the projection nonvacuity premise.
+
+Defined full Q and external RAM/FP returns are the unchanged root domain.
+Child-output definedness, predicate substitution, original graph lift, complete
+retained-D coverage, outer trace and production applicability remain pending.
+Undefined/difference witnesses are terminal diagnostic outcomes, not theorem
+success. Timeout/error preserves incomplete artifacts and revokes theorem flags.
+Guards include actual gate pin/order mapping, unknown shared fanout, independent
+omitted roots, full schema, target ancestry, both fault controls and wrong
+orientation/unswapped operand inputs. No tests or solver run by author.

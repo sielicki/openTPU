@@ -1,0 +1,99 @@
+import copy
+from pathlib import Path
+import pytest
+from check_predicate_D import new_resume_rows,prior_shared_contract
+from predicate_chain import certificate_contract
+from check_partitioned_D import schedule,coverage,resume_identity
+
+
+def row(lo,hi,representation='predicate_congruent'):
+    return {'lo':lo,'hi':hi,'result':'equal','representation':representation}
+
+
+def baseline():
+    rows=[row(i,i+16,'original') for i in range(0,2240,16)]
+    rows.extend(row(i,i+1,'original' if i<2249 else 'single_congruence') for i in range(2240,2250))
+    rows.extend(row(i,i+16,'full_congruence') for i in range(2250,2410,16))
+    return rows
+
+
+def partial():
+    return {'schema_version':1,'certificate_kind':'archived_generic_shared_fullgraph_retained_D_coverage',
+        'status':'incomplete','baseline_partitions':baseline(),
+        'partitions':[row(2410,2411,'generic_shared'),row(2411,2412,'generic_shared')],
+        'original_graph':{'sha256':'original'},'model':{'exact':'model'},'mux_model':{'exact':'mux'},
+        'multiply_model':{'exact':'multiply'},'representation':{'full_shared_sha256':'shared'},
+        'premises':{'complete':'original chain'},'complete_5928_D_equality_proven':False,
+        'original_full_D_definedness_requalified':False,'fullgraph_operand_lemma_lift_proven':False,
+        'fullgraph_congruence_proven':False,'generic_sharing_requalified':False}
+
+
+def test_exact_two_shared_proofs_join_without_prior_flag_promotion():
+    old=partial();current=copy.deepcopy(old);before=copy.deepcopy(old)
+    rows=prior_shared_contract(old,current,old['premises'])
+    assert set(rows)=={(2410,2411),(2411,2412)} and old==before
+
+
+@pytest.mark.parametrize('key',['original_graph','model','mux_model','representation','premises'])
+def test_changed_shared_source_chain_rejected(key):
+    old=partial();current=copy.deepcopy(old);expected=copy.deepcopy(old['premises']);old[key]={'changed':True}
+    with pytest.raises(RuntimeError,match='source/model/representation'):prior_shared_contract(old,current,expected)
+
+
+def test_missing_one_shared_interval_rejected():
+    old=partial();current=copy.deepcopy(old);old['partitions'].pop()
+    with pytest.raises(ValueError,match='incomplete partition coverage'):prior_shared_contract(old,current,old['premises'])
+
+
+def test_all162_prefix_intervals_and3516_remaining_preserved():
+    base=baseline()+[row(2410,2411,'generic_shared'),row(2411,2412,'generic_shared')]
+    assert len(base)==162
+    prior=new_resume_rows({'partitions':[row(2412,2428),row(2428,2429)]})
+    intervals=schedule(5928,16,{**{(r['lo'],r['hi']):r for r in base},**prior})
+    coverage(intervals,5928)
+    assert all((r['lo'],r['hi']) in intervals for r in base)
+    assert (2412,2428) in intervals and (2428,2429) in intervals
+    assert sum(hi-lo for lo,hi in intervals if lo>=2412)==3516
+
+
+@pytest.mark.parametrize('rows',[[row(2411,2412)],[row(2412,2428,'generic_shared')],
+    [row(2412,2428),row(2420,2430)],[row(2412,2428),row(2412,2428)]])
+def test_wrong_new_resume_overlap_or_representation_rejected(rows):
+    with pytest.raises(RuntimeError):new_resume_rows({'partitions':rows})
+
+
+def cert():
+    return {'schema_version':1,'certificate_kind':'archived_full_shared_eight_predicate_congruence',
+        'status':'complete_full_shared_predicate_congruence','operand_lemmas_requalified':True,
+        'comparison_rule_requalified':True,'fullgraph_operand_lift_proven':True,'fullgraph_predicate_congruence_proven':True,
+        'model':{'actual':'model'},'mux_projection_model':{'actual':'mux'},
+        'premises':{'shared_source':{'path':'/old/summary.json','sha256':'source'}},
+        'defined_full_Q_required':True,'defined_external_RAM_FP_returns_required':True,
+        'RAM_FP_child_output_definedness_discharged':False,'original_to_shared_lineage_requalified':False,
+        'prefix_2412_requalified':False,'complete_5928_D_equality_proven':False,
+        'outer_trace_refinement_proven':False,'production_applicability_proven':False}
+
+
+def test_standalone_predicate_scope_requires_fresh_lineage_requalification():
+    record=cert();before=copy.deepcopy(record)
+    certificate_contract(record,{'actual':'model'},{'actual':'mux'},Path('/old/summary.json'),'source')
+    assert record==before
+
+
+@pytest.mark.parametrize('field',['status','model','premises','defined_external_RAM_FP_returns_required','prefix_2412_requalified'])
+def test_unqualified_or_wrong_predicate_certificate_rejects(field):
+    record=cert()
+    if field=='prefix_2412_requalified':record[field]=True
+    elif field=='defined_external_RAM_FP_returns_required':record[field]=False
+    elif field=='premises':record[field]={'shared_source':{'path':'/wrong/summary.json','sha256':'source'}}
+    elif field=='model':record[field]={'changed':True}
+    else:record[field]='changed'
+    with pytest.raises(RuntimeError):
+        certificate_contract(record,{'actual':'model'},{'actual':'mux'},Path('/old/summary.json'),'source')
+
+
+def test_transformed_artifact_fields_cannot_override_archived_closure(tmp_path):
+    graph=tmp_path/'graph';meta=tmp_path/'meta'
+    old={'graph':str(graph),'manifest':str(meta),'graph_sha256':'fresh','manifest_sha256':'metadata'}
+    with pytest.raises(RuntimeError,match='artifact/closure identity'):
+        resume_identity(old,{str(graph):'different',str(meta):'metadata'},'fresh','metadata')

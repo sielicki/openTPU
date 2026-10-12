@@ -1,0 +1,113 @@
+UNEXECUTED DRAFT. Diagnostic only; not initialized composition.
+
+Run guards and probes only under the existing bounded runner when root releases
+the heavy gate. Driver default evaluates all nine leaf cases, both sides; add
+--include-parent for both complete local-parent transition graphs. No side or
+state field is selectively omitted. A timeout, unsupported SAT cell or parse
+failure is incomplete, never a totality result. Parent SAT may require a later
+memory decomposition; this draft streams the graph wrapper but SAT itself still
+imports the full selected graph under the unchanged 3 GiB ceiling.
+
+Historical exact steps files are authenticated by the completed leaf/local
+initialization receipts and their full transition lineage. Each module is
+streamed owner-by-owner; cells, constants, metadata, ports and netnames remain
+unchanged. A new alias output concatenates every original output port in LSB
+order, including every next_dsp_state_N field and parent helper-input port.
+Input state fields must pair in width with every next field and cover the
+receipt's complete mapped-state count. All original aliases are retained.
+
+The query uses SAT's explicit undef model with every original input port
+constrained defined, including arbitrary mapped Q and parent shared cut outputs.
+It asks for at least one undefined bit in the entire obligation vector. No
+initial/legal-control assumptions, optimizations, setundef, ignored cells or
+omitted next-state bits. UNSAT certifies full definedness in this SAT model.
+SAT records the complete input valuation in the log and exact original port/bit
+locations of every undefined bit in that witness. It does NOT enumerate every
+potentially undefined location across all inputs. Exposed unused DSP D may be
+literal x: a SAT result is useful evidence, not a failed equivalence theorem.
+
+Semantics source inspected: official Yosys passes/sat/sat.cc, set-def-inputs,
+set-any-undef, setup() importUndefSigSpec and terminal SAT branches:
+https://raw.githubusercontent.com/YosysHQ/yosys/main/passes/sat/sat.cc
+The actual execution binary is pinned to the completed initialized leaf receipt;
+the upstream source is explanatory and is not an authenticated version bridge.
+
+Why needed: historical leaf/parent equiv_simple -short proofs omit -undef.
+Installed satgen.h maps literal X to false when model_undef=false. Those receipts
+therefore do not alone certify arbitrary independent unknown resolution or one
+coherent simultaneous output/next-state relation. Uninitialized Q, represented
+as arbitrary corresponding two-state inputs, is different from literal X in
+combinational logic. If all outputs/D are total with explicit undef, a separate
+reviewed lifting argument may connect the historical binary theorem to ordinary
+composition. If not, further work needs either an actual initialized invariant
+that proves totality on reachable state or a complete coherent coupling theorem
+for each primitive's simultaneous outputs and D. Per-bit existential choices
+and a DAG alone do not supply that coupling.
+
+PARENT RESUME DRAFT (unexecuted): resume_dot_definedness.py and
+ dot_definedness_cones.py. Explicit --prior and --prior-sha must match the
+ preserved interrupted receipt b9a68fc6...; all18 complete leaf logs/scripts,
+ graphs/manifests and provenance are rechecked without SAT rerun. The prior
+ immutable parent/gold probe is reused. Parent/gate wrapper is streamed fresh
+ from the same authenticated steps input.
+
+SQLite indexes all original drivers/cells. A global conservative input-pin
+ DFS rejects cycles and missing drivers, including unused cells. Each disjoint
+ interval of at most128 original obligation bits obtains its complete recursive
+ whole-cell fanin cone; every original cell/parameter/connection is retained
+ exactly, every upstream original input bit is exposed as the same arbitrary
+ defined bit, and no internal signal becomes a cut assumption. Large multi-bit
+ intervals are bisected; even a one-bit cone can legitimately remain too large
+ and fail incomplete under the same memory ceiling. No repeat of full-parent SAT.
+
+Each partition's exact original output span and input-origin map is archived.
+Intervals must cover the complete original concatenated observation/fullD vector
+without gaps or overlaps. SAT uses explicit undef as before. Partition witness
+indices translate back to original port bit indices. A successful probe is still
+not a composed equivalence theorem; it is evidence for a later reviewed lift.
+
+Second partition attempt:329 gold intervals covering [0,42112) completed;
+whole-cell closure then encountered an omitted-Q sibling. Root diagnosis is
+consistent with code: prior quotient uses precise A[i],B[i],S dependencies only
+for well-formed vector $mux, while the projection conservatively retains all
+inputs of the whole mux. Updated Index first independently repeats the precise
+quotient root walk; any truly reachable omitted Q rejects. Then the complete
+cell closure retains omitted siblings under their original undriven net IDs,
+with internal aliases only. They are never input ports, never forced defined,
+never replaced with zero. Manifest records every such ID. Explicit-undef SAT
+still handles the full projected primitive equations. Two-bit mux guard covers
+both accepted unrelated sibling and rejected observable sibling.
+
+Resume now additionally requires explicit --partitions-prior and
+--partitions-sha for the immutable second attempt. Exactly329 intervals covering
+[0,42112) and their scripts/logs/manifests/graphs are reauthenticated. Fresh exact
+cone projection must byte-hash match each old graph and match full input/output
+manifest before its completed SAT result is reused. No solver rerun for those
+intervals. Every historical interval must be consumed exactly once.
+
+Third attempt diagnostic: failed128-bit cone included a6144-bit mux, a2048-bit
+mux,128 shiftx,127 adders,3072 comparisons. Streamed bounded inventory completed
+0.142s/20,602,880B/zeroevents; no solver retried. New SlicedIndex propagates demanded
+net bits. Only exact $mux with sole WIDTH parameter, matching A/B/Y widths and
+one-bit S is coordinate-projected. Selected indices strictly ascending, original
+Y IDs and corresponding A/B IDs preserved, S unchanged, WIDTH changed to exact
+selected count. Other primitive cells/parameters/connections stay intact and
+all input dependencies are retained. Thus sibling logic is absent only under an
+explicit coordinatewise primitive identity, never by a guessed logical value.
+
+Installed SAT model audit pins the header alongside already pinned Yosys binary
+and checks its exact value/undefined pair mux equation. Every output coordinate
+uses only a[i],ua[i],b[i],ub[i],s,us; no sibling coordinate appears. This identity
+includes unknown selectors and data. Standard four-state table and explicit SAT
+pair fixtures cover selectors/data exhaustively for two coordinates. This is
+not an entire-device four-state trace claim. Projection manifests record each
+original mux width and ordered source indices. Dead omitted siblings are no
+longer retained for new projected muxes; demanded omitted bits still reject.
+
+Resume now pins third receipt99abef71... and interruptionc2567dcd..., reuses all361
+completed gold intervals [0,46208). First329 artifacts reside in second attempt;
+next32 reside in third. Exact old full-cell projection and SHA/manifest replay
+is retained for all historical intervals. Only remaining intervals use mux
+coordinate projection. Pin-bit heuristic50,000 and cell heuristic10,000 cause
+interval bisection, with single-bit excessive cone rejected before solver.
+These heuristics are not a RAM guarantee; unchanged bounded3GiB gate is required.

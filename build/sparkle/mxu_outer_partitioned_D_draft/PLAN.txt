@@ -1,0 +1,57 @@
+UNEXECUTED immutable retained-D equality resume; design review requested.
+
+Pin explicit source receipt path/SHA, currently expansion-first summary
+1fdce06c06fe058ed1a527564670db454ee150f3f7e05ac1c69437c46825f8b7.
+It remains incomplete. Its two all-D terminal results can be individually
+qualified; its revoked theorem flags are not promoted wholesale.
+
+1. Authenticate its entire input/helper/model/artifact closure. For each side,
+   bind exact full step graph, full-state manifest, 7436-bit D probe ordering,
+   exact original no-assumption query script and actual unique terminal UNSAT
+   log. Re-run graph schema/driver/DAG extension audits and require every state
+   Q/D coordinate occurs once. Explicit defined fullQ and RAM/FP return premises
+   remain unchanged. No extraction or solver repetition for these two results.
+
+2. Independently replay the retained pair assembly from immutable side graphs
+   and retained relation, requiring exact complete equality with original paired
+   graph/paired manifest. This rechecks all input/Q ownership:5928shared retained
+   Q and1508independent omitted Q per side, complete external-root pairing,
+   side-disjoint internals. Authenticate its semantic field/index ordering.
+   Original-memory bridge theorem status remains distinct; this stage proves
+   equality of exact archived expanded/native graphs and joins available scoped
+   construction evidence, never silently upgrades the incomplete receipt.
+
+3. Work on this SAME paired graph so root sharing is never recreated by a loose
+   semantic matcher. Its original complete equality cell contains ordered A/B
+   D vectors. Add only an alias vector interleaving [goldD0,gateD0,...], preserving
+   every original cell/port/alias. Audit its entire driver/DAG/model again.
+   Index via SQLite; original full-equality cell can remain unused in this
+   index. Never cut or constrain any internal driver.
+
+4. Default16retained-D-bit partitions; fixed disjoint union[0,5928). Trace each
+   interleaved interval through exact coordinatewise mux slices; retain every
+   other primitive whole with all dependencies. Original bits/aliases/root
+   correlations stay exact, including independently rooted omitted Q. Preserve
+   per-use literalX and one output identity per original wire; no setundef/opt
+   passes. Append only a fresh reviewed $eq of that interval and ask for0 under
+   explicitundef plus defined original roots. Both full-D totality premises make
+   this an ordinary mismatch question. Universally proved partitions imply the
+   entire vector equality; there is no existential per-partition witness choice.
+
+5. Authenticate pinned mux projection model and all exact primitive schemas.
+   Bound representation before solver using projected pins/cell counts and the
+   mandatory3GiB gate. If one fullcell cone remains huge or times out, preserve
+   incomplete; no limit increase or arithmetic abstraction. Exact deterministic
+   sharing would be a separately reviewed future representation change.
+
+6. Immutable resume supported from first new version: explicit prior path+SHA;
+   validate all completed intervals/logs/scripts and graph/manifest digest fields
+   against their actual old closure entries. Regenerate each reused projection
+   from the same base graph and require exact graph+manifest bytes. Reject
+   duplicate/overlapping/unknown intervals, unused resume successes or any
+   changed base graph/semantic order/model. Preserve initial/incremental summaries,
+   active partial artifacts, safe partial-index cleanup and all timeout/CEX logs.
+   Revoke success on finalization/publication failures; stream archive/hashes.
+
+No strict output equality, directional refinement, original quotient, child
+composition or outertrace claim follows from this retained-D resume alone.

@@ -5,6 +5,7 @@ RSQRT and LOG2 microcoded over NS generic multiply-add stages per lane
 exponent; chunks issued as the VPU issues them (hold, the latency rule), with random gaps and
 random enable stalls; the stage units inside the module and outside it (EXT, built as SE's
 slot 0, U and Q)."""
+import os
 import numpy as np
 import pytest
 
@@ -93,8 +94,13 @@ def run_comp(chunks, tmp_path, lanes=8, ns=3, ext=0, ha=2, ipct=100, epct=0, see
     fin, fout = tmp_path / "in.hex", tmp_path / "out.txt"
     fin.write_text("\n".join(lines) + "\n")
     R = rtlsim.RTL
+    composite = R / "vpu/otpu_se_comp.sv"
+    if os.environ.get("OTPU_SPARKLE") in ("secomp", "all"):
+        from opentpu.sparkle import se_composite_source
+        # tb_se_comp fixes the opaque chunk tag width at sixteen bits.
+        composite = se_composite_source(lanes, 16, ns, ha, bool(ext))
     exe = rtlsim.build("tb_se_comp", [R / "vpu/otpu_fp.sv", R / "vpu/otpu_fpipe.sv",
-                                      R / "top/otpu_pkg.sv", R / "vpu/otpu_se_comp.sv",
+                                      R / "top/otpu_pkg.sv", composite,
                                       rtlsim.TB / "tb_se_comp.sv"],
                        {"LANES": lanes, "NS": ns, "EXT": ext, "HA": ha})
     r = rtlsim.run_sim([exe, f"+in={fin}", f"+out={fout}"], timeout=600)

@@ -1,0 +1,18 @@
+Unexecuted independent actual-SatGen finite rule certificate, no controller claim.
+
+Authenticate the same exact Yosys binary, acquired source NAR and comparison
+SatGen branches through existing authenticate_model; snapshot all resolved local
+driver imports before work and verify at finish. Generate immutable exact JSON
+graphs with64 defined original roots A/B, unsigned32/32/1 gt(A,B),lt(B,A), and a
+one-bit equality observation. Prove both predicate outputs defined and mismatch
+UNSAT using -enable_undef -set-def-inputs with no optimization pass. Then require
+the actual lt(A,B) wrong-orientation mutation to produce a SAT witness. Three
+queries, scripts/logs/graphs in closure, same180-second timeout and bounded runner.
+
+This avoids an additional trusted handwritten proof of ezSAT vec_cmp's carry
+equations: the actual pinned SatGen encoding proves the exact reversed rule.
+It does not prove any controller operands defined/equal, lift a cone, substitute
+cells, or complete D coverage. Those require the independent concrete operand
+and subsequent fullgraph certificates. Interrupted/failed finalization revokes
+comparison_rule_proven and preserves all artifacts via reviewed retrying failure
+publisher. Repeated termination signals are suppressed during failure handling.

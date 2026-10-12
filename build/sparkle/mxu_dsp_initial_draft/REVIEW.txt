@@ -1,0 +1,87 @@
+Draft status: not imported or executed. Install the checker/tests under tools
+only after source freeze lifts. All extraction/tests require sparkle_bounded.
+
+Proof argument and bridges:
+- The existing physical-dot receipt authenticates each of nine successful leaf
+  summaries and its terminal equiv_status log. Each leaf authenticates the exact
+  steps.json, complete solver script, source/parameter extraction scripts, native
+  and original modules and the functional DSP48E1 model.
+- Current native generation source closure, reference RTL, helper sources and
+  current installed primitive model must match these authenticated artifacts.
+  Native/reference/model artifacts consumed by extraction are direct immutable
+  originals, not a silently different archive path.
+- A fresh extraction removes --ignore-initial and uses a separately archived
+  primitive copy with exactly one parameter-only initializer RHS expansion.
+  The first real attempt was preserved at mxu-dsp-initial-first: Slang rejected
+  reading the carryout_reset net in the CARRYOUT initializer. That unsuccessful
+  extraction supplied no initialization theorem.
+- The original carryout_reset net is assigned by one generate-if chain using
+  only the elaboration parameter USE_SIMD. Its values are FOUR12 -> 0000,
+  TWO24 -> 0x0x, otherwise -> 0xxx. The normalizer requires the exact full
+  generate branch block, unique parameter and net declarations, one initial
+  read, one synchronous reset read, and exactly the three assignments: six
+  total carryout_reset identifier occurrences. This rejects current-input,
+  register-state or unresolved-alias dependencies and any additional driver.
+  Only `initial CARRYOUT = carryout_reset;` becomes the corresponding constant
+  parameter ternary. The original branches, net and synchronous reset remain
+  untouched. Every original zero and x bit is preserved; x is unconstrained in
+  this formal model, never implicitly zero. Both positive sides use this same
+  expanded primitive, and the Br2 mutation derives from that exact copy.
+  A source-to-expression/dependency certificate is archived per configuration.
+- This bridge proves constant propagation for parameter-elaborated FORMAL
+  initialization constraints. It does not establish event-region/time-zero
+  four-state simulation equivalence of a procedural net read and a parameter
+  expression: a raw SV simulator can expose initialization scheduling effects.
+  This limitation is explicitly in the checker scope and each certificate.
+  A cross-check using another frontend on the original primitive or a minimal
+  carryout initializer model would be useful additional evidence, but is not
+  performed by this draft and must not be claimed. Do not treat a frontend
+  that also rejects net initializers as evidence of equivalence.
+- The mapper refuses every pre-existing dsp_state_N alias before any mutation and
+  snapshots the entire initial predicate before mapping, requiring it remain
+  unchanged afterward. An initializer cannot be lost by alias overwrite.
+  Complete matching_state + expose_steps check every retained Q/D bit. The base
+  relation is bitwise equality. Every reference-defined bit must be identically
+  native-defined. Native undefined bits remain '?' and choose the same arbitrary
+  value in the reference witness. Unknown init values are unconstrained; defined
+  init constraints outside real state are rejected unless on matching constants.
+- A bijective bit-ID graph bridge ties each fresh full transition module to the
+  actual historical solver input. All port/net/cell inventories, state aliases,
+  constants, operators, parameters, directions and attributes must match; only
+  src location annotations are ignored. Initial attrs are removed only after
+  the separate base audit by the existing expose_steps helper.
+- Consequently the already proved all-state/all-input output and next-state
+  equivalence applies to the fresh initialization relation without rerunning SAT.
+  This is externally checked initialized refinement of the primitive model,
+  not independent initial-state equality or physical device startup signoff.
+
+Fail-closed first-run risks:
+- Slang/Yosys may change net/cell naming or optimize an initial constant into a
+  different graph. The current bridge rejects that. Do not strip more semantic
+  attributes or delete state to force a match. If needed, add an explicitly
+  proved graph correspondence or run a fresh small complete-state leaf theorem.
+- Concrete initial constraints may attach to registers removed by optimization;
+  a nonconstant leftover constraint is rejected. If encountered, preserve a
+  pre-optimization initializer inventory and prove its projection soundly.
+- Any differing reference/native initial constraint fails even if reset/fill
+  would later hide it; no schedule is assumed.
+
+Tests cover native undefined state, mismatched/missing/conflicting initializers,
+full-state coverage, exact graph reuse, changed clocks/next-state/constants,
+wrong configurations, and missing/repeated initializer mutation targets.
+They are not substitutes for the real nine-leaf run.
+Each real case now includes a mandatory native-only primitive source mutation:
+change exactly one BREG=1 Br2 initializer from 18'b0 to 18'b1. All other source
+bytes remain unchanged. This one primitive-source declaration is instantiated
+once in a PE and four times in a column-end helper. Fresh extraction must succeed, complete state mapping
+must match, and the mutated transition graph must still bridge to the existing
+theorem before the negative control can pass. Only the dedicated initialization
+implication exception, with original reference bit=0 and changed native bit=1,
+counts as rejection. Parser/state/bridge errors fail the entire run. Mutated
+source, extraction script/log/netlist and named-state initialization constraints
+plus precise failing bit are preserved in initializer-mutation-audit.json.
+This negative control is drafted, not executed.
+
+No cascade Moore claim is made: LAST PEs and internal column-end DSPs are Mealy.
+Outer-DSP composition still needs acyclic combinational dependency evidence,
+dot/controller/RAM initialization and complete production occurrence binding.

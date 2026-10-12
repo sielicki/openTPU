@@ -11,7 +11,7 @@ from pathlib import Path
 
 import numpy as np
 
-from . import simtmp
+from . import simtmp, simmemory
 from . import target as _target
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -47,6 +47,23 @@ def verilator_version() -> str:
     return _VERSION
 
 
+def verilator_jobs() -> int:
+    """Compiler parallelism override, also used for linker recovery."""
+    try:
+        jobs = int(os.environ.get("OTPU_VERILATOR_JOBS", "0"))
+    except ValueError as error:
+        raise ValueError("OTPU_VERILATOR_JOBS must be a nonnegative integer") from error
+    if jobs < 0:
+        raise ValueError("OTPU_VERILATOR_JOBS must be a nonnegative integer")
+    return jobs
+
+
+def verilator_flags() -> list[str]:
+    flags = list(VFLAGS)
+    flags[flags.index("-j") + 1] = str(verilator_jobs())
+    return flags
+
+
 def build_dir(top: str, sources: list[Path], params: dict | None = None) -> Path:
     """The build's directory: keyed on the sources' names (in the tree: OTPU_REMOTE_BUILD shares
     build/ between trees) and contents, the parameters, VFLAGS and Verilator's version."""
@@ -56,7 +73,7 @@ def build_dir(top: str, sources: list[Path], params: dict | None = None) -> Path
         name = s.relative_to(ROOT).as_posix() if s.is_relative_to(ROOT) else str(s)
         h.update(name.encode() + b"\0" + s.read_bytes() + b"\0")
     h.update(repr(sorted((params or {}).items())).encode())
-    h.update(repr(VFLAGS).encode() + b"\0" + verilator_version().encode())
+    h.update(repr(verilator_flags()).encode() + b"\0" + verilator_version().encode())
     return BUILD / f"{top}_{h.hexdigest()[:12]}"
 
 
@@ -66,6 +83,10 @@ def build(top: str, sources: list[Path], params: dict | None = None) -> Path:
     build of the same waits for it instead of running a half-linked executable, and a build
     killed or failed leaves no executable for the next to take."""
     params = params or {}
+    jobs = verilator_jobs()
+    if audit_path := os.environ.get("OTPU_SIM_BUILD_AUDIT"):
+        from .simcache import build_audited
+        return build_audited(top, sources, params, jobs, audit_path)
     out = build_dir(top, sources, params)
     exe = out / f"V{top}"
     if exe.exists():
@@ -80,7 +101,7 @@ def build(top: str, sources: list[Path], params: dict | None = None) -> Path:
                 shutil.rmtree(d, ignore_errors=True)
         tmp = Path(tempfile.mkdtemp(prefix=f".{out.name}.", dir=BUILD))
         try:
-            cmd = ["verilator", *VFLAGS, "--top-module", top, "-Mdir", str(tmp)]
+            cmd = ["verilator", *verilator_flags(), "--top-module", top, "-Mdir", str(tmp)]
             cmd += [f"-G{k}={v}" for k, v in params.items()]
             cmd += [str(s) for s in sources]
             r = subprocess.run(cmd, capture_output=True, text=True)
@@ -88,7 +109,7 @@ def build(top: str, sources: list[Path], params: dict | None = None) -> Path:
                 # the parallel make occasionally archives a stale object: rebuild the archive once
                 for f in tmp.glob("*__ALL.a"):
                     f.unlink()
-                r = subprocess.run(["make", "-C", str(tmp), "-f", f"V{top}.mk", "-j", "8"],
+                r = subprocess.run(["make", "-C", str(tmp), "-f", f"V{top}.mk", "-j", str(jobs or 8)],
                                    capture_output=True, text=True)
             if r.returncode != 0 or not (tmp / f"V{top}").exists():
                 raise RuntimeError(f"verilator failed:\n{r.stdout[-4000:]}\n{r.stderr[-4000:]}")
@@ -231,8 +252,92 @@ def build_top(cfg, dram_lat: int = 8, uarch: dict | None = None, axi: bool = Fal
     shell = RTL / "shell"
     mem = ([shell / "otpu_afifo.sv", shell / "otpu_mem_ch.sv", TB / LDC_MODELS[ldc],
             TB / "otpu_ldc_mem.sv"] if ldc else [TB / "otpu_native_mem.sv"] if axi else [])
-    return build("tb_top", [RTL / s for s in RTL_SOURCES] + mem + [TB / "tb_top.sv"],
-                 top_params(cfg, dram_lat, uarch, 2 if ldc else axi, dram_bytes))
+    params = top_params(cfg, dram_lat, uarch, 2 if ldc else axi, dram_bytes)
+    sources = [RTL / s for s in RTL_SOURCES]
+    sparkle = os.environ.get("OTPU_SPARKLE", "0")
+    if sparkle == "top-test":
+        from .sparkle import top_source, mem_channel_source
+        if ldc:
+            mem = [mem_channel_source(), TB / LDC_MODELS[ldc], TB / "otpu_ldc_mem.sv"]
+        # Only packages and explicit simulation memory models remain external.
+        sources = [RTL / "vpu/otpu_fp.sv", RTL / "top/otpu_pkg.sv", top_source(params)]
+        return build("tb_top", sources + mem + [TB / "tb_top.sv"], params)
+    if sparkle not in ("0", "collective", "float", "actram", "tmem", "vtree", "seq", "qscale", "qread", "qwrite", "quant", "dma", "secomp", "setail", "dram", "native-dram", "vpu-test", "mxu-test", "all"):
+        raise ValueError("OTPU_SPARKLE must be 0, collective, float, actram, tmem, vtree, seq, qscale, qread, qwrite, quant, dma, secomp, setail, dram, native-dram, vpu-test, mxu-test, or all")
+    if sparkle in ("mxu-test", "all"):
+        from .sparkle import mxu_test_source
+        sources[sources.index(RTL / "mxu/otpu_mxu.sv")] = mxu_test_source(
+            params["D"], params["MCOLS"], params["ACT_ROWS"], params.get("FIFO_DEPTH", 128),
+            params.get("ULANES", params["LANES"]), params.get("MXU_IMPL", 0),
+            params.get("MXU_CL", 16))
+    if sparkle in ("vpu-test", "all"):
+        from .sparkle import vpu_test_source
+        lanes = params["LANES"]
+        # Match otpu_slice's HAS_SS and ARB_MASK elaboration constants.
+        streams = bool(params.get("HAS_DSTEP", 1) and lanes == 8 and params["D"] >= 32)
+        buffered = params["RPB"] >= 8 * lanes and params["WPB"] == 1
+        sources[sources.index(RTL / "vpu/otpu_vpu.sv")] = vpu_test_source(
+            lanes, params.get("VPU_CL", lanes // 4 if lanes >= 8 else 1), streams, buffered)
+    if sparkle in ("native-dram", "all") and params["AXI"]:
+        from .sparkle import native_dram_source
+        sources[sources.index(RTL / "mem/otpu_native_dram.sv")] = native_dram_source(params["D"])
+    if sparkle in ("dram", "all") and not params["AXI"]:
+        from .sparkle import dram_source
+        sources[sources.index(RTL / "mem/otpu_dram.sv")] = dram_source(
+            params["DRAM_WORDS"], params["D"], params["DRAM_LAT"])
+    if sparkle in ("collective", "all"):
+        from .sparkle import collective_source
+        sources[sources.index(RTL / "top/otpu_coll.sv")] = collective_source(params["S"], params["LANES"])
+    if sparkle in ("float", "all"):
+        from .sparkle import float_source
+        sources.insert(sources.index(RTL / "vpu/otpu_fpipe.sv"), float_source())
+    if sparkle in ("actram", "all"):
+        from .sparkle import actram_source
+        sources[sources.index(RTL / "mem/otpu_actram.sv")] = actram_source(
+            params["D"], params["MCOLS"], params["ACT_ROWS"], params["ACT_BLOCKS"],
+            params.get("ULANES", params["LANES"]))
+    if sparkle in ("tmem", "all"):
+        from .sparkle import tmem_source
+        sources[sources.index(RTL / "mem/otpu_tmem.sv")] = tmem_source(
+            params["TMEM_WORDS"], params["LANES"], params["WPB"])
+    if sparkle == "vtree":
+        from .sparkle import vtree_source
+        # LA is a fixed localparam (4) in otpu_vpu.
+        sources[sources.index(RTL / "vpu/otpu_vtree.sv")] = vtree_source(params["LANES"])
+    if sparkle == "qscale":
+        from .sparkle import qscale_source
+        sources.insert(sources.index(RTL / "vpu/otpu_quant.sv"), qscale_source())
+    if sparkle == "qread":
+        from .sparkle import qread_source
+        sources.insert(sources.index(RTL / "vpu/otpu_quant.sv"),
+                       qread_source(params.get("ULANES", params["LANES"])))
+    if sparkle == "qwrite":
+        from .sparkle import qwrite_source
+        sources.insert(sources.index(RTL / "vpu/otpu_quant.sv"),
+                       qwrite_source(params.get("ULANES", params["LANES"])))
+    if sparkle in ("quant", "all"):
+        from .sparkle import quant_source
+        sources[sources.index(RTL / "vpu/otpu_quant.sv")] = quant_source(
+            params["D"], params.get("ULANES", params["LANES"]))
+    if sparkle in ("dma", "all"):
+        from .sparkle import dma_source
+        streams = params["LANES"] == 8 and params["D"] >= 32
+        sources[sources.index(RTL / "dma/otpu_dma.sv")] = dma_source(
+            params["D"], params["LANES"], streams=streams)
+    if sparkle in ("seq", "all"):
+        from .sparkle import seq_source
+        sources[sources.index(RTL / "seq/otpu_seq.sv")] = seq_source(
+            params["IMEM_WORDS"], params["D"], params["S"], params["WIN"])
+    if sparkle == "secomp":
+        from .sparkle import se_composite_source
+        # VPU fixes AW=20, CNS=3 and HA=2, and shares its arithmetic stages.
+        sources[sources.index(RTL / "vpu/otpu_se_comp.sv")] = se_composite_source(
+            params["LANES"], 21)
+    if sparkle == "setail":
+        from .sparkle import se_tail_source
+        # The tail is instantiated only in the eight-lane stream configuration.
+        sources[sources.index(RTL / "vpu/otpu_se_tail.sv")] = se_tail_source()
+    return build("tb_top", sources + mem + [TB / "tb_top.sv"], params)
 
 
 def run(cfg, programs: list, images: list, *args, keep: Path | None = None, **kw):
@@ -244,6 +349,38 @@ def run(cfg, programs: list, images: list, *args, keep: Path | None = None, **kw
         return _run(cfg, programs, images, *args, keep=keep, **kw)
     with simtmp.tempdir("otpu_") as d:
         return _run(cfg, programs, images, *args, keep=d, **kw)
+
+
+def _write_dram_image(path: Path, image: np.ndarray, program: np.ndarray | None = None,
+                      boot_at: int | None = None, chunk_bytes: int = 1 << 20) -> None:
+    """Write the original big-endian word image without image-sized temporaries.
+
+    The final partial word is zero padded before the optional boot gap/program.
+    Each conversion owns at most chunk_bytes; input arrays remain unchanged.
+    """
+    if chunk_bytes <= 0 or chunk_bytes % 4:
+        raise ValueError("DRAM serialization chunk must be a positive multiple of four")
+    padded = (len(image) + 3) // 4 * 4
+    if boot_at is not None and (boot_at < padded or boot_at % 4):
+        raise ValueError("boot address must follow the padded image on a word boundary")
+    with path.open("wb") as stream:
+        full = len(image) // 4 * 4
+        for start in range(0, full, chunk_bytes):
+            block = np.ascontiguousarray(image[start:min(start + chunk_bytes, full)])
+            block.view("<u4").astype(">u4").tofile(stream)
+        if full != len(image):
+            tail = np.zeros(4, np.uint8)
+            tail[:len(image) - full] = image[full:]
+            tail.view("<u4").astype(">u4").tofile(stream)
+        if boot_at is not None:
+            gap = boot_at - padded
+            zeros = bytes(min(gap, chunk_bytes))
+            while gap:
+                count = min(gap, chunk_bytes)
+                stream.write(zeros[:count])
+                gap -= count
+            for start in range(0, len(program), chunk_bytes // 4):
+                program[start:start + chunk_bytes // 4].astype(">u4").tofile(stream)
 
 
 def _run(cfg, programs: list, images: list, dram_lat: int = 8, max_cycles: int = 50_000_000,
@@ -275,30 +412,32 @@ def _run(cfg, programs: list, images: list, dram_lat: int = 8, max_cycles: int =
     ldc = (MEMORY["LDC"] if ldc is None else ldc) if axi else 0
     tmp = Path(keep) if keep else Path(tempfile.mkdtemp(prefix="otpu_"))
     tmp.mkdir(parents=True, exist_ok=True)
-    imgs, progs = [], []
+    imgs, progs, image_lengths = [], [], []
     for s in range(cfg.S):
         words = I.assemble(programs[s])
         if len(words) > cfg.IMEM_WORDS:
             raise ValueError("program does not fit IMEM")
         _write_hex(tmp / f"prog_{s}.hex", words)
         img = np.asarray(images[s], np.uint8)
-        imgs.append(np.concatenate([img, np.zeros(-len(img) % 4, np.uint8)]))
+        imgs.append(img)
+        image_lengths.append((len(img) + 3) // 4 * 4)
         progs.append(np.asarray(words, "<u4"))
     # boot: every slice's program right after the largest image (one loader address), or, if
     # there is no room, above the machine's DRAM (the simulated DRAM is then doubled)
-    at = -(-max(len(i) for i in imgs) // cfg.D) * cfg.D
+    at = -(-max(image_lengths) // cfg.D) * cfg.D
     grow = boot and at + 4 * max(len(p) for p in progs) > cfg.DRAM_BYTES
     if grow:
         at = cfg.DRAM_BYTES
     exe = build_top(cfg, 20 if axi else dram_lat, uarch, axi,
                     2 * cfg.DRAM_BYTES if grow else None, ldc)
     for s in range(cfg.S):
-        img = imgs[s]
-        if boot:
-            if 4 * len(progs[s]) > cfg.DRAM_BYTES:
-                raise ValueError("no room in DRAM for the program")
-            img = np.concatenate([img, np.zeros(at - len(img), np.uint8), progs[s].view(np.uint8)])
-        img.view("<u4").astype(">u4").tofile(tmp / f"dram_{s}.bin")
+        if boot and 4 * len(progs[s]) > cfg.DRAM_BYTES:
+            raise ValueError("no room in DRAM for the program")
+        _write_dram_image(tmp / f"dram_{s}.bin", imgs[s],
+                          progs[s] if boot else None, at if boot else None)
+    # Only lengths are needed for output validation. Release any dtype-converted
+    # images before starting the simulator; caller-owned inputs stay untouched.
+    del imgs, img
     for s, pk in (pokes or {}).items():
         if axi and ldc:
             raise ValueError("pokes: the behavioural DRAM or the native memory model (not LDC)")
@@ -329,6 +468,8 @@ def _run(cfg, programs: list, images: list, dram_lat: int = 8, max_cycles: int =
         args += ldc_plusargs(ldc, MEMORY["LDC_MHZ"])
     if boot:
         args += ["+boot", f"+boot_addr={at}", f"+boot_n={max(len(p) for p in progs) // 8}"]
+    for image in images:
+        simmemory.flush(image)
     r = run_sim(args, timeout=3600)
     out = r.stdout + r.stderr
     import re
@@ -339,11 +480,11 @@ def _run(cfg, programs: list, images: list, dram_lat: int = 8, max_cycles: int =
     if not halted or (err and not error_ok):
         raise RuntimeError(f"RTL did not halt cleanly (halted={halted} error={err}):\n{out[-2000:]}")
     icounts = [int(x) for x in re.findall(r"SLICE \d+ icount=(\d+)", out)]
-    drams = [np.fromfile(tmp / f"dram_out_{s}.bin", dtype=np.uint8) for s in range(cfg.S)]
+    drams = [simmemory.read_dump(tmp / f"dram_out_{s}.bin") for s in range(cfg.S)]
     for s in range(cfg.S):             # a short dump (e.g. a full disk) is an error, not a result
-        if len(drams[s]) < len(imgs[s]):
+        if len(drams[s]) < image_lengths[s]:
             raise RuntimeError(f"dram_out_{s}.bin has {len(drams[s])} bytes, fewer than the "
-                               f"{len(imgs[s])}-byte image: the dump was cut short")
+                               f"{image_lengths[s]}-byte image: the dump was cut short")
     if boot:                           # the program is not part of the result
         drams = [d[:cfg.DRAM_BYTES] for d in drams]
         for s in range(cfg.S):

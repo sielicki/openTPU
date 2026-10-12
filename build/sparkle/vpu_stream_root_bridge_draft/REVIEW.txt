@@ -1,0 +1,35 @@
+Actual original/native stream transition bridge, pending review/execution.
+
+Observe all1350 actual original D versus exact native D, all820 exported outputs,
+and every original/native raw state/input alias. Original unpacked lane groups
+are reversed into the native packed coordinates using the measured candidate
+mapping; this is not asserted as a behavioral theorem until SAT. Packed kq bits
+stay direct. Exact ss_meta_t declaration checks s_xm.first offset15/17 as a
+boundary coordinate candidate. All buffers are retained in solver graphs.
+
+The original whole-root graph and production-bound native raw graph are immutable
+receipt-owned inputs. No re-extraction. Original state/inputs remain defined and
+related; actual source X branches remain. Full cell frontier must close before
+queries. Precise mux/pmux projection and one-owner selectors reuse reviewed679
+helpers. Native demux/bmux/bwmux retain entire cells, shared selectors and actual
+SatGen semantics; pinned local stream model records and concrete binary/source
+identity required. Projection dependency audit uses the passed stream Cones,
+with only an audit-copy buf-to-pos change, never rewriting actual SAT buffers.
+
+Partition width16, all obligations fixed upfront. Session exact resume requalifies
+query scripts, graph bytes, alpha topology, model/source identity and success
+logs; first incomplete query stops. Actual ss_rq D flip/hold/X before projection
+must produce concrete negative models. Full Q inventory remains1350.
+
+Scope: direct original-root stream relation to an already production-bound native
+module. This closes actual D/output lane-coordinate behavior within the stated
+complete boundary relation, not generic packed-layout correctness. Initialization
+is recorded but not newly proved. Original/native external providers, whole4231
+feedback composition and all outward crossings remain pending. en/ss_rq are not
+silently discharged into whole-control assumptions. Next composition joins this
+1350 actual relation with1159 and write22/RAM1700 plus full selected-state startup
+witness and exact provider edges.
+
+Inherited local native raw extraction scope is explicit: the historical importer
+ran default frontend then proc-noopt; this checker does not invent a stronger
+source preprocessing theorem. Actual original graph had noopt/norom extraction.

@@ -1,0 +1,31 @@
+UNEXECUTED next stage: check_streamlane_parent_stage.py, streamlane_graph_store.py,
+test_streamlane_graph_store.py. No installed edits/execution by author.
+
+Consumes pinned terminal third-stage receipt SHA f23c3db55c72c1d14b58154509804fe3a4e130b6a34be28a113f31ebb7e62e5e
+and immutable hierarchy from authenticated archive; never invokes Lean or Slang
+again. One JSON owner at a time into SQLite, 8MiB cache/temp disk. Blackboxing
+writes owners incrementally; no full hierarchy/module deepcopy. Actual24leaf
+paths/families/ports/directions/unresolved params and reference identity padding
+audited. Complete concrete closures archived separately before FP-only abstraction.
+Composite remains concrete. SQLite closed before Yosys flatten/memory_map/opt_clean;
+no opt_expr or unsupported X erasure. Full parent Q/D, all initializer aliases,
+clocks, driver uniqueness, exact24 result cuts and source mappings audited.
+
+This is NOT complete FP proof authentication: actual concrete leaf graphs are
+preserved for later full-state relation/init/Moore check. Source attributes,
+complete clocks and graph obligations do not by themselves prove arithmetic.
+No parent SAT/definedness/equality claims. Literal X in D is retained and a guard
+requires this; it must subsequently fail strong definedness if reachable.
+
+Expected18982 statebits remains a candidate until executable audit. Unmapped Q
+is saved alongside all Q/D; gate cannot mark the stage audited with extra state.
+Missing/constant/aliased source fields fail closed and raw hierarchy/combined JSON
+and disk inventory remain available. No RAM defaults: any memory/storage form
+outside DFF currently fails, requiring explicit preserved obligations extension.
+Original diagnostics and unique-case decoder bridge remain separately pending.
+
+Stage metadata and artifacts are checkpointed; graceful interruption leaves
+incomplete receipt and retained DB/raw files. This stage consumes prior immutable
+inputs but does not yet resume a partial SQLite mutation; use a fresh attempt.
+Streaming preserves unselected modules unchanged, including full leaf dependencies.
+Only exact reached FP module bodies become boxes; no composite blackbox allowed.

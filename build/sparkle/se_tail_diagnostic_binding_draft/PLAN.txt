@@ -1,0 +1,107 @@
+Read-only composition review and concrete production diagnostic remedy.
+
+Boundary composition: the completed retained product preserves equality of
+warm8, ub_q273, and native dv_5/original u_dv.g_regs.qr1. The new actual counter
+cone has no state roots outside these282 bits and its own four Q bits. Its full
+D equality for arbitrary values therefore extends the existing relation by
+counter equality; all-alias native initialization supplies the matching original
+witness. Parent/FP proof does not assume counter equality: its synthesized
+retained graph removes the diagnostic-only counter. This is a one-way observer
+extension, not circular composition. Original output q is connected to qr via
+an actual one-bit $buf; the installed bridge now audits identity buffers strictly.
+
+Production assertion gap (must remain visible): SeTailABI emits an assertion in
+standalone otpu_se_tail, but VpuDatapath instantiates otpu_se_tail_sparkle directly
+as u_tail. The authenticated Gen1/Gen2/CLI paths therefore bypass that wrapper.
+A binder can currently certify production four-bit state and derived diagnostic
+predicate equality. It cannot certify actual production assertion triggering.
+
+Concrete remedy staged in core_fifo_assertion.sv: insert this simulation-only
+block into the emitted otpu_se_tail_sparkle core, where clk/rst/pe/d_pop/dq_n/dv
+are the actual signals. Use original diagnostic text and conditional reason.
+Do not mask on init. SYNTHESIS exclusion preserves synthesis intent; fresh raw
+pre-clean extraction must establish synthesis graph equivalence, not assume it.
+If core assertion is adopted, remove the duplicate standalone ABI assertion in
+the same change to avoid two simultaneous fatal processes in standalone mode.
+No Lean or emitted production artifacts have been edited by this draft.
+
+Required next implementation/validation steps:
+1. Finish the current four-bit actual-cone theorem; preserve failed first run.
+2. Review and implement actual core emission of the staged assertion. Require
+   exact one core module-end insertion, or use an existing structured backend
+   assertion facility if available; fail closed on an ambiguous insertion.
+3. Compile the exact8/7/1 generator and production assemblies under bounded gate.
+   Authenticate new generator source/closure and full module/directive tokens.
+4. Independently extract synthesis with/without the simulation block and prove
+   exact complete graph correspondence, including all initial aliases. Refresh
+   applicability to changed module bodies without pretending old body hashes
+   still match. Reuse unchanged authenticated solver graphs where correspondence
+   actually validates; do not rerun expensive arithmetic solely for comments.
+5. Compile the emitted core in simulation mode and validate both real triggers:
+   pe1/rst0/d_pop1/count0 underflow; pe1/rst0/dv1/d_pop0/count8 overflow.
+   Check pe0/rst1 suppressions, init1 does not suppress, and safe occupancy.
+   Drive actual internal state/signals in a focused diagnostic fixture, reporting
+   that explicit fixture scope. This supplements, not replaces, arbitrary-state
+   SAT predicate parity. Verify original-specific underflow/overflow fatal text.
+6. Production binder must authenticate current exact proof+counter receipts,
+   reached SE-tail core specialization in all three assemblies, full changed core
+   tokens and incoming directives, exact one simulation-only assertion block,
+   actual core inputs/clock/signals, and no duplicate wrapper diagnostic.
+   Counter init0000 and all four Q/D must remain; sharedRAM76160 stays arbitrary.
+
+Without the core change, any binder status should explicitly say
+counter_and_derived_observer_bound, with production_assertion_parity=false.
+With the change and successful validations, trigger/message parity can be bound;
+four-state semantics and full simulator event-ordering remain separate scopes.
+
+REFINEMENT AFTER SIXTH DIAGNOSTIC PASS (read-only review):
+The completed receipt is build/sparkle/se-tail-diagnostic-sixth/summary.json.
+It proves definedness of all22 observed bits, then full four-D/output/predicate
+equality. Actual D inversion and D->X each produce concrete models. Native dv
+also has identity buffers, now independently audited. Current asserted coverage
+is a standalone ABI trigger theorem plus a production-applicable derived source
+observer; the production core still has no assertion process.
+
+Prefer narrowly scoped emission change in SeTail.toVerilog, after the current
+Backend.withRegisterHints return and before appending arithmetic modules:
+  Require exactly one "\nendmodule\n" occurrence and that it ends the emitted
+  single core string. Replace that terminator by the reviewed local assertion
+  block followed by the same terminator. Do not apply replace to concatenated
+  arithmetic modules or assembly text. Keep all register/memory attributes.
+This isolates the simulation-only block without changing native circuit state,
+ports, arithmetic helpers, or parent connection wiring. Remove the old ABI block
+simultaneously; update its diagnostic qualification to require zero duplicate
+wrapper processes and an inherited core assertion instead of the historical
+exact standalone block. The historical sixth receipt remains immutable.
+
+Freshness/provenance refresh is the main cost, not a new arithmetic proof:
+- Current product/consumer checkers pin live SeTail.lean and complete core tokens.
+  They will correctly fail after changing the source. Do not override these
+  checks or rewrite old receipts. Introduce a separate immutable emission bridge.
+- Compile fresh exact8/7/1 output with current complete generator/link closure.
+  Extract exactly the named native core and its incoming directive context.
+  Remove only the single exact reviewed simulation block. Compare every remaining
+  module token and attribute, plus incoming directives, against authenticated
+  pre-change proof output; require helper modules unchanged in full. Also compare
+  the standalone ABI wrapper to old wrapper after removal of its exact old block.
+- Under SYNTHESIS, independently re-extract old and new core artifacts with the
+  same authenticated recipe and compare complete raw state/transitions/init.
+  Preserve both extraction scripts and logs. A normalized alpha-renaming bridge
+  must include every Q/D, constant, port and init alias if numbering differs.
+- New proof applicability consumes both immutable old theorem closure and new
+  emission bridge. Do not require changed live Lean sources to masquerade as old
+  source hashes; instead authenticate archived old sources and the independently
+  checked current-source/generator bridge explicitly. Check all unaffected live
+  sources normally. No broad skip of live-source freshness is justified.
+- Rebuild Gen1/Gen2/CLI assemblies. Full module checks should show only the added
+  simulation block/removal of duplicate wrapper block. Re-elaborate exact reached
+  core8/7/1 under synthesis, authenticate each new assembly and module contexts,
+  and bind that reached node to the emission bridge and four-bit theorem.
+- Refresh generated-runtime freeze/checkpoints after sources stabilize; simulator
+  behavior has intentionally changed for invalid FIFO traffic. Any newly exposed
+  runtime fatal is a real result to investigate, not a reason to mask the check.
+
+Reasonable acceptance order: lightweight emission guards -> exact generator and
+bridge -> focused simulator diagnostic triggers/suppressions -> production
+assembly applicability -> existing runtime checkpoints. All heavy steps bounded,
+one job at a time; keep full failed receipts, no lowered proof scope.

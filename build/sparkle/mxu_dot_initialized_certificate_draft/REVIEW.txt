@@ -1,0 +1,70 @@
+SOURCE-ONLY INITIALIZED PHYSICAL-DOT CERTIFICATE DRAFT. Not executed.
+
+Pinned premises now include terminal complete paired equality SHA992521... and
+complete model-extension SHA2f843a..., plus exact local init/quotient, DSP init,
+and cascade receipts. No future result is assumed. No production binding or
+whole-MXU/kernel-instantiation claim is made.
+
+This performs concrete work beyond metadata joins:
+- Opens the authenticated local bridge SQLite read-only; independently compares
+  every physical DFF Q/D and every initializer-bearing alias against stored Q
+  and init tables. Audits helper blackbox declarations, replays complete old/
+  fresh graph bijections, full actual cut/steps correspondence, complete
+  observational quotient and native-init implication witness.
+- Emits every one of 61,323 paired parent physical coordinates with exact old/
+  fresh Q IDs, actual D IDs and its initialized witness constraint. Emits all
+  2,048 original-only Q/D coordinates and their actual initial witness; their
+  future values are NOT reset, reselected or required equal to native D.
+- For each of nine helper configurations, reopens exact original/native fresh
+  graphs, recomputes complete state matching and all initialization aliases,
+  replays full graph correspondence to the historical steps used by direct
+  equality, checks output-cone identity against the actual cascade certificate,
+  and records every mapped Q/D in both fresh/historical coordinates.
+- Instantiates those template coordinates at exactly 516 distinct physical
+  helper occurrences with exact FIRST/LAST/WREG/SW configuration. Counts all
+  102,516 helper bits; full mapped state163,839/reference physical state165,887.
+  Parent state owners come from parent DFF cells, while helpers are closed
+  blackbox occurrences; their state namespaces are disjoint by actual hierarchy.
+- Joins exact full input/output/full-D interfaces to equality's authenticated
+  canonical coordinate manifests. Replays 1,028 concrete output induction
+  records with actual parent gold/native pin vectors, relevant helper input
+  names and all predecessor nodes in the common DAG. It consumes the already
+  authenticated concrete parent dependency certificate rather than building a
+  second huge in-memory parent Cones graph.
+
+Mathematical induction rule: local and helper initialized witnesses form one
+reference initial state on disjoint physical coordinates. In the common output
+DAG, already equal predecessor outputs suffice for each output's relevant parent
+input/leaf cones. Apply complete parent/helper equality using identical arbitrary
+completions of unused cut/input coordinates; exact cone independence removes
+these completions. Once all actual helper outputs agree, full parent equality
+provides public outputs, all parent D and all helper inputs; full leaf equality
+then provides all helper D simultaneously. The original-only Q/D evolves by
+its actual model and remains irrelevant by the replayed quotient. The complete
+explicit-undef total-model-extension/totality/independent-unknown-equality
+premises support simultaneous values; no old binary X-to-zero lifting is used.
+
+This is an evidence-backed external composition checker with a reviewed
+mathematical induction rule. It is not a concrete Lean-kernel theorem instance.
+Production applicability of this NEW parent initialization theorem is a separate
+next binder (Gen1/Gen2/CLI exact reached specialization/definitions/directives,
+516 helper paths and528 terminal DSP paths). Existing transition/leaf binders
+are not silently promoted to that stronger claim.
+
+Tests focus physical table versus owner/init conflicts, whole semantic port/D
+inventory, every concrete DAG node/predecessor, and exhaustive state occurrence
+count/configuration. They reuse earlier meaningful local graph fixtures; root
+may include all55 local guards and initialized DSP guards as appropriate.
+
+Suggested guard command (only once root grants gate):
+source /tmp/opentpu-test-env.sh
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m pytest -q build/sparkle/mxu_dot_initialized_certificate_draft/test_concrete_relation.py
+
+Proposed real command after independent review:
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_dot_initialized_certificate_draft/check_initialized_dot.py --output build/sparkle/mxu-dot-initialized-composition-first
+
+No solver, new extraction, build daemon, or cap increase. Full provenance/large
+artifact hashing occurs only in the gate. Driver checkpoints before each heavy
+stage; partial JSONL files and errors remain archived/incomplete. Read-only
+SQLite closes even on interruption; parsed helper graphs die before next case.
+Final publication failure revokes initialized_dot_proven.

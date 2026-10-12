@@ -1,0 +1,83 @@
+UNEXECUTED exact raw->annotated native lane implementation bridge.
+
+Concrete allowed delta, exactproduction8/2/true:
+ nsx=1,nll=0 => OpenTPU.VpuDatapath.laneRegisterHints returns exactly
+ meta_slot0_6 -> [keep,noShiftRegister]. Emitted text adds ONLY
+ (* keep = "true", shreg_extract = "no" *)
+ immediately before logic [32:0] meta_slot0_6 = 33'h0;.
+No other attribute, initializer, state bit, expression, declaration or hierarchy
+change is allowed. Bare init/attribute stripping is expressly prohibited.
+
+Inputs:
+ - stage-third SHA f23c3db55c72c1d14b58154509804fe3a4e130b6a34be28a113f31ebb7e62e5e
+   native.sv contains rawlane+oldcomposite+mul/add; reached-lanes.sv contains
+   exact production-annotated lane. Both were produced from SAME actual compiled
+   lanes IR in archived Generate.lean: emit lanes vs withRegisterHints lanes.
+ - initialized local normalized-reference FP product second SHA
+   4e749057b648372993947a366456c0c7090fcbeab3099f98828bb29a26f00dc8
+   covers18982parent+3528FP=22510retainedstate, full24427parent obligations.
+ - decoder use-site first SHA
+   7e3ee06dc4a06e61637d6599b0394f41d9a509889807ff2f8ad3081eb6d1c862
+   discharges onehot at actual reached currentlane input; supplies all3current
+   assembly SHA identities and exact annotated child module identity.
+ - installed composite bridge first SHA
+   27b77270bb9d749d6bcbf5cb67a84c8758e3e8b8aceb1d3d4ade7a3d9f971e33
+   and its pinned candidate positive/synthesisgraph identity, actual simulation
+   and source mutation receipts. Current SeComposite core adds simulation-only
+   diagnostics; do NOT silently compare currentcore to oldstagecore or strip
+   arbitrary SYNTHESIS guards.
+
+Executable recipe:
+ 1 Authenticate these closed receipts/source/object/solver archives, normalize
+   receipt path maps ONCE. Full raw lane module tokens+attributes compared to
+   exact reached-lanes tokens after removing exactly the one permitted prefix
+   ONLY at target initialized33-bit declaration. Entire other module token list,
+   incoming/global directives must match exactly. Use lane_annotation helper.
+ 2 Construct annotated-whole-native text by inserting that exact single prefix
+   at matching raw lane declaration while retaining every byte of composite/FP
+   dependency modules. Require complete full-source module inventory/directives
+   equality and selected annotated lane==stage reached-lanes. No regeneration
+   from potentiallychanged Lean required: sourcecompiled provenance is pinned.
+ 3 Fresh two SMALL native hierarchy extractions with original authenticated
+   Yosys/Slang binary/plugin: read_slang --keep-hierarchy --top lane; proc -noopt;
+   write_json. No flatten, optimization, memorymapping, statepruning, or SAT.
+   All actual dependency modules are retained; caller archives both full JSONs.
+ 4 Streaming graph_inventory compares every module/category/owner bitvector,
+   port,direction,parameter,cell type/pin,Q/D,allinitializer aliases and metadata.
+   Ignore ONLY creator and attributes.src locations; remove ONLY exact
+   keep="true",shreg_extract="no" on lane.netnames.meta_slot0_6, after auditing
+   width33/init33zero and actualQmembership. Require full actual laneQcount1255.
+   All other attributes including ALL init are hashed verbatim. No alpharenaming
+   or number tolerance: unexpected source-location-derived name differences fail
+   closed and need separate review, never blanket name stripping.
+   Exact graph identity supplies behavioral/state witness equality before
+   optimization. The hints can affect later physical mapping; this does not
+   claim timing/physical-signoff equivalence.
+ 5 Currentassembly lane body/attrs/directives must equal same reached-lanes in
+   all3use-site receipt cases; mul/add wholemodule source bodies must equal raw
+   stage modules, unchanged parameters/types. Composite currentbody equals
+   installedbridge core.sv; rawstage composite body equals authenticated old-core
+   in candidate positive bridge. Reauthenticate qualified full SYNTHESIS graph
+   equality and exact added diagnostic block: this transitive bridge preserves
+   circuit output/state behavior, while explicitly ADDING original diagnostics
+   to simulation. No unsupported diagnostic-equivalence claim for arbitrary X.
+ 6 Join concrete full22510product, actual original-fragment/use-site lemma, and
+   this exact annotation+composite-emission correspondence. Result only exact
+   reached streamlane/EXT1 component initialized refinement at actual use sites.
+   c_uy/c_qy remain shared external arithmetic inputs; completewholeVPU and real
+   productionmutationcontrols remain separate. Never mark external closure true.
+
+Guards must reject: hintvaluechanged; wrongtarget; extra attributes; removed/init
+changed; oneQorDbit changed; portdirection/width/type/cellparameterchanged;
+missing childmodule; additionalcell; altered unrelatedmodule attribute. Positive
+source and graph fixtures require exactsingle annotation delta. Graph rootQ1255
+expectation is actual passed stage count; fixture can use deliberately1255simple
+Q mapping, not weaken production count for tests. Future bound run3GiB only.
+
+Staged files: lane_annotation.py, check_lane_annotation.py, test_lane_annotation.py.
+No code imports/tests/netlist processing run. Independent source review remains
+before actual extraction. All old receipts preserved unchanged.
+
+Proposed bounded commands, only when root releases the heavy gate:
+ python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_lane_annotation_draft -p 'test_lane_annotation.py'
+ python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_lane_annotation_draft/check_lane_annotation.py --work build/sparkle/vpu-lane-annotation-first

@@ -1,0 +1,49 @@
+DRAFT ONLY: no installed source changes, imports, builds or guard execution.
+
+check_composite_installation.py implements a two-phase exact-source/actual-
+compiled-emission bridge. Run baseline before applying any patch. It authenticates
+both completed candidate and three actual compiled-fault receipts and closures,
+checks exact old core/ABI sources, and compiles old core+wrapper. Installed phase
+requires explicit baseline receipt path/SHA; demands byte-exact reviewed core/ABI
+source transformation, compiles actual current core/wrapper and production8/2true,
+requires installed core byte equality to the proven candidate, exact old wrapper
+minus audited legacy observers, and complete production module+incoming directive
+equality. No edits are applied by this checker. Generator and dependency objects,
+source closure, commands, logs and emitted artifacts are archived; SIGTERM/SIGINT
+and failed commands publish an incomplete receipt with available artifacts.
+
+The SYNTHESIS bridge is transitive: the positive receipt already proves complete
+preclean old/new core graph/init identity; this checker proves actual emitted core
+identity and exact removal of the old SYNTHESIS-excluded wrapper observer block.
+It does NOT perform a new wrapper netlist extraction, nor claim whole current
+assembly qualification. Packing, configuration-mismatch initial check, interface,
+and instance are preserved byte-for-byte. Baseline source hashes freeze the
+original helper, so removing its exact source region cannot hide a new statement.
+
+Production reachability: Config.comp8 is streams && lanes==8. VpuDatapath invokes
+SeComposite.toVerilog with lanes/21/3/2/true and VpuLanes instantiates it under that
+same guard. All reached production composite configs therefore equal the qualified
+8/21/3/2/EXT1. Positive compositeLanes is independent of this core config. Valid VPU
+lanes2/4/16 omit this loop core. Standalone se-comp/core allows additional positive
+lanes/metadata, stages1..2^27, 0<lookAhead<7*stages+4, EXT0/1; those configurations
+are NOT qualified by this receipt. The source helper remains generic. Its insertion
+is immediately after register hints and before optional internal FP module emission.
+
+Event scope: collision is gated by !rst && en, return/control by !rst only; all
+observe pre-NBA state on posedge clk. The old ABI return shortcut vpos24&&!out_v
+is not equivalent to original vpos24&&!fin for arbitrary four-state operands:
+vpos24=X,fin=1 gives X for the shortcut but 0 for the original expression. Moving
+the qualified original predicate into the core deliberately corrects that shortcut;
+no unchanged arbitrary-X ABI semantics or relative fatal-process ordering claim.
+The three exact original messages and isolated fixtures remain pinned by candidate.
+34 actual two-state simulation fixtures passed; the four-state fixture is generated
+but UNEXECUTED. command lookup found no iverilog/vvp; only a local Verilator5.052
+binary, unsuitable for an arbitrary four-state qualification.
+
+After review: bounded baseline+guards; apply exact source changes only when root
+releases source freeze; bounded installed bridge. Then regenerate/bind all affected
+Gen1/Gen2/CLI assemblies and run appropriate current-source composite/program
+runtime regressions. Those are separate required qualifications; historical parent
+raw-state and candidate receipts are immutable and do not automatically qualify
+new whole assemblies. Full VPU arithmetic/decoder/initialization composition remains
+outside this diagnostic installation bridge.

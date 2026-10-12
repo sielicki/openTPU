@@ -1,0 +1,59 @@
+UNEXECUTED local normalized-reference initialized product draft.
+check_streamlane_fp_product.py + test_streamlane_fp_product.py.
+
+Scope exact local lane8/2/true plus EXT1 composite8/MW21/NS3/HA2 parent18982
+retainedbits and ALL24 actualFP instances (16mul2*125 +8add4*191=3528), total22510.
+EXT1 c_uy/c_qy and all other external arithmetic ports remain arbitrary shared
+inputs. This is NOT closed wholeVPU. Original unique-case applicability, raw vs
+production register annotation bridge, and real production fault controls remain
+pending explicitly, regardless of this checker's positive result.
+
+Requires explicit path+SHA of completed parent definedness/equality receipt; does
+not use latest or current incomplete state. Reauthenticates source/input closure,
+checks24427complete interval coverage and both queries per interval, replays exact
+recorded script/command/tool/model/log/artifact identities through reviewed reuse
+validator. No parent re-extraction or solver replay.
+
+Exact parent stage receipt SHA18582054... supplies authenticated18982 initial
+witness/fullQ-D inventory,24 edges/ports/common clock, and all concrete per-instance
+subtrees preserved before blackboxing. Every actual subtree is freshly isolated,
+flattened and audited separately; never a22510bit flat solver. Complete all-alias
+init audit, actualQ/D mapping, input/cell driver disjointness, commonposedge clock,
+noformal/opaque/memory assertions. State counts must be exact125/191.
+
+Historical formal_fp_state/attempt2 receipt requires explicit SHA; authenticates
+all init/output/step logs and original hardware mutation logs; pins exact historic
+prove_sparkle_fp_state.py transformation/relation source. Actual mapped witness
+must equal historical witness. No inference from type names alone: each actual
+closure gets fresh proofs and actual state coverage. It is acceptable to fail
+closed on tool/source-schema drift; do not silently substitute modern helper.
+
+Moore output structural audit forbids any current clk/en/a/b dependency. Thus
+related oldleafstates supply equaloldresults independentofcurrentinputs; complete
+parent theorem gives equalallparentD/externaloutputs/allleafenandoperands; actual
+leafstep preservesR. Rmul equates everyfield except m_sv conditionalonm_sp;
+Radd full equality. Init picks original unspecified state equalnativeactualinit.
+Parent nativeinit all concrete18982; no implicitreset/fill. Fullstate22510.
+
+NEW conservative strengthening: every actual leaf query uses explicitundef,
+definedexistinginputs,strictprove. An additional completebothsideoutput+fullD
+vector definedness query precedes init/output/step. This may expose real original
+partial-field don'tcares; if it fails, stop/preserveCEX and review scoped relation
+semantics rather than silently dropping bits. No proof has been executed yet.
+
+Phase checkpoints track files; signals preserve incomplete status/artifacts;
+smallclosure JSON capped32MiB but shared readhelper currentlycaps16MiB (failclosed).
+Source/object closures and all solvercommands/logs are archived under3GiBgate.
+Currentlive parent job mustfinish before this driver mayrun. Actual FP positivity
+and total parentreceipt are prerequisites; productioncoverage stayspending.
+
+Independent review correction: fresh leaf extraction now uses exactly flatten;
+proc -noopt; opt_clean. No opt_expr or setundef is allowed. New exact-script guard
+pins this policy so unknown branches survive for strong definedness. Unsupported
+remaining primitive schemas stop rather than trigger unreviewed simplification.
+
+Second independent-review correction: audit ALL actual combinational cells for
+acyclicity with Q/current inputs/constants as terminals; every actual D/y driver
+must exist. Original undriven leaf wires fail closed (no source assumptions).
+New D-self-cycle guard keeps y purely Moore, so it specifically catches vacuous
+transition proof risk beyond output-cone checking. Separate missing-D guard too.

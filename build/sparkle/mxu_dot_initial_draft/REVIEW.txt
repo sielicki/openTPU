@@ -1,0 +1,78 @@
+Physical-dot local initialization bridge: unexecuted draft
+
+Scope: exact D128/C4/CL16/IMPL2 local parent under shared arbitrary helper outputs.
+All61323 native local Q bits remain in the relation. Gold has63371 Q bits; all2048
+extra bits must be independently outside every original observable output, every
+helper input (including clock/enables/cascades), and every retained next-state
+cone. They receive explicit reference initial witnesses consistent with all
+actual constraints, not fabricated corresponding native state.
+
+Memory representation
+Original and fresh graphs are streamed owner by owner to SQLite. The database
+uses a32MiB page cache and disk temporary storage. No complete graph JSON,
+deepcopy, global alias-list or solver is allocated. Alias joins establish a
+bijective integer-net map; comparisons retain one owner plus bounded dictionaries.
+The quotient walk uses a256-cell LRU, iterative DFS and bit sets. Both graph
+identities are checked one module/side at a time. The complete historical steps
+artifact is also streamed; original cells, parent/cut ports, every mapped Q and
+every mapped D are independently matched, rather than rebuilding steps in RAM.
+
+Exact reuse bridge
+Fresh extraction removes only --ignore-initial from the authenticated original
+folded extraction script and changes its output path. It preserves original
+source bytes and all semantic commands. Every initializer-bearing net alias is
+collected before any map/filter, with width/conflict/non-state checks. Cell/module
+initializers fail closed. Graph comparison ignores only source locations and the
+already audited net initialization attribute; all cells, parameters, directions,
+connections, aliases, module metadata and constants remain exact under a bijective
+renaming. A changed structure or extra optimized state fails; no assumption that
+removing --ignore-initial is harmless is made.
+
+The fresh frontend binary and plugin inventory are pinned to the actual passed
+nine-leaf initializer receipt. The original parent receipt did not capture its
+binary hash; that gap is explicit. Exact full graph comparison discharges the
+front-end correspondence needed for theorem reuse independently of version names.
+The complete parent theorem, initialized leaf receipt, DAG certificate and actual
+compiled cascade fault receipt are authenticated. The latter two are supporting
+premises only, not a claim of initialized whole-dot composition.
+
+Initial relation
+For every native allowed initial bit valuation, mapped reference bits equal it.
+Any reference-defined bit must have the same native-defined constraint. Native
+undefined bits remain arbitrary ('?'); no all-zero restriction is introduced.
+The2048 unmatched original bits honor their own concrete initial constraints and
+may otherwise take zero as an existential reference witness, justified only by
+the independent observation/retained-transition quotient.
+
+Guard/test/run status
+Code and synthetic guards are drafted only. No imports, graph processing, tests,
+hashing sweep, extraction or solver executed. Independent review, then bounded
+256MiB guards and a fresh3GiB real attempt are required. Any interruption writes
+atomic incomplete stage evidence; existing attempts are never overwritten.
+The database and all fresh graphs/scripts/logs are archived at completion.
+
+Still separate: coherent undefined-value semantics across actual DSP instances,
+full initialized dot composition, current production parent applicability,
+controller/RAM startup and outer MXU theorem. A real parent-initializer mutation
+is also a future fault-sensitivity obligation; synthetic witness faults alone do
+not count as compiled source mutation evidence.
+
+Review hardening (still unexecuted)
+The steps reader now requires exactly gold/gate, unique root/module/section/owner
+keys, complete semantic sections, EOF, matching selected-module metadata, and no
+remaining initializer on any theorem owner in either module. The original Python
+step emitter omits creator; only that optional string annotation is allowed in
+addition to modules. Cut reconstruction rechecks helper type/parameters, complete
+pins, clock, duplicate instances and prospective port/netname alias collisions.
+Graph constants must be individual0/1/x/z tokens, never empty/multichar strings.
+Added direct positive/negative full steps bridge guards including concrete cuts,
+changed combinational cells, changed Q/D, missing obligations, metadata changes,
+initializers, duplicate/trailing JSON, and the original creator-free schema.
+
+Independent follow-up review (2026-10-11)
+runtime_recovery reviewed the hardened parser, cut audits, constant validation
+and fixtures without execution. No blocking soundness or schema issue found;
+approved for bounded guard execution. This is code-review evidence only, not a
+passing test or real-graph proof. Root also inspected the witness, observational
+quotient and full transition-bridge paths. Installation and bounded execution
+must wait until the current STREAM runtime source freeze and heavy job finish.

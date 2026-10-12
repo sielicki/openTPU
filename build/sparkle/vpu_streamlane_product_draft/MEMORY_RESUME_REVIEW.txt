@@ -1,0 +1,95 @@
+SOURCE-ONLY REVIEW after MXU wide-vector mux scope OOM; no execution/netlist scan.
+Current parent cone draft should NOT be treated as memory-qualified yet.
+
+Resource findings
+-----------------
+Partitioning24427 outputs into32-bit slices bounds selected roots, not cone size.
+Index.cone follows every input of each encountered cell. A single bit of a wide
+vector mux can therefore pull the entire bank of sibling datapaths into a cone.
+The writer retains every output and WIDTH of that mux, so merely traversing precise
+bit dependencies while still emitting its original full cell is insufficient:
+it either leaves dependencies undriven or still imports the giant cell. SQLite's
+8MiB cache controls graph storage, not Yosys/SAT size. Paired equality includes two
+cones and undef tracking, potentially increasing solver memory over one-side probes.
+There is currently no projected bit-width budget/preflight or adaptive partition
+refinement in check_streamlane_parent_cones.py. A fixed32-bit plan can still OOM.
+Streamlane lacks certified omitted Q entirely: all18982 bits are mapped. Do not
+copy MXU's undriven omitted-state allowance or add any internal cut to reduce size.
+
+Exact $mux bit projection recommended before real proof
+-------------------------------------------------------
+Use the forthcoming reviewed helper from scale_binding, pinned by source/hash,
+when stable. If separate API is needed, adapter must preserve these invariants:
+1. Audit original complete graph drivers/cycles, all original Q/D exposure and
+   all24427 obligations BEFORE projection. Store retains exact original owners.
+2. Maintain demands as (cell output port,index), unioned to fixed point. For exact
+   $mux only, require type, complete A/B/S/Y directions, exactly WIDTH parameter,
+   WIDTH=len(A)=len(B)=len(Y)>0, len(S)=1, unique integerY and validbit tokens.
+   For demanded Y indices I, dependencies are A[I],B[I],S. No sign/resize rules.
+3. Emit ONE narrowed mux per original cell with sorted unique I, preserve original
+   selected Y bit IDs, A/B in matching order, original S, WIDTH=len(I), attributes
+   unchanged. This preserves every selected output for S=0/1/X/Z: each output
+   bit's four-state mux function depends only on its matching A/B and shared S.
+   Never replace omitted arms withzero/X, introduce ports, or assume selector.
+4. Every other primitive remains exact full cell. Its complete inputs become
+   demands; keep all its outputs/drivers consistently. A later dependency can
+   add another demanded mux output; rerun propagation until stable before emit.
+   Do not extend to $pmux/$bmux/arithmetic/bitwise operators without a separately
+   reviewed exact parameter/width/unknown-semantics rule.
+5. Two-side root union still matches semantic port/index. Narrowing must not
+   reorder lane/bit meaning or rename shared roots based on raw Yosys IDs.
+6. Archive per-cone certificate original cell hash, demanded index list, emitted
+   cell hash, complete root set and output manifest. Independently reconstruct
+   emitted exact owners and compare before reusing proof results.
+
+Preflight counts should include original/emitted widths, sum pin bits, max cell
+width, and serialized bytes for BOTH sides, not only cell_count. Bound heuristic
+can trigger deterministic interval bisection; record explicit coverage-tree splits.
+A one-output cone exceeding the budget stays incomplete for representation work.
+No fixed heuristic guarantees memory completion; bounded3GiB gate remains final
+limit. No automatic ceiling increase, false success, or new assumptions.
+
+Immutable resume gaps in current draft
+--------------------------------------
+1. CLI accepts only fresh --work. No pinned prior receipt/resume path. Partial
+   completed cones are archived but cannot yet be mechanically reused.
+2. Every fresh attempt re-streams parent and regenerates complete steps. This
+   avoids Lean/Slang re-extraction but still repeats representation work.
+3. Current successful proof entry records log path but does not persist actual
+   returncode/query identity directly. Before reuse require authenticated exact
+   script, argv/cwd, rc0 plus unique terminal success; pin tool binary identity.
+4. A cone may finish definedness and be interrupted in equality. Resume should
+   reuse that definedness result alone when exact input/harness/projection/query
+   identity holds; never require both successes merely to preserve useful work.
+5. Mutable SQLite databases are active artifacts. Do not reuse an interrupted DB
+   as a trusted index. Rebuild index from archived complete immutable steps, or
+   publish a closed committed DB snapshot with schema/content certificate.
+6. If new projection changes a previously solved graph, old result cannot be
+   inherited solely because interval matches. Byte-identical cone+harness (or
+   separately certified exact owner identity) is required. MXU's329 exact byte
+   reuse pattern is appropriate. Changed projection reruns only affected cones.
+7. Existing failed/incomplete attempt must remain untouched. New attempt consumes
+   archive-only HistoricalEvidence closure, validates exact parent SHA and full
+   24427 manifest, registers each prior consumed result once, and tracks a used
+   set. All newly solved/resumed leaves must cover the final plan without gaps,
+   overlaps, dropped duplicate output aliases or forgotten refined subintervals.
+8. Interrupted receipt/result/code hashes are part of provenance. Explicitly
+   compare strong -enable_undef/-set-def-inputs/-verify query construction; never
+   accept weaker -prove-x, missing definedness, foreign roots or added assumptions.
+
+Required focused guards before reuse/run
+----------------------------------------
+- mux sibling giant cones disappear only through certified narrowed cell emission;
+- S unknown preserves four-state output, including equal arms and differing arms;
+- discontiguous requested indices preserve correct A/B/Y correspondence;
+- one mux shared by different output cones/demands reaches union fixed point;
+- malformed WIDTH/pins, unknown cell, extra outputdriver and dropped root reject;
+- semantic root pairing across different native/reference bit IDs remains equal;
+- exact previous cone/query/result reuse succeeds; one changed cell/S/index/root,
+  rc1, missing marker, wrong tool or incomplete coverage rejects;
+- interrupted equality reuses only completed definedness and preserves failure;
+- deterministic split-tree full24427 coverage, including repeated output aliases.
+
+No changes made to scale_binding files. FP composition, initialized decoder
+applicability, annotated production binding, and real mutation controls remain
+separate pending obligations exactly as before this memory review.

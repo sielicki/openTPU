@@ -1,0 +1,45 @@
+Next refinement after completed whole-cell diagnostic
+
+Measured: all1924 observations retained (424 raw outputs +424 normalized writer
+endpoints +1076 input aliases),91 internal state coordinates and424 writer
+occurrences. Native whole-cell frontier empty. Original whole-cell frontier
+contains packed metadata siblings, memory readers, composite/delay outputs.
+Do not label these dead or introduce extra cuts based on this finding.
+
+First execute a separate read-only precise-demand diagnostic, using the SAME
+boundary() and complete manifest from the frozen passed probe. Replace only
+the diagnostic traversal with the reviewed precise_frontier.precise_closure.
+Feed every manifest occurrence to the root list, with exact unchanged cuts,
+originalQ inventory and real producer callback. The rule is coordinate-local
+for strict $buf/$mux/$pmux only: corresponding A position, each branch-major B
+position, and ALL selectors. Every other cell conservatively demands all
+inputs. Report the complete remaining frontier and per-owner demanded outputs.
+No graph rewrite, SAT, new defined input, or equivalence flag in this stage.
+Preserve raw input alias observation roots and both sets of424 outputs.
+
+If frontier closes, proof generation uses the already reviewed
+physical_graph.projected through the local issue primitive adapter. Its demand
+union retains ONE cell per actual owner with ordered demanded positions;
+physical_slices.project_owners preserves original wire IDs, all selectors and
+per-import literal occurrence provenance. This is already the issue pair
+implementation, so the failed whole-cell diagnostic need not imply a solver
+representation change. Audit exact schema and reject unsupported primitive;
+never silently keep a sibling without its driver or erase X.
+The solver/model certificate and executable-source linkage must be joined to
+the completed physical679 model evidence, with all slice helper identities
+and post-SigMap topology rechecked. Retain actual buffer cells in emitted SAT
+graphs; audit-only normalization must remain separate. Unknown selector bits
+receive no constraints. Both strong definedness and strict equality still
+cover all1924 coordinate pairs before provider discharge.
+
+Guards for the new diagnostic wrapper: packed vector mux observation avoids
+only the unobserved sibling dependency; observed selector or demanded branch
+outside boundary is still a frontier; retain literal X/Z selectors; invalid
+WIDTH/direction rejects; full original manifest count/coordinate multiset is
+unchanged. A guard must demonstrate that an observed unexpected state remains
+reported. No test assumes cloned-X selectors change observable semantics.
+
+If a precise frontier remains, report exact demanded output, owner/pin/index
+and trace to the original state/child/memory. Additional coordinate rules need
+separate actual-model review, and genuine missing providers require proofs,
+not enlarged shared-input contracts.

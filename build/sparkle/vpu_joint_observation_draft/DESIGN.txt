@@ -1,0 +1,60 @@
+Stage2b: exact original public observation correspondence. Source-only design.
+
+Passed Stage2a owner:
+ build/sparkle/vpu-joint-partition-first/summary.json
+ 8c0374eaf99c809be8d64bd01ef126ac092f39fc3a825bf7fc75768db0e84a35
+This selects679 physical Q+480 cq memory bits, preserves9811owners and records
+2455crossings/437frontierbits/1431dependencycells. All observation, layout,
+transition and DAG proof flags remain false. Its checker is frozen.
+
+The archived joint reference explicitly defines963 public observation bits:
+ sequence:44 state fields totaling676, each out_sequence_o_F=F;
+ command:hc240,hf8,h_empty1,can_begin1,busy1,rdy1,o_cq_n2;
+ plus begin_cmd1,nchunks16,nfill16.
+The first930 bits have explicit same-name original aliases or selected state.
+This is a candidate mapping, not a demonstrated coordinate theorem. Obtain exact
+aliases from the pinned database and compare widths, bit tokens, signed/range
+metadata, state coordinates and archived reference assignments. For mi115 and
+hc240, retain original typedef/member-select obligations; matching total width
+alone does not prove semantic struct-field coordinates across elaborations.
+
+Important genuine distinction for the remaining33 bits:
+ begin_cmd is an added joint output of expression can_begin && en, matching the
+ original enclosing sequencing guard. It need not have an original named wire.
+ nchunks is a combinational observer in the joint reference, duplicated from
+ statements inside the original guarded nonempty command branch. The original
+ procedural temporary may be X or unconstrained outside that branch. Do not map
+ observer_chunks unconditionally to an arbitrary same-width nchunks alias.
+ command nfill is the geometry setup expression max(observer_chunks,2), whereas
+ original nfill is selected registered sequence state. Mapping these together
+ would erase the very boundary distinction the joint proof preserved.
+
+Next executable bridge should have two explicit parts:
+ A. Authenticate exact joint receipt/reference/output vector, Stage2a owner and
+ original inventory. Check all direct930-bit observation assignments against
+ their exact original alias/state vectors, preserving literals/aliases, and
+ extend Stage2a backward closure with every public root. Every new output and
+ dependency remains an actual archived original owner, never a generated
+ surrogate. Add missing/width/permutation/initializer/owner mutation guards.
+ B. Bind the three derived observers to actual original guard/dataflow. Derive
+ the start guard from the unique actual expression cone (or introduce only an
+ observational expression with an explicit source-to-cone lemma). Establish
+ actual geometry consumers/guards and a small conditional lemma relating setup
+ data to the observer, while proving actual selected D equivalence for ALL input
+ valuations. Do not add a legal-command/nonempty/reset assumption to the global
+ theorem. Branch-sensitive data equality is an internal lemma, not narrowed
+ traffic. Full original alias provenance and unmodified actual D cones remain.
+
+The root graph's actual alias shapes are needed before implementing these joins.
+The supplied lightweight diagnostic reads only pinned summaries and SQLite rows,
+stream-hashes the frozen database, then reports exact outputs, all candidate
+alias vectors/drivers and all nchunks/c16/begin_cmd aliases. It emits no proof
+receipt and makes no provenance-closure or behavioral claim. Root command:
+ python3 tools/sparkle_bounded.py --memory-mib 512 -- python3 build/sparkle/vpu_joint_observation_draft/diagnose_observations.py
+Capture stdout in a new immutable diagnostic log. No execution by author.
+
+After diagnosis, keep independently useful direct observation inventory distinct
+from unresolved derived-observer semantics. Overall public_observation_bridge
+must remain false until every963 bit is bound, and every extra outward crossing
+from Stage2a is either represented by a proven observation or separately proved.
+No joint-control partition or whole-control feedback theorem follows from names.

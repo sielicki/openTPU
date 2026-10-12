@@ -1,0 +1,30 @@
+Source-only complete retained-D continuation; not yet executed.
+
+Delta from frozen check_configured_D:
+* Rebuild unchanged original paired7436/fullD, exact multiply lemma, fullgraph
+  congruence, generic sharing and two earlier predicate certificates.
+* Requalify the exact incomplete configured-D-first receipt SHA
+  090b04d60214f83c771692fc899c1fc93f7e4ce128b92f7455f8f3e728ccc086.
+  Regenerate its two successful [2444,2460),[2460,2476) graphs/manifests and
+  authenticate actual scripts/terminal logs before extending baseline to166
+  intervals covering [0,2476). Never promote its revoked global flags.
+* Consume explicit terminal all18-predicate certificate path+SHA, now available:
+  build/sparkle/mxu-outer-all-predicates-first/summary.json
+  91e0a5016add6b3303f46cc5287be57c6fd89267dd1d459c114dcf4fb9b08411.
+  Reconstruct all three operand projections, query graph/script/log evidence,
+  actual root/target/ancestry lifts and exact unsigned32 rule on the freshly
+  rebuilt configured predecessor. Replay all owner substitutions, match exact
+  target bytes and certificate fields, and perform fresh target driver/DAG audit.
+* Prove all remaining3,452 D coordinates [2476,5928), default16-bit intervals.
+  Immutable optional resume binds the new receipt kind, full premise/model/graph
+  chain, all166 baseline intervals, regenerated query graph/manifest bytes and
+  their actual old closure hashes. All reused rows must be consumed exactly.
+* Preserve original source/cut/control, external definedRAM/FP-return domain,
+  independent omitted-Q, explicitundef semantics, original fullD totality,
+  complete5928 obligations, timeout180s and bounded memory requirements.
+  No strict/directional output, collected-memory quotient, trace or production
+  claim is introduced. New all-predicate success flag is revoked on failure.
+
+All previous executables and receipts remain unchanged. New tests cover mixed166
+coverage and3,452 remainder, predecessor identity and new resume representation,
+standalone certificate scope and archived-vs-declared graph identity.

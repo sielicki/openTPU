@@ -1,0 +1,14 @@
+New runnable check_write_select.py/write_select_proof.py; passed probe files
+unchanged. Full1924 pairs partitioned width16 (121 partitions), both strict
+queries, immutable Session resume and post-SigMap check. Uses actual native
+raw from authenticated noopt/norom extraction, replays complete three-assembly
+provider topology and module/directive correspondence. All imported helper
+sources require direct explicit owners or this new draft; no generic fallback.
+Physical679 concrete model/source/binary certificate joined via issue receipt.
+Actual cw_en[0] inversion and cw_data[0] undefined mutations precede projection,
+with complete graph delta restored and actual model validation. No new domain.
+Final flags only424 actual outputs,424 writer premises and91 state-domain joins;
+shared datapath equality and full connected product/public crossings pending.
+Strong graph query failure stops immediately and preserves incomplete evidence.
+No execution by author. Root should run four new proof guards then driver under
+3GiB; authentication can reclaim cache but solver cones are bounded width16.

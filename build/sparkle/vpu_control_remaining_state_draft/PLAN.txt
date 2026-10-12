@@ -1,0 +1,58 @@
+Goal: close actual original control4231, not publish more disconnected local
+models. Completed issue555 removes27 internal premises; the two remaining are
+en=actual g_wbuf.en_r Q and ss_rq=actual stream.ss_rq Q. c_hold is the actual
+g_comp.u_comp.hold output, which replaces iss_ok as an honest datapath boundary.
+Its equality is NOT a control-local fact and remains for composite applicability.
+
+Next measured state bridge is the remaining3072 coordinates as ONE inventory:
+stream1350 and write-buffer1722 (four425-bit words plus22 control bits). Combined
+with existing joint1159, this supplies a full4231 partition with no missing
+state. The original candidate inventory already identifies every logical bit;
+now independently join actual Q/D/clock/init or exact memory word owners to
+the corresponding frozen local reference and native graphs, keeping all layout
+candidates visible. This is required before a complete connected proof.
+
+Specific difficult obligations, not traffic assumptions:
+* Five stream256-bit arrays are unpacked [0:7] original arrays. Local proof maps
+  groups in reverse order to native packed lane0-low convention. Root candidate
+  original_bits explicitly have NO lane permutation theorem. Record raw ranges
+  and aliases on both original-root and local-reference sides; compare complete
+  actual D/output cones under proposed mapping to establish it. Never silently
+  inherit source name or width equality as a packed-layout proof.
+* Stream kq is actual packed8-bit state (not RAM), with kt/kh3 each. Original
+  reset zeros pointers but leaves kq unspecified; no fill/occupancy premise.
+* Stream input data/config captures happen outside reset; q_pd captures on en.
+* Write wq is original4x425 memory; writes happen outside reset. Preserve every
+  actual read/write/init access, masks, clocks and unused-X pins. Determine its
+  actual read count and schema instead of copying the CQ one-read/two-word rule.
+  Reuse the successful CQ strategy only after this audit: actual enabled-control
+  knownness, exact lowering model, independent finite masked write/read law,
+  full1700D plus ALL read providers. No known-disabled-control premise.
+
+After the diagnostic, implement one connected original-state proof frontier:
+1. Native control: fresh extraction of exact already-qualified six component
+   modules plus containing VpuControl body (all3 production bodies joined),
+   noopt/norom, complete4231 Q/D/init and complete connected DAG. Avoid old
+   structural checks that used opt or alternate8/8 configuration.
+2. Original: retain all2051 candidate physical Q plus cq480/wq1700 memory when
+   the measured classification confirms those counts; isolate actual providers
+   with only concrete external top/datapath ports as the final shared boundary.
+3. Reuse already-proven679/CQ480/issue555 where exact provider/domain joins hold;
+   fresh actual-root versus native proofs for stream1350, write22 and memory1700,
+   plus write-select424 consumed outputs. Strong definedness and equality on
+   complete vectors/D, bounded by cones, resumable before first query.
+4. Compose all4231 simultaneously with common init witness and exact inter-unit
+   edges. en and ss_rq then derive from related state, so neither remains an
+   environment premise. Check all newly internal cycles with actual bit-DAG,
+   not a presumed unit-level ordering: write-select depends on current state
+   and datapath; stream next-state reads write status; these can be legitimate
+   synchronous feedback only when the concrete current-state cones establish it.
+5. Observe actual external control outputs and every outward crossing needed by
+   native datapath. Head_nfill is the command setup observer, not retained nfill;
+   if unconsumed by actual production ancestors, explicitly classify it as an
+   extra native diagnostic output rather than invent an original state alias.
+
+The next diagnostic cannot itself promote D equivalence, memory semantics,
+lane layout, initialized3072 relation, whole4231, or c_hold producer equality.
+It provides exact measured owners and field/provider links for this single
+connected route. No saved theorem/helper files are edited.

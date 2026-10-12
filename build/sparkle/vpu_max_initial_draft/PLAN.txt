@@ -1,0 +1,97 @@
+Paused for SE-tail production binder (root request).
+
+Historical lanes8 max arbitrary-state proof maps 757 retained native Q bits;
+177 reference-only Q bits were pruned by prune_unobserved_register_bits.
+Source native tree declares one additional final h bit already optimized away.
+Never report these as all original source registers.
+
+Required bridge: enumerate original Q/D and every initializer alias before
+pruning; independently reconstruct selected field map; prove backward closure
+from ALL outputs AND ALL mapped next-state bits cannot reach any unmatched
+reference Q. Audit cell directions, drivers, common clock, unsupported types,
+and exactly identify all 177 omitted bits plus source aliases. This establishes
+an observational quotient, not equality of unmatched state. Extend existential
+reference witness respecting all actual original init constraints; native
+defined init establishes mapped equal state. mx_new/mx_ni are Mealy, so do not
+assert all-Moore. Preserve reference-undefined behavior of historical -undef.
+
+Historical steps/proof/source graphs already content-hashed; terminal proof.log
+is authenticated downstream in all_child_binding-complete/summary.json:
+b08692df5fff981d20020bcc51dd6baea11e3aa6efe130a612fc01fcf56c5634.
+Do not rerun solely for log provenance. Require exact replay/complete bridge
+to these inputs before using theorem for induction. Actual compiled Lean init/
+state/output faults and missing/observably connected omitted-Q guards remain
+to draft. No new implementation or initialized proof exists yet.
+
+Draft now includes max_initial_bridge.py and test_max_initial_bridge.py.
+They are unexecuted. Bridge independently fixes all757 mapping bits, checks
+raw physical Q/D/init before pruning, identifies every177 omitted bit and its
+aliases, proves cone closure from all outputs AND every retained D, reconstructs
+complete old steps graph and requires structural equality to the authenticated
+historical theorem graph, then constructs both mapped and omitted-state initial
+witnesses. Fail closed if physical counts or source aliases differ.
+
+Remaining before executable theorem:
+- Build receipt driver authenticating complete historical proof+log+flat+steps
+  closure, exact original wrapper/source scope, and current compiled native
+  source/directives/attrs against theorem source.
+- Clarify Yosys -undef asymmetric semantics with a precise claim before lifting
+  historical transition theorem to initialized trace refinement. Structural
+  bridge intentionally preserves scope and does not prove total equivalence.
+- Actual compiled Lean mutations (output, init and retained-state update), plus
+  genuine original omitted-state diagnostic changes if diagnostics exist.
+- Bounded actual bridge/guards execution; verify expected934/757 physical counts
+  and all757 native defined initializer values without assuming them beforehand.
+- Exact production applicability binder and generic induction instantiation.
+No new proof, compilation, import, or test has run.
+
+Receipt/compiled-source driver now drafted as check_sparkle_vpu_max_initial.py,
+with GenerateTemplate.lean for actual output, enable-hold, and initializer
+mutations. Pins historical summary fb083dbdd8c682ffac244c1b37711a4c160e07c9fa3409b264b019ffec88a8b3
+and log hash above, checks all18 theorem inputs, exact -undef proof/extraction
+scripts and original reference wrapper. Current compiled native full module
+tokens, init attributes and directives must exactly equal historical source.
+
+Output/hold changes demand actual full-transition SAT counterexamples. The
+initializer change is correctly treated as a source/witness applicability
+guard: existential unconstrained original initial state can accommodate a new
+native initializer, so this is NOT a claimed semantic counterexample.
+
+Status intentionally says bridge_audited and initialized_trace_claim=false;
+precise undefined-value logical lifting and production binding are still open.
+Requires independent review and bounded execution. Install template alongside
+driver (or adjust explicit template path after review); imports max_initial_bridge.
+
+Conservative operator-definedness certificate now integrated (unexecuted).
+Every observed output and retained D cone must use only nonempty, correctly
+parameterized total RTLIL unary/binary operations and exact-width scalar-select
+muxes, with no live x/z literal. It rejects shiftx, div/mod (including possibly
+zero denominators), pmux, bmux, demux and unsupported shift without assuming
+onehot/range/reachability facts. All actual ports/directions/widths/signedness
+must match operator contracts. No four-state input/device claim is added.
+
+Text-only source inspection suggests this may suffice: RMAX and ftz/fp_gt use
+constant slices/concats, logical/bitwise conditions, equality/comparison and
+muxes; ARGMAX uses negate/add/sub, reduction-or, fixed slices and left shifts.
+Native integerStage1/2 uses the same families. The original leading-zero loop
+is statically unrolled; no source variable part-select, division or modulus was
+found in the extracted RMAX region. Actual generated RTLIL operators remain
+uninspected until a bounded run; synthesis may introduce unsupported pmux/etc.
+The driver remains initialized_trace_claim=false pending actual certificate
+success and independent review of the historical -undef lifting argument.
+
+Latest update supersedes earlier provisional status paragraphs: scale_binding
+independently reviewed the totality/quotient lifting argument and found no
+blocker. See LIFTING.md. Driver now promotes to
+max8_initialized_two_state_observed_refinement_proven ONLY after both actual
+complete certificates, historical whole graph/source authentication, current
+compiled source equality and all required fault/applicability guards pass.
+No run has occurred, so no current theorem is being claimed. Scope remains
+explicitly common-clock two-state input traces with existential reference init.
+
+Unique input drivers and scalar input clock now checked; positive schema and
+six alias/constant/bool/clock negatives added. SIGTERM/SIGINT preserve incomplete
+status and atomic phase checkpoints naming active scripts/inputs/outputs/logs;
+build/extraction/compiler/frontend/CEX phases checkpoint before launch. Partial
+outputs are archived on graceful failure; a forced SIGKILL can only rely on the
+already durable pre-phase checkpoint and remaining files, never a success flag.

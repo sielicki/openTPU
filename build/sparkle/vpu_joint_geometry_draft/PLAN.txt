@@ -1,0 +1,76 @@
+First semantic Stage2b increment: actual 32-bit nch/nfill next-state theorem
+Status: source-only design; no solver run and no theorem claimed.
+
+Coordinate receipt (frozen): vpu-joint-observation-first/summary.json
+ 4cd94a0c9829b06fb529a2a25736c6fb93e603066c9913ef434045ff0b068586
+Its930 direct coordinates do not themselves prove behavioral equality. This
+increment stops adding name-only inventories and proves actual data consumers.
+
+Proposed exact assertion:
+ Original-root D(nch[15:0]) and D(nfill[15:0]) equal the corresponding actual
+ archived joint-gold D vectors, and all64 observed bits are defined, for every
+ equal defined selected nch/nfill state and every shared defined packed hc240,
+ can_begin1, en1, rst1 boundary valuation. This local domain covers all two-valued
+ boundary/state combinations; original internal X/Z remains in the actual cones.
+ These are conditional shared-boundary operands, not
+ new traffic restrictions; the surrounding control theorem must subsequently
+ establish those boundaries' equality/definedness and exact packed coordinates.
+ No reset, valid/nonempty command, command stability, or head_nfill==nfill premise.
+
+Why these two consumers:
+ The original process assigns nch<=nchunks and
+ nfill<=(nchunks<16'd2)?16'd2:nchunks only under !rst && can_begin && en &&
+ !h_empty. Otherwise each retains its old value. Neither is reset to zero.
+ The original source contains no other writer to nch or nfill. These facts
+ motivate the slice but are NOT substitutes for its actual elaborated D cones.
+ Keep every mux, including X-valued procedural temporary branches, in both
+ actual cones and prove totality on those actual graphs. Do not reconstruct
+ either D equation from this paragraph.
+
+The hc boundary remains a whole240-bit packed cmd_t. Both elaborations use the
+exact same authenticated package and cmd_t declaration, and both actual aliases
+must be traced through only exact identity buffers. Bind positions explicitly;
+reject any overlap with another chosen boundary or selected Q unless the same
+semantic coordinate is shared consistently. hf and h_empty are NOT independent
+inputs: retain their actual member-select/combinational cones downstream of hc.
+can_begin is a conditional shared input at this stage; do not claim its producer
+proof. en is the original actual internal write-buffer enable, paired with the
+joint original wire derived from control_en. Its producer theorem comes later.
+
+First bounded probe: consume immutable original DB and joint raw graph, trace
+both selected D vectors to precisely those permitted frontiers, preserving all
+bit identities and complete cell dependencies. Report unsupported/memory/extra-Q/
+undriven dependencies and X/Z literals; no optimization or coercion. This tells
+us whether the proposed complete 32-bit theorem is actually self-contained.
+The original graph may have whole-vector mux sibling dependencies; do not add
+extra defined cut inputs to make them disappear. Use independently checked exact
+bit projection if needed, or retain the wider authentic cone.
+
+Implementation after probe:
+ 1. Freeze projected graph and a per-cell original/gold owner identity manifest;
+    verify every retained D and complete removed-driver boundary, including all
+    same-wire aliases. Pure combinational DAG/unique-driver audit precedes SAT.
+ 2. Build side-disjoint graphs with shared exact underlying boundary coordinates
+    and state bits. Keep every actual buffer and its separate undef/value output.
+    Observe all32 D per side and every actual downstream boundary alias; prove
+    those aliases defined/equal to their exact underlying cut inputs. Observe
+    all614 bits in total. Literal X/Z and original undriven aliases
+    retain exact undef behavior. Do not silently use opt_expr or proc_rom.
+ 3. Run explicit-undef totality and strict equality. Totality has no onehot,
+    nonempty, reset, or traffic premise. A concrete counterexample is a real
+    failure of this proposed local scope, not a reason to hide an observation.
+ 4. Actual graph hardware negatives: mutate selected nfill D data bit and retain
+    all32 D; change a real guard input/hold branch; actual D->X. Require concrete
+    failed-query models, not only solver returncode or source applicability error.
+ 5. Authenticate query/artifacts/results and retain any incomplete attempt.
+
+A passing result proves two actual original geometry consumers against the
+already-proven joint graph. It does not prove an unconditional equality between
+the scoped original procedural nchunks aliases and the added joint observer.
+If needed to close the public interface, prove that extra observer formula as a
+separate observational extension, and show it has no feedback; do not force it
+onto a guarded temporary. Eventually all1,159 selected D, all crossing consumers,
+and the original/native boundary equality proof must close universally.
+
+Resource strategy: root serial gate,512MiB diagnostic,3GiB proof ceiling, no
+re-extraction or whole-VPU memory mapping. Preserve previous passed sources.

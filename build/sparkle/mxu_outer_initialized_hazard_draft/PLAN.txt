@@ -1,0 +1,88 @@
+Source-only proposal: resolve the actual lane0 witness with the smallest
+initialized state invariant before constructing a large reachability query.
+Design independently reviewed. No proof has run. Passed source artifacts remain frozen.
+
+Existing concrete witness owner
+mxu-outer-enabled-write-first/summary.json
+cc885b72b57a5d7289b34639e651dc107b34f50892ba4b8dd8b810b510d238f0.
+Lane0: both enables1, original data32X, native dataFFFFFFFF, actual mk read port4
+address4. This is an arbitrary-state graph witness, not an initialized trace.
+
+Small exact candidate invariant
+LANES=8, MCOLS=4, original MW=clog2(MCOLS)+1=3.
+Source mx_i is8bits: native initial value0; reset/head completion sets0;
+otherwise the advancing update adds LANES=8. Proposed invariant mx_i[2:0]=0.
+If established on the actual authenticated native transition, lane0's original
+three-bit index is0, never4. This rejects the EXISTING witness without assuming
+M<=4, inserting a reset, or restricting any external command. It does not
+establish safe lane4: with mx_i low3=0, lane4's three-bit index is4.
+
+Concrete checker prerequisites and obligations
+1. Authenticate the enabled-write witness, complete initial ownership/native
+   initial predicates, full7436-state native step graph and retained relation,
+   and original/native graph correspondence used by the completed bridge.
+2. Locate actual mx_i through exact native source alias AND semantic full-state
+   coordinate map, not presumed net numbers or a synthetic register. Require
+   exactly8 distinct Q coordinates and their actual paired D positions. Bind
+   every one to the complete native initialization predicate, including all
+   aliases; require the low3 constrained0 by that predicate. No reset premise.
+3. Build the complete actual backward cone for its low3 D coordinates using
+   reviewed primitive/mux projection and full original Q/input identities.
+   Audit its root inventory against the complete port ownership: distinguish
+   physical Q from true external top inputs and all RAM/FP/dot/epilogue return
+   boundaries. Require ZERO child-return roots for the desired small theorem.
+   If any occur, fail this scope and report them; never call freely chosen
+   provider values reachable. Full source model and total-extension audit remain
+   mandatory, including explicit undef masks and shared literal occurrences.
+4. Under arbitrary defined physical Q and actual external top inputs with only
+   actual mx_i low3=0, prove actual low3D equals defined0 using strict -prove.
+   All other state bits and commands are unrestricted. This is a Boolean-state
+   architectural transition invariant; the defined-state domain is explicit.
+   Do not infer original four-state/event semantics or global source closure.
+   If the concrete D cone yields an unknown or mismatch, preserve that result.
+5. Authenticate the original read-address relation: all32 exposed address bits
+   must be checked, including exact constant-zero upper bits. Actual MW low3
+   wires of lane0's mk read are the low3 of mx_i+0, using complete original cell
+   and full paired root/pin correspondence. Prove this small combinational
+   relation on the exact graph rather than assuming a source-text equation.
+   Join current retained mx_i Q equality to the initialized invariant and show
+   the already captured address4 assignment violates it. This is an explanation
+   of that witness's incompatibility with the qualified initialized native state
+   domain, not a blanket claim that the whole OOB class is unreachable.
+6. Actual graph-mutation negative controls (not compiled-source mutations):
+   changed native initializer lowbit1 must fail base
+   implication; a deliberately changed queried lowD bit1 must give a concrete
+   strict-proof failure on a separately archived mutation. Preserve all source,
+   model, query, log and graph bindings; no tests are mirrors of source strings.
+
+Applicability distinction
+The closed graph theorem can avoid ALL child-output assumptions only if the
+actual control cone excludes provider-return roots. Its induction still lives
+in the explicitly defined Boolean-state archived native transition domain.
+Historical current-generation/source closure, original SV/event correspondence,
+and whole-MXU initialized feedback remain unproved. The original/reference
+retained-state comparison uses the already explicit memory-model scope; do not
+promote it to four-state source parity through this invariant.
+
+Then investigate the real remaining hazard, rather than repeat lane0
+Choose lane4 and query enabled original undefined data with the verified
+mx_i alignment relation. mxm[4] is populated from4<h.M; current hardware copies
+command M without a synthesized M<=4 guard. A command M=5/RMAX is a useful seed,
+not a reachability theorem. ISA restrictions are not a new premise.
+
+A later initialized bounded trace must connect ALL physical Q to actual D across
+cycles, satisfy actual complete initial predicates, keep arbitrary initial arrays
+as one fixed entire-array choice, and use the real command accept/release path.
+It must either instantiate actual RAM/FP/dot/epilogue transition relations or
+prove excluded-return dependency for the selected hazard control cone. An open
+controller SAT prefix with free child returns is only a candidate for subsequent
+closed trace replay; it is never labelled an actual whole-MXU reachable witness.
+Full-array/child/model compatibility cannot be replaced by selecting convenient
+returns each cycle. Every undefined wire retains one coherent choice per cycle
+shared across its consumers, while hidden state evolves without re-selection.
+
+Implementation ordering after independent design review
+First a bounded metadata/cone inventory if actual aliases/roots need inspection;
+then the small initial+step+address invariant certificate and negative controls.
+No large unroll until this identifies the exact remaining lane4/control cone.
+Root alone executes all guards/audits/solvers through the existing resource gate.

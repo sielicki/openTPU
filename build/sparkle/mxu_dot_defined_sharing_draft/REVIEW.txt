@@ -1,0 +1,64 @@
+UNEXECUTED new-file draft. Existing active/evidence sources untouched.
+
+Actual diagnostic reported gold:$41 / gate:$43 as identical defined43x43->43
+multipliers in second pe000[64,80), signature125cc89a.... This draft does NOT trust
+that signature as an equality certificate. It recomputes the exact source DAG,
+full primitive schemas and definedness. Both binary0/1 constants and original
+paired inputs start defined. Only authenticated finite deterministic rule types
+may propagate definedness, and only when every input coordinate is defined.
+Gold expressions are canonical; a gate cell is removed only when its exact type,
+ALL parameters, directions, non-src attributes, ordered already-substituted input
+IDs and output widths equal a gold cell. Equality keys are exact JSON structures,
+not hash equality alone. Every gate output coordinate is replaced by the matching
+gold output coordinate in all remaining consumers and observations. No new root,
+input, assumption, equality premise or internal cut is introduced.
+
+Unknown/case-X-sensitive/partial cells remain, with their original output IDs
+side-disjoint. Their inputs may refer to previously certified equal defined
+expressions; this is ordinary substitution, not correlation of unknown values.
+Complete mismatch observation and all input ports stay present. Original source
+sides must be independent except original shared inputs; cycles/missing/ambiguous
+drivers reject. A second complete replay reconstructs expected graph+certificate
+from source and rejects any proposal differing from it. Certificate includes the
+full defined-expression induction, actual removed cells and every substitution.
+
+Model rules: actual installed Yosys0.69 binary is pinned by completed initialized
+leaf receipt. The package derivation points to source derivation
+/nix/store/x2q2509a921d640gxy7chwkrbp7w8m39-source.drv, fixed source output
+/nix/store/fiq6rwpyasp5f401gdaws45pl3biq68s-source, recursive SHA256
+563ca4e9a30ac27244136e6d43448a5907177c9c63a42568bbee077fc73e20be.
+Source satgen.cc and satgen.h, source/package derivations and actual installed
+satgen.h must all be archived, and source/installed header SHA must agree.
+Full multiplication body is checked; definedness-rule source anchors also checked.
+Actual v0.69 model source inspection:
+https://raw.githubusercontent.com/YosysHQ/yosys/v0.69/kernel/satgen.cc
+For add/sub/mul, output undef mask is OR of input masks; on zero masks, the
+finite vector arithmetic equation uniquely fixes every output. Bitwise operators
+propagate zero masks to zero; not/logic_not and eq/ne do likewise. Mux with fully
+defined A/B/S selects one exact defined coordinate. Exact widths/signedness and
+same inputs imply the same total vector, including truncation/sign extension.
+No eqx/nex,pmux,shiftx,division/modulo or unknown input participates in sharing.
+
+IMPORTANT PENDING DEPENDENCY: that exact source tree is presently not materialized.
+The checker fails closed with an explicit model-authentication error until it is
+available; this draft does not fabricate a source pin or label substitution
+certified from the diagnostic alone. Do not launch an unbounded Nix build daemon
+or bypass the gate to obtain source. Root can choose a bounded source acquisition
+or a separately reviewed exact-source authentication method. No such action run.
+
+Standalone check_defined_sharing.py consumes explicit terminal paired receipt
+path/SHA + case/range, rechecks complete prior closure and actual paired graph/
+manifest identity, checks actual input-port mapping, then performs/replays the
+substitution and archives rewritten graph+certificate. It requires at least one
+multiplier removal for the requested concrete diagnostic target. No solver runs,
+and no explicit-undef equality or initialized-dot theorem is claimed. Future
+solver integration must bind source paired graph, rewritten graph, certificate
+and model-rule evidence and keep every original interval obligation. Original
+four completed intervals [0,64) must remain reusable via their old exact proof
+graphs; sharing is only a representation change for new queries.
+
+Guards: exact removal and complete consumer remapping; changed signedness or
+operand order; X/Z input rejection; unknown-cell output nonsharing; cross-side
+internal dependency rejection; added cut input; dropped observation; stale output
+reference; tampered substitution certificate; unreviewed rule enablement; missing
+model source. No guards or real checker executed while runtime owns the gate.

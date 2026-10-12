@@ -1,0 +1,65 @@
+UNEXECUTED draft checker + pure observer/support helpers + guards.
+No imports, tests, compilations, extraction, or installed source changes performed.
+
+Required completed parent receipt supplied by explicit path/SHA. Actual available
+path: build/sparkle/vpu-streamlane-parent-first/summary.json
+SHA256: 1858205495448741e6694339169680e2bdc802cdcde5e4b8606df80f2b1fc349
+Checker authenticates full closure and exact third-stage provenance, then audits
+all 486 containing Q/D bits and 349 sliced support bits against both complete
+parent inventories and all-alias initial constraints. No omitted support permitted.
+
+Isolated Lean generator compiles existing native build/register hints plus the
+reviewed helper text, yielding a CANDIDATE core and original core. It does not
+apply the patch. Exact stripping recovers original full core text; complete module
+tokens/attributes/directive context bind that core to the authenticated hierarchy.
+Original observer functions/types/microcode come from authenticated actual RTL,
+not the Lean ROM. Exact original posedge/ifdef predicates and their support
+aliases are pinned before extraction. Native predicates/functions are extracted
+from the actual compiled candidate. ROM inputs are arbitrary seven bits, covering
+all 3*128 class/pass cases. Five trigger flags, 315 ROM bits, four pass-count bits
+per side (648 total) must be defined; strict equality follows separately. All
+486 mapped state bits and rst/en/in_v are arbitrary defined inputs, without
+initial/traffic/enable restrictions. Full initial witness separately implies
+first-edge observer silence. A source-level negative control suite protects
+extraction and mapping; ACTUAL COMPILED Lean mutations remain explicitly pending.
+
+Both full original/candidate SYNTHESIS graphs are extracted before opt_clean or
+opt_expr, including every module/port/cell/net/init alias. Independent streamed
+owner inventories compare all data except source locations/creator. No pruning.
+The local graph auditor requires exactly otpu_se_comp_sparkle; it does not reuse
+the SE-tail-specific module inventory. Slang/Yosys paths are separately validated
+bare-safe paths; only Lean string literals use quoting. Both graph extraction and
+observer preparation use proc -noopt, avoiding its implicit opt_expr step. Both
+SAT checks enable explicit undef with defined arbitrary inputs, -verify, and an
+archived actual failure-model path. No -prove-x, setundef or legal-state premise.
+
+First actual attempt (root execution) stopped incomplete at unsupported $meminit
+in the observer SAT import. The draft now lowers source ROMs with memory_map after
+proc -noopt/flatten and before opt_clean, archives that complete graph, then audits
+exact observer module/port widths, combinational-only cell types, no memories,
+and no initializer attributes anywhere. Both SAT obligations consume this same
+authenticated graph. Literal X/undriven observed values are left for strong SAT
+definedness, never repaired or assumed away. The full original/candidate SYNTHESIS
+bridge remains preclean and unchanged (no memory_map there). No rerun by author.
+
+--simulate additionally compiles actual emitted candidate with Verilator -j1,
+runs isolated collision/return/each-stage/rr_e fixtures, reset suppression,
+disabled-collision/correct-return/matching-control/idle, and first-edge actual
+initialization without forcing. Only diagnostic containing state operands are
+forced. Exact fatal text, hierarchy and termination transcript required; no
+generic exit-one acceptance. Repeated SYNTHESIS build must survive all fixtures.
+Fixtures demonstrate predicates under forced state, not legal-traffic reachability.
+
+four-state-fixture.sv exercises the actual extracted source observer modules for
+the vpos24=X/fin=1 return difference and unknown ROM class/pass defaults. It is
+generated but NOT executed by this driver, and four-state/event qualification
+remains false. Parent datapath and original diagnostic event-order equivalence
+are not inferred from the two-state SAT certificate.
+
+Pending: actual compiled mutation controls; apply reviewed core/ABI patch;
+exact old ABI observer removal and packing bridge; original/candidate diagnostic
+behavior under a four-state simulator; fresh production assembly/runtime binding.
+Terminal status is candidate-observer qualification only, never installed-core,
+ABI, whole-VPU or full native datapath equivalence. Graceful interruption preserves
+active files/logs/generator-local artifacts and publishes incomplete status.
+All execution must use sparkle_bounded; no increased ceiling or concurrency.

@@ -1,0 +1,88 @@
+Full4,231 control composition: measured provider obligations before a theorem.
+
+Existing actual-root behavior now covers complete command/sequence1,159 state,
+stream1,350 D+820 outputs, write-buffer1,722 D+428 outputs, issue555 outputs.
+These are not yet a connected full-control theorem. Root owns the simultaneous
+original/native startup witness. This stage will inventory every input coordinate
+of all six reached production child modules against these exact proof domains,
+without inventing a new arbitrary input for an internal provider.
+
+Native topology source: the same complete VpuControl definition and all ordered
+child ports/edges in the authenticated current assemblies (gen1/gen2/bundle).
+Four stateful child edges come from the production applicability receipt. Issue
+edges and fullparent context come from actual issue555 proof. Write-select must
+be independently parsed from the same parent/module, with full424-output body
+bound to its completed local combinational receipt. Require all six edges and
+all parent ports identical across the three assemblies. Reject duplicate driver,
+missing pin/width, unknown expression, or unexpected root port. Do not derive
+connectivity merely from signal names.
+
+State relation: one4,231-coordinate bijection with original2051Q+2180logicalmemory
+and corresponding native per-unit Q. Reuse the startup audit's explicitly joined
+records when terminal/pinned, not another differently ordered field inventory.
+CQ480 mapped word IDs and writeRAM1700 mapped IDs are temporary netlist IDs;
+convert them through authenticated word/address aliases to original logical
+(memory,word,bit) coordinates before cross-proof comparison. Native combined
+command/sequence gate IDs also need the joint receipt's exact named field maps
+before matching the per-unit startup witness. Preserve all field bit orders.
+
+Diagnostic output is a complete coordinate-level provider table, not a theorem:
+  consumer unit/pin/position and exact reached expression;
+  actual proof boundary row and its original normalized bit/literal;
+  native provider unit/output/position or exact external parent input;
+  provider theorem observation/state coordinate and its actual original bit;
+  exact original buffer-chain candidate joining the two endpoints;
+  disposition (already exact state identity; observed combinational provider;
+  missing actual-root provider theorem; external datapath/top; unconsumed output).
+All counts and missing joins explicit. Count each consumer occurrence, not unique
+signal names, and retain aliases/constants and complete original buffer owners.
+No canonical-buffer substitution is a semantic proof: final certificate must
+reuse each actual alias totality/linkage observation or prove the chain defined
+from the upstream provider result with the retained-buffer model.
+
+Concrete likely remaining obligations to measure:
+- en is write-buffer en_r and ss_rq is stream Q. Passed actual output/Q relations
+  should close the two formerly external1,159 premises after exact normalized
+  endpoint joins, with no state-dependent environment assumptions left.
+- Stream busy comes from command. Existing actual679+D/hc theorem does not by
+  itself prove every exported command combinational observation. Compare actual
+  root busy and any other used command outputs to the joint reference/native
+  outputs; preserve full hc and all actual source definitions. Do not assume
+  command setup nfill equals sequence retained nfill.
+- All424 write-select outputs cw_en/cw_addr/cw_data feed actual write-buffer inputs.
+  Only the local write-select theorem exists; need an actual-root424 output bridge
+  like issue555, with exact original packed mo/mxm/am4 fields and lane coordinates.
+- All stream/write exports used by other control modules have actual output proofs;
+  still join exact endpoint IDs/buffers and complete source expression ordering.
+- Unconsumed command head_nfill/nchunks observations are separately inventoried.
+  An unconsumed setup observer is not a new original register or environment.
+
+After the diagnostic, add only the missing actual-root provider lemmas, likely
+command busy plus actual write-select424. Then prove complete connected per-bit
+combinational dependency DAG over actual native/provider cones after removing
+all4,231 Q. Do not use an arbitrary topological order inferred from module names:
+modules have state and outputs may depend on inputs, so use bit-level supports.
+Construct totality/equality in this DAG order from current related state and only
+genuine external parent/datapath boundaries, then apply each complete D theorem.
+All internal input relations must be discharged once, with a complete union audit.
+
+The final theorem will be initialized selected-control refinement under explicitly
+matched actual external datapath/host edges. It will not claim other original root
+state, datapath internals, or all original outward consumer connections are equal.
+For full original control-context replacement also extend the crossing inventory
+from selected1,159's2,455 crossings to all4,231 state and every output cone. Map
+all outside D/cell/port consumers to proved public/current-state observations or
+add explicit missing observation obligations. Never silently reuse2,455 as the
+complete full4,231 crossing count.
+
+First executable artifact: bounded read-only provider inventory, consumes fixed
+terminal receipts and current assembly hashes, streams original SQLite, and reads
+complete saved proof manifests. No extraction, SAT or state simplification.
+Preserve full coordinate rows in output artifact; concise grouped counts in log.
+Receipt source pins, joins, all unresolved rows and false theorem flags mandatory.
+
+Inventory scope clarification: all4,231 selected storage and its complete backward
+D/memory-access dependency closure are included. This does NOT automatically
+include every public/provider output cone unused by those roots. Their observation
+and outward-use inventories remain explicitly additive obligations. The new
+crossing count is complete for this precise storage/dependency boundary only.

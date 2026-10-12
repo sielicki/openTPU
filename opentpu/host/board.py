@@ -546,6 +546,27 @@ class SimTransport:
         p.setdefault("ARCH_HASH", "32'h%08x" % arch_hash(build_config(
             t, MCOLS=p["MCOLS"], LANES=p["LANES"], ACT_ROWS=p["ACT_ROWS"],
             DSTEP=p.get("DSTEP", 1))))
+        sparkle_mode = os.environ.get("OTPU_SPARKLE")
+        if sparkle_mode == "board-native-test":
+            from opentpu.sparkle import board_assembly_source, mem_channel_source
+            # Complete native accelerator hardware; only packages, testbench,
+            # and explicit external memory models come from the reference tree.
+            srcs = [rtlsim.RTL / "vpu/otpu_fp.sv", rtlsim.RTL / "top/otpu_pkg.sv",
+                    board_assembly_source(p, native_slice=True), mem_channel_source(),
+                    rtlsim.TB / "otpu_native_mem.sv", rtlsim.TB / "otpu_chmem.sv",
+                    rtlsim.TB / "otpu_ldn_model.sv", rtlsim.TB / "tb_board.sv"]
+        elif sparkle_mode in {"board-assembly-test", "board-channel-test"}:
+            from opentpu.sparkle import board_assembly_source
+            assembly = board_assembly_source(p)
+            srcs = [assembly if source.name == "otpu_board.sv" else source for source in srcs]
+        elif sparkle_mode == "board-test":
+            from opentpu.sparkle import board_support_sources
+            native_support = board_support_sources(p)
+            srcs = [native_support.get(source.name, source) for source in srcs]
+        if sparkle_mode in {"mem-channel-test", "board-channel-test"}:
+            from opentpu.sparkle import mem_channel_source
+            channel = mem_channel_source()
+            srcs = [channel if source.name == "otpu_mem_ch.sv" else source for source in srcs]
         exe = rtlsim.build("tb_board", srcs, p)
         with simtmp.tempdir("otpu_board_") as d:
             for c in range(len(self.ch)):

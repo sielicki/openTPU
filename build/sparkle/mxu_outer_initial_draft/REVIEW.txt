@@ -1,0 +1,207 @@
+SOURCE-ONLY OUTER-MXU INITIALIZATION STAGE. UNEXECUTED; no success assumed.
+
+Authoritative existing case:
+build/sparkle/formal_mxu_memory_control/128_4_4_1024_8_2_16/summary.json
+Root independently authenticated the terminal historical receipt SHA
+dae66f98cb05e67c208a6253bdc27ab1b00068803b61d8c323d66bf70e2c56d0.
+The first bounded audit is preserved incomplete: its direct historical input
+map does not contain generating_sources.json. The corrected checker validates
+the entire current manifest against the authenticated embedded generating map,
+checks each embedded source entry against the historical input closure, and
+freezes/archives the manifest as a newly checked correspondence input. It does
+not invent a historical file digest. Both pre-read/post-read digests must match.
+The original first receipt and its archived checker sources remain unchanged. Existing driver/source and bounded text metadata inspection show:
+5,928 retained controller register bits;1,508 pruned bits on EACH side;
+8 RAMs retaining1,204,224 bits;8 RMW arithmetic instances. The historical
+controller command is equiv_simple -short -undef. Its result is not silently
+promoted to initialized unknown-semantics trace equality.
+
+Critical difference from dot: the historical read_slang extraction already
+preserves initializers. It has no --ignore-initial or setundef. Thus the exact
+flat/cut/mapped artifacts can supply actual initialization constraints without
+a new Lean compile/extraction, if the complete graph bridges below succeed.
+Both extraction and mapping recipes are pinned exactly. Original native,
+reference, blackbox emissions and recorded generating-source manifest remain
+in the authenticated closure. The old Generate.lean digest may be absent;
+the report records that fact and makes no fresh/current emission qualification.
+
+Implemented executable independent stage:
+1. Authenticate explicit terminal receipt SHA and closure; exact seven-parameter
+   configuration/state/pruning/FP counts. Preserve original successful artifacts.
+2. Recreate exact full flat.json -> cut.json transformation from the actual
+   eight $mem_v2 instances and actual pipeline-output renames. Compare every
+   owner, alias, cell, bit, parameter and initializer with the historical cut.
+3. RAM parameters match completely except MEMID; every INIT bit is literally x
+   on both sides, with exact WIDTH*SIZE length. Do NOT write zeros. Array witness
+   is identity of the entire arbitrary native initial array at every address
+   and bit. All data/address/per-bit write mask/clock/control pins are retained.
+   Reproduce all RAM cut ports and reject extra memory state/cut-name collisions.
+   Scale RAM64x2048; result RAMs3x(128x64); FIFO data RAMs(288+252+252+232)x1024.
+4. Require exact cut->mapped graph isomorphism by the reviewed full alias-bijection
+   bridge, preserving init attributes. This is deliberately fail-closed: the old
+   map recipe includes memory_map/opt_expr/opt_clean. No optimization-equivalence
+   assumption is made if this isomorphism fails. All RAMs have already been cut,
+   so memory_map should have no remaining array to expand; actual outcome awaits
+   the first bounded audit. If owner/alias inventories differ, inspect them
+   boundedly and prove the specific missing bridge, rather than ignoring them.
+5. Reject unsupported module/port/cell/blackbox initializer owners and unlowered
+   processes/memories before any cut can discard them. Supported RAM INIT
+   parameters remain distinct from register netname init aliases.
+   Record all physical register Q/D and EVERY original initializer alias before
+   pruning or correspondence injection. Reject paired_N collisions. Check full
+   RMW schemas/common clock/cut ports, replay pruning and state mapping, and
+   compare the entire reconstructed historical steps graph including the exact
+   50 gt/ge operand-orientation rewrites. No output or full-D obligation drops.
+6. Independently traverse true output/boundary/retained-D cones in the unpruned
+   model (bit-sensitive only for exact-width mux). All5,928 retained Q on each
+   side stay related; all1,508 omitted Q on each side must be irrelevant to the
+   complete observations and retained next state. Keep their actual D and initial
+   constraints in the certificate. Native omitted state stays arbitrary subject
+   to its real predicate; original omitted state receives one legal initial
+   witness and subsequently evolves normally. No repeated state selection.
+7. Prove per-coordinate initialization implication from native to equal original
+   retained state, retaining undefined native bits as '?'. Emit all mapped Q/D,
+   witnesses, omitted Q/D/constraints, and RAM bit-range identities.
+
+The resulting status explicitly certifies retained initial predicates, complete
+RAM identity/base relation, and the exact graph/observational quotient bridges.
+It does NOT claim a RAM transition proof, outer trace refinement, whole-MXU
+composition or production applicability. Existing RAM SMT query bodies and
+parameter evidence are authenticated, but legacy .z3.log files were not included
+in that driver's input-file filter; the new stage does not turn the record's
+answers list into newly authenticated solver evidence.
+
+Remaining concrete prerequisites for complete initialized outer MXU:
+- Same-model controller output/all-retained-D equality under explicit unknown
+  semantics, with complete definedness/nonvacuity or an explicitly justified
+  weaker refinement where totality fails. Inspect actual primitive inventory;
+  no generic promotion of old equiv_simple -short -undef.
+- Actual8RAM transition/read semantics and address/clock/per-bit-mask relation.
+  Structural identical primitive parameters support identity, but read ports
+  are combinational: need complete original/native RAM-output/input dependency
+  certificate and consistent simultaneous array/FP/pipeline boundary functions.
+- Four concrete mul2 and four add4 RMW initialized relations (125/191 bits each,
+  totaling1,264), exact actual parent child/pin/source/clock/enable binding, and
+  all boundary dependencies. Their cut outputs are not permanently arbitrary
+  assumptions once composing. Existing FP initialization receipts are useful
+  premises; this stage has not yet authenticated or instantiated them.
+- Join completed physical dot163,839 mapped+2,048 original-only bits and epilogue
+ 8,197 bits to actual controller/native/reference top wiring. Verify original
+  cut pipeline outputs and rowr/lv2 return inputs in both designs, including
+  enable/reset/data timing, then show a common dependency order. The controller
+  cut source removes only the designated S5/S6..result-FIFO section and selected
+  m5/m6 delay assignments; actual source split/composition needs explicit audit.
+- Establish disjoint full global state/array ownership and a single initial
+  witness, then induct. Candidate mapped total is1,383,452 bits if exact product
+  scopes join as expected; this number is planning only, not a new theorem.
+- Bind the NEW initialized outer theorem to exact reached production parent
+  specializations, complete modules/attributes/directives/current source closure
+  and all child/terminal paths in Gen1/Gen2/CLI. Existing behavioral or leaf-only
+  binding receipts are not sufficient alone.
+
+Resource design: input files inspected for size only: flat10.6MB,cut6.4MB,
+mapped9.9MB,steps7.4MB. The future driver caps each JSON decode at16MiB, deletes
+flat/cut/intermediate graphs between stages and uses no solver or build. All
+actual decoding, deep-copy graph replay, provenance hashing and archival runs
+under the standard3GiB/zero-swap gate. If memory pressure occurs, reduce to a
+streamed SQLite representation; never increase the ceiling. Atomic stage
+checkpoints and partial outputs are preserved as incomplete.
+
+Proposed guards, only on root's gate:
+source /tmp/opentpu-test-env.sh
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m pytest -q build/sparkle/mxu_outer_initial_draft/test_outer_initial_graph.py
+
+Then independent review and a new bounded output directory:
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/mxu_outer_initial_draft/check_outer_initial.py --proof-sha dae66f98cb05e67c208a6253bdc27ab1b00068803b61d8c323d66bf70e2c56d0 --output build/sparkle/mxu-outer-initial-second
+
+No imports, tests, source generation, graph processing or proof runs were
+performed during this draft. Installed sources and all completed evidence
+remain unchanged. Exact RAM and graph assumptions fail closed.
+
+Revision after actual first failure and residual-memory diagnostics (UNEXECUTED):
+- The pinned legacy receipt has neither a generating_sources.json digest nor an
+  embedded generating_source_sha256. generation_scope now explicitly restricts
+  this stage to authenticated archived graph models. No current generation or
+  production correspondence is inferred. A present malformed map still fails.
+- The original cut retains eleven small register arrays: 33 words, 2,297 bits.
+  These are included in the mapped controller state, NOT added to the eight
+  external RAM arrays. Exact inventory is checked before proceeding.
+- residual_memory_bridge.py independently checks every array word against a
+  complete added physical DFF, all initial aliases (arbitrary memory remains
+  arbitrary), every actual read mux coordinate, every masked write coordinate,
+  all ordinary cells and ports, and complete added mux/DFF coverage. The
+  original memory parameter inventory is closed. Writes must be distinct known
+  addresses covering every word. Four-word read addresses may have arbitrary
+  low selectors, with high bits literally zero; non-power-of-two reads must be
+  known in-range. Original memory-to-DFF word ordering is explicit, LSB first.
+- Mux equations preserve selectors and vector coordinates under source-pinned
+  four-state RTLIL memory/mux coordinate semantics. Literal-X constants stay
+  explicit. This is NOT raw SatGen value/undef-pair model identity: undefGating
+  permits different free value correlations at undefined mux outputs. Both
+  raw_sat_value_undef_model_identity_proven and the original-to-mapped explicit
+  unknown transition refinement flag remain false. That semantic lift is a
+  separate remaining obligation before any outer trace composition.
+  The only graph identification beyond ordinary-driver injectivity is memory
+  read identity justified by the complete checked mux equation. Deleted aliases
+  cannot carry initializers/non-source attributes. All remaining init aliases
+  are independently reconciled across the full physical Q inventory.
+- The source tree is authenticated by the existing exact derivation/NAR checker;
+  memory_map.cc and kernel/mem.cc have explicit full-file digests. No historical
+  optimizer execution is assumed or replayed. This checker verifies its actual
+  input/output graph and exact finite lowering equations; it is not a generic
+  proof that memory_map/opt_expr is correct, nor an event-region four-state
+  simulation equivalence claim. Outer explicit-undef transition composition
+  remains a separate obligation, as before.
+- Tests include dynamic read selectors, masked writes, state/word/input alias
+  faults, high address/read/write/clock/mode/initialization faults, complete
+  added-cell inventory faults, and literal-X non-commoning. Not yet executed.
+
+Independent reviewer identified and corrected the scope boundary above before
+execution. The finite lowering audit supplies complete state ownership and
+initial predicates plus actual mapper-coordinate equations. It does not silently
+promote optimized mux identities into SAT relation equality or infer original
+SystemVerilog memory event-region semantics. Per-use-X SAT correlation machinery
+is therefore deliberately not claimed/implemented in this initialization stage.
+
+After second bounded attempt (preserved incomplete): mk read ports 4..11 have
+an actual dynamic address bit 2, while SIZE=4. The draft now retains every
+potentially nonzero address selector and builds the full finite lookup with X
+leaves at addresses 4..7. It makes no in-range assumption and cannot wrap or
+truncate bit 2. All remaining address bits must be literal zero; a >8-bit table
+is rejected before allocation rather than weakening or expanding unboundedly.
+A synthetic positive checks an actual out-of-range X mux, while negatives reject
+truncation, wrapping, zero replacement, wrong selectors and oversized expansion.
+
+Important unresolved applicability question: authenticated memory_map.cc uses
+ceil_log2(mem.size) and rd_addr.extend_u0(abits,false). This appears to truncate
+mk's high bit in the historical mapper's own read tree. If the actual mapped
+cone has no explicit range guard, the complete coordinate check must fail. The
+new expected X leaves are NOT evidence that this historical graph preserves
+out-of-range reads. A later contextual or precisely directional unknown-value
+refinement would require its own proof; this draft deliberately does not infer
+one, even though raw SatGen identity/outer trace flags are already false.
+
+After third bounded attempt (preserved incomplete): only the eight exact RMW
+blackbox instances per side omit JSON port_directions. outer_rmw_contract.py
+resolves this read-only from all four empty, unparameterized original flat-graph
+blackbox declarations and the exact eight occurrence names/types per side.
+Complete a/b/y32, clk/en1 pins and actual common clock are checked; any supplied
+port_directions must agree. Generic missing directions fail. No cell is patched,
+and the complete ordinary cell body/metadata/pin vectors still participate in
+the original-versus-mapped graph comparison. The validated declaration context
+is retained from flat.json through the RAM cut, lowering and eventual FP cut.
+Focused guards cover declaration and occurrence type/parameter/pin/width/clock
+faults, missing context, generic fallback refusal, immutability and whole-body
+comparison. No raw SatGen/outer trace scope flag changes.
+
+After fourth attempt: bounded ordinary metadata diagnostic confirms the only
+body-metadata differences are port_directions present in cut.json and omitted
+in mapped.json on the same eight RMW instances per side. Whole ordinary-body
+comparison now compares the independently resolved direction field separately,
+then compares ALL remaining fields exactly (only source locations are ignored as
+before). Only the already declaration-authenticated resolver can supply a
+missing field; generic omissions still fail. Neither graph is mutated. New
+positive guards cover both serialization asymmetries and graph immutability;
+negative guards retain wrong explicit direction and unrelated-body rejection.
+Diagnostic log: mxu-outer-ordinary-metadata-diagnostic-first.log, bounded512MiB,
+terminal exit0,0.202s,98,566,144B peak,all memory events0. No proof rerun performed.

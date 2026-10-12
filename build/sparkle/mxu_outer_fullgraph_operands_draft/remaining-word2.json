@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "inventory": {
+    "path": "/home/sielicki/openTPU/build/sparkle/mxu-outer-full-predicate-inventory-first/summary.json",
+    "sha256": "8dd2f1f313c030b41d2900c86ed774d3860fab624fde25c23ef406fb3516a18b"
+  },
+  "pairs": [
+    ["gold:$1043", "gate:$1983"],
+    ["gold:$1061", "gate:$1997"],
+    ["gold:$1079", "gate:$2026"],
+    ["gold:$1097", "gate:$2040"],
+    ["gold:$1115", "gate:$2069"],
+    ["gold:$1133", "gate:$2083"],
+    ["gold:$1151", "gate:$2112"],
+    ["gold:$1169", "gate:$2126"]
+  ]
+}

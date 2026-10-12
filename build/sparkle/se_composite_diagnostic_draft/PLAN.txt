@@ -1,0 +1,106 @@
+DRAFT ONLY: native_core_diagnostics.patch is unapplied, uncompiled, unexecuted.
+No current source, historical receipts, generators or runtime outputs changed.
+
+Production gap and proposed remedy
+----------------------------------
+OpenTPU/SeCompositeABI.lean currently implements collision/return/control checks.
+Production OpenTPU/VpuDatapath.lean directly calls SeComposite.toVerilog; VpuLanes
+instantiates otpu_se_comp_sparkle directly. That core currently emits no checks,
+so production bypasses all ABI diagnostics. Proposed patch moves checks into the
+single core (after register hints, before FP helpers), removes ABI duplicates and
+keeps wrapper configuration checks/packing unchanged. Insertion requires exactly
+one complete emitted module terminator. SYNTHESIS suppresses the entire block.
+This applies generically to validated configs, but first qualification is exact
+LANES8/MW21/NS3/HA2/EXT1. Do not infer other configs qualified from this one.
+
+Exact original observer contract, rtl/vpu/otpu_se_comp.sv
+-------------------------------------------------------
+All three groups are enclosed in separate `ifndef SYNTHESIS blocks; each samples
+pre-nonblocking-update state on posedge clk. No extra observer registers exist.
+1. Lines341-344: !rst && en && in_v && ret
+   $fatal(1,"otpu_se_comp: entry while a chunk returns").
+2. Lines373-376: !rst && ret != (lp_v && !fin)
+   $fatal(1,"otpu_se_comp: ret out of step"). NO en gating.
+3. Lines400-408: each s in0..2, !rst && vpos[s_off(s)+SL-1] &&
+   (uco[s] != uc_rom(mo[s].cls,mo[s].pass,s) ||
+    s==0 && rr_e != (mo[0].pass==0 && (mo[0].cls==CC_EXP || mo[0].cls==CC_EXS)))
+   $fatal(1,"otpu_se_comp: output control out of step"). NO en gating.
+
+ret=ret_r;lp_v=vpos[24];fin=(lp_m.pass+4'd1>=n_pass(lp_m.cls)).
+NS3 n_pass class1/2=3,class3=2,class4/5=4,default1. Preserve 4-bit wrap on
+pass+1 (pass15 wraps0); do not widen addition or substitute unbounded integers.
+Original uc_rom starts identity and overrides for fully equal class1..5/pass0..15.
+The proposed complete case table on7-bit {class,pass}, with identity default,
+preserves defined and unknown-input default matching. Independently prove table
+values against actual original ucode/uc_rom, not against the same Lean generator.
+
+Native/core mapping and retained coverage
+-----------------------------------------
+ret -> ret_r1; lp_v -> vpos[24]; fin reads lp_m[32:29]pass/[35:33]class.
+mo[s] -> md{s}_6; pass=[32:29],class=[35:33],pack=[35:29].
+uco[s] -> uco{s}[104:0]; rr_e -> rr_e.
+s_off0/1/2=0/10/17; vpos control-valid bits6/16/23.
+Every mapped observer field belongs to the proposed17727-bit composite relation:
+full containing fields vpos25+ret_r1+lp_m36+uco3*105+md*_6 3*36+rr_e1=486bits;
+actual sliced observer support349statebits plus rst/en/in_v. No extra original
+state is introduced by these diagnostics. ROM tables/functions are combinational.
+Coverage is source-derived pending complete raw graph/init audit: do not pretend
+an optimized-away register is covered without the actual mapping certificate.
+
+Original initial configuration check at lines80-81 is outside SYNTHESIS:
+NS<1 || HA<1 || HA>=T -> "otpu_se_comp: unsupported NS / HA".
+Exact8/21/3/2 validates, so trigger is constantfalse. Native Config.validate also
+rejects invalid configs at generation time; standalone ABI has a separate exact
+parameter mismatch fatal. Do not add original invalid-config runtime behavior to
+an exact valid production core or confuse compile-time rejection with parity.
+No init input exists. Checks run from the first clock edge; no rst_seen, warmup,
+fill restriction or collisionfree premise is introduced.
+
+Four-state detail requiring care
+--------------------------------
+Existing ABI simplifies the return predicate using vpos[24] && !out_v, where
+out_v=vpos[24]&&fin. This is equivalent in two-state logic but not universally
+four-state: vpos24=X,fin=1 yields original lp_v&&!fin=0, simplified=X.
+The proposed core computes exact fin and uses original expression. Do not claim
+unchanged arbitrary-X standalone-ABI behavior; this is a deliberate correction to
+match original. Full datapath four-state equivalence is not inferred from it.
+Use logical !=, not !==; unknown predicate in procedural if does not fire.
+Simultaneous fatal conditions can race across always processes; tests must isolate
+each predicate or accept the exact set of triggered messages, not invent ordering.
+
+Proof/emission/simulation sequence (bounded, no work performed yet)
+------------------------------------------------------------------
+A. Independently authenticate original complete bodies/params/constant tables,
+   exact conditional-compilation and posedge statements, native aliases, current
+   initialized parent mapping. Extract original observer cones from real source
+   and actual generated native observer cones; no handwritten next-state proxy.
+   Strong definedness+trigger equality for all defined mapped state and inputs.
+   Include all three control-stage flags separately, collision and return flags.
+   Full decode/ROM proof:3*128 defined class/pass table cases against reference.
+   Initial observer-silence check actual native initializers: vpos0/ret0 means
+   no collision/return/control fatal, even without a sampled reset.
+B. Apply reviewed patch only after authorization/gate. Fresh compiled emit exact
+   core+wrapper. Removing ONLY exact newcore block recovers old full module tokens,
+   attrs/directives/helpers. Removing ONLY old ABI observer helpers/block recovers
+   new wrapper. Complete SYNTHESIS preclean old/new graph equality, every module,
+   Q/D/init, no state pruning; historical receipts stay immutable.
+C. Compile actual new core with Verilator -j1, no SYNTHESIS. Force actual state
+   fields to isolate diagnostics, toggling clock once. Common base: rst0,in_v0,
+   en0,ret_r0,vpos0,lp_m0,all md*_6=0,uco*=identity,rr_e0.
+   - collision: en1,in_v1,ret1,vpos24=1,lp_m.class1/pass0; other valid bits0.
+   - return: ret1,vpos24=0,in_v0; must fire with en0 too.
+   - eachstage control: corresponding vpos6/16/23=1, uco stage identity XOR1;
+     remaining base preserved; must fire with en0.
+   - stage0 rr_e-only mismatch: vpos6=1,rr_e1,uco0identity,md0_6class0/pass0.
+   - reset suppresses each; en0 suppresses collision only; matching control,
+     idle, and correct return cases survive. First-edge actual init survives.
+   Exact fatal reason and hierarchy marker plus abort/stop transcript required;
+   installed Verilator may use rc1, so generic rc1 is never sufficient.
+   Add synthesis-defined run: all diagnostic stimuli survive, no functional graph
+   change. Add four-state simulator fixtures if available for unknown-class/pass
+   identity defaults, return countercondition above, and != rather than !==.
+D. Whole current Gen1/Gen2/CLI assembly token/context correspondence modulo only
+   reviewed core addition and ABI duplicate removal; fresh reachability binding.
+   Runtime qualification must refresh: rtlsim does not define SYNTHESIS. Preserve
+   all old evidence; source modification invalidates current applicability until
+   exact emission/assembly/runtime bridges complete. No source edits now.

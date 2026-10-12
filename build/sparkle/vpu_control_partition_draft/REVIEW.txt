@@ -1,0 +1,40 @@
+Stage2a: executable structural storage/frontier inventory only. Unexecuted.
+
+Consumes pinned seventh completed inventory and its exact second extraction
+owner. HistoricalEvidence authenticates complete closure before read-only SQLite
+access; all own sources and output artifacts are archived and final-rehashed.
+No original source edits, extraction, memory mapping, solver, or shared helper
+changes. Root schedules all executions. Expected ceiling:3GiB for closure reuse;
+SQLite cache8MiB, one owner payload at a time, integer dependency sets/queue.
+
+The independent joint field inventory totals1159; actual aliases and Q/D/clock
+rows are joined to real owner payloads. Complete selected memory words and every
+actual access owner are preserved. Whole-cell backward closure is conservative;
+no mux slicing or cell semantic claim is made. All owner records in every module
+are emitted losslessly, with selected/dependency/complement roles. Every outgoing
+use of a selected Q or retained dependency output is recorded, including top
+outputs. Full original QD records and complete memory/init payloads remain.
+
+This is intentionally Stage2a: roots are selected D and all memory-access inputs.
+The exact old joint public observation-to-original alias map is NOT yet supplied.
+That additive Stage2b is required before claiming a complete contract partition.
+Side outputs conservatively retained by whole-cell closure can create extra
+crossings; no crossing is treated as proved or silently removed. Mixed selected/
+unselected flop owners remain full original owners; field-level Q selection is
+recorded separately. No transformed executable graph is emitted.
+
+Frontier kinds are actual top inputs, nonselected original Q, original child
+outputs, nonselected memory outputs, and original undriven wires. Their source
+identity/aliases are retained, not converted to solver ports. All literals remain
+in owners. DAG, undef abstraction, physical field/lane layout, memory mapping,
+joint public observations, partition equivalence, and control composition flags
+remain false. Unresolved original child metadata is never used as a premise.
+
+Root commands (not run by author):
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_control_partition_draft -p test_joint_partition.py -v
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_control_partition_draft/check_joint_partition.py --work build/sparkle/vpu-joint-partition-first
+
+Guard coverage: complete1159 mapping; actual alias/D/clock corruption; partial
+memory, duplicate/missing fields; exact MEMID; owner checksum; outside crossing
+and original missing-wire preservation; direct receipt joins; failed artifact
+capture cannot leave completed flag or prevent later preservation/publication.

@@ -1,0 +1,103 @@
+Plan only: generic defined-expression sharing on the certified full graph
+
+The2410..2426 timeout contains no multiplier. Its diagnostic identified three
+exact known-input add candidates (8-bit gold:$127/gate:$3877,32-bit
+gold:$111/gate:$3897,32-bit gold:$77/gate:$3936). This is a prioritization hint,
+not a substitution theorem. The preserved ledger already covers[0,2410).
+Remaining complete interval is[2410,5928),3518 coordinates.
+
+Preferred next representation
+  Build one source-pinned generic certificate on the actual full-congruent
+  graph. Reuse the reviewed finite rule semantics and exact-body authentication
+  from mxu_dot_defined_sharing_draft/sharing_model_rules.py. Recompute all
+  eligibility and expressions from actual fullgraph owners; diagnostic hashes
+  are never accepted as equality premises. No new arithmetic rule is required.
+
+Existing helper is NOT directly applicable unchanged
+  defined_expression_sharing.py requires shared_* single-bit input names,
+  one paired_mismatch observation, no aliases, and source-side independence.
+  The outer fullgraph has its actual paired root names, complete observations,
+  and already-certified gold-to-native multiplier dependencies. Those checks
+  cannot simply be deleted and described as the old proof. Introduce a new
+  separately reviewed fullgraph adapter/certificate with explicit general DAG
+  reasoning and complete owner preservation. Preserve the old helper intact.
+
+1. Exact lineage and model
+   Pin complete-D-first summary SHA
+   be2b2227e672306cdbf633253bce191cee263f50c3a819e7efcd3c661e31b41f,
+   its full original/indexed/assembled identity, operand-lift and fullgraph
+   congruence artifacts, actual original128/64 operand lemmas and source rules.
+   Requalify those completed component audits against their exact graphs and
+   receipts without promoting the incomplete whole receipt. Reconstruct the
+   full-congruent graph from the original fullgraph and compare its actual SHA
+   with both the declared representation and authenticated input closure.
+   Authenticate the installed Yosys binary, derivations, complete source NAR,
+   actual SatGen/header and finite-rule bodies. Root domain stays arbitrary
+   defined original paired inputs/full Q and external RAM/FP returns.
+
+2. Generic fullgraph expression replay
+   Audit every owner, primitive contract, driver and full DAG. Original roots
+   and literal0/1 are the ONLY initial known coordinates; literalX and outputs
+   of unsupported or unknown-dependent cells never start known.
+   Use the existing conservative approved set: mux,not,logic_not,and,or,xor,
+   xnor,add,sub,mul,eq,ne. Full params, signedness, pin/width contracts and ordered
+   operands must match exactly. The selector of an eligible mux must be known.
+   Unknown-sensitive or currently unsupported primitives remain untouched;
+   observed aggregate totality is not a license to declare their inputs known.
+
+   Traverse one actual whole-graph topological order; do NOT process by assumed
+   gold/gate independence. Maintain canonical representatives only from earlier
+   eligible cells. An eligible cell has every actual input known, after prior
+   proved substitutions. Compare complete canonical typed expression records,
+   not only hash equality: same type/parameters/directions, relevant attributes,
+   ordered canonical input IDs and output coordinate widths. Source annotations
+   may be ignored only as the already reviewed nonsemantic src field.
+   The first exact expression is its permanent representative; later duplicate
+   outputs map to that representative coordinate-by-coordinate. Representatives
+   are never later removed, so substitutions do not create cycles or unresolved
+   chains. Sharing may be within either side or across sides; known deterministic
+   equality follows from the DAG induction, not side labels. A conservative
+   cross-side-only policy is also valid if preferred, but must keep the same
+   generic topological proof once cross-side dependencies already exist.
+
+3. Concrete substitution certificate
+   Record every applied actual rule, input correspondence, prior substitutions,
+   full original/canonical cell bodies and complete output coordinate map.
+   Each step follows from equal defined inputs and pinned total deterministic
+   output equations; no internal cut, assumed equality or solver constraint.
+   Preserve every unclassified cell and every existing unknown choice/fanout.
+   Map uses in ALL cell pins, original observation ports and alias bit vectors;
+   delete only certified duplicate cells. Preserve metadata and all roots.
+   Stream full owner emission and independently replay the complete proposed
+   graph/certificate. Use disk-backed expression/known-bit tables if necessary;
+   storing huge recursively expanded expression trees is unnecessary.
+   Audit the complete transformed driver/DAG/schema and stream archive hashes.
+   Guards must cover changed signedness/operand order/root identities, literalX
+   or unknown wire operands, already-cross-side dependencies, all output/alias
+   replacements, representative stability, missing map entries and tampered
+   certificates. Prove the original-full-congruent to shared-model observation
+   correspondence, then compose it with the prior fullgraph congruence.
+
+4. First concrete query and continuation
+   Project and rerun the exact2410..2426 mismatch from the certified new full
+   graph, same explicit-undef/defined-root domain and resource/time ceilings.
+   Record actual removed cell/bit counts and SAT size; no predicted speedup is
+   treated as a fact. A smaller source-cone-only prototype is acceptable to test
+   efficacy, but cannot substitute for the fullgraph certificate or automatically
+   authorize rewriting other cones. Prefer the fullgraph certificate directly.
+
+   Preserve all150 baseline intervals plus10 subsequent original full-congruence
+   intervals, exact union[0,2410). Authenticate each query's original representation
+   and model-transformation chain; never relabel old queries as shared-model runs.
+   Keep all3518 remaining coordinates. If16-bit queries still time out, a reviewed
+   schedule using the existing1-bit partition option is sound, with identical
+   roots/cones/complete union and explicit immutable resume. This is a fallback
+   representation experiment, not a blind repeated solver retry or higher limit.
+   A single-bit timeout remains unresolved. No correctness claim follows from
+   small cone size, number of removed adds or a diagnostic exact signature.
+
+Every partial result remains incomplete; atomic checkpoints and source/artifact
+closure preservation apply from the first version. Full5928-D coverage is the
+only eventual retained-equality success condition. Original memory semantics,
+public-output refinement, child output definedness, initialized outer trace and
+production applicability remain separate pending obligations.

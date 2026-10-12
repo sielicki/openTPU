@@ -1,0 +1,145 @@
+Status: source design only. No new extraction, projection, solver, or proof has
+run. Passed diagnostic/proof sources and receipts remain unchanged.
+
+Measured prerequisite
+---------------------
+The bounded precise diagnostic log vpu-joint-physical-bits-first.log reports
+empty extra_frontier on both sides for all 679 actual selected flop D bits AND
+all boundary aliases. Reverse alias and literal conflicts are empty. Primitive
+counts agree except for 17 original $buf cells. This is dependency evidence,
+not yet a semantic projection or original-partition equivalence theorem.
+
+The next useful artifact is a complete conditional 679-D theorem, using the
+same boundary vector and original/gold state coordinates as that diagnostic.
+It includes the earlier 32 geometry D bits rather than silently subtracting
+them. The independently retained command memory has 480 bits and is NOT part
+of this 679-D claim. No original state or child output is added as a new cut.
+
+Exact graph projection
+----------------------
+Recompute the complete demand union from authenticated original SQLite owners
+and joint gold raw graph. Authenticate original inventory, joint proof, partition,
+observation, geometry receipts and exact owning artifact maps, plus current
+implementation/model/tool closure. Diagnostic logs are supporting evidence only;
+the checker repeats their audits. No re-extraction is necessary.
+
+For each reached cell, accumulate demanded ORIGINAL Y positions before emitting
+anything. Keep one cell per original owner, with sorted unique positions:
+* $buf: retain A[I], Y[I], change WIDTH to len(I), preserve output identities.
+* $mux: retain A[I], B[I], Y[I], the complete original scalar S; change WIDTH.
+* $pmux: retain A[I], concatenated B[j*old_WIDTH+I] for EVERY j in original
+  branch order, Y[I], complete original S and unchanged S_WIDTH; change WIDTH.
+Every other cell keeps its full original payload/connections/parameters and all
+input dependencies. Preserve attributes; reject hidden semantic/init owners.
+No $buf output is identified with its input. No per-output cloned selector cell,
+constant/X substitution, selector constraint, onehot premise, or optimization.
+
+Validate exact pin sets/directions, sole supported parameters, dimensions,
+positive widths, integer unique outputs, bit tokens, drivers, and disjoint
+input/output ownership. Keep all primary/state boundary correlations, repeated
+aliases and constants exactly. Reject any unresolved frontier or reverse alias
+conflict. All retained cells must be supported by the pinned actual solver.
+Audit the resulting complete dependency DAG before a query. No cyclic constraint
+system is accepted as a transition function. Audit-only schema adaptation must
+never change the graph sent to SAT.
+
+Projection certificate obligations
+----------------------------------
+Pin the actual Yosys executable and its exact acquired source/build linkage,
+kernel/satgen.cc and kernel/satgen.h. Do not reuse the old MXU model snippet:
+the currently acquired source has different code organization. Extract/authenticate
+the exact mux, pmux and pos/buf branches, importSigSpecWorker, importDefSigSpec,
+importUndefSigSpec, extendSignalWidthUnary and undefGating. Changed implementation
+must fail closed until reviewed, even if cell names remain the same.
+
+The justification is coordinate projection of the ACTUAL explicit-undef SAT
+relation, including intermediate value variables, not merely Verilog two-state
+functional equivalence:
+* mux value and undef equations act per coordinate with the same imported S.
+* pmux value is the same ordered selector fold for each retained coordinate;
+  undef includes the same global unknown-selector and multiple-active-selector
+  conditions across ALL branches. No exclusivity assumption is introduced.
+* exact equal-width buf has no extension/truncation. Each retained output keeps
+  its separate value/undef variables and coordinate undefGating equation.
+* undefGating allows an undefined output value to vary independently. It is
+  retained, not replaced with an alias equation.
+* importDefSigSpec creates a fresh value for each literal-X occurrence, but
+  wire identities share named variables. S is imported once per retained cell.
+  Keep every retained data occurrence and its port/coordinate provenance;
+  map its existential value to the corresponding original occurrence. Removed
+  data occurrences do not occur in retained-coordinate equations. Literal Z
+  retains the actual installed model treatment; do not relabel it X or zero.
+
+An executable small certificate suite should instantiate actual primitive cells
+with separated outputs and exercise all binary/undefined selectors, repeated
+wire data, literal-X occurrences, arbitrary undefined output values and pmux
+multi-active selection. Compare projected relation against elimination of only
+omitted coordinate variables, not equality of independently chosen undefined
+output values. Tiny exhaustive value/undef relation enumeration can validate
+the certificate formulas, but does not replace the pinned-source coordinate
+argument. Use demonstrably wrong branch-coordinate indexing and unknown-buffer
+aliasing negatives. Do not presume selector cloning changes observable behavior:
+the pinned mux/pmux undef rules can mask that difference. Keep the one-owner,
+one-selector-import provenance check independently. No generic compiler/kernel
+theorem is claimed.
+
+Complete conditional theorem
+-----------------------------
+Use one immutable global semantic input/state boundary map, not new unrelated
+input vectors per output. Under the SAME defined/shared boundary as the precise
+diagnostic, preserve actual input aliases as observations. Prove their definedness
+and exact equality to the corresponding shared underlying coordinates (as in
+the passed geometry proof). Do not infer those links from buffer identity alone.
+All physical state overlaps must agree; reject conflicting aliases/constants.
+
+Before SAT, freeze a manifest enumerating ALL 679 original/gold D pairs and every
+actual boundary-alias observation exactly once, plus a partition of this complete
+vector. Use a modest fixed coordinate budget and demand slicing per partition;
+measure actual cone sizes before choosing a bounded execution batch. Both queries
+for every partition use the identical archived graph and defined-input domain:
+  totality: -enable_undef -set-def-inputs -set-any-undef observed
+            -prove impossible 1 -verify
+  equality/linkage: -enable_undef -set-def-inputs -prove equal_ok 1 -verify
+All actual X literals remain. Positive queries must have exact success return
+and terminal evidence. Every output and all 679 D obligations must complete.
+No after-reset, occupancy, can_begin, h_empty, head_nfill=nfill or legal-traffic
+premise is added. Independent partition proofs universally quantify the same
+boundary; splitting queries does not introduce a trace or layout theorem.
+
+Mutation validation modifies actual gold D before demand/projection, keeps the
+full original 1,159 state inventory, and requires model-backed failures for an
+actual update inversion, lost update/hold, and introduced X. Prefer a newly
+covered non-geometry state field. Prove target ownership and unique mutation;
+do not mutate only the comparison harness. Strong totality must catch D->X.
+
+Receipts/resume and memory
+-------------------------
+Stream/archive all large inputs and SQLite access; release graphs before solver
+launch. Each partition freezes raw-source coordinates, projection certificate,
+graph, exact script/argv, binary/model, input domain, manifest index, log and
+model. Resume requires exact source/graph/query/manifest identity and successful
+terminal records, with direct artifact ownership/path joins. Publish active
+artifacts before starting a phase. Signal/error cleanup revokes all success flags,
+preserves partial artifacts individually and publishes incomplete receipts.
+All runs remain under root's serial 3 GiB gate; no agent execution is requested.
+
+What remains after this theorem
+------------------------------
+The boundary is deliberately conditional: hc240 and the other existing external
+joint inputs are shared/defined symbolic inputs. This does not prove their actual
+original/native producers equal or defined. Source-packed member coordinates
+still need exact original graph/type layout joins; no array permutation is inferred.
+The cq480 physical memory relation/read/write provider must be proved separately,
+including address/enable knownness OR exact arbitrary-undef memory semantics.
+Initialization must be joined to all original flop/memory aliases with coherent
+unspecified state witnesses. All 2,455 outward crossings/public observations must
+be covered before claiming a complete original-to-joint partition refinement.
+No whole-control, whole-VPU, external arithmetic, or trace theorem follows solely
+from this conditional 679-D result.
+
+Review gate
+-----------
+Review this design before implementing the full driver. Then implement pure
+strict slicing/model-certificate helpers and guards first, without touching passed
+diagnostic files. Root runs bounded guards/model fixtures. Only after their review
+does root run the complete parent graph audit and partition queries.

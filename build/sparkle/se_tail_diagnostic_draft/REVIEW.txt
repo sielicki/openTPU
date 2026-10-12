@@ -1,0 +1,45 @@
+UNEXECUTED DRAFT. No imports, tests, extraction, netlist processing or solver run.
+
+Scope: extend the authenticated SE-tail 8/7/1 retained-product theorem (89824
+bits) with four actual dq_n diagnostic source bits. The archived pre-clean
+hierarchy must still contain all four actual Q/D bits; otherwise fail closed.
+No handwritten next-state implementation substitutes for the original circuit.
+Read one authenticated hierarchy in the bounded job, extract both tiny backward
+cones in place, then release the hierarchy before solver launch. A source graph
+already missing dq_n will require fresh authenticated pre-clean extraction as a
+separate reviewed change, not reconstruction from an assumed counter equation.
+
+The 282 parent cut bits are warm8, ub_q273 and dv_5=original u_dv.g_regs.qr1.
+Audit actual Q endpoints, shared positive clock, parent bit correspondence and
+original hierarchy endpoint/root en/clock connection. Complete four-bit Q/D is
+exposed, with arbitrary parent boundary state and clk/rst/init/pe inputs.
+No reset, fill, legal traffic, warm-up or init masking premise. All initial
+aliases are read before projection. Native zero has an existential matching
+reference witness; native initializer one also has a witness when reference is
+undefined, so it is deliberately NOT advertised as a negative counterexample.
+An actual projected counter D bit inversion must instead produce a concrete SAT
+model. All three positive step/output/diagnostic predicates remain unrestricted.
+
+CORRECTION to earlier diagnostic gap speculation: SeTailABI.lean ALREADY emits a
+simulation-only FIFO assertion. The draft compiles the actual current wrapper
+via its Lean generator and authenticates its imported source/link artifacts.
+Both exact original and native assertion predicates and positive clock anchors
+are pinned. The theorem concerns two-state sampled assertion trigger equality.
+Original text chooses underflow/overflow; native text is generic. Therefore
+fatal message equivalence, complete simulator event ordering, and four-state
+behavior are not claimed. No additional assertion source change is necessary.
+A later applicability binder must bind the generated wrapper to each actual
+consuming assembly; the main retained-product binder excludes these four bits.
+
+Trust/scope: checked synthesis and SAT tools, not a kernel-instantiated circuit
+proof. Parent main theorem already independently authenticates generation,
+complete retained transformations and concrete FP relations. The new receipt
+must bind that successful parent receipt and all historical input closure.
+No arbitrary RAM is zeroed. Full-source bookkeeping becomes89828 bits while
+synthesized retained state stays89824. Whole VPU/board composition remains open.
+
+Suggested first gate work: bounded256MiB synthetic guards, then default3GiB full
+checker against successful parent receipt. Preserve first failure and inputs.
+Potential concrete first-run differences: pre-clean dq_n retention, exact gold
+u_dv module/port spelling, generated wrapper specialization string. Adjust only
+against authenticated graph/source evidence; do not weaken state completeness.

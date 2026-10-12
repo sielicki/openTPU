@@ -418,15 +418,13 @@ def test_stream_without_the_stream_engine_is_an_error(have_verilator):
 
 
 # ------------------------------------------------------------------------------ Qwen3
-torch = pytest.importorskip("torch")
-transformers = pytest.importorskip("transformers")
-
-
 @pytest.mark.parametrize("formats", ["", "attn=fp4,down=int4,head=fp4",
                                      "attn@0=fp4,mlp@1=fp4"])
 def test_tiny_qwen3_on_board_model(have_verilator, formats):
     """Logits bit-identical to the ISA simulator; with per-kind weight formats too (int8,
     fp4 and int4 MMs in one layer), and per layer (a run, a layer block layout, each)."""
+    torch = pytest.importorskip("torch")
+    transformers = pytest.importorskip("transformers")
     import dataclasses
     from opentpu.llm.qwen3 import Engine, Spec
     torch.manual_seed(0)
@@ -553,6 +551,8 @@ def test_tiny_qwen3_generate_on_board_model(have_verilator):
     DRAM state of a 248-token prefill on the ISA simulator, 12 tokens across the attention
     bucket boundary at 256 in one start (HALT CHAIN on the board's loader), token for token
     and the whole DRAM of the ISA simulator's run."""
+    torch = pytest.importorskip("torch")
+    transformers = pytest.importorskip("transformers")
     from opentpu.llm.qwen3 import PREFILL_ROWS, Engine, Spec
     torch.manual_seed(0)
     hc = transformers.Qwen3Config(hidden_size=256, num_hidden_layers=2, num_attention_heads=4,
@@ -605,4 +605,3 @@ def test_run_clock_is_there_while_the_host_serves_a_run():
             assert set(seen) == {None}
         else:                                       # (CYCLES / CORE_KHZ, times the ratio)
             assert all(c is not None and 0.009 < c[1] < 0.011 for c in seen)
-

@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import json
 import math
+from collections import OrderedDict
 from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
@@ -151,11 +152,23 @@ class Weights(Mapping):
     fp32 (LFM2-2.6B: 10 GB), the image build converts one tensor at a time. Tensors of at most
     CACHE bytes stay cached (norms, conv taps: read per token by the references), and the
     last larger one (the embedding table a reference indexes per token). A tensor with a NaN or
-    an infinity is refused (finite)."""
+    an infinity is refused (finite).
+
+    OTPU_WEIGHT_CACHE_BYTES optionally bounds the aggregate small-tensor cache
+    with LRU eviction. It does not bound caller-held tensors, mapped checkpoint
+    pages, conversion temporaries, or the separate single-large-tensor cache.
+    An absent setting preserves the original unlimited small-tensor cache.
+    """
 
     CACHE = 16 << 20
 
     def __init__(self, model_dir, mtp: bool = False):
+        import os
+        budget = os.environ.get("OTPU_WEIGHT_CACHE_BYTES")
+        if budget is not None and (not budget or not budget.isascii() or not budget.isdecimal()):
+            raise ValueError("OTPU_WEIGHT_CACHE_BYTES must be a nonnegative decimal integer")
+        self._small_budget = None if budget is None else int(budget)
+        self._small_bytes = 0
         from safetensors import safe_open
         self.model_dir = Path(model_dir)
         self._files, self._where = [], {}
@@ -168,7 +181,7 @@ class Weights(Mapping):
                     continue
                 self._where[k.replace("model.language_model.", "model.", 1)] = (h, k, None)
         self._split_fused(Path(model_dir))
-        self._small: dict = {}
+        self._small: OrderedDict = OrderedDict()
         self._big: tuple | None = None
 
     def _split_fused(self, model_dir: Path) -> None:
@@ -197,6 +210,8 @@ class Weights(Mapping):
 
     def __getitem__(self, name) -> np.ndarray:
         if name in self._small:
+            if self._small_budget is not None:
+                self._small.move_to_end(name)
             return self._small[name]
         if self._big is not None and self._big[0] == name:
             return self._big[1]
@@ -205,7 +220,13 @@ class Weights(Mapping):
         t = h.get_tensor(k) if rows is None else h.get_slice(k)[rows[0]:rows[1]]
         v = finite(t.to(torch.float32).numpy(), name)
         if v.nbytes <= self.CACHE:
-            self._small[name] = v
+            if self._small_budget is None or v.nbytes <= self._small_budget:
+                if self._small_budget is not None:
+                    while self._small_bytes + v.nbytes > self._small_budget:
+                        _, evicted = self._small.popitem(last=False)
+                        self._small_bytes -= evicted.nbytes
+                self._small[name] = v
+                self._small_bytes += v.nbytes
         else:
             self._big = (name, v)
         return v
@@ -1293,7 +1314,18 @@ def _mlp(x, lw, spec: Spec):
 # holds the activations of 8 rows of Qwen3-0.6B (Engine.prefill_chunks shrinks a run that does
 # not fit).
 PREFILL_ROWS = 8
-COMPILE_AHEAD = 3    # decode programs compiled ahead by the worker processes (Engine)
+COMPILE_AHEAD = 3    # default decode compilation workers; optional environment override
+
+
+def _compile_ahead() -> int:
+    import os
+    value = os.environ.get("OTPU_COMPILE_AHEAD")
+    if value is None:
+        return COMPILE_AHEAD
+    if not value or not value.isascii() or not value.isdecimal() or int(value) < 1:
+        raise ValueError("OTPU_COMPILE_AHEAD must be a positive decimal integer")
+    return int(value)
+
 DECODE_LEAD = 16     # resident decode: the next bucket's program is compiled from this many
                      # positions before the current bucket ends (Engine)
 HEAD_CHUNK = 8192     # LM head rows per MM (the fp32 logits of one chunk must fit TMEM)
@@ -1757,9 +1789,30 @@ def device_config(spec: Spec, cap: int, batch: int = 1, rows: int = 1, wformat: 
 class IsaBackend:
     """The bit-exact ISA simulator, one persistent machine (DRAM keeps the KV cache).
     adopt: the images (arrays of their own) become the machine's DRAM, grown to DRAM_BYTES in
-    place instead of copied, so a 4 GiB image is held once; the caller gives them up."""
+    place instead of copied, so a 4 GiB image is held once; the caller gives them up.
+    With OTPU_SIM_MMAP=1, full-capacity disk snapshots replace the transferred
+    list entries instead, and completed ISA runs flush their updates to disk."""
 
     def __init__(self, cfg: Config, images: list, adopt: bool = False):
+        from .. import simmemory
+        if simmemory.enabled():
+            # Preserve independent slice snapshots, including the complete zero
+            # tail, on reclaimable disk pages. Machine's temporary zero arrays
+            # are untouched and replaced one slice at a time.
+            if len(images) != cfg.S:
+                raise ValueError("ISA images must match the slice count")
+            for image in images:
+                if np.ndim(image) != 1 or len(image) > cfg.DRAM_BYTES:
+                    raise ValueError("ISA image must be a vector fitting DRAM_BYTES")
+            self.machine = Machine(cfg, [[] for _ in range(cfg.S)], [None] * cfg.S)
+            for i, state in enumerate(self.machine.slices):
+                state.dram = simmemory.snapshot(images[i], size_bytes=cfg.DRAM_BYTES)
+                if adopt:
+                    # The caller explicitly transfers ownership. Release its
+                    # image reference promptly instead of retaining all original
+                    # anonymous arrays while subsequent slices are copied.
+                    images[i] = state.dram
+            return
         own = adopt and all(isinstance(m, np.ndarray) and m.dtype == np.uint8 and m.ndim == 1
                             and m.flags.owndata and len(m) <= cfg.DRAM_BYTES for m in images)
         self.machine = Machine(cfg, [[] for _ in range(cfg.S)],
@@ -1782,6 +1835,10 @@ class IsaBackend:
 
     def run(self, programs: list, args=None) -> dict:
         self.machine.load(programs, args).run(max_steps=1 << 40)
+        from .. import simmemory
+        if simmemory.enabled():
+            for state in self.machine.slices:
+                simmemory.flush(state.dram)
         return {"instructions": [s.icount for s in self.machine.slices]}
 
 
@@ -2217,7 +2274,7 @@ class Engine:
         # per-position decode programs precompiled ahead: three worker processes, so a
         # compile can take three device runs (LFM2 fp4 on the card: a 13.5 ms run against a
         # 16-30 ms trace, more on a host busy with other work; resident decode compiles none)
-        self._ahead = COMPILE_AHEAD if self._procs else 1
+        self._ahead = 1                     # process pool sets the configured width below
         if self._procs:
             self._start_pool()
         if hasattr(self.backend, "attach"):
@@ -2239,6 +2296,7 @@ class Engine:
         """The compile worker process (spawned: it inherits no device or lock descriptor)."""
         import multiprocessing as mp
         from concurrent.futures import ProcessPoolExecutor
+        self._ahead = _compile_ahead()
         self._pool = ProcessPoolExecutor(
             self._ahead, mp_context=mp.get_context("spawn"), initializer=_worker_init,
             initargs=(self.spec, self.cfg, self.cap, self.batch, self.rows, self.block,

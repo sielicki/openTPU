@@ -1,0 +1,85 @@
+Actual original-root write-select provider bridge (unexecuted design)
+
+Target
+Compare all424 actual original cw outputs with the exact reached native
+write_select combinational module: cw_en8, cw_addr160, cw_data256. Close the
+424 missing writer input providers and establish the91 write_select internal
+input coordinates against the authoritative4231 current-state relation.
+This is the remaining missing provider cone after busy; it does not by itself
+prove the entire4231 connected product or all5857 outward crossings.
+
+Authoritative inputs
+Provider inventory: vpu-control-provider-closure-second, SHA
+b61359382979c221be0ef0cd959ffeb3dd5ddf1bdfbeb389038584e94953a7f8.
+Its complete coordinate inventory has91 consumer_actual_domain_missing rows
+for write_select and424 provider_actual_observation_missing writer cw rows.
+Join its exact direct receipt maps to completed startup, original root,
+writer, joint, combinational and assembly receipts. No generic transitive
+artifact lookup. Preserve the entire six-child topology and all occurrences.
+Use comb write_select/none/raw.json gate plus actual fullbody/attributes and
+incoming directives of each reached Gen1/Gen2/bundle specialization. The
+completed local combinational theorem does not replace this actual-root proof.
+
+Domain (source-derived until bounded probe confirms exact saved rows)
+The91 internal input coordinates are sequence state:
+red_act1, func8, tag8, rdb1, wr_row20, flushing1, fl16, rows16, dst20.
+Require exact native provider edge expressions and startup ('joint',Q)->
+('Q',originalQ) joins for each coordinate; retain and observe raw aliases.
+The remaining write_select inputs are explicit datapath boundary coordinates:
+mo_v/mo_mask/mo_waddr, lres/lmm/lmv, mxm_v/mxm_tag/mxm_row_last/mxm_waddr,
+mx_new, am4_v/am4_a/am4_m/am4_i, root_v/root, rbuf_q.
+Their values remain arbitrary defined shared inputs, with exact original
+aliases/packed-field coordinates and actual parent input expressions recorded.
+Do not claim these datapath producers proved, nor cut an extra unexpected
+frontier to force closure. Preserve aliased/constant original coordinates as
+one coherent relation; contradictory bindings reject.
+
+Actual mapping and probe
+Use original immutable owner SQLite, not a reconstructed write process.
+Extract mo members from the exact original mt_t declaration/alias, mxm_q
+members from exact rm_t declaration/alias. Preserve every field width and
+packed LSB offset; source/typed evidence must match the pinned original.
+For lres/lmv/rbuf_q original unpacked arrays, retain the actual alias offset,
+upto and full vector. Candidate reversal of eight32-bit groups must be
+explicit and validated by the actual cone theorem; do not call this a generic
+array-layout theorem. cw_addr/cw_data are packed multidimensional vectors;
+require complete aliases and coordinate metadata and compare all424 entries.
+Join all424 original writer input normalized endpoints to corresponding raw
+cw output coordinates, preserving each recorded actual buffer path.
+Observe normalized consumer endpoints directly in addition to raw outputs,
+so unknown-valued buffers cannot be eliminated by identity substitution.
+The bounded probe should emit complete input vectors, raw+normalized output
+observations, startup joins, each consumer occurrence, fullcell primitive
+inventory and all frontier escapes. It makes no proof claim. Unexpected
+selectors/state/memory/children/undriven frontiers remain explicit blockers.
+
+Proof
+One complete upfront observation manifest:424 raw outputs, all424 writer
+normalized consumers (duplicates retained coordinate-wise), every raw input
+alias. Exact final count is measured, not inferred from unique wire count.
+Reuse reviewed strong paired projection with actual buffers and exact native
+primitive schema. Preserve literalX, complete selectors and shared wire
+identities. Audit complete drivers and combinational DAG before SAT; no state
+or process may occur in native write_select. Keep actual original support
+outside cut boundaries intact. Use bounded16-coordinate partitions with both
+full output definedness and strict equality, exact post-SigMap identity, and
+immutable query/graph/model/source/log resume joins. No occupancy, reset,
+function, mask, after-fill or priority exclusivity assumptions.
+
+Actual graph faults
+Flip actual native cw_en[0] producer/output, replace actual cw_data[0] output
+withX, and change an actual native cw_addr coordinate (e.g. lane swap only if
+actual outputs differ under an unconstrained witness). Mutations occur before
+projection and outside miter logic; exact restored graph identity and genuine
+counterexample checks required. Do not require a speculative lane-swap fault
+if equivalence happens to hold; choose a demonstrated concrete bit inversion.
+
+Composition deliverable
+Save all91 exact state-domain joins and424 provider->writer endpoint lemmas,
+plus their exact native edge coordinates. State-dependent sources therefore
+require no new external premise. Genuine datapath inputs retain their shared
+boundary contract. Reconcile with complete provider inventory without
+dropping duplicated uses. The final connected4231 composition still needs
+all remaining candidate alias links, actual original/native dependency DAG,
+public/provider-only observations outside D/access closure, and startup
+certificate joins. No whole-control flag until those are discharged.

@@ -1,0 +1,65 @@
+Full executable driver source is now staged; no author execution.
+Existing six cq_memory guards and six cq_mapping guards passed under root gate.
+Six new test_cq_driver methods await bounded execution after source review.
+
+check_cq.py authenticates completed679 and its exact original/joint owner joins,
+then independently rebuilds the complete boundary and requires byte-structural
+equality with the proven679 observation/boundary manifest. All memory/access
+owners are collected from the original SQLite inventory and strict measured
+schema is required. Original RTL identity, mapped gold fields and full1159Q are
+joined; cq memory words remain initially unspecified.
+
+Phases:
+1. Actual482-observation control totality, no extra solver assumptions. Undefined
+   inactive write address/data are property-masked, never replaced in hardware.
+2. Isolate only the actual original cq plus complete real provider graph. Actual
+   memory/access/provider payloads persist; hc/read DATA are not external cuts.
+   Run memory_map with no optimization. Pin complete memory_map.cc, mem.cc,
+   mem.h against the exact NAR-linked source used by the installed Yosys binary.
+3. Audit complete ordered480Q/D/no-init/clock and before/after provider identities.
+   Prove all720 actual mapped next-state/head bits against the independently
+   constructed finite one-writer memory law on actual provider pins. Strong
+   totality precedes equality; both sides'1440 observations remain explicit.
+4. Prove the actual head dependency is only480 current memory Q plus cq_h on
+   both sides. Freeze the complete480D/240head/all-alias manifest and its16-pair
+   partitions before any joint queries. All partitions require totality and
+   strict equality/linkage with the existing joint reference; provisional hc
+   is gone from the input domain.
+5. Three real original access mutations are made before mapping: write address
+   inversion, read address inversion and newly enabled reset-time write. They
+   The reset fault also selects address0 and the actual command data while rst1,
+   making the erroneous write defined even if inactive original ADDR/DATA are X.
+   All three intended pin changes are audited; nonreset hardware is unchanged.
+   Faults rerun control/schema/law checks, then must fail against unchanged joint gold
+   with concrete SAT models. The reset-write counterexample explicitly requires
+   and checks rst1. Full480state remains and no miter fault is substituted.
+
+Session records active artifacts before commands, archives logs/models on error,
+revokes all publication flags, records individual preservation errors, retries
+incomplete publication and restores signal handlers. Constructor failures also
+restore handlers. Signals never leave a positive result after an interrupted run.
+
+Optional --resume RECEIPT --resume-sha256 SHA accepts only the same complete
+source/model/domain/manifest identity. Successful query reuse uses the reviewed
+physical_resume exact direct-owner/path/digest/script/command/result/log and
+post-SigMap checks. Mapping-stage reuse binds exact isolated bytes, immutable
+mapped graph, original script/argv/cwd/returncode/log and fresh full mapping audit.
+Original query paths stay distinct from archive storage paths through repeated
+reuse. An incomplete first query stops the run; no status is promoted by resume.
+
+Scope remains conditional on the recorded defined/shared current state/external
+boundary. Source-packed external layout/provider equivalence, combined coherent
+startup witness, complete2455outward crossings, initialized partition trace and
+whole4231control theorem remain false. Generic compiler or memory-lowering
+correctness is not claimed; the concrete mapped memory has its own law proof.
+
+Root-only guard:
+python3 tools/sparkle_bounded.py --memory-mib 256 -- python3 -m unittest discover -s build/sparkle/vpu_joint_cq_memory_draft -p test_cq_driver.py -v
+
+Root-only first actual proof:
+python3 tools/sparkle_bounded.py -- python3 build/sparkle/vpu_joint_cq_memory_draft/check_cq.py --work build/sparkle/vpu-joint-cq-proof-first
+
+Use default3GiB gate; compiler/extraction daemons are not involved. The only
+memory_map is2x240bits, independent-law observations1440bits and paired queries
+are16 observations except deliberate whole720-observation negative checks.
+Each Yosys command has120s limit; total runtime is not yet measured.

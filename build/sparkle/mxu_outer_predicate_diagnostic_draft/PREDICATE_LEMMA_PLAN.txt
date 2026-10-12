@@ -1,0 +1,62 @@
+Unexecuted plan; no new equality or coverage claim.
+
+Evidence and diagnostic boundary
+The immutable single-bit diagnostic c4726e4b8dd4925d70e7ed5f0bf702cb7d10bfe7ce70b936e34af84b1ca78ad3
+qualifies the actual D2412 cone of the fully shared graph. Root's bounded detail
+reports contain eight original $gt and eight native $lt, all unsigned 32/32/1,
+with no exactly reversed wire-ID pair. The new read-only report enumerates all
+opposite-orientation candidates, aligning gold A with native B and gold B with
+native A. Signature and actual-wire match counts are only ranking information.
+Literal X tokens never establish a shared choice. Mismatched widths/signs remain
+explicit; no cell is rewritten or newly declared known by this diagnostic.
+
+Choose a concrete pair from the authenticated report, preferably a first-stage
+comparison whose full operand cones avoid later predicates. Before solving,
+reconstruct its exact source cone and full original/shared-graph lineage, full
+cell bodies and actual semantic root IDs. Determine actual ancestry from drivers,
+not source names or numeric cell order. Retain all shared read/output fanout,
+independent omitted Q, and existing multiply congruence/cross-side edges.
+
+Operand lemma stage (separate executable and immutable receipt)
+For each selected unsigned 32-bit gt/lt pair, expose all 128 actual operand bits
+with the reviewed exact dependency projection. No internal cuts, assumed operand
+equality, new in-range constraint, or unknown simplification. Prove all 128 bits
+defined on the existing full defined-root domain, then all 64 ordered swapped
+pairs equal. The domain still assumes defined external RAM/FP returns; this
+does not discharge those child obligations. Negative controls must detect one
+inverted operand and one forced unknown coordinate. Target Y cannot be an
+operand ancestor. A timeout or counterexample is a result to diagnose, not a
+reason to substitute. If operand equality is false, preserve that concrete
+witness rather than assuming the apparent max/select correspondence.
+
+Congruence stage (separately reviewed)
+Authenticate exact current Yosys NAR, binary and SatGen source. Pin the arithmetic
+comparison undef branch, width/sign extension, importDef/Undef and undefGating,
+and the ezSAT unsigned comparison implementation. With all inputs defined,
+SatGen sets Y's undef bit to zero and gt(A,B) equals lt(B,A). Either source-audit
+the exact reversed comparison implementation or use a tiny actual-SatGen
+universal 32-bit swapped-comparison query as an additional concrete certificate;
+do not enlarge the generic sharing whitelist silently. Restrict the first rule
+to the actual unsigned A_WIDTH=B_WIDTH=32, Y_WIDTH=1 schema. Requalify operand
+queries before applying the rule; equality of predicate outputs is a consequence,
+never a premise of the operand lemma.
+
+Replace every use of one entire Y coordinate simultaneously in the full graph,
+remove only its proved redundant cell, preserve all other owners/roots/aliases,
+and freshly audit drivers and DAG. Full target/operand ancestry and projected
+root correspondence must lift the universal operand lemma to that full graph;
+the diagnostic's failed D slice alone is not a fullgraph certificate. If later
+stages need the first predicate substitution, qualify the earlier wholegraph
+transformation first and prove new lemmas on that exact transformed model.
+No circular assumed predicate equality or per-consumer unknown reselection.
+
+Coverage continuation (only after the certificates above)
+Requalify original-to-congruent-to-shared lineage and the exact mixed prefix
+[0,2412), including the two successful one-bit queries in shared-D-second SHA
+2f54acfa644ea7b63eb6d57ef31cd01373c1a1caa39e99223596274cd0f5317c.
+Preserve all remaining 3516 coordinates [2412,5928). A new representation needs
+its own immutable graph/certificate and explicit resume identities. First retry
+the original D2412 obligation, then complete the exact disjoint 5928 union.
+Full retained equality, original memory semantic bridge/quotient, public output
+relation, child-definedness, outer initialized trace and production remain
+unproved until their separate required stages finish.

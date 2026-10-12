@@ -1,0 +1,99 @@
+Status: independently reviewed source-only design; ready for scoped implementation.
+No observation theorem or execution.
+
+Smallest next executable stage: complete actual observation qualification
+
+The passed discrete memory bridge establishes one-way extension and retained
+transition independence under defined full Q/external/RAM/FP returns. It does
+not equate outputs. Next construct and test every original public and child
+input observation, before attempting initialized feedback composition.
+
+Entry evidence
+Require explicit terminal bridge receipt path/SHA supplied by root, its complete
+input closure, every local true flag and stronger false flag. Join exactly the
+completed 5,928-D theorem and ownership receipt already replayed by that bridge.
+Do not infer a receipt digest from the filename or prior commentary. Preserve
+all previous driver bytes and immutable artifacts.
+
+Actual observation inventory
+Reconstruct the original archived flat -> eight main RAM cuts -> eight RMW FP
+cuts with existing exact whole-owner contracts. Save complete output port
+inventories at this point, BEFORE any auxiliary bootstrap/D/control probes.
+This includes all actual ordinary outputs, o_* pipeline outputs after the
+audited native rename, every RAM input pin including address/data/masks/control,
+and all eight FP a/b/en inputs. Full child clock identity remains separately
+audited. Do not select only aesthetically public names or omit constant outputs.
+Pair by actual semantic port name and bit index; reject any unmatched port,
+direction or width. Keep constants, duplicates and aliases as real occurrences.
+Classify ownership only using exact RAM/FP cut records and the remaining exact
+pre-cut top ports; classification must exhaust and not change the inventory.
+
+Concrete graph identity
+Rebuild expanded gold/native full graphs and complete relation exactly as the
+passed bridge. Require full serialized graphs and manifests to equal the bridge
+artifacts/closure, including 7,436 physical Q/D and independent omitted states.
+Reproduce the original paired retained-D graph byte-for-byte. Extend this graph
+only by observation ports; do not reapply the accumulated retained-D arithmetic
+substitutions to observations without a new wholegraph lift certificate.
+
+Build old-to-paired integer-wire maps by the same explicit external/retained/
+omitted root construction and exact actual cell pin correspondence used by
+assemble(). Audit every pair against source cell names/types/parameters/pins,
+including repeated-wire consistency. Unknown literal tokens remain literal
+occurrences, never dictionary keys for shared choices. Every observed integer
+must already have its exact driver/root map; reject missing drivers rather than
+invent observation roots. Retained-D equality cell is kept unchanged. Fresh
+complete driver/schema/DAG and source-pinned total-extension audits apply to
+the new graph. Deleting only new ports must yield the exact old paired graph.
+
+First queries and complete coverage
+1. Emit immutable ordered manifest (port, index, side, source bit, paired bit,
+   boundary ownership), exact counts and disjoint complete coverage. Do not
+   invent the actual count before inspecting the authenticated inventory.
+2. Query explicit-undef knownness on complete gold and native observation
+   vectors under the SAME defined original root domain. Use bounded disjoint
+   partitions with full primitive cones and exact mux-only projection if needed;
+   retain original root identities and source-pinned projection/extension proof.
+   Resume only explicit immutable receipt/SHA, actual graph/manifest/script/log
+   identities and exact complete interval union. All failure flags stay false.
+3. Strict output equality is a separate query over every paired observation.
+   A concrete unknown/mismatch witness is an expected possible outcome, notably
+   mk addresses4..7. Preserve all root values and the original shared RD wire
+   values/masks for diagnosis. Do not infer initialized reachability from a
+   one-step all-state witness. Never remove the high address bit or assume range.
+4. If strict equality fails, stop that claim. A later reviewed specified-bit
+   directional relation must cover complete original/native outputs and actual
+   consumer behavior. It cannot by itself discharge RAM/FP feedback: undefined
+   original writes/child arguments may change subsequent retained state or
+   require one coherent existential model across all consumers/cycles. No
+   independent repair choice per consumer or rechoice of hidden state is
+   permitted. Undefined combinational values may vary each cycle in a coherent
+   trace, preserving shared RD fanout; they are not forced permanently constant.
+
+Initial-state composition is separate and already has concrete prerequisites
+The original word ownership map plus full original initialization aliases and
+the native initial witness permit a fresh retained-base relation audit. Compose
+that base with complete retained-D equality and full 7,436-D knownness to prove
+conditional retained-state induction for externally supplied equal defined
+boundary-return sequences. Reference omitted state is chosen once respecting
+its initial constraints, then evolves along its own D. Arbitrary main RAM
+arrays remain equal by an initial whole-array witness, never zero initialized.
+However their ongoing equality and defined returns need all actual address,
+mask,data and read-mode obligations; RMW FP returns need initialized children;
+dot/epilogue inputs need complete observation equality/refinement. Therefore
+this conditional induction is not yet a closed outer-MXU theorem.
+
+Remaining applicability obligations must remain explicit in every receipt
+* Original SV/extraction/event semantics -> explicit collected-memory lift.
+  Historical generating-source closure is absent; new source binding required.
+* All actual public and RAM/FP/arithmetic observations, including OOB mk reads.
+* Initialized RAM/FP/dot/epilogue feedback with coherent unknown correlations.
+* Exact original/native initial state composition and one evolving witness.
+* Current production specialization and every reachable instance binding.
+
+Implementation proposal after design review
+New observation_pair.py + check_observations.py + focused guards here. First
+version supports explicit immutable resume. Root alone executes guards and
+audits through the existing bounded gate, with no larger limits. Observation
+construction can publish a complete inventory even if later knownness/equality
+queries are incomplete; those statuses/flags stay distinct.
